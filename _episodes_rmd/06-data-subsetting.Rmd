@@ -525,27 +525,6 @@ xlist$data
 {: .challenge}
 
 
-> ## Challenge 6
-> Given a linear model:
->
-> ```{r, eval=FALSE}
-> mod <- aov(pop ~ lifeExp, data=gapminder)
-> ```
->
-> Extract the residual degrees of freedom (hint: `attributes()` will help you)
->
-> > ## Solution to challenge 6
-> >
-> > ```{r, eval=FALSE}
-> > attributes(mod) ## `df.residual` is one of the names of `mod`
-> > ```
-> > ```{r, eval=FALSE}
-> > mod$df.residual
-> > ```
-> {: .solution}
-{: .challenge}
-
-
 ## Data frames
 
 Remember the data frames are lists underneath the hood, so similar rules
