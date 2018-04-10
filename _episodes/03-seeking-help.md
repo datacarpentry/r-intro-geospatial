@@ -116,29 +116,24 @@ sessionInfo()
 
 ~~~
 R version 3.4.3 (2017-11-30)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 16.04.3 LTS
+Platform: x86_64-apple-darwin17.3.0 (64-bit)
+Running under: macOS High Sierra 10.13.3
 
 Matrix products: default
-BLAS: /usr/lib/openblas-base/libblas.so.3
-LAPACK: /usr/lib/libopenblasp-r0.2.18.so
+BLAS: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+LAPACK: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
 
 locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=de_CH.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=de_CH.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=de_CH.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=de_CH.UTF-8 LC_IDENTIFICATION=C       
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
 attached base packages:
 [1] methods   stats     graphics  grDevices utils     datasets  base     
 
 other attached packages:
-[1] checkpoint_0.4.3 stringr_1.3.0    knitr_1.20      
+[1] checkpoint_0.4.3 stringr_1.2.0    knitr_1.18      
 
 loaded via a namespace (and not attached):
-[1] compiler_3.4.3  magrittr_1.5    tools_3.4.3     stringi_1.1.7  
+[1] compiler_3.4.3  magrittr_1.5    tools_3.4.3     stringi_1.1.6  
 [5] evaluate_0.10.1
 ~~~
 {: .output}

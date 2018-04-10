@@ -6,9 +6,7 @@ questions:
 - "How can I create publication-quality graphics in R?"
 objectives:
 - "To be able to use ggplot2 to generate publication quality graphics."
-- "To apply geometry, aesthetic, and statisics layers to a ggplot plot."
-- "To manipulate the aesthetics of a plot usng different colors, shapes, and lines."
-- "To improve data visualization through transforming scales and paneling by group."
+- "To understand the basic grammar of graphics, including the aesthetics and geometry layers, adding statistics, transforming scales, and coloring or panelling by groups."
 keypoints:
 - "Use `ggplot2` to create plots."
 - "Think about graphics in layers: aesthetics, geometry, statistics, scale transformation, and grouping."
