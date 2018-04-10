@@ -3,13 +3,13 @@
 #------------------------------------------------------------
 
 # Which carpentry is this ("swc" or "dc")?
-carpentry: "swc"
+carpentry: "dc"
 
 # Overall title for pages.
-title: "R for Reproducible Scientific Analysis"
+title: "Introduction to R for Geospatial Data"
 
 # Contact email address.
-email: lessons@software-carpentry.org
+email: info@datacarpentry.org
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
