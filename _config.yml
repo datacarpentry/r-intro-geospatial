@@ -67,3 +67,6 @@ exclude:
 
 # Turn off built-in syntax highlighting.
 highlighter: false
+
+# Specify Metadata github plugin
+github: [metadata]
