@@ -3,6 +3,8 @@ layout: lesson
 root: .
 ---
 
+<!-- TODO: update data if lesson uses data from existing geospatial lessons -->
+
 Introduction to R for non-programmers using gapminder data.
 
 The goal of this lesson is to revise best practices for using R in data
