@@ -25,8 +25,8 @@ making a toy dataset in your `data/` directory, called `feline-data.csv`:
 
 
 ~~~
-cats <- data.frame(coat = c("calico", "black", "tabby"), 
-                    weight = c(2.1, 5.0,3.2), 
+cats <- data.frame(coat = c("calico", "black", "tabby"),
+                    weight = c(2.1, 5.0,3.2),
                     likes_string = c(1, 0, 1))
 write.csv(x = cats, file = "data/feline-data.csv", row.names = FALSE)
 ~~~
@@ -69,11 +69,11 @@ cats
 The `read.table` function is used for reading in tabular data stored in a text
 file where the columns of data are separated by punctuation characters such as
 CSV files (csv = comma-separated values). Tabs and commas are the most common
-punctuation characters used to separate or delimit data points in csv files. 
+punctuation characters used to separate or delimit data points in csv files.
 For convenience R provides 2 other versions of `read.table`. These are: `read.csv`
 for files where the data are separated with commas and `read.delim` for files
 where the data are separated with tabs. Of these three functions `read.csv` is
-the most commonly used.  If needed it is possible to override the default 
+the most commonly used.  If needed it is possible to override the default
 delimiting punctuation marks for both `read.csv` and `read.delim`.
 
 
@@ -452,8 +452,8 @@ a column to be the same basic data type.
 > > By keeping everything in a column the same, we allow ourselves to make simple
 > > assumptions about our data; if you can interpret one entry in the column as a
 > > number, then you can interpret *all* of them as numbers, so we don't have to
-> > check every time. This consistency is what people mean when they talk about 
-> > *clean data*; in the long run, strict consistency goes a long way to making 
+> > check every time. This consistency is what people mean when they talk about
+> > *clean data*; in the long run, strict consistency goes a long way to making
 > > our lives easier in R.
 > {: .solution}
 {: .discussion}
@@ -1326,238 +1326,5 @@ str(cats[1,])
 > > Again we use the single brace with row and column coordinates. The column
 > coordinate is not specified. The return value is a _list_ containing all the
 > values in the first row.
-> {: .solution}
-{: .challenge}
-
-## Matrices
-
-Last but not least is the matrix. We can declare a matrix full of zeros:
-
-
-~~~
-matrix_example <- matrix(0, ncol=6, nrow=3)
-matrix_example
-~~~
-{: .language-r}
-
-
-
-~~~
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    0    0    0    0    0    0
-[2,]    0    0    0    0    0    0
-[3,]    0    0    0    0    0    0
-~~~
-{: .output}
-
-And similar to other data structures, we can ask things about our matrix:
-
-
-~~~
-class(matrix_example)
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] "matrix"
-~~~
-{: .output}
-
-
-
-~~~
-typeof(matrix_example)
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] "double"
-~~~
-{: .output}
-
-
-
-~~~
-str(matrix_example)
-~~~
-{: .language-r}
-
-
-
-~~~
- num [1:3, 1:6] 0 0 0 0 0 0 0 0 0 0 ...
-~~~
-{: .output}
-
-
-
-~~~
-dim(matrix_example)
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] 3 6
-~~~
-{: .output}
-
-
-
-~~~
-nrow(matrix_example)
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] 3
-~~~
-{: .output}
-
-
-
-~~~
-ncol(matrix_example)
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] 6
-~~~
-{: .output}
-
-> ## Challenge 4
->
-> What do you think will be the result of
-> `length(matrix_example)`?
-> Try it.
-> Were you right? Why / why not?
->
-> > ## Solution to Challenge 4
-> >
-> > What do you think will be the result of
-> > `length(matrix_example)`?
-> >
-> > 
-> > ~~~
-> > matrix_example <- matrix(0, ncol=6, nrow=3)
-> > length(matrix_example)
-> > ~~~
-> > {: .language-r}
-> > 
-> > 
-> > 
-> > ~~~
-> > [1] 18
-> > ~~~
-> > {: .output}
-> >
-> > Because a matrix is a vector with added dimension attributes, `length`
-> > gives you the total number of elements in the matrix.
-> {: .solution}
-{: .challenge}
-
-
-> ## Challenge 5
->
-> Make another matrix, this time containing the numbers 1:50,
-> with 5 columns and 10 rows.
-> Did the `matrix` function fill your matrix by column, or by
-> row, as its default behaviour?
-> See if you can figure out how to change this.
-> (hint: read the documentation for `matrix`!)
->
-> > ## Solution to Challenge 5
-> >
-> > Make another matrix, this time containing the numbers 1:50,
-> > with 5 columns and 10 rows.
-> > Did the `matrix` function fill your matrix by column, or by
-> > row, as its default behaviour?
-> > See if you can figure out how to change this.
-> > (hint: read the documentation for `matrix`!)
-> >
-> > 
-> > ~~~
-> > x <- matrix(1:50, ncol=5, nrow=10)
-> > x <- matrix(1:50, ncol=5, nrow=10, byrow = TRUE) # to fill by row
-> > ~~~
-> > {: .language-r}
-> {: .solution}
-{: .challenge}
-
-
-> ## Challenge 6
->  Create a list of length two containing a character vector for each of the sections in this part of the workshop:
->
->  - Data types
->  - Data structures
->
->  Populate each character vector with the names of the data types and data
->  structures we've seen so far.
->
-> > ## Solution to Challenge 6
-> > 
-> > ~~~
-> > dataTypes <- c('double', 'complex', 'integer', 'character', 'logical')
-> > dataStructures <- c('data.frame', 'vector', 'factor', 'list', 'matrix')
-> > answer <- list(dataTypes, dataStructures)
-> > ~~~
-> > {: .language-r}
-> > Note: it's nice to make a list in big writing on the board or taped to the wall
-> > listing all of these types and structures - leave it up for the rest of the workshop
-> > to remind people of the importance of these basics.
-> >
-> {: .solution}
-{: .challenge}
-
-
-> ## Challenge 7
->
-> Consider the R output of the matrix below:
-> 
-> ~~~
->      [,1] [,2]
-> [1,]    4    1
-> [2,]    9    5
-> [3,]   10    7
-> ~~~
-> {: .output}
-> What was the correct command used to write this matrix? Examine
-> each command and try to figure out the correct one before typing them.
-> Think about what matrices the other commands will produce.
->
-> 1. `matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)`
-> 2. `matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)`
-> 3. `matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)`
-> 4. `matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)`
->
-> > ## Solution to Challenge 7
-> >
-> > Consider the R output of the matrix below:
-> > 
-> > ~~~
-> >      [,1] [,2]
-> > [1,]    4    1
-> > [2,]    9    5
-> > [3,]   10    7
-> > ~~~
-> > {: .output}
-> > What was the correct command used to write this matrix? Examine
-> > each command and try to figure out the correct one before typing them.
-> > Think about what matrices the other commands will produce.
-> > 
-> > ~~~
-> > matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)
-> > ~~~
-> > {: .language-r}
 > {: .solution}
 {: .challenge}

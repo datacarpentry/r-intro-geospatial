@@ -6,7 +6,9 @@ questions:
 - "How can I create publication-quality graphics in R?"
 objectives:
 - "To be able to use ggplot2 to generate publication quality graphics."
-- "To understand the basic grammar of graphics, including the aesthetics and geometry layers, adding statistics, transforming scales, and coloring or panelling by groups."
+- "To apply geometry, aesthetic, and statisics layers to a ggplot plot."
+- "To manipulate the aesthetics of a plot usng different colors, shapes, and lines."
+- "To improve data visualization through transforming scales and paneling by group."
 keypoints:
 - "Use `ggplot2` to create plots."
 - "Think about graphics in layers: aesthetics, geometry, statistics, scale transformation, and grouping."
@@ -350,41 +352,6 @@ variables and their visual representation.
 > {: .solution}
 {: .challenge}
 
-
-## Multi-panel figures
-
-Earlier we visualized the change in life expectancy over time across all
-countries in one plot. Alternatively, we can split this out over multiple panels
-by adding a layer of **facet** panels. Focusing only on those countries with
-names that start with the letter "A" or "Z".
-
-> ## Tip
->
-> We start by subsetting the data.  We use the `substr` function to
-> pull out a part of a character string; in this case, the letters that occur
-> in positions `start` through `stop`, inclusive, of the `gapminder$country`
-> vector. The operator `%in%` allows us to make multiple comparisons rather
-> than write out long subsetting conditions (in this case,
-> `starts.with %in% c("A", "Z")` is equivalent to
-> `starts.with == "A" | starts.with == "Z"`)
-{: .callout}
-
-
-
-~~~
-starts.with <- substr(gapminder$country, start = 1, stop = 1)
-az.countries <- gapminder[starts.with %in% c("A", "Z"), ]
-ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
-  geom_line() + facet_wrap( ~ country)
-~~~
-{: .language-r}
-
-<img src="../fig/rmd-08-facet-1.png" title="plot of chunk facet" alt="plot of chunk facet" style="display: block; margin: auto;" />
-
-The `facet_wrap` layer took a "formula" as its argument, denoted by the tilde
-(~). This tells R to draw a panel for each unique value in the country column
-of the gapminder dataset.
-
 ## Modifying text
 
 To clean this figure up for a publication we need to change some of the text
@@ -392,11 +359,11 @@ elements. The x-axis is too cluttered, and the y axis should read
 "Life expectancy", rather than the column name in the data frame.
 
 We can do this by adding a couple of different layers. The **theme** layer
-controls the axis text, and overall text size. Labels for the axes, plot 
+controls the axis text, and overall text size. Labels for the axes, plot
 title and any legend can be set using the `labs` function. Legend titles
 are set using the same names we used in the `aes` specification. Thus below
-the color legend title is set using `color = "Continent"`, while the title 
-of a fill legend would be set using `fill = "MyTitle"`. 
+the color legend title is set using `color = "Continent"`, while the title
+of a fill legend would be set using `fill = "MyTitle"`.
 
 
 ~~~
@@ -412,7 +379,12 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-08-theme-1.png" title="plot of chunk theme" alt="plot of chunk theme" style="display: block; margin: auto;" />
+
+
+~~~
+Error in ggplot(data = az.countries, aes(x = year, y = lifeExp, color = continent)): object 'az.countries' not found
+~~~
+{: .error}
 
 
 This is a taste of what you can do with `ggplot2`. RStudio provides a
