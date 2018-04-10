@@ -3,19 +3,21 @@ layout: lesson
 root: .
 ---
 
+<!-- TODO: update data if lesson uses data from existing geospatial lessons -->
+
 Introduction to R for non-programmers using gapminder data.
 
-The goal of this lesson is to teach novice programmers to write modular code
-and best practices for using R for data analysis. R is commonly used in many
-scientific disciplines for statistical analysis and its array of third-party
-packages. We find that many scientists who come to Software Carpentry workshops
-use R and want to learn more. The emphasis of these materials is to give
-attendees a strong foundation in the fundamentals of R, and to teach best
-practices for scientific computing: breaking down analyses into modular units,
-task automation, and encapsulation.
+The goal of this lesson is to revise best practices for using R in data
+ analysis.
+R is commonly used in many scientific disciplines for statistical analysis and
+ its array of third-party packages.
+These materials are designed to provide attendees with a concise introduction
+ in the fundamentals of R, and to introdue best practices for scientific
+ computing: breaking down analyses into modular units, task automation,
+ and encapsulation, before getting started with working with geospatial data.
 
-Note that this workshop will focus on teaching the fundamentals of the
-programming language R, and will not teach statistical analysis.
+Note that this workshop focuses on the fundamentals of the programming
+language R, and not on statistical analysis.
 
 The lesson contains more material than can be taught in a day.  The [instructor notes page]({{ page.root }}/guide) has some suggested lesson plans suitable for a one or half day workshop.
 
