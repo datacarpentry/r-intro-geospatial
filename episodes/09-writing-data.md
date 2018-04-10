@@ -7,7 +7,7 @@ questions:
 objectives:
 - "To be able to write out plots and data from R."
 keypoints:
-- "Save plots from RStudio using the 'Export' button."
+- "Save plots using `ggsave()` or `pdf()` combined with `dev.off()`."
 - "Use `write.table` to save tabular data."
 source: Rmd
 ---
