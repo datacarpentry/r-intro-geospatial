@@ -496,7 +496,7 @@ x[names(x) == "a"]
 > vector are `TRUE`).
 {: .callout}
 
-> ## Challenge 2
+> ## Challenge 3
 >
 > Given the following code:
 >
@@ -518,7 +518,7 @@ x[names(x) == "a"]
 >
 > Write a subsetting command to return the values in x that are greater than 4 and less than 7.
 >
-> > ## Solution to challenge 2
+> > ## Solution to challenge 3
 > >
 > > 
 > > ~~~
@@ -712,7 +712,7 @@ When one vector is shorter than the other, it gets *recycled*:
 ![Inequality testing: results of recycling](../fig/06-rmd-inequality.2.png)
 
 In this case R **repeats** `c("a", "c")` as many times as necessary to match `names(x)`, i.e. we get `c("a","c","a","c","a")`. Since the recycled `"a"`
-doesn't match the third element of `names(x)`, the value of `!=` is `TRUE`.
+doesn't match the third element of `names(x)`, the value of `!=` is `FALSE`.
 Because in this case the longer vector length (5) isn't a multiple of the shorter vector length (2), R printed a warning message. If we had been unlucky and `names(x)` had contained six elements, R would *silently* have done the wrong thing (i.e., not what we intended it to do). This recycling rule can can introduce hard-to-find and subtle bugs!
 
 The way to get R to do what we really want (match *each* element of the left argument with *all* of the elements of the right argument) it to use the `%in%` operator. The `%in%` operator goes through each element of its left argument, in this case the names of `x`, and asks, "Does this element occur in the second argument?". Here, since we want to *exclude* values, we also need a `!` operator to change "in" to "not in":
@@ -731,7 +731,7 @@ x[! names(x) %in% c("a","c") ]
 ~~~
 {: .output}
 
-> ## Challenge 3
+> ## Challenge 2
 >
 > Selecting elements of a vector that match any of a list of components
 > is a very common data analysis task. For example, the gapminder data set
@@ -758,7 +758,7 @@ x[! names(x) %in% c("a","c") ]
 > an elegant way (using `%in%`). See whether you can come up with all three
 > and explain how they (don't) work.
 > 
-> > ## Solution to challenge 3
+> > ## Solution to challenge 2
 > >
 > > - The **wrong** way to do this problem is `countries==seAsia`. This
 > > gives a warning (`"In countries == seAsia : longer object length is not a multiple of shorter object length"`) and the wrong answer (a vector of all
