@@ -3,7 +3,15 @@
 # Usually you shouldn't need to change the first part of the file
 
 # DO NOT CHANGE THE CODE BELOW
-before_install: R -q -e 'install.packages("remotes"); remotes::install_github("ropenscilabs/tic"); tic::prepare_all_stages(); tic::before_install()'
+before_install:
+  - sudo apt-get -qq update && sudo apt-get install -y linkchecker
+  - mkdir -p ~/.linkchecker
+  - echo -e '[checking]\nsslverify=0' > ~/.linkchecker/linkcheckerrc
+  - sudo apt-get install -y python-pip libgdal-dev libproj-dev
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install jekyll bundler
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S bundle install
+  - sudo pip install update-copyright
+  - R -q -e 'install.packages("remotes"); remotes::install_github("ropenscilabs/tic"); tic::prepare_all_stages(); tic::before_install()'
 install: R -q -e 'tic::install()'
 after_install: R -q -e 'tic::after_install()'
 before_script: R -q -e 'tic::before_script()'
