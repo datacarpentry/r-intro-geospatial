@@ -337,47 +337,6 @@ This approach can be useful, but 'growing your results' (building
 the result object incrementally) is computationally inefficient, so avoid
 it when you are iterating through a lot of values.
 
-> ## Tip: don't grow your results
->
-> One of the biggest things that trips up novices and
-> experienced R users alike, is building a results object
-> (vector, list, matrix, data frame) as your for loop progresses.
-> Computers are very bad at handling this, so your calculations
-> can very quickly slow to a crawl. It's much better to define
-> an empty results object before hand of the appropriate dimensions.
-> So if you know the end result will be stored in a matrix like above,
-> create an empty matrix with 5 row and 5 columns, then at each iteration
-> store the results in the appropriate location.
-{: .callout}
-
-A better way is to define your (empty) output object before filling in the values.
-For this example, it looks more involved, but is still more efficient.
-
-
-~~~
-output_matrix <- matrix(nrow=5, ncol=5)
-j_vector <- c('a', 'b', 'c', 'd', 'e')
-for(i in 1:5){
-  for(j in 1:5){
-    temp_j_value <- j_vector[j]
-    temp_output <- paste(i, temp_j_value)
-    output_matrix[i, j] <- temp_output
-  }
-}
-output_vector2 <- as.vector(output_matrix)
-output_vector2
-~~~
-{: .language-r}
-
-
-
-~~~
- [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c"
-[12] "2 c" "3 c" "4 c" "5 c" "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e"
-[23] "3 e" "4 e" "5 e"
-~~~
-{: .output}
-
 > ## Tip: While loops
 >
 >
@@ -412,69 +371,11 @@ output_vector2
 
 > ## Challenge 2
 >
-> Compare the objects output_vector and
-> output_vector2. Are they the same? If not, why not?
-> How would you change the last block of code to make output_vector2
-> the same as output_vector?
->
-> > ## Solution to Challenge 2
-> > We can check whether the two vectors are identical using the `all()` function:
-> > 
-> > ~~~
-> > all(output_vector == output_vector2)
-> > ~~~
-> > {: .language-r}
-> > However, all the elements of `output_vector` can be found in `output_vector2`:
-> > 
-> > ~~~
-> > all(output_vector %in% output_vector2)
-> > ~~~
-> > {: .language-r}
-> > and vice versa:
-> > 
-> > ~~~
-> > all(output_vector2 %in% output_vector)
-> > ~~~
-> > {: .language-r}
-> > therefore, the element in `output_vector` and `output_vector2` are just sorted in a different order.
-> > This is because `as.vector()` outputs the elements of an input matrix going over its column.
-> > Taking a look at `output_matrix`, we can notice that we want its elements by rows.
-> > The solution is to transpose the `output_matrix`. We can do it either by calling the transpose function
-> > `t()` or by inputing the elements in the right order.
-> > The first solution requires to change the original
-> > 
-> > ~~~
-> > output_vector2 <- as.vector(output_matrix)
-> > ~~~
-> > {: .language-r}
-> > into
-> > 
-> > ~~~
-> > output_vector2 <- as.vector(t(output_matrix))
-> > ~~~
-> > {: .language-r}
-> > The second solution requires to change
-> > 
-> > ~~~
-> > output_matrix[i, j] <- temp_output
-> > ~~~
-> > {: .language-r}
-> > into
-> > 
-> > ~~~
-> > output_matrix[j, i] <- temp_output
-> > ~~~
-> > {: .language-r}
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 3
->
 > Write a script that loops through the `gapminder` data by continent and prints out
 > whether the mean life expectancy is smaller or larger than 50
 > years.
 >
-> > ## Solution to Challenge 3
+> > ## Solution to Challenge 2
 > >
 > > **Step 1**:  We want to make sure we can extract all the unique values of the continent vector
 > > 
@@ -527,14 +428,14 @@ output_vector2
 > {: .solution}
 {: .challenge}
 
-> ## Challenge 4
+> ## Challenge 3
 >
-> Modify the script from Challenge 3 to loop over each
+> Modify the script from Challenge 2 to loop over each
 > country. This time print out whether the life expectancy is
 > smaller than 50, between 50 and 70, or greater than 70.
 >
-> > ## Solution to Challenge 4
-> >  We modify our solution to Challenge 3 by now adding two thresholds, `lowerThreshold` and `upperThreshold` and extending our if-else statements:
+> > ## Solution to Challenge 3
+> >  We modify our solution to Challenge 2 by now adding two thresholds, `lowerThreshold` and `upperThreshold` and extending our if-else statements:
 > >
 > > 
 > > ~~~
@@ -560,13 +461,13 @@ output_vector2
 > {: .solution}
 {: .challenge}
 
-> ## Challenge 5 - Advanced
+> ## Challenge 4 - Advanced
 >
 > Write a script that loops over each country in the `gapminder` dataset,
 > tests whether the country starts with a 'B', and graphs life expectancy
 > against time as a line graph if the mean life expectancy is under 50 years.
 >
-> > ## Solution for Challenge 5
+> > ## Solution for Challenge 4
 > >
 > > We will use the `grep` command that was introduced in the Unix Shell lesson to find countries that start with "B."
 > > Lets understand how to do this first.
