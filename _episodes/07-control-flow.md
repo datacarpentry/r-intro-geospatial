@@ -333,9 +333,11 @@ output_vector
 ~~~
 {: .output}
 
-This approach can be useful, but 'growing your results' (building
-the result object incrementally) is computationally inefficient, so avoid
-it when you are iterating through a lot of values.
+> ## Tip: Don’t grow your results 
+>
+> This approach can be useful, but 'growing your results' (building
+> the result object incrementally) is computationally inefficient, so avoid
+> it when you are iterating through a lot of values.
 
 > ## Tip: While loops
 >
