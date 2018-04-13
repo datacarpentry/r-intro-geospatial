@@ -33,203 +33,13 @@ data types and data structures in R. Everything you do will be a manipulation of
 those tools. But most of the time, the star of the show is the data frame—the table that we created by loading information from a csv file. In this lesson, we'll learn a few more things
 about working with data frames.
 
-## Adding columns and rows in data frames
+## Realistic example
 
 We already learned that the columns of a data frame are vectors, so that our
-data are consistent in type throughout the columns. As such, if we want to add a
-new column, we can start by making a new vector:
+data are consistent in type throughout the columns. 
+So far, you have seen the basics of manipulating data frames with our nordic data; now let’s use those skills to digest a more extensive dataset. Let’s read in the gapminder dataset that we downloaded previously:
 
 ```{r, echo = FALSE}
-cats <- read.csv("data/feline-data.csv")
-```
-
-```{r}
-age <- c(2, 3, 5)
-cats
-```
-
-We can then add this as a column via:
-
-```{r}
-cbind(cats, age)
-```
-
-Note that if we tried to add a vector of ages with a different number of entries than the number of rows in the dataframe, it would fail:
-
-```{r, error=TRUE}
-age <- c(2, 3, 5, 12)
-cbind(cats, age)
-
-age <- c(2, 3)
-cbind(cats, age)
-```
-
-Why didn't this work? Of course, R wants to see one element in our new column
-for every row in the table:
-
-```{r}
-nrow(cats)
-length(age)
-```
-
-So for it to work we need to have `nrow(cats)` = `length(age)`. Let's overwite the content of cats with our new data frame.
-
-```{r}
-age <- c(2, 3, 5)
-cats <- cbind(cats, age)
-```
-
-Now how about adding rows? We already know that the rows of a
-data frame are lists:
-
-```{r}
-newRow <- list("tortoiseshell", 3.3, TRUE, 9)
-cats <- rbind(cats, newRow)
-```
-
-## Factors
-
-Here is another thing to look out for: in a `factor`, each different value represents what is called a `level`. In our case, the `factor` "coat" has 3 levels: "black", "calico", and "tabby". R will only accept values that match one of the levels. If you add a new value, it will become `NA`.
-
-The warning is telling us that we unsuccessfully added "tortoiseshell" to our
-*coat* factor, but 3.3 (a numeric), TRUE (a logical), and 9 (a numeric) were
-successfully added to *weight*, *likes_string*, and *age*, respectively, since
-those variables are not factors. To successfully add a cat with a
-"tortoiseshell" *coat*, add "tortoiseshell" as a *level* of the factor:
-
-```{r}
-levels(cats$coat)
-levels(cats$coat) <- c(levels(cats$coat), "tortoiseshell")
-cats <- rbind(cats, list("tortoiseshell", 3.3, TRUE, 9))
-```
-
-Alternatively, we can change a factor into a character vector; we lose the
-handy categories of the factor, but we can subsequently add any word we want to the
-column without babysitting the factor levels:
-
-```{r}
-str(cats)
-cats$coat <- as.character(cats$coat)
-str(cats)
-```
-
-> ## Challenge 1
-> Let's imagine that 1 human year is equivalent to 7 cat years. 
-> 1. Create a vector called `human.age` by multiplying `cats$age` by 7.
-> 2. Convert `human.age` to a factor.
-> 3. Convert `human.age` back to a numeric vector using the `as.numeric()` function. Now divide it by 7 to get the original ages back. Explain what happened.
->
-> > ## Solution to Challenge 1
-> > 1. `human.age <- cats$age * 7`
-> > 2. `human.age <- factor(human.age)`. `as.factor(human.age)` works just as well.
-> > 3. `as.numeric(human.age)` yields `1 2 3 4 4` because factors are stored as integers (here, 1:4), each of which is associated with a label (here, 28, 35, 56, and 63). Converting the factor to a numeric vector gives us the underlying integers, not the labels. If we want the original numbers, we need to convert `human.age` to a character vector and then to a numeric vector (why does this work?). This comes up in real life when we accidentally include a character somewhere in a column of a .csv file supposed to only contain numbers, and forget to set `stringsAsFactors=FALSE` when we read in the data.
-> {: .solution}
-{: .challenge}
-
-## Removing rows
-
-We now know how to add rows and columns to our data frame in R—but in our
-first attempt to add a "tortoiseshell" cat to the data frame we have accidentally
-added a garbage row:
-
-```{r}
-cats
-```
-
-We can ask for a data frame minus this offending row:
-
-```{r}
-cats[-4, ]
-```
-
-Notice the comma with nothing after it to indicate that we want to drop the entire fourth row.
-
-Note: we could also remove both new rows at once by putting the row numbers
-inside of a vector: `cats[c(-4,-5), ]`
-
-Alternatively, we can drop all rows with `NA` values:
-
-```{r}
-na.omit(cats)
-```
-
-Let's reassign the output to `cats`, so that our changes will be permanent:
-
-```{r}
-cats <- na.omit(cats)
-```
-
-## Removing columns  
-
-We can also remove columns in our data frame. What if we want to remove the column "age". We can remove it in two ways, by variable number or by index.  
-
-```{r}
-cats[,-4]
-```
-
-Notice the comma with nothing before it, indicating we want to keep all of the rows.  
-
-Alternatively, we can drop the column by using the index name.  
-
-```{r}
-drop <- names(cats) %in% c("age")
-cats[,!drop]
-```
-
-## Appending to a data frame
-
-The key to remember when adding data to a data frame is that *columns are
-vectors and rows are lists.* We can also glue two data frames
-together with `rbind`:
-
-```{r}
-cats <- rbind(cats, cats)
-cats
-```
-But now the row names are unnecessarily complicated. We can remove the rownames,
-and R will automatically re-name them sequentially:
-
-```{r}
-rownames(cats) <- NULL
-cats
-```
-
-> ## Challenge 2
->
-> You can create a new data frame right from within R with the following syntax:
-> ```{r}
-> df <- data.frame(id = c("a", "b", "c"),
->                  x = 1:3,
->                  y = c(TRUE, TRUE, FALSE),
->                  stringsAsFactors = FALSE)
-> ```
-> Make a data frame that holds the following information for yourself:
->
-> - first name
-> - last name
-> - lucky number
->
-> Then use `rbind` to add an entry for the people sitting beside you.
-> Finally, use `cbind` to add a column with each person's answer to the question, "Is it time for coffee break?"
->
-> > ## Solution to Challenge 2
-> > ```{r}
-> > df <- data.frame(first = c("Grace"),
-> >                  last = c("Hopper"),
-> >                  lucky_number = c(0),
-> >                  stringsAsFactors = FALSE)
-> > df <- rbind(df, list("Marie", "Curie", 238) )
-> > df <- cbind(df, coffeetime = c(TRUE,TRUE))
-> > ```
-> {: .solution}
-{: .challenge}
-
-## Realistic example
-So far, you have seen the basics of manipulating data frames with our cat data;
-now let's use those skills to digest a more realistic dataset. Let's read in the
-`gapminder` dataset that we downloaded previously:
-
-```{r}
 gapminder <- read.csv("data/gapminder-FiveYearData.csv")
 ```
 
@@ -320,13 +130,13 @@ to start digging into our data proper. Check out the first few lines:
 head(gapminder)
 ```
 
-> ## Challenge 3
+> ## Challenge 1
 >
 > It's good practice to also check the last few lines of your data and some in the middle. How would you do this?
 >
 > Searching for ones specifically in the middle isn't too hard but we could simply ask for a few lines at random. How would you code this?
 >
-> > ## Solution to Challenge 3
+> > ## Solution to Challenge 1
 > > To check the last few lines it's relatively simple as R already has a function for this:
 > > 
 > > ~~~
@@ -350,7 +160,7 @@ head(gapminder)
 To make sure our analysis is reproducible, we should put the code
 into a script file so we can come back to it later.
 
-> ## Challenge 4
+> ## Challenge 2
 >
 > Go to file -> new file -> R script, and write an R script
 > to load in the gapminder dataset. Put it in the `scripts/`
@@ -359,7 +169,7 @@ into a script file so we can come back to it later.
 > Run the script using the `source` function, using the file path
 > as its argument (or by pressing the "source" button in RStudio).
 >
-> > ## Solution to Challenge 4
+> > ## Solution to Challenge 2
 > > The contents of `scripts/load-gapminder.R`:
 > > ```{r eval = FALSE}
 > > download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "data/gapminder-FiveYearData.csv")
@@ -372,7 +182,7 @@ into a script file so we can come back to it later.
 > {: .solution}
 {: .challenge}
 
-> ## Challenge 5
+> ## Challenge 3
 >
 > Read the output of `str(gapminder)` again;
 > this time, use what you've learned about factors, lists and vectors,
@@ -380,7 +190,7 @@ into a script file so we can come back to it later.
 > to explain what everything that `str` prints out for gapminder means.
 > If there are any parts you can't interpret, discuss with your neighbors!
 >
-> > ## Solution to Challenge 5
+> > ## Solution to Challenge 3
 > >
 > > The object `gapminder` is a data frame with columns
 > > - `country` and `continent` are factors.
@@ -389,3 +199,183 @@ into a script file so we can come back to it later.
 > >
 > {: .solution}
 {: .challenge}
+
+## Adding columns and rows in data frames
+
+We would like to create a new column to hold information on whether the life expectancy is below the world average life expectancy (70.5) or above:
+
+```{r}
+below_average <-  as.logical(gapminder$lifeExp<70.5)
+head(gapminder)
+```
+
+We can then add this as a column via:
+
+```{r}
+cbind(gapminder, below_average)
+```
+
+Note that if we tried to add a vector of below_average with a different number of entries than the number of rows in the dataframe, it would fail:
+
+```{r, error=TRUE}
+below_average <- c(TRUE,TRUE,TRUE,TRUE,TRUE)
+cbind(gapminder, below_average)
+```
+
+Why didn't this work? Of course, R wants to see one element in our new column
+for every row in the table:
+
+```{r}
+nrow(gapminder)
+length(below_average)
+```
+
+So for it to work we need either to have `nrow(gapminder)` = `length(below_average)` or `nrow(gapminder)` to be a multiple of `length(below_average)`: 
+
+```{r, error=TRUE}
+below_average <- c(TRUE,TRUE,FALSE)
+cbind(gapminder, below_average)
+```
+The sequence `TRUE,TRUE,FALSE` is repeated over all the gapminder rows.
+
+Let's overwite the content of gapminder with our new data frame.
+
+
+
+```{r}
+below_average <-  as.logical(gapminder$lifeExp<70.5)
+gapminder <- cbind(gapminder, below_average)
+```
+
+Now how about adding rows? We already know that the rows of a
+data frame are lists:
+
+```{r}
+newRow <- list('Norway',2016,5000000,'Nordic',80.3,49400.0,FALSE)
+gapminder <- rbind(gapminder, newRow)
+```
+
+## Factors
+
+Here is another thing to look out for: in a `factor`, each different value represents what is called a `level`. In our case, the `factor` "continent" has 5 levels: "Africa", "Americas", "Asia", "Europe" and "Oceania". R will only accept values that match one of the levels. If you add a new value, it will become `NA`.
+
+The warning is telling us that we unsuccessfully added "Nordic" to our
+*continent* factor, but 2016 (a numeric), 5000000 (a numeric), 80.3 (a numeric), 49400.0 (a numeric) and FALSE (a logical) were
+successfully added to *country*, *year*, *pop*, *lifeExp*, *gdpPercap* and *below_average* respectively, since
+those variables are not factors. 'Norway' was also successfully added since it corresponds to an existing level. To successfully add a gapminder row with a
+"Nordic" *continent*, add "Nordic" as a *level* of the factor:
+
+```{r}
+levels(gapminder$continent)
+levels(gapminder$continent) <- c(levels(gapminder$continent), "Nordic")
+gapminder <- rbind(gapminder, list('Norway',2016,5000000,'Nordic',80.3,49400.0,FALSE))
+```
+
+Alternatively, we can change a factor into a character vector; we lose the
+handy categories of the factor, but we can subsequently add any word we want to the
+column without babysitting the factor levels:
+
+```{r}
+str(gapminder)
+gapminder$continent <- as.character(gapminder$continent)
+str(gapminder)
+```
+
+## Removing rows
+
+We now know how to add rows and columns to our data frame in R—but in our
+first attempt to add a "Nordic" continent to the data frame gapminder we have accidentally
+added a garbage row:
+
+```{r}
+tail(gapminder, n=3)
+```
+
+We can ask for a data frame minus this offending row:
+
+```{r}
+tail(gapminder[-1706, ])
+```
+
+Notice the comma with nothing after it to indicate that we want to drop the entire row (rwo with number 1706).
+
+Note: we could also remove both new rows at once by putting the row numbers
+inside of a vector: `cats[c(-1706,-1707), ]`
+
+Alternatively, we can drop all rows with `NA` values:
+
+```{r}
+na.omit(gapminder)
+```
+
+Let's reassign the output to `gapminder`, so that our changes will be permanent:
+
+```{r}
+gapminder <- na.omit(gapminder)
+```
+
+## Removing columns  
+
+We can also remove columns in our data frame. What if we want to remove the column "continent". We can remove it in two ways, by variable number or by index.  
+
+```{r}
+gapminder[,-4]
+```
+
+Notice the comma with nothing before it, indicating we want to keep all of the rows.  
+
+Alternatively, we can drop the column by using the index name.  
+
+```{r}
+drop <- names(gapminder) %in% c("continent")
+gapminder[,!drop]
+```
+
+## Appending to a data frame
+
+The key to remember when adding data to a data frame is that *columns are
+vectors and rows are lists.* We can also glue two data frames
+together with `rbind`:
+
+```{r}
+gapminder <- rbind(gapminder, gapminder)
+tail(gapminder,n=3)
+```
+But now the row names are unnecessarily complicated (not consecutive numbers). We can remove the rownames,
+and R will automatically re-name them sequentially:
+
+```{r}
+rownames(gapminder) <- NULL
+gapminder
+```
+
+> ## Challenge 2
+>
+> You can create a new data frame right from within R with the following syntax:
+> ```{r}
+> df <- data.frame(id = c("a", "b", "c"),
+>                  x = 1:3,
+>                  y = c(TRUE, TRUE, FALSE),
+>                  stringsAsFactors = FALSE)
+> ```
+> Make a data frame that holds the following information for yourself:
+>
+> - first name
+> - last name
+> - lucky number
+>
+> Then use `rbind` to add an entry for the people sitting beside you.
+> Finally, use `cbind` to add a column with each person's answer to the question, "Is it time for coffee break?"
+>
+> > ## Solution to Challenge 2
+> > ```{r}
+> > df <- data.frame(first = c("Grace"),
+> >                  last = c("Hopper"),
+> >                  lucky_number = c(0),
+> >                  stringsAsFactors = FALSE)
+> > df <- rbind(df, list("Marie", "Curie", 238) )
+> > df <- cbind(df, coffeetime = c(TRUE,TRUE))
+> > ```
+> {: .solution}
+{: .challenge}
+
