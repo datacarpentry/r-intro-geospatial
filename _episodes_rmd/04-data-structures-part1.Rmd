@@ -24,7 +24,7 @@ knitr_fig_path("04-")
 ## Save the data
 nordic_orig <- data.frame(country = factor(c("Denmark", "Sweden", "Norway")),
                    year = c(2002, 2002, 2002),
-                   lifeExp = c(77.2,80.0, 79.0))
+                   lifeExp = c(77.2, 80.0, 79.0))
 nordic_bad <- data.frame(country = factor(c("Denmark", "Sweden", "Norway", "Norway")),
                    year = factor(c(2002, 2002, 2002, 2008)),
                    lifeExp = c(77.2, 80.0, 79.0, '78.3 or 83.0'))
