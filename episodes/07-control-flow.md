@@ -513,8 +513,8 @@ output_vector
 > >               ) # end with
 > >     } # end for loop
 > >     rm(tmp)
-> >  }```
-> > > {: .solution}
-> > {: .challenge}
+> >  }
 > > ~~~
 > > {: .language-r}
+> {: .solution}
+{: .challenge}
