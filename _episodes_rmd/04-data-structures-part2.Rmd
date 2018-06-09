@@ -335,7 +335,7 @@ rownames(gapminder) <- NULL
 head(gapminder)
 ```
 
-> ## Challenge 2
+> ## Challenge 3
 >
 > You can create a new data frame right from within R with the following syntax:
 > ```{r}
@@ -353,7 +353,7 @@ head(gapminder)
 > Then use `rbind` to add an entry for the people sitting beside you.
 > Finally, use `cbind` to add a column with each person's answer to the question, "Is it time for coffee break?"
 >
-> > ## Solution to Challenge 2
+> > ## Solution to Challenge 3
 > > ```{r}
 > > df <- data.frame(first = c("Grace"),
 > >                  last = c("Hopper"),
