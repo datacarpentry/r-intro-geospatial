@@ -1,7 +1,7 @@
 ---
 title: "Project Management With RStudio"
-teaching: 20
-exercises: 10
+teaching: 10
+exercises: 5
 questions:
 - "How can I manage my projects in R?"
 objectives:
@@ -10,7 +10,6 @@ keypoints:
 - "Use RStudio to create and manage projects with consistent layout."
 - "Treat raw data as read-only."
 - "Treat generated output as disposable."
-- "Separate function definition and application."
 source: Rmd
 ---
 
@@ -118,50 +117,6 @@ get shared between projects.
 >
 {: .callout}
 
-> ## Tip: ProjectTemplate - a possible solution
->
-> One way to automate the management of projects is to install the third-party package, `ProjectTemplate`.
-> This package will set up an ideal directory structure for project management.
-> This is very useful as it enables you to have your analysis pipeline/workflow organised and structured.
-> Together with the default RStudio project functionality and Git you will be able to keep track of your
-> work as well as be able to share your work with collaborators.
->
-> 1. Install `ProjectTemplate`.
-> 2. Load the library
-> 3. Initialise the project:
->
-> ```{r, eval=FALSE}
-> install.packages("ProjectTemplate")
-> library("ProjectTemplate")
-> create.project("../my_project", merge.strategy = "allow.non.conflict")
-> ```
->
-> For more information on ProjectTemplate and its functionality visit the
-> home page [ProjectTemplate](http://projecttemplate.net/index.html)
-{: .callout}
-
-### Separate function definition and application
-
-One of the more effective ways to work with R is to start by writing the code you want to run directly in an .R script, and then running the selected lines (either using the keyboard shortcuts in RStudio or clicking the "Run" button) in the interactive R console.
-
-When your project is in its early stages, the initial .R script file usually contains many lines
-of directly executed code. As it matures, reusable chunks get pulled into their
-own functions. It's a good idea to separate these functions into two separate folders; one
-to store useful functions that you'll reuse across analyses and projects, and
-one to store the analysis scripts.
-
-> ## Tip: avoiding duplication
->
-> You may find yourself using data or analysis scripts across several projects.
-> Typically you want to avoid duplication to save space and avoid having to
-> make updates to code in multiple places.
->
-> In this case I find it useful to make "symbolic links", which are essentially
-> shortcuts to files somewhere else on a filesystem. On Linux and OS X you can
-> use the `ln -s` command, and on Windows you can either create a shortcut or
-> use the `mklink` command from the windows terminal.
-{: .callout}
-
 ### Save the data in the data directory
 
 Now we have a good directory structure we will now place/save the data file in the `data/` directory.
@@ -201,14 +156,4 @@ Now we have a good directory structure we will now place/save the data file in t
 > > ```
 > {: .solution}
 {: .challenge}
-
-> ## Tip: command line in R Studio
->
-> You can quickly open up a shell in RStudio using the **Tools -> Shell...** menu item.
-{: .callout}
-
-### Version Control
-
-It is important to use version control with projects.  Go [here](http://swcarpentry.github.io/git-novice/14-supplemental-rstudio/) for a good lesson which describes using Git with R Studio.
-
 
