@@ -1,27 +1,23 @@
 ---
 title: "Introduction to R and RStudio"
-teaching: 45
-exercises: 10
+teaching: 20
+exercises: 5
 questions:
 - "How to find your way around RStudio?"
 - "How to interact with R?"
-- "How to manage your environment?"
 - "How to install packages?"
 objectives:
 - "Describe the purpose and use of each pane in the RStudio IDE"
 - "Locate buttons and options in the RStudio IDE"
 - "Define a variable"
 - "Assign data to a variable"
-- "Manage a workspace in an interactive R session"
 - "Use mathematical and comparison operators"
 - "Call functions"
 - "Manage packages"
 keypoints:
 - "Use RStudio to write and run R programs."
-- "R has the usual arithmetic operators and mathematical functions."
+- "R has the usual arithmetic operators."
 - "Use `<-` to assign values to variables."
-- "Use `ls()` to list the variables in a program."
-- "Use `rm()` to delete objects in a program."
 - "Use `install.packages()` to install packages (libraries)."
 source: Rmd
 ---
@@ -224,29 +220,6 @@ You can write numbers in scientific notation too:
 5e3  # Note the lack of minus here
 ```
 
-## Mathematical functions
-
-R has many built in mathematical functions. To call a function,
-we simply type its name, followed by  open and closing parentheses.
-Anything we type inside the parentheses is called the function's
-arguments:
-
-```{r}
-sin(1)  # trigonometry functions
-```
-
-```{r}
-log(1)  # natural logarithm
-```
-
-```{r}
-log10(10) # base-10 logarithm
-```
-
-```{r}
-exp(0.5) # e^(1/2)
-```
-
 Don't worry about trying to remember every function in R. You
 can simply look them up on Google, or if you can remember the
 start of the function's name, use the tab completion in RStudio.
@@ -412,105 +385,6 @@ symbol used in the community. So the recommendation is to use `<-`.
 > {: .solution}
 {: .challenge}
 
-## Vectorization
-
-One final thing to be aware of is that R is *vectorized*, meaning that
-variables and functions can have vectors as values. In contrast to physics and
-mathematics, a vector in R describes a set of values in a certain order of the 
-same data type. For example
-
-```{r}
-1:5
-2^(1:5)
-x <- 1:5
-2^x
-```
-
-This is incredibly powerful; we will discuss this further in an
-upcoming lesson.
-
-
-## Managing your environment
-
-There are a few useful commands you can use to interact with the R session.
-
-`ls` will list all of the variables and functions stored in the global environment
-(your working R session):
-
-```{r}
-ls()
-```
-
-> ## Tip: hidden objects
->
-> Like in the shell, `ls` will hide any variables or functions starting
-> with a "." by default. To list all objects, type `ls(all.names=TRUE)`
-> instead
->
-{: .callout}
-
-Note here that we didn't give any arguments to `ls`, but we still
-needed to give the parentheses to tell R to call the function.
-
-If we type `ls` by itself, R will print out the source code for that function!
-
-```{r}
-ls
-```
-
-You can use `rm` to delete objects you no longer need:
-
-```{r}
-rm(x)
-```
-
-If you have lots of things in your environment and want to delete all of them,
-you can pass the results of `ls` to the `rm` function:
-
-```{r}
-rm(list = ls())
-```
-
-In this case we've combined the two. Like the order of operations, anything
-inside the innermost parentheses is evaluated first, and so on.
-
-In this case we've specified that the results of `ls` should be used for the
-`list` argument in `rm`. When assigning values to arguments by name, you *must*
-use the `=` operator!!
-
-If instead we use `<-`, there will be unintended side effects, or you may get an error message:
-
-```{r, error=TRUE}
-rm(list <- ls())
-```
-
-> ## Tip: Warnings vs. Errors
->
-> Pay attention when R does something unexpected! Errors, like above,
-> are thrown when R cannot proceed with a calculation. Warnings on the
-> other hand usually mean that the function has run, but it probably
-> hasn't worked as expected.
->
-> In both cases, the message that R prints out usually give you clues
-> how to fix a problem.
->
-{: .callout}
-
-## R Packages
-
-It is possible to add functions to R by writing a package, or by
-obtaining a package written by someone else. As of this writing, there
-are over 10,000 packages available on CRAN (the comprehensive R archive
-network). R and RStudio have functionality for managing packages:
-
-* You can see what packages are installed by typing
-  `installed.packages()`
-* You can install packages by typing `install.packages("packagename")`,
-  where `packagename` is the package name, in quotes.
-* You can update installed packages by typing `update.packages()`
-* You can remove a package with `remove.packages("packagename")`
-* You can make a package available for use with `library(packagename)`
-
 > ## Challenge 2
 >
 > What will be the value of each  variable  after each
@@ -577,20 +451,5 @@ network). R and RStudio have functionality for managing packages:
 > > ```{r ch4-sol}
 > > rm(age, mass)
 > > ```
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 5
->
-> Install the following packages: `ggplot2`, `plyr`, `gapminder`
->
-> > ## Solution to challenge 5
-> >
-> > We can use the `install.packages()` command to install the required packages.
-> > ```{r ch5-sol, eval=FALSE}
-> > install.packages("ggplot2")
-> > install.packages("plyr")
-> > install.packages("gapminder")
-> >```
 > {: .solution}
 {: .challenge}
