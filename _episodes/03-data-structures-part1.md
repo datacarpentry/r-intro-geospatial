@@ -21,29 +21,29 @@ source: Rmd
 
 One of R's most powerful features is its ability to deal with tabular data -
 such as you may already have in a spreadsheet or a CSV file. Let's start by
-making a toy dataset in your `data/` directory, called `feline-data.csv`:
+making a toy dataset in your `data/` directory, called `nordic-monarchy-data.csv`:
 
 
 ~~~
-cats <- data.frame(coat = c("calico", "black", "tabby"),
-                    weight = c(2.1, 5.0,3.2),
-                    likes_string = c(1, 0, 1))
-write.csv(x = cats, file = "data/feline-data.csv", row.names = FALSE)
+nordic <- data.frame(country = c("Denmark", "Sweden", "Norway"),
+                    year = c(2002, 2002, 2002),
+                    lifeExp = c(77.2, 80.0, 79.0))
+write.csv(x = nordic, file = "data/nordic-monarchy-data.csv", row.names = FALSE)
 ~~~
 {: .language-r}
 
 
 ~~~
-coat,weight,likes_string
-calico,2.1,1
-black,5.0,0
-tabby,3.2,1
+country,year,lifeExp
+Denmark,2002,77.2
+Sweden,2002,80.0
+Norway,2002,79.0
 ~~~
 {: .language-r}
 
 > ## Tip: Editing Text files in R
 >
-> Alternatively, you can create `data/feline-data.csv` using a text editor (Nano),
+> Alternatively, you can create `data/nordic-monarchy-data.csv` using a text editor (Nano),
 > or within RStudio with the **File -> New File -> Text File** menu item.
 {: .callout}
 
@@ -51,18 +51,18 @@ We can load this into R via the following:
 
 
 ~~~
-cats <- read.csv(file = "data/feline-data.csv")
-cats
+nordic <- read.csv(file = "data/nordic-monarchy-data.csv")
+nordic
 ~~~
 {: .language-r}
 
 
 
 ~~~
-    coat weight likes_string
-1 calico    2.1            1
-2  black    5.0            0
-3  tabby    3.2            1
+  country year lifeExp
+1 Denmark 2002    77.2
+2  Sweden 2002    80.0
+3  Norway 2002    79.0
 ~~~
 {: .output}
 
@@ -82,29 +82,29 @@ them using the `$` operator:
 
 
 ~~~
-cats$weight
+nordic$country
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] 2.1 5.0 3.2
+[1] Denmark Sweden  Norway 
+Levels: Denmark Norway Sweden
 ~~~
 {: .output}
 
 
 
 ~~~
-cats$coat
+nordic$lifeExp
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] calico black  tabby 
-Levels: black calico tabby
+[1] 77.2 80.0 79.0
 ~~~
 {: .output}
 
@@ -112,29 +112,31 @@ We can do other operations on the columns:
 
 
 ~~~
-## Say we discovered that the scale weighs two Kg light:
-cats$weight + 2
+## Say we discovered that the life expectancy is two years lower:
+nordic$lifeExp + 2
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] 4.1 7.0 5.2
+[1] 79.2 82.0 81.0
 ~~~
 {: .output}
 
 
 
 ~~~
-paste("My cat is", cats$coat)
+paste("Life expectancy is now higher:", nordic$lifeExp)
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] "My cat is calico" "My cat is black"  "My cat is tabby" 
+[1] "Life expectancy is now higher: 77.2"
+[2] "Life expectancy is now higher: 80"  
+[3] "Life expectancy is now higher: 79"  
 ~~~
 {: .output}
 
@@ -142,15 +144,15 @@ But what about
 
 
 ~~~
-cats$weight + cats$coat
+nordic$lifeExp + nordic$country
 ~~~
 {: .language-r}
 
 
 
 ~~~
-Warning in Ops.factor(cats$weight, cats$coat): '+' not meaningful for
-factors
+Warning in Ops.factor(nordic$lifeExp, nordic$country): '+' not meaningful
+for factors
 ~~~
 {: .error}
 
@@ -172,7 +174,7 @@ data something is:
 
 
 ~~~
-typeof(cats$weight)
+typeof(nordic$lifeExp)
 ~~~
 {: .language-r}
 
@@ -258,23 +260,23 @@ No matter how
 complicated our analyses become, all data in R is interpreted as one of these
 basic data types. This strictness has some really important consequences.
 
-A user has added details of another cat. This information is in the file
-`data/feline-data_v2.csv`.
+A user has added new details of age expectancy. This information is in the file
+`data/nordic-monarchy-data_v2.csv`.
 
 
 
 ~~~
-file.show("data/feline-data_v2.csv")
+file.show("data/nordic-monarchy-data_v2.csv")
 ~~~
 {: .language-r}
 
 
 ~~~
-coat,weight,likes_string
-calico,2.1,1
-black,5.0,0
-tabby,3.2,1
-tabby,2.3 or 2.4,1
+country,year,lifeExp
+Denmark,2002,77.2
+Sweden,2002,80
+Norway,2002,79
+Norway,2008,78.3 or 83.0
 ~~~
 {: .language-r}
 
@@ -283,45 +285,59 @@ Load the new cats data like before, and check what type of data we find in the
 
 
 ~~~
-cats <- read.csv(file="data/feline-data_v2.csv")
-typeof(cats$weight)
+nordic <- read.csv(file="data/nordic-monarchy-data_v2.csv")
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] "integer"
-~~~
-{: .output}
-
-Oh no, our weights aren't the double type anymore! If we try to do the same math
-we did on them before, we run into trouble:
-
-
-~~~
-cats$weight + 2
-~~~
-{: .language-r}
-
-
-
-~~~
-Warning in Ops.factor(cats$weight, 2): '+' not meaningful for factors
+Warning in file(file, "rt"): cannot open file 'data/nordic-monarchy-
+data_v2.csv': No such file or directory
 ~~~
 {: .error}
 
 
 
 ~~~
-[1] NA NA NA NA
+Error in file(file, "rt"): cannot open the connection
+~~~
+{: .error}
+
+
+
+~~~
+typeof(nordic$lifeExp)
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "double"
+~~~
+{: .output}
+
+Oh no, our life expectancy lifeExp aren't the double type anymore! If we try to do the same math
+we did on them before, we run into trouble:
+
+
+~~~
+nordic$lifeExp + 2
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] 79.2 82.0 81.0
 ~~~
 {: .output}
 
 What happened? When R reads a csv file into one of these tables, it insists that
 everything in a column be the same basic type; if it can't understand
 *everything* in the column as a double, then *nobody* in the column gets to be a
-double. The table that R loaded our cats data into is something called a
+double. The table that R loaded our nordic data into is something called a
 *data.frame*, and it is our first example of something called a *data
 structure* - that is, a structure which R knows how to build out of the basic
 data types.
@@ -330,7 +346,7 @@ We can see that it is a *data.frame* by calling the `class` function on it:
 
 
 ~~~
-class(cats)
+class(nordic)
 ~~~
 {: .language-r}
 
@@ -343,22 +359,22 @@ class(cats)
 
 In order to successfully use our data in R, we need to understand what the basic
 data structures are, and how they behave. For now, let's remove that extra line
-from our cats data and reload it, while we investigate this behavior further:
+from our nordic data and reload it, while we investigate this behavior further:
 
-feline-data.csv:
+nordic-monarchy-data.csv:
 
 ```
-coat,weight,likes_string
-calico,2.1,1
-black,5.0,0
-tabby,3.2,1
+country,year,lifeExp
+Denmark,2002,77.2
+Sweden,2002,80.0
+Norway,2002,79.0
 ```
 
 And back in RStudio:
 
 
 ~~~
-cats <- read.csv(file="data/feline-data.csv")
+nordic_orig <- read.csv(file="data/nordic-monarchy-data.csv")
 ~~~
 {: .language-r}
 
@@ -427,18 +443,18 @@ empty character strings. If we similarly do
 
 
 ~~~
-str(cats$weight)
+str(nordic$lifeExp)
 ~~~
 {: .language-r}
 
 
 
 ~~~
- num [1:3] 2.1 5 3.2
+ num [1:3] 77.2 80 79
 ~~~
 {: .output}
 
-we see that `cats$weight` is a vector, too - *the columns of data we load into R
+we see that `nordic$lifeExp` is a vector, too - *the columns of data we load into R
 data.frames are all vectors*, and that's the root of why R forces everything in
 a column to be the same basic data type.
 
@@ -580,29 +596,57 @@ using the `as.logical` function:
 
 
 ~~~
-cats$likes_string
+nordic$year
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] 1 0 1
+[1] 2002 2002 2002
 ~~~
 {: .output}
 
 
 
 ~~~
-cats$likes_string <- as.logical(cats$likes_string)
-cats$likes_string
+nordic$year <- as.logical(nordic$year)
+nordic$year
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1]  TRUE FALSE  TRUE
+[1] TRUE TRUE TRUE
+~~~
+{: .output}
+Because all years are greater than 0 the state is TRUE for all countries. We could for instance create a mask where we set year to TRUE for year 2000 and FALSE otherwise:
+
+~~~
+nordic$year
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] TRUE TRUE TRUE
+~~~
+{: .output}
+
+
+
+~~~
+nordic$year <- as.logical(nordic$year==2000)
+nordic$year
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] FALSE FALSE FALSE
 ~~~
 {: .output}
 
@@ -816,28 +860,28 @@ We said that columns in data.frames were vectors:
 
 
 ~~~
-str(cats$weight)
+str(nordic$lifeExp)
 ~~~
 {: .language-r}
 
 
 
 ~~~
- num [1:3] 2.1 5 3.2
+ num [1:3] 77.2 80 79
 ~~~
 {: .output}
 
 
 
 ~~~
-str(cats$likes_string)
+str(nordic$year)
 ~~~
 {: .language-r}
 
 
 
 ~~~
- logi [1:3] TRUE FALSE TRUE
+ logi [1:3] FALSE FALSE FALSE
 ~~~
 {: .output}
 
@@ -845,14 +889,14 @@ These make sense. But what about
 
 
 ~~~
-str(cats$coat)
+str(nordic$country)
 ~~~
 {: .language-r}
 
 
 
 ~~~
- Factor w/ 3 levels "black","calico",..: 2 1 3
+ Factor w/ 3 levels "Denmark","Norway",..: 1 3 2
 ~~~
 {: .output}
 
@@ -860,35 +904,34 @@ str(cats$coat)
 
 Another important data structure is called a *factor*. Factors usually look like
 character data, but are typically used to represent categorical information. For
-example, let's make a vector of strings labelling cat colorations for all the
-cats in our study:
+example, let's make a vector of strings labelling nordic countries for all the
+countries in our study:
 
 
 ~~~
-coats <- c('tabby', 'tortoiseshell', 'tortoiseshell', 'black', 'tabby')
-coats
+nordic <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
+nordic
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] "tabby"         "tortoiseshell" "tortoiseshell" "black"        
-[5] "tabby"        
+[1] "Denmark" "Finland" "Iceland" "Norway"  "Sweden" 
 ~~~
 {: .output}
 
 
 
 ~~~
-str(coats)
+str(nordic)
 ~~~
 {: .language-r}
 
 
 
 ~~~
- chr [1:5] "tabby" "tortoiseshell" "tortoiseshell" "black" "tabby"
+ chr [1:5] "Denmark" "Finland" "Iceland" "Norway" "Sweden"
 ~~~
 {: .output}
 
@@ -896,8 +939,8 @@ We can turn a vector into a factor like so:
 
 
 ~~~
-CATegories <- factor(coats)
-class(CATegories)
+categories <- factor(nordic)
+class(categories)
 ~~~
 {: .language-r}
 
@@ -911,14 +954,14 @@ class(CATegories)
 
 
 ~~~
-str(CATegories)
+str(categories)
 ~~~
 {: .language-r}
 
 
 
 ~~~
- Factor w/ 3 levels "black","tabby",..: 2 3 3 1 2
+ Factor w/ 5 levels "Denmark","Finland",..: 1 2 3 4 5
 ~~~
 {: .output}
 
@@ -930,7 +973,7 @@ calculations utilise such numerical representations for categorical data:
 
 
 ~~~
-typeof(coats)
+typeof(nordic)
 ~~~
 {: .language-r}
 
@@ -944,7 +987,7 @@ typeof(coats)
 
 
 ~~~
-typeof(CATegories)
+typeof(categories)
 ~~~
 {: .language-r}
 
@@ -957,10 +1000,10 @@ typeof(CATegories)
 
 > ## Challenge 2
 >
-> Is there a factor in our `cats` data.frame? what is its name?
+> Is there a factor in our `nordic` data.frame? what is its name?
 > Try using `?read.csv` to figure out how to keep text columns as character
 > vectors instead of factors; then write a command or two to show that the factor
-> in `cats` is actually a character vector when loaded in this way.
+> in `nordic` is actually a character vector when loaded in this way.
 >
 > > ## Solution to Challenge 2
 > >
@@ -968,8 +1011,8 @@ typeof(CATegories)
 > >
 > > 
 > > ~~~
-> > cats <- read.csv(file="data/feline-data.csv", stringsAsFactors=FALSE)
-> > str(cats$coat)
+> > nordic <- read.csv(file="data/nordic-monarchy-data.csv", stringsAsFactors=FALSE)
+> > str(nordic$country)
 > > ~~~
 > > {: .language-r}
 > >
@@ -978,8 +1021,8 @@ typeof(CATegories)
 > >
 > > 
 > > ~~~
-> > cats <- read.csv(file="data/feline-data.csv", colClasses=c(NA, NA, "character"))
-> > str(cats$coat)
+> > nordic <- read.csv(file="data/nordic-monarchy-data.csv", colClasses=c(NA, NA, "character"))
+> > str(nordic$country)
 > > ~~~
 > > {: .language-r}
 > >
@@ -1068,14 +1111,14 @@ We can now understand something a bit surprising in our data.frame; what happens
 
 
 ~~~
-typeof(cats)
+typeof(nordic)
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] "list"
+[1] "character"
 ~~~
 {: .output}
 
@@ -1086,126 +1129,120 @@ data.frame needs something a bit more flexible than a vector to put all the
 columns together into a familiar table.  In other words, a `data.frame` is a
 special list in which all the vectors must have the same length.
 
-In our `cats` example, we have an integer, a double and a logical variable. As
+In our `nordic` example, we have an integer, a double and a logical variable. As
 we have seen already, each column of data.frame is a vector.
 
 
 ~~~
-cats$coat
+nordic$country
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] calico black  tabby 
-Levels: black calico tabby
+Error in nordic$country: $ operator is invalid for atomic vectors
 ~~~
-{: .output}
-
-
-
-~~~
-cats[,1]
-~~~
-{: .language-r}
+{: .error}
 
 
 
 ~~~
-[1] calico black  tabby 
-Levels: black calico tabby
-~~~
-{: .output}
-
-
-
-~~~
-typeof(cats[,1])
+nordic[,1]
 ~~~
 {: .language-r}
 
 
 
 ~~~
-[1] "integer"
+Error in nordic[, 1]: incorrect number of dimensions
 ~~~
-{: .output}
+{: .error}
 
 
 
 ~~~
-str(cats[,1])
+typeof(nordic[,1])
 ~~~
 {: .language-r}
 
 
 
 ~~~
- Factor w/ 3 levels "black","calico",..: 2 1 3
+Error in nordic[, 1]: incorrect number of dimensions
 ~~~
-{: .output}
+{: .error}
+
+
+
+~~~
+str(nordic[,1])
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in nordic[, 1]: incorrect number of dimensions
+~~~
+{: .error}
 
 Each row is an *observation* of different variables, itself a data.frame, and
 thus can be composed of elements of different types.
 
 
 ~~~
-cats[1,]
+nordic[1,]
 ~~~
 {: .language-r}
 
 
 
 ~~~
-    coat weight likes_string
-1 calico    2.1         TRUE
+Error in nordic[1, ]: incorrect number of dimensions
 ~~~
-{: .output}
-
-
-
-~~~
-typeof(cats[1,])
-~~~
-{: .language-r}
+{: .error}
 
 
 
 ~~~
-[1] "list"
-~~~
-{: .output}
-
-
-
-~~~
-str(cats[1,])
+typeof(nordic[1,])
 ~~~
 {: .language-r}
 
 
 
 ~~~
-'data.frame':	1 obs. of  3 variables:
- $ coat        : Factor w/ 3 levels "black","calico",..: 2
- $ weight      : num 2.1
- $ likes_string: logi TRUE
+Error in nordic[1, ]: incorrect number of dimensions
 ~~~
-{: .output}
+{: .error}
+
+
+
+~~~
+str(nordic[1,])
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in nordic[1, ]: incorrect number of dimensions
+~~~
+{: .error}
 
 > ## Challenge 3
 >
 > There are several subtly different ways to call variables, observations and
 > elements from data.frames:
 >
-> - `cats[1]`
-> - `cats[[1]]`
-> - `cats$coat`
-> - `cats["coat"]`
-> - `cats[1, 1]`
-> - `cats[, 1]`
-> - `cats[1, ]`
+> - `nordic[1]`
+> - `nordic[[1]]`
+> - `nordic$country`
+> - `nordic["country"]`
+> - `nordic[1, 1]`
+> - `nordic[, 1]`
+> - `nordic[1, ]`
 >
 > Try out these examples and explain what is returned by each one.
 >
@@ -1214,17 +1251,14 @@ str(cats[1,])
 > > ## Solution to Challenge 3
 > > 
 > > ~~~
-> > cats[1]
+> > nordic[1]
 > > ~~~
 > > {: .language-r}
 > > 
 > > 
 > > 
 > > ~~~
-> >     coat
-> > 1 calico
-> > 2  black
-> > 3  tabby
+> > [1] "Denmark"
 > > ~~~
 > > {: .output}
 > > We can think of a data frame as a list of vectors. The single brace `[1]`
@@ -1232,97 +1266,89 @@ str(cats[1,])
 > first column of the data frame.
 > > 
 > > ~~~
-> > cats[[1]]
+> > nordic[[1]]
 > > ~~~
 > > {: .language-r}
 > > 
 > > 
 > > 
 > > ~~~
-> > [1] calico black  tabby 
-> > Levels: black calico tabby
+> > [1] "Denmark"
 > > ~~~
 > > {: .output}
 > > The double brace `[[1]]` returns the contents of the list item. In this case
 > it is the contents of the first column, a _vector_ of type _factor_.
 > > 
 > > ~~~
-> > cats$coat
+> > nordic$country
 > > ~~~
 > > {: .language-r}
 > > 
 > > 
 > > 
 > > ~~~
-> > [1] calico black  tabby 
-> > Levels: black calico tabby
+> > Error in nordic$country: $ operator is invalid for atomic vectors
 > > ~~~
-> > {: .output}
+> > {: .error}
 > > This example uses the `$` character to address items by name. _coat_ is the
 > first column of the data frame, again a _vector_ of type _factor_.
 > > 
 > > ~~~
-> > cats["coat"]
+> > nordic["country"]
 > > ~~~
 > > {: .language-r}
 > > 
 > > 
 > > 
 > > ~~~
-> >     coat
-> > 1 calico
-> > 2  black
-> > 3  tabby
+> > [1] NA
 > > ~~~
 > > {: .output}
-> > Here we are using a single brace `["coat"]` replacing the index number with
+> > Here we are using a single brace `["country"]` replacing the index number with
 > the column name. Like example 1, the returned object is a _list_.
 > > 
 > > ~~~
-> > cats[1, 1]
+> > nordic[1, 1]
 > > ~~~
 > > {: .language-r}
 > > 
 > > 
 > > 
 > > ~~~
-> > [1] calico
-> > Levels: black calico tabby
+> > Error in nordic[1, 1]: incorrect number of dimensions
 > > ~~~
-> > {: .output}
+> > {: .error}
 > > This example uses a single brace, but this time we provide row and column
 > coordinates. The returned object is the value in row 1, column 1. The object
 > is an _integer_ but because it is part of a _vector_ of type _factor_, R
 > displays the label "calico" associated with the integer value.
 > > 
 > > ~~~
-> > cats[, 1]
+> > nordic[, 1]
 > > ~~~
 > > {: .language-r}
 > > 
 > > 
 > > 
 > > ~~~
-> > [1] calico black  tabby 
-> > Levels: black calico tabby
+> > Error in nordic[, 1]: incorrect number of dimensions
 > > ~~~
-> > {: .output}
+> > {: .error}
 > > Like the previous example we use single braces and provide row and column
 > coordinates. The row coordinate is not specified, R interprets this missing
 > value as all the elements in this _column_ _vector_.
 > > 
 > > ~~~
-> > cats[1, ]
+> > nordic[1, ]
 > > ~~~
 > > {: .language-r}
 > > 
 > > 
 > > 
 > > ~~~
-> >     coat weight likes_string
-> > 1 calico    2.1         TRUE
+> > Error in nordic[1, ]: incorrect number of dimensions
 > > ~~~
-> > {: .output}
+> > {: .error}
 > > Again we use the single brace with row and column coordinates. The column
 > coordinate is not specified. The return value is a _list_ containing all the
 > values in the first row.

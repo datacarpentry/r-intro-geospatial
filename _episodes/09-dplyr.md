@@ -1,7 +1,7 @@
 ---
 title: Dataframe Manipulation with dplyr
-teaching: 40
-exercises: 15
+teaching: 30
+exercises: 10
 questions:
 - "How can I manipulate dataframes without repeating myself?"
 objectives:
@@ -297,10 +297,10 @@ even better.
 > >
 > >~~~
 > ># A tibble: 2 x 2
-> >  country      mean_lifeExp
-> >  <fct>               <dbl>
-> >1 Iceland              76.5
-> >2 Sierra Leone         36.8
+> >       country mean_lifeExp
+> >        <fctr>        <dbl>
+> >1      Iceland     76.51142
+> >2 Sierra Leone     36.76917
 > >~~~
 > >{: .output}
 > Another way to do this is to use the `dplyr` function `arrange()`, which
@@ -320,9 +320,9 @@ even better.
 > >
 > >~~~
 > ># A tibble: 1 x 2
-> >  country      mean_lifeExp
-> >  <fct>               <dbl>
-> >1 Sierra Leone         36.8
+> >       country mean_lifeExp
+> >        <fctr>        <dbl>
+> >1 Sierra Leone     36.76917
 > >~~~
 > >{: .output}
 > >
@@ -340,8 +340,8 @@ even better.
 > >~~~
 > ># A tibble: 1 x 2
 > >  country mean_lifeExp
-> >  <fct>          <dbl>
-> >1 Iceland         76.5
+> >   <fctr>        <dbl>
+> >1 Iceland     76.51142
 > >~~~
 > >{: .output}
 > {: .solution}
@@ -394,12 +394,12 @@ gapminder %>%
 ~~~
 # A tibble: 5 x 2
   continent     n
-  <fct>     <int>
-1 Africa       52
-2 Asia         33
-3 Europe       30
-4 Americas     25
-5 Oceania       2
+     <fctr> <int>
+1    Africa    52
+2      Asia    33
+3    Europe    30
+4  Americas    25
+5   Oceania     2
 ~~~
 {: .output}
 
@@ -419,13 +419,13 @@ gapminder %>%
 
 ~~~
 # A tibble: 5 x 2
-  continent se_le
-  <fct>     <dbl>
-1 Africa    0.366
-2 Americas  0.540
-3 Asia      0.596
-4 Europe    0.286
-5 Oceania   0.775
+  continent     se_le
+     <fctr>     <dbl>
+1    Africa 0.3663016
+2  Americas 0.5395389
+3      Asia 0.5962151
+4    Europe 0.2863536
+5   Oceania 0.7747759
 ~~~
 {: .output}
 
@@ -447,13 +447,13 @@ gapminder %>%
 
 ~~~
 # A tibble: 5 x 5
-  continent mean_le min_le max_le se_le
-  <fct>       <dbl>  <dbl>  <dbl> <dbl>
-1 Africa       48.9   23.6   76.4 0.366
-2 Americas     64.7   37.6   80.7 0.540
-3 Asia         60.1   28.8   82.6 0.596
-4 Europe       71.9   43.6   81.8 0.286
-5 Oceania      74.3   69.1   81.2 0.775
+  continent  mean_le min_le max_le     se_le
+     <fctr>    <dbl>  <dbl>  <dbl>     <dbl>
+1    Africa 48.86533 23.599 76.442 0.3663016
+2  Americas 64.65874 37.579 80.653 0.5395389
+3      Asia 60.06490 28.801 82.603 0.5962151
+4    Europe 71.90369 43.585 81.757 0.2863536
+5   Oceania 74.32621 69.120 81.235 0.7747759
 ~~~
 {: .output}
 
@@ -474,119 +474,6 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
               sd_gdp_billion=sd(gdp_billion))
 ~~~
 {: .language-r}
-
-## Connect mutate with logical filtering: ifelse
-
-When creating new variables, we can hook this with a logical condition. A simple combination of
-`mutate()` and `ifelse()` facilitates filtering right where it is needed: in the moment of creating something new.
-This easy-to-read statement is a fast and powerful way of discarding certain data (even though the overall dimension
-of the data frame will not change) or for updating values depending on this given condition.
-
-
-~~~
-## keeping all data but "filtering" after a certain condition
-# calculate GDP only for people with a life expectation above 25
-gdp_pop_bycontinents_byyear_above25 <- gapminder %>%
-    mutate(gdp_billion = ifelse(lifeExp > 25, gdpPercap * pop / 10^9, NA)) %>%
-    group_by(continent, year) %>%
-    summarize(mean_gdpPercap = mean(gdpPercap),
-              sd_gdpPercap = sd(gdpPercap),
-              mean_pop = mean(pop),
-              sd_pop = sd(pop),
-              mean_gdp_billion = mean(gdp_billion),
-              sd_gdp_billion = sd(gdp_billion))
-
-## updating only if certain condition is fullfilled
-# for life expectations above 40 years, the gpd to be expected in the future is scaled
-gdp_future_bycontinents_byyear_high_lifeExp <- gapminder %>%
-    mutate(gdp_futureExpectation = ifelse(lifeExp > 40, gdpPercap * 1.5, gdpPercap)) %>%
-    group_by(continent, year) %>%
-    summarize(mean_gdpPercap = mean(gdpPercap),
-              mean_gdpPercap_expected = mean(gdp_futureExpectation))
-~~~
-{: .language-r}
-
-## Combining `dplyr` and `ggplot2`
-
-In the plotting lesson we looked at how to make a multi-panel figure by adding
-a layer of facet panels using `ggplot2`. Here is the code we used (with some
-extra comments):
-
-
-~~~
-# Get the start letter of each country
-starts.with <- substr(gapminder$country, start = 1, stop = 1)
-# Filter countries that start with "A" or "Z"
-az.countries <- gapminder[starts.with %in% c("A", "Z"), ]
-# Make the plot
-ggplot(data = az.countries, aes(x = year, y = lifeExp, color = continent)) +
-  geom_line() + facet_wrap( ~ country)
-~~~
-{: .language-r}
-
-<img src="../fig/rmd-13-unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" style="display: block; margin: auto;" />
-
-This code makes the right plot but it also creates some variables (`starts.with`
-and `az.countries`) that we might not have any other uses for. Just as we used
-`%>%` to pipe data along a chain of `dplyr` functions we can use it to pass data
-to `ggplot()`. Because `%>%` replaces the first argument in a function we don't
-need to specify the `data =` argument in the `ggplot()` function. By combining
-`dplyr` and `ggplot2` functions we can make the same figure without creating any
-new variables or modifying the data.
-
-
-~~~
-gapminder %>%
-   # Get the start letter of each country
-   mutate(startsWith = substr(country, start = 1, stop = 1)) %>%
-   # Filter countries that start with "A" or "Z"
-   filter(startsWith %in% c("A", "Z")) %>%
-   # Make the plot
-   ggplot(aes(x = year, y = lifeExp, color = continent)) +
-   geom_line() +
-   facet_wrap( ~ country)
-~~~
-{: .language-r}
-
-<img src="../fig/rmd-13-unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" style="display: block; margin: auto;" />
-
-Using `dplyr` functions also helps us simplify things, for example we could
-combine the first two steps:
-
-
-~~~
-gapminder %>%
-    # Filter countries that start with "A" or "Z"
-	filter(substr(country, start = 1, stop = 1) %in% c("A", "Z")) %>%
-	# Make the plot
-	ggplot(aes(x = year, y = lifeExp, color = continent)) +
-	geom_line() +
-	facet_wrap( ~ country)
-~~~
-{: .language-r}
-
-<img src="../fig/rmd-13-unnamed-chunk-23-1.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" style="display: block; margin: auto;" />
-
-> ## Advanced Challenge
->
-> Calculate the average life expectancy in 2002 of 2 randomly selected countries
-> for each continent. Then arrange the continent names in reverse order.
-> **Hint:** Use the `dplyr` functions `arrange()` and `sample_n()`, they have
-> similar syntax to other dplyr functions.
->
-> > ## Solution to Advanced Challenge
-> >
-> >~~~
-> >lifeExp_2countries_bycontinents <- gapminder %>%
-> >    filter(year==2002) %>%
-> >    group_by(continent) %>%
-> >    sample_n(2) %>%
-> >    summarize(mean_lifeExp=mean(lifeExp)) %>%
-> >    arrange(desc(mean_lifeExp))
-> >~~~
-> >{: .language-r}
-> {: .solution}
-{: .challenge}
 
 ## Other great resources
 
