@@ -156,33 +156,7 @@ head(gapminder)
 > {: .solution}
 {: .challenge}
 
-
-To make sure our analysis is reproducible, we should put the code
-into a script file so we can come back to it later.
-
 > ## Challenge 2
->
-> Go to file -> new file -> R script, and write an R script
-> to load in the gapminder dataset. Put it in the `scripts/`
-> directory and add it to version control.
->
-> Run the script using the `source` function, using the file path
-> as its argument (or by pressing the "source" button in RStudio).
->
-> > ## Solution to Challenge 2
-> > The contents of `scripts/load-gapminder.R`:
-> > ```{r eval = FALSE}
-> > download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "data/gapminder-FiveYearData.csv")
-> > gapminder <- read.csv(file = "data/gapminder-FiveYearData.csv")
-> > ```
-> > To run the script and load the data into the `gapminder` variable:
-> > ```{r eval = FALSE}
-> > source(file = "scripts/load-gapminder.R")
-> > ```
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 3
 >
 > Read the output of `str(gapminder)` again;
 > this time, use what you've learned about factors, lists and vectors,
@@ -190,7 +164,7 @@ into a script file so we can come back to it later.
 > to explain what everything that `str` prints out for gapminder means.
 > If there are any parts you can't interpret, discuss with your neighbors!
 >
-> > ## Solution to Challenge 3
+> > ## Solution to Challenge 2
 > >
 > > The object `gapminder` is a data frame with columns
 > > - `country` and `continent` are factors.
@@ -211,15 +185,27 @@ head(gapminder)
 
 We can then add this as a column via:
 
-```{r}
+```{r, eval=FALSE}
 cbind(gapminder, below_average)
+```
+
+```{r, eval=TRUE, echo=FALSE}
+head(cbind(gapminder, below_average))
+```
+
+We probably don't want to print the entire dataframe each time, so
+let's put our `cbind` command within a call to `head` to return
+only the first six lines of the output.
+
+```{r, eval=TRUE}
+head(cbind(gapminder, below_average))
 ```
 
 Note that if we tried to add a vector of below_average with a different number of entries than the number of rows in the dataframe, it would fail:
 
 ```{r, error=TRUE}
 below_average <- c(TRUE,TRUE,TRUE,TRUE,TRUE)
-cbind(gapminder, below_average)
+head(cbind(gapminder, below_average))
 ```
 
 Why didn't this work? Of course, R wants to see one element in our new column
@@ -234,7 +220,7 @@ So for it to work we need either to have `nrow(gapminder)` = `length(below_avera
 
 ```{r, error=TRUE}
 below_average <- c(TRUE,TRUE,FALSE)
-cbind(gapminder, below_average)
+head(cbind(gapminder, below_average))
 ```
 The sequence `TRUE,TRUE,FALSE` is repeated over all the gapminder rows.
 
@@ -305,7 +291,7 @@ inside of a vector: `cats[c(-1706,-1707), ]`
 Alternatively, we can drop all rows with `NA` values:
 
 ```{r}
-na.omit(gapminder)
+head(na.omit(gapminder))
 ```
 
 Let's reassign the output to `gapminder`, so that our changes will be permanent:
@@ -319,7 +305,7 @@ gapminder <- na.omit(gapminder)
 We can also remove columns in our data frame. What if we want to remove the column "continent". We can remove it in two ways, by variable number or by index.  
 
 ```{r}
-gapminder[,-4]
+head(gapminder[,-4])
 ```
 
 Notice the comma with nothing before it, indicating we want to keep all of the rows.  
@@ -328,7 +314,7 @@ Alternatively, we can drop the column by using the index name.
 
 ```{r}
 drop <- names(gapminder) %in% c("continent")
-gapminder[,!drop]
+head(gapminder[,!drop])
 ```
 
 ## Appending to a data frame
@@ -346,10 +332,10 @@ and R will automatically re-name them sequentially:
 
 ```{r}
 rownames(gapminder) <- NULL
-gapminder
+head(gapminder)
 ```
 
-> ## Challenge 2
+> ## Challenge 3
 >
 > You can create a new data frame right from within R with the following syntax:
 > ```{r}
@@ -367,7 +353,7 @@ gapminder
 > Then use `rbind` to add an entry for the people sitting beside you.
 > Finally, use `cbind` to add a column with each person's answer to the question, "Is it time for coffee break?"
 >
-> > ## Solution to Challenge 2
+> > ## Solution to Challenge 3
 > > ```{r}
 > > df <- data.frame(first = c("Grace"),
 > >                  last = c("Hopper"),
