@@ -1,13 +1,7 @@
 ---
 layout: page
 title: Setup
-root: .
+permalink: /setup/
 ---
 
-This lesson assumes you have the R, RStudio software installed on your computer.
-
-R can be downloaded [here](https://cran.r-project.org/mirrors.html).
-
-RStudio is an environment for developing using R.
-It can be downloaded [here](https://www.rstudio.com/products/rstudio/download/).
-You will need the Desktop version for your computer.
+This lesson is designed to be taught in conjunction with other lessons in the [Data Carpentry Geospatial workshop](http://www.datacarpentry.org/geospatial-workshop/). For information about required software, and to access the datasets used in this lesson, see the [setup instructions](http://www.datacarpentry.org/geospatial-workshop/) on the workshop homepage.
