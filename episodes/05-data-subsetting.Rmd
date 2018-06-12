@@ -1,11 +1,11 @@
 ---
 title: Subsetting Data
-teaching: 35
-exercises: 15
+teaching: 25
+exercises: 10
 questions:
 - "How can I work with subsets of data in R?"
 objectives:
-- "To be able to subset vectors, lists and data frames"
+- "To be able to subset vectors and data frames"
 - "To be able to extract individual and multiple elements: by index, by name, using comparison operations"
 - "To be able to skip and remove elements from various data structures."
 keypoints:
@@ -284,24 +284,6 @@ x[names(x) == "a"]
 > {: .solution}
 {: .challenge}
 
-
-> ## Tip: Non-unique names
->
-> You should be aware that it is possible for multiple elements in a
-> vector to have the same name. (For a data frame, columns can have
-> the same name --- although R tries to avoid this --- but row names
-> must be unique.) Consider these examples:
->
->```{r}
-> x <- 1:3
-> x
-> names(x) <- c('a', 'a', 'a')
-> x
-> x['a']  # only returns first value
-> x[names(x) == 'a']  # returns all three values
-> ```
-{: .callout}
-
 > ## Tip: Getting help for operators
 >
 > Remember you can search for help on operators by wrapping them in quotes:
@@ -323,89 +305,6 @@ x[names(x) == "a"]
 >   that do not contain `NA`, `NaN` or `Inf`.
 > * `na.omit` will filter out all missing values from a vector
 {: .callout}
-
-## List subsetting
-
-Now we'll introduce some new subsetting operators. There are three functions
-used to subset lists. We've already seen these when learning about atomic vectors and matrices:  `[`, `[[`, and `$`.
-
-Using `[` will always return a list. If you want to *subset* a list, but not
-*extract* an element, then you will likely use `[`.
-
-```{r}
-xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
-xlist[1]
-```
-
-This returns a *list with one element*.
-
-We can subset elements of a list exactly the same way as atomic
-vectors using `[`. Comparison operations however won't work as
-they're not recursive, they will try to condition on the data structures
-in each element of the list, not the individual elements within those
-data structures.
-
-```{r}
-xlist[1:2]
-```
-
-To extract individual elements of a list, you need to use the double-square
-bracket function: `[[`.
-
-```{r}
-xlist[[1]]
-```
-
-Notice that now the result is a vector, not a list.
-
-You can't extract more than one element at once:
-
-```{r, error=TRUE}
-xlist[[1:2]]
-```
-
-Nor use it to skip elements:
-
-```{r, error=TRUE}
-xlist[[-1]]
-```
-
-But you can use names to both subset and extract elements:
-
-```{r}
-xlist[["a"]]
-```
-
-The `$` function is a shorthand way for extracting elements by name:
-
-```{r}
-xlist$data
-```
-
-> ## Challenge 5
-> Given the following list:
->
-> ```{r, eval=FALSE}
-> xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
-> ```
->
-> Using your knowledge of both list and vector subsetting, extract the number 2 from xlist.
-> Hint: the number 2 is contained within the "b" item in the list.
->
-> > ## Solution to challenge 5
-> >
-> > ```{r}
-> > xlist$b[2]
-> > ```
-> > ```{r}
-> > xlist[[2]][2]
-> > ```
-> > ```{r}
-> > xlist[["b"]][2]
-> > ```
-> {: .solution}
-{: .challenge}
-
 
 ## Data frames
 
@@ -447,7 +346,7 @@ gapminder[3,]
 But for a single column the result will be a vector (this can
 be changed with the third argument, `drop = FALSE`).
 
-> ## Challenge 7
+> ## Challenge 3
 >
 > Fix each of the following common data frame subsetting errors:
 >
@@ -483,7 +382,7 @@ be changed with the third argument, `drop = FALSE`).
 >    gapminder[gapminder$year == 2002 | 2007,]
 >    ```
 >
-> > ## Solution to challenge 7
+> > ## Solution to challenge 3
 > >
 > > Fix each of the following common data frame subsetting errors:
 > >
@@ -527,7 +426,7 @@ be changed with the third argument, `drop = FALSE`).
 > {: .solution}
 {: .challenge}
 
-> ## Challenge 8
+> ## Challenge 4
 >
 > 1. Why does `gapminder[1:20]` return an error? How does it differ from `gapminder[1:20, ]`?
 >
@@ -535,7 +434,7 @@ be changed with the third argument, `drop = FALSE`).
 > 2. Create a new `data.frame` called `gapminder_small` that only contains rows 1 through 9
 > and 19 through 23. You can do this in one or two steps.
 >
-> > ## Solution to challenge 8
+> > ## Solution to challenge 4
 > >
 > > 1.  `gapminder` is a data.frame so needs to be subsetted on two dimensions. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
 > >
