@@ -8,7 +8,7 @@ PARSER=bin/markdown_ast.rb
 DST=_site
 
 # Controls
-.PHONY : commands clean files bundle-install
+.PHONY : commands clean files
 .NOTPARALLEL:
 all : commands
 
@@ -23,13 +23,6 @@ serve : lesson-md
 ## site             : build files but do not run a server.
 site : lesson-md
 	${JEKYLL} build
-
-## bundle-install   : runs bundle install
-bundle-install:
-	bundle install
-
-## travis-site      : to use on Travis, run bundle install first
-travis-site: bundle-install site
 
 # repo-check        : check repository settings.
 repo-check :
