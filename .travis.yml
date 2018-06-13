@@ -11,6 +11,8 @@ before_install:
   - sudo apt-get install --yes libudunits2-dev
   - sudo apt-get install -y python-pip libproj-dev libgeos-dev libgdal-dev
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install jekyll bundler
+  - rvm $(travis_internal_ruby) --fuzzy do ruby --version
+  - echo $(travis_internal_ruby)
   #- rvm $(travis_internal_ruby) --fuzzy do ruby -S bundle install
   - sudo pip install update-copyright
   - R -q -e 'install.packages("remotes"); remotes::install_github("ropenscilabs/tic"); tic::prepare_all_stages(); tic::before_install()'
