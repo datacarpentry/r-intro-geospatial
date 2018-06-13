@@ -46,7 +46,7 @@ usability.
 * Juan Fung
 
 [gapminder]: http://www.gapminder.org/
-[lesson-example]: https://swcarpentry.github.io/lesson-example
+[lesson-example]: https://carpentries.github.io/lesson-example
 [wasser_leah]: https://software-carpentry.org/team/#wasser_leah
 [stachelek_joesph]: https://software-carpentry.org/team/#stachelek_joesph
 <!-- [swetnam_tyson]: https://software-carpentry.org/team/#swetnam_tyson -->

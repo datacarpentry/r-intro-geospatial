@@ -4,10 +4,12 @@
 
 # DO NOT CHANGE THE CODE BELOW
 before_install:
+  - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
   - sudo apt-get -qq update && sudo apt-get install -y linkchecker
   - mkdir -p ~/.linkchecker
   - echo -e '[checking]\nsslverify=0' > ~/.linkchecker/linkcheckerrc
-  - sudo apt-get install -y python-pip libgdal-dev libproj-dev
+  - sudo apt-get install --yes libudunits2-dev
+  - sudo apt-get install -y python-pip libproj-dev libgeos-dev libgdal-dev
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install jekyll bundler
   #- rvm $(travis_internal_ruby) --fuzzy do ruby -S bundle install
   - sudo pip install update-copyright
@@ -42,6 +44,6 @@ env:
   global:
   - _R_CHECK_FORCE_SUGGESTS_=false
   - MAKEFLAGS="-j 2"
-
+  
 #services
 services:
