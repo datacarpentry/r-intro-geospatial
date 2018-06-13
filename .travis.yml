@@ -22,6 +22,7 @@ after_success: R -q -e 'tic::after_success()'
 after_failure: R -q -e 'tic::after_failure()'
 before_deploy:
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S bundle install
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S bundle update
   - R -q -e 'tic::before_deploy()'
 deploy:
   provider: script
