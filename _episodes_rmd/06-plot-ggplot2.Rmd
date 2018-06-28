@@ -298,26 +298,34 @@ variables and their visual representation.
 ## Modifying text
 
 To clean this figure up for a publication we need to change some of the text
-elements. The x-axis is too cluttered, and the y axis should read
-"Life expectancy", rather than the column name in the data frame.
+elements. The x-axis is in scientific notation, and the x and y axes should 
+read "GDP per capita" and "Life expectancy", rather than the column names in 
+the data frame.
 
 We can do this by adding a couple of different layers. The **theme** layer
-controls the axis text, and overall text size. Labels for the axes, plot
-title and any legend can be set using the `labs` function. Legend titles
-are set using the same names we used in the `aes` specification. Thus below
-the color legend title is set using `color = "Continent"`, while the title
-of a fill legend would be set using `fill = "MyTitle"`.
+controls the axis text, and overall text size. You can set `size`, `color`,
+`family` (font), `face` (e.g. bold, italic) and `angle` in this layer.
+Labels for the axes, plot title and any legend can be set using the `labs` 
+function. Legend titles are set using the same names we used in the `aes` 
+specification. Thus below the color legend title is set using 
+`color = "Continent"`, while the title of a fill legend would be set using 
+`fill = "MyTitle"`. A fill legend would be used for e.g. box plots, bar plots 
+or density plots. Instead of `color` in the `aes`, you would use `fill`.
+The scientific notation is changed in the layer that scales the x-axis (the
+notation `scales::` indicates this is a function from the package `scales`).
 
 ```{r theme}
-ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
-  geom_line() + facet_wrap( ~ country) +
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point(size=3, shape=17) + scale_x_log10(labels = scales::comma) +
+  geom_smooth(method="lm", size=1.5)+
   labs(
-    x = "Year",              # x axis title
+    x = "GDP per capita",              # x axis title
     y = "Life expectancy",   # y axis title
     title = "Figure 1",      # main title of figure
     color = "Continent"      # title of legend
   ) +
-  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+  theme(axis.text.x=element_text(size=12), axis.text.y=element_text(size=12), # font size of tick labels
+        axis.title.x=element_text(size=14), axis.title.y=element_text(size=14)) # font size of axis labels
 ```
 
 
