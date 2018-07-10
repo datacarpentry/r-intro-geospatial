@@ -1,11 +1,11 @@
 ---
 title: Subsetting Data
-teaching: 35
-exercises: 15
+teaching: 25
+exercises: 10
 questions:
 - "How can I work with subsets of data in R?"
 objectives:
-- "To be able to subset vectors, lists and data frames"
+- "To be able to subset vectors and data frames"
 - "To be able to extract individual and multiple elements: by index, by name, using comparison operations"
 - "To be able to skip and remove elements from various data structures."
 keypoints:
@@ -537,75 +537,6 @@ x[names(x) == "a"]
 > {: .solution}
 {: .challenge}
 
-
-> ## Tip: Non-unique names
->
-> You should be aware that it is possible for multiple elements in a
-> vector to have the same name. (For a data frame, columns can have
-> the same name --- although R tries to avoid this --- but row names
-> must be unique.) Consider these examples:
->
->
->~~~
-> x <- 1:3
-> x
->~~~
->{: .language-r}
->
->
->
->~~~
->[1] 1 2 3
->~~~
->{: .output}
->
->
->
->~~~
-> names(x) <- c('a', 'a', 'a')
-> x
->~~~
->{: .language-r}
->
->
->
->~~~
->a a a 
->1 2 3 
->~~~
->{: .output}
->
->
->
->~~~
-> x['a']  # only returns first value
->~~~
->{: .language-r}
->
->
->
->~~~
->a 
->1 
->~~~
->{: .output}
->
->
->
->~~~
-> x[names(x) == 'a']  # returns all three values
->~~~
->{: .language-r}
->
->
->
->~~~
->a a a 
->1 2 3 
->~~~
->{: .output}
-{: .callout}
-
 > ## Tip: Getting help for operators
 >
 > Remember you can search for help on operators by wrapping them in quotes:
@@ -627,192 +558,6 @@ x[names(x) == "a"]
 >   that do not contain `NA`, `NaN` or `Inf`.
 > * `na.omit` will filter out all missing values from a vector
 {: .callout}
-
-## List subsetting
-
-Now we'll introduce some new subsetting operators. There are three functions
-used to subset lists. We've already seen these when learning about atomic vectors and matrices:  `[`, `[[`, and `$`.
-
-Using `[` will always return a list. If you want to *subset* a list, but not
-*extract* an element, then you will likely use `[`.
-
-
-~~~
-xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
-xlist[1]
-~~~
-{: .language-r}
-
-
-
-~~~
-$a
-[1] "Software Carpentry"
-~~~
-{: .output}
-
-This returns a *list with one element*.
-
-We can subset elements of a list exactly the same way as atomic
-vectors using `[`. Comparison operations however won't work as
-they're not recursive, they will try to condition on the data structures
-in each element of the list, not the individual elements within those
-data structures.
-
-
-~~~
-xlist[1:2]
-~~~
-{: .language-r}
-
-
-
-~~~
-$a
-[1] "Software Carpentry"
-
-$b
- [1]  1  2  3  4  5  6  7  8  9 10
-~~~
-{: .output}
-
-To extract individual elements of a list, you need to use the double-square
-bracket function: `[[`.
-
-
-~~~
-xlist[[1]]
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] "Software Carpentry"
-~~~
-{: .output}
-
-Notice that now the result is a vector, not a list.
-
-You can't extract more than one element at once:
-
-
-~~~
-xlist[[1:2]]
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in xlist[[1:2]]: subscript out of bounds
-~~~
-{: .error}
-
-Nor use it to skip elements:
-
-
-~~~
-xlist[[-1]]
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in xlist[[-1]]: attempt to select more than one element in get1index <real>
-~~~
-{: .error}
-
-But you can use names to both subset and extract elements:
-
-
-~~~
-xlist[["a"]]
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] "Software Carpentry"
-~~~
-{: .output}
-
-The `$` function is a shorthand way for extracting elements by name:
-
-
-~~~
-xlist$data
-~~~
-{: .language-r}
-
-
-
-~~~
-  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-1          5.1         3.5          1.4         0.2  setosa
-2          4.9         3.0          1.4         0.2  setosa
-3          4.7         3.2          1.3         0.2  setosa
-4          4.6         3.1          1.5         0.2  setosa
-5          5.0         3.6          1.4         0.2  setosa
-6          5.4         3.9          1.7         0.4  setosa
-~~~
-{: .output}
-
-> ## Challenge 5
-> Given the following list:
->
-> 
-> ~~~
-> xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
-> ~~~
-> {: .language-r}
->
-> Using your knowledge of both list and vector subsetting, extract the number 2 from xlist.
-> Hint: the number 2 is contained within the "b" item in the list.
->
-> > ## Solution to challenge 5
-> >
-> > 
-> > ~~~
-> > xlist$b[2]
-> > ~~~
-> > {: .language-r}
-> > 
-> > 
-> > 
-> > ~~~
-> > [1] 2
-> > ~~~
-> > {: .output}
-> > 
-> > ~~~
-> > xlist[[2]][2]
-> > ~~~
-> > {: .language-r}
-> > 
-> > 
-> > 
-> > ~~~
-> > [1] 2
-> > ~~~
-> > {: .output}
-> > 
-> > ~~~
-> > xlist[["b"]][2]
-> > ~~~
-> > {: .language-r}
-> > 
-> > 
-> > 
-> > ~~~
-> > [1] 2
-> > ~~~
-> > {: .output}
-> {: .solution}
-{: .challenge}
-
 
 ## Data frames
 
@@ -909,7 +654,7 @@ gapminder[3,]
 But for a single column the result will be a vector (this can
 be changed with the third argument, `drop = FALSE`).
 
-> ## Challenge 7
+> ## Challenge 3
 >
 > Fix each of the following common data frame subsetting errors:
 >
@@ -955,7 +700,7 @@ be changed with the third argument, `drop = FALSE`).
 >    ~~~
 >    {: .language-r}
 >
-> > ## Solution to challenge 7
+> > ## Solution to challenge 3
 > >
 > > Fix each of the following common data frame subsetting errors:
 > >
@@ -1009,7 +754,7 @@ be changed with the third argument, `drop = FALSE`).
 > {: .solution}
 {: .challenge}
 
-> ## Challenge 8
+> ## Challenge 4
 >
 > 1. Why does `gapminder[1:20]` return an error? How does it differ from `gapminder[1:20, ]`?
 >
@@ -1017,7 +762,7 @@ be changed with the third argument, `drop = FALSE`).
 > 2. Create a new `data.frame` called `gapminder_small` that only contains rows 1 through 9
 > and 19 through 23. You can do this in one or two steps.
 >
-> > ## Solution to challenge 8
+> > ## Solution to challenge 4
 > >
 > > 1.  `gapminder` is a data.frame so needs to be subsetted on two dimensions. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
 > >

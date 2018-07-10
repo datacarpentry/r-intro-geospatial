@@ -150,7 +150,7 @@ Now we have a good directory structure we will now place/save the data file in t
 > > 
 > > 
 > > ~~~
-> > -rw-r--r--  1 ebecker  staff    80K Jun  8 18:27 data/gapminder-FiveYearData.csv
+> > -rw-r--r--  1 ebecker  staff    80K Jun 12 10:12 data/gapminder-FiveYearData.csv
 > > ~~~
 > > {: .output}
 > > The file size is 80K.
