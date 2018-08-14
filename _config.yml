@@ -92,3 +92,6 @@ highlighter: rouge
 # to ensure that local rendering
 # do not change
 github: [metadata]
+
+plugins:
+  - "jekyll-github-metadata"
