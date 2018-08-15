@@ -130,7 +130,7 @@ Now we have a good directory structure we will now place/save our data files in 
 > 2\. Make sure the files have the following names: 
 > - `nordic-data.csv`
 > - `nordic-data-2.csv`
-> - `gapminder-FiveYearData.csv`
+> - `gapminder-FiveYearData.csv`  
 > 3\. Save the files in the `data/` folder within your project.
 >
 > We will load and inspect these data later.
