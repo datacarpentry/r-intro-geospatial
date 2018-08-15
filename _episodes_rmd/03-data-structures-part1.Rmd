@@ -82,7 +82,7 @@ class(1L) # The L suffix forces the number to be an integer, since by default R 
 class(1+1i)
 class(TRUE)
 class('banana')
-class(factor('banana`))
+class(factor('banana'))
 ```
 
 No matter how
@@ -320,15 +320,15 @@ example, let's make a vector of strings labelling nordic countries for all the
 countries in our study:
 
 ```{r}
-nordic <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
-nordic
-str(nordic)
+nordic_countries <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
+nordic_countries
+str(nordic_countries)
 ```
 
 We can turn a vector into a factor like so:
 
 ```{r}
-categories <- factor(nordic)
+categories <- factor(nordic_countries)
 class(categories)
 str(categories)
 ```
@@ -340,13 +340,13 @@ with numbered indices under the hood, this is necessary as many statistical
 calculations utilise such numerical representations for categorical data:
 
 ```{r}
-typeof(nordic)
+typeof(nordic_countries)
 typeof(categories)
 ```
 
 > ## Challenge 3
 >
-> Is there a factor in our `nordic` data.frame? what is its name?
+> Is there a factor in our `nordic` data frame? what is its name?
 > Try using `?read.csv` to figure out how to keep text columns as character
 > vectors instead of factors; then write a command or two to show that the factor
 > in `nordic` is actually a character vector when loaded in this way.
@@ -401,21 +401,21 @@ another_list <- list(title = "Numbers", numbers = 1:10, data = TRUE )
 another_list
 ```
 
-We can now understand something a bit surprising in our data.frame; what happens if we run:
+We can now understand something a bit surprising in our data frame; what happens if we run:
 
 ```{r}
 typeof(nordic)
 ```
 
-We see that data.frames look like lists 'under the hood' - this is because a
-data.frame is really a list of vectors and factors, as they have to be - in
+We see that data frames look like lists 'under the hood' - this is because a
+data frame is really a list of vectors and factors, as they have to be - in
 order to hold those columns that are a mix of vectors and factors, the
-data.frame needs something a bit more flexible than a vector to put all the
-columns together into a familiar table.  In other words, a `data.frame` is a
+data frame needs something a bit more flexible than a vector to put all the
+columns together into a familiar table.  In other words, a data frame is a
 special list in which all the vectors must have the same length.
 
 In our `nordic` example, we have an integer, a double and a logical variable. As
-we have seen already, each column of data.frame is a vector.
+we have seen already, each column of data frame is a vector.
 
 ```{r}
 nordic$country
@@ -424,7 +424,7 @@ typeof(nordic[,1])
 str(nordic[,1])
 ```
 
-Each row is an *observation* of different variables, itself a data.frame, and
+Each row is an *observation* of different variables, itself a data frame, and
 thus can be composed of elements of different types.
 
 ```{r}
@@ -436,7 +436,7 @@ str(nordic[1,])
 > ## Challenge 4
 >
 > There are several subtly different ways to call variables, observations and
-> elements from data.frames:
+> elements from data frames:
 >
 > - `nordic[1]`
 > - `nordic[[1]]`
