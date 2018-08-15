@@ -295,7 +295,7 @@ x[names(x) == "a"]
 > ## Handling special values
 > At some point you will encounter functions in R that cannot handle missing, infinite,
 > or undefined data.
-
+>
 > There are a number of special functions you can use to filter out this data:
 >
 > * `is.na` will return all positions in a vector, matrix, or data.frame
