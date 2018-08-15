@@ -82,7 +82,7 @@ class(1L) # The L suffix forces the number to be an integer, since by default R 
 class(1+1i)
 class(TRUE)
 class('banana')
-class(factor('banana`))
+class(factor('banana'))
 ```
 
 No matter how
@@ -320,15 +320,15 @@ example, let's make a vector of strings labelling nordic countries for all the
 countries in our study:
 
 ```{r}
-nordic <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
-nordic
-str(nordic)
+nordic_countries <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
+nordic_countries
+str(nordic_countries)
 ```
 
 We can turn a vector into a factor like so:
 
 ```{r}
-categories <- factor(nordic)
+categories <- factor(nordic_countries)
 class(categories)
 str(categories)
 ```
@@ -340,7 +340,7 @@ with numbered indices under the hood, this is necessary as many statistical
 calculations utilise such numerical representations for categorical data:
 
 ```{r}
-typeof(nordic)
+typeof(nordic_countries)
 typeof(categories)
 ```
 
