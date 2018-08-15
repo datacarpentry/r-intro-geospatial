@@ -326,66 +326,7 @@ y <- x * 2
 The right hand side of the assignment can be any valid R expression.
 The right hand side is *fully evaluated* before the assignment occurs.
 
-Variable names can contain letters, numbers, underscores and periods. They
-cannot start with a number nor contain spaces at all. Different people use
-different conventions for long variable names, these include
-
-  * periods.between.words
-  * underscores\_between_words
-  * camelCaseToSeparateWords
-
-What you use is up to you, but **be consistent**.
-
-It is also possible to use the `=` operator for assignment:
-
-```{r}
-x = 1/40
-```
-
-But this is much less common among R users.  The most important thing is to
-**be consistent** with the operator you use. There are occasionally places
-where it is less confusing to use `<-` than `=`, and it is the most common
-symbol used in the community. So the recommendation is to use `<-`.
-
 > ## Challenge 1
->
-> Which of the following are valid R variable names?
-> ```{r, eval=FALSE}
-> min_height
-> max.height
-> _age
-> .mass
-> MaxLength
-> min-length
-> 2widths
-> celsius2kelvin
-> ```
->
-> > ## Solution to challenge 1
-> >
-> > The following can be used as R variables:
-> > ```{r ch1pt1-sol, eval=FALSE}
-> > min_height
-> > max.height
-> > MaxLength
-> > celsius2kelvin
-> > ```
-> >
-> > The following creates a hidden variable:
-> > ```{r ch1pt2-sol, eval=FALSE}
-> > .mass
-> > ```
-> >
-> > The following will not be able to be used to create a variable
-> > ```{r ch1pt3-sol, eval=FALSE}
-> > _age
-> > min-length
-> > 2widths
-> > ```
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 2
 >
 > What will be the value of each  variable  after each
 > statement in the following program?
@@ -397,7 +338,7 @@ symbol used in the community. So the recommendation is to use `<-`.
 > age <- age - 20
 > ```
 >
-> > ## Solution to challenge 2
+> > ## Solution to challenge 1
 > >
 > > ```{r ch2pt1-sol}
 > > mass <- 47.5
@@ -424,12 +365,12 @@ symbol used in the community. So the recommendation is to use `<-`.
 {: .challenge}
 
 
-> ## Challenge 3
+> ## Challenge 2
 >
 > Run the code from the previous challenge, and write a command to
 > compare mass to age. Is mass larger than age?
 >
-> > ## Solution to challenge 3
+> > ## Solution to challenge 2
 > >
 > > One way of answering this question in R is to use the `>` to set up the following:
 > > ```{r ch3-sol}
@@ -440,16 +381,64 @@ symbol used in the community. So the recommendation is to use `<-`.
 {: .challenge}
 
 
-> ## Challenge 4
+Variable names can contain letters, numbers, underscores and periods. They
+cannot start with a number nor contain spaces at all. Different people use
+different conventions for long variable names, these include
+
+  * periods.between.words
+  * underscores\_between_words
+  * camelCaseToSeparateWords
+
+What you use is up to you, but **be consistent**.
+
+It is also possible to use the `=` operator for assignment:
+
+```{r}
+x = 1/40
+```
+
+But this is much less common among R users.  The most important thing is to
+**be consistent** with the operator you use. There are occasionally places
+where it is less confusing to use `<-` than `=`, and it is the most common
+symbol used in the community. So the recommendation is to use `<-`.
+
+> ## Challenge 3
 >
-> Clean up your working environment by deleting the mass and age
-> variables.
+> Which of the following are valid R variable names?
+> ```{r, eval=FALSE}
+> min_height
+> max.height
+> _age
+> .mass
+> MaxLength
+> min-length
+> 2widths
+> celsius2kelvin
+> ```
 >
-> > ## Solution to challenge 4
+> > ## Solution to challenge 3
 > >
-> > We can use the `rm` command to accomplish this task
-> > ```{r ch4-sol}
-> > rm(age, mass)
+> > The following can be used as R variables:
+> > ```{r ch1pt1-sol, eval=FALSE}
+> > min_height
+> > max.height
+> > MaxLength
+> > celsius2kelvin
+> > ```
+> >
+> > The following creates a hidden variable:
+> > ```{r ch1pt2-sol, eval=FALSE}
+> > .mass
+> > ```
+> >
+> > We won't be discussing hidden variables in this lesson. We recommend not using a period at the
+> > beginning of variable names unless you intend your variables to be hidden.
+> >
+> > The following will not be able to be used to create a variable
+> > ```{r ch1pt3-sol, eval=FALSE}
+> > _age
+> > min-length
+> > 2widths
 > > ```
 > {: .solution}
 {: .challenge}
