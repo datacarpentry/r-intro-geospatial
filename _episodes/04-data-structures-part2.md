@@ -381,7 +381,7 @@ Error in data.frame(..., check.names = FALSE): arguments imply differing number 
 ~~~
 {: .error}
 
-Why didn't this work? Of course, R wants to see one element in our new column
+Why didn't this work? R wants to see one element in our new column
 for every row in the table:
 
 
@@ -437,15 +437,13 @@ The sequence `TRUE,TRUE,FALSE` is repeated over all the gapminder rows.
 Let's overwite the content of gapminder with our new data frame.
 
 
-
-
 ~~~
 below_average <-  as.logical(gapminder$lifeExp<70.5)
 gapminder <- cbind(gapminder, below_average)
 ~~~
 {: .language-r}
 
-Now how about adding rows? We already know that the rows of a
+Now how about adding rows? The rows of a
 data frame are lists:
 
 

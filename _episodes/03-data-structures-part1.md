@@ -138,23 +138,85 @@ There are 6 main types: `numeric`, `integer`, `complex`, `logical`, `character`,
 
 ~~~
 class(3.14)
-class(1L) # The L suffix forces the number to be an integer, since by default R uses float numbers
-class(1+1i)
-class(TRUE)
-class('banana')
-class(factor('banana`))
 ~~~
 {: .language-r}
 
 
 
 ~~~
-Error: <text>:6:14: unexpected INCOMPLETE_STRING
-5: class('banana')
-6: class(factor('banana`))
-                ^
+[1] "numeric"
 ~~~
-{: .error}
+{: .output}
+
+
+
+~~~
+class(1L) # The L suffix forces the number to be an integer, since by default R uses float numbers
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "integer"
+~~~
+{: .output}
+
+
+
+~~~
+class(1+1i)
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "complex"
+~~~
+{: .output}
+
+
+
+~~~
+class(TRUE)
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "logical"
+~~~
+{: .output}
+
+
+
+~~~
+class('banana')
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "character"
+~~~
+{: .output}
+
+
+
+~~~
+class(factor('banana'))
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "factor"
+~~~
+{: .output}
 
 No matter how
 complicated our analyses become, all data in R is interpreted a specific 
@@ -732,8 +794,8 @@ countries in our study:
 
 
 ~~~
-nordic <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
-nordic
+nordic_countries <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
+nordic_countries
 ~~~
 {: .language-r}
 
@@ -747,7 +809,7 @@ nordic
 
 
 ~~~
-str(nordic)
+str(nordic_countries)
 ~~~
 {: .language-r}
 
@@ -762,7 +824,7 @@ We can turn a vector into a factor like so:
 
 
 ~~~
-categories <- factor(nordic)
+categories <- factor(nordic_countries)
 class(categories)
 ~~~
 {: .language-r}
@@ -796,7 +858,7 @@ calculations utilise such numerical representations for categorical data:
 
 
 ~~~
-typeof(nordic)
+typeof(nordic_countries)
 ~~~
 {: .language-r}
 
@@ -823,7 +885,7 @@ typeof(categories)
 
 > ## Challenge 3
 >
-> Is there a factor in our `nordic` data.frame? what is its name?
+> Is there a factor in our `nordic` data frame? what is its name?
 > Try using `?read.csv` to figure out how to keep text columns as character
 > vectors instead of factors; then write a command or two to show that the factor
 > in `nordic` is actually a character vector when loaded in this way.
@@ -930,7 +992,7 @@ $data
 ~~~
 {: .output}
 
-We can now understand something a bit surprising in our data.frame; what happens if we run:
+We can now understand something a bit surprising in our data frame; what happens if we run:
 
 
 ~~~
@@ -941,19 +1003,19 @@ typeof(nordic)
 
 
 ~~~
-[1] "character"
+[1] "list"
 ~~~
 {: .output}
 
-We see that data.frames look like lists 'under the hood' - this is because a
-data.frame is really a list of vectors and factors, as they have to be - in
+We see that data frames look like lists 'under the hood' - this is because a
+data frame is really a list of vectors and factors, as they have to be - in
 order to hold those columns that are a mix of vectors and factors, the
-data.frame needs something a bit more flexible than a vector to put all the
-columns together into a familiar table.  In other words, a `data.frame` is a
+data frame needs something a bit more flexible than a vector to put all the
+columns together into a familiar table.  In other words, a data frame is a
 special list in which all the vectors must have the same length.
 
 In our `nordic` example, we have an integer, a double and a logical variable. As
-we have seen already, each column of data.frame is a vector.
+we have seen already, each column of data frame is a vector.
 
 
 ~~~
@@ -964,9 +1026,10 @@ nordic$country
 
 
 ~~~
-Error in nordic$country: $ operator is invalid for atomic vectors
+[1] Denmark Sweden  Norway 
+Levels: Denmark Norway Sweden
 ~~~
-{: .error}
+{: .output}
 
 
 
@@ -978,9 +1041,10 @@ nordic[,1]
 
 
 ~~~
-Error in nordic[, 1]: incorrect number of dimensions
+[1] Denmark Sweden  Norway 
+Levels: Denmark Norway Sweden
 ~~~
-{: .error}
+{: .output}
 
 
 
@@ -992,9 +1056,9 @@ typeof(nordic[,1])
 
 
 ~~~
-Error in nordic[, 1]: incorrect number of dimensions
+[1] "integer"
 ~~~
-{: .error}
+{: .output}
 
 
 
@@ -1006,11 +1070,11 @@ str(nordic[,1])
 
 
 ~~~
-Error in nordic[, 1]: incorrect number of dimensions
+ Factor w/ 3 levels "Denmark","Norway",..: 1 3 2
 ~~~
-{: .error}
+{: .output}
 
-Each row is an *observation* of different variables, itself a data.frame, and
+Each row is an *observation* of different variables, itself a data frame, and
 thus can be composed of elements of different types.
 
 
@@ -1022,9 +1086,10 @@ nordic[1,]
 
 
 ~~~
-Error in nordic[1, ]: incorrect number of dimensions
+  country year lifeExp
+1 Denmark 2002    77.2
 ~~~
-{: .error}
+{: .output}
 
 
 
@@ -1036,9 +1101,9 @@ typeof(nordic[1,])
 
 
 ~~~
-Error in nordic[1, ]: incorrect number of dimensions
+[1] "list"
 ~~~
-{: .error}
+{: .output}
 
 
 
@@ -1050,14 +1115,17 @@ str(nordic[1,])
 
 
 ~~~
-Error in nordic[1, ]: incorrect number of dimensions
+'data.frame':	1 obs. of  3 variables:
+ $ country: Factor w/ 3 levels "Denmark","Norway",..: 1
+ $ year   : int 2002
+ $ lifeExp: num 77.2
 ~~~
-{: .error}
+{: .output}
 
 > ## Challenge 4
 >
 > There are several subtly different ways to call variables, observations and
-> elements from data.frames:
+> elements from data frames:
 >
 > - `nordic[1]`
 > - `nordic[[1]]`
@@ -1081,7 +1149,10 @@ Error in nordic[1, ]: incorrect number of dimensions
 > > 
 > > 
 > > ~~~
-> > [1] "Denmark"
+> >   country
+> > 1 Denmark
+> > 2  Sweden
+> > 3  Norway
 > > ~~~
 > > {: .output}
 > > We can think of a data frame as a list of vectors. The single brace `[1]`
@@ -1096,7 +1167,8 @@ Error in nordic[1, ]: incorrect number of dimensions
 > > 
 > > 
 > > ~~~
-> > [1] "Denmark"
+> > [1] Denmark Sweden  Norway 
+> > Levels: Denmark Norway Sweden
 > > ~~~
 > > {: .output}
 > > The double brace `[[1]]` returns the contents of the list item. In this case
@@ -1110,9 +1182,10 @@ Error in nordic[1, ]: incorrect number of dimensions
 > > 
 > > 
 > > ~~~
-> > Error in nordic$country: $ operator is invalid for atomic vectors
+> > [1] Denmark Sweden  Norway 
+> > Levels: Denmark Norway Sweden
 > > ~~~
-> > {: .error}
+> > {: .output}
 > > This example uses the `$` character to address items by name. _coat_ is the
 > first column of the data frame, again a _vector_ of type _factor_.
 > > 
@@ -1124,7 +1197,10 @@ Error in nordic[1, ]: incorrect number of dimensions
 > > 
 > > 
 > > ~~~
-> > [1] NA
+> >   country
+> > 1 Denmark
+> > 2  Sweden
+> > 3  Norway
 > > ~~~
 > > {: .output}
 > > Here we are using a single brace `["country"]` replacing the index number with
@@ -1138,9 +1214,10 @@ Error in nordic[1, ]: incorrect number of dimensions
 > > 
 > > 
 > > ~~~
-> > Error in nordic[1, 1]: incorrect number of dimensions
+> > [1] Denmark
+> > Levels: Denmark Norway Sweden
 > > ~~~
-> > {: .error}
+> > {: .output}
 > > This example uses a single brace, but this time we provide row and column
 > coordinates. The returned object is the value in row 1, column 1. The object
 > is an _integer_ but because it is part of a _vector_ of type _factor_, R
@@ -1154,9 +1231,10 @@ Error in nordic[1, ]: incorrect number of dimensions
 > > 
 > > 
 > > ~~~
-> > Error in nordic[, 1]: incorrect number of dimensions
+> > [1] Denmark Sweden  Norway 
+> > Levels: Denmark Norway Sweden
 > > ~~~
-> > {: .error}
+> > {: .output}
 > > Like the previous example we use single braces and provide row and column
 > coordinates. The row coordinate is not specified, R interprets this missing
 > value as all the elements in this _column_ _vector_.
@@ -1169,9 +1247,10 @@ Error in nordic[1, ]: incorrect number of dimensions
 > > 
 > > 
 > > ~~~
-> > Error in nordic[1, ]: incorrect number of dimensions
+> >   country year lifeExp
+> > 1 Denmark 2002    77.2
 > > ~~~
-> > {: .error}
+> > {: .output}
 > > Again we use the single brace with row and column coordinates. The column
 > coordinate is not specified. The return value is a _list_ containing all the
 > values in the first row.
