@@ -12,6 +12,9 @@ carpentry: "dc"
 # Overall title for pages.
 title: "Introduction to R for Geospatial Data"
 
+# life cycle
+# possible values: "pre-alpha", "alpha", "beta", "stable"
+life_cycle: "beta"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).

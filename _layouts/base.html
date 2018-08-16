@@ -38,8 +38,12 @@ To work around this, we use the `jekyll.environment` variable which is set to `d
   </head>
   <body>
     <div class="container">
+      {% include life_cycle.html %}
+
       {% include navbar.html %}
-{{ content }}
+
+      {{ content }}
+
       {% if site.kind == "workshop" %}
       {% include workshop_footer.html %}
       {% else %}
