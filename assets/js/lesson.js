@@ -26,3 +26,32 @@ function google_search() {
   var domain = $("meta[name=search-domain]").attr("value");
   window.open("https://www.google.com/search?q=" + query + "+site:" + domain);
 }
+
+//
+
+$(function(){
+    $('#life-cycle').data('size','big');
+});
+
+$(window).scroll(function(){
+    if($(document).scrollTop() > 0)
+    {
+        if($('#life-cycle').data('size') == 'big')
+        {
+            $('#life-cycle').data('size','small');
+            $('#life-cycle').stop().animate({
+                padding: '5px'
+            },100);
+        }
+    }
+    else
+    {
+        if($('#life-cycle').data('size') == 'small')
+        {
+            $('#life-cycle').data('size','big');
+            $('#life-cycle').stop().animate({
+                padding: '15px'
+            },100);
+        }
+    }
+});
