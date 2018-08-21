@@ -100,7 +100,8 @@ interactive R console.
 >
 > 1. click on the `Run` button above the editor panel, or 
 > 2. select "Run Lines" from the "Code" menu, or 
-> 3. hit <kbd>Ctrl</kbd>+<kbd>Return</kbd> in Windows or Linux 
+> 3. hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd> in Windows,
+> <kbd>Ctrl</kbd>+<kbd>Return</kbd> in Linux, 
 > or <kbd>&#8984;</kbd>+<kbd>Return</kbd> on OS X.
 > (This shortcut can also be seen by hovering
 > the mouse over the button). To run a block of code, select it and then `Run`.
