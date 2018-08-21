@@ -64,17 +64,19 @@ Open up this document and have a look.
 > ## Challenge 1
 >
 > Rewrite your 'pdf' command to print a second
-> page in the pdf, showing a facet plot (hint: use `facet_grid`)
-> of the same data with one panel per continent.
+> page in the pdf, showing a line plot of year versus
+> gdp per capita, coloured by country.
 > > ## Solution to challenge 1
 > >
 > > ```{r, eval = FALSE}
 > > pdf("Life_Exp_vs_time.pdf", width = 12, height = 4)
-> > p <- ggplot(data = gapminder, aes(x = year, y = lifeExp, colour = country)) +
+> > ggplot(data = gapminder, aes(x = year, y = lifeExp, colour = country)) +
 > >   geom_line() +
 > >   theme(legend.position = "none")
-> > p
-> > p + facet_grid(. ~continent)
+> > 
+> > ggplot(data = gapminder, aes(x = year, y = gdpPercap, color = country)) +
+> >   geom_line() +
+> >   theme(legend.position = "none")
 > > dev.off()
 > > ```
 > {: .solution}
