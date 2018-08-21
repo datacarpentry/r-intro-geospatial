@@ -14,10 +14,15 @@ source: Rmd
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("11-")
+knitr_fig_path("08-")
 # Silently load in the data so the rest of the lesson works
 library("ggplot2")
+library(dplyr)
 gapminder <- read.csv("data/gapminder-FiveYearData.csv", header=TRUE)
+
+# load data that learners created in previous episode
+gapminder_small_2 <- filter(gapminder, continent == "Americas", year %in% c(1952, 2007))
+
 # Temporarily create a cleaned-data directory so that the writing examples work
 # The students should have created this in topic 2.
 dir.create("cleaned-data")
@@ -25,13 +30,6 @@ dir.create("cleaned-data")
 
 
 ## Saving plots
-
-You have already seen how to save the most recent plot you create in `ggplot2`,
-using the command `ggsave`. As a refresher:
-
-```{r, eval=FALSE}
-ggsave("My_most_recent_plot.pdf")
-```
 
 You can save a plot from within RStudio using the 'Export' button
 in the 'Plot' window. This will give you the option of saving as a
@@ -41,18 +39,15 @@ Sometimes you will want to save plots without creating them in the
 'Plot' window first. Perhaps you want to make a pdf document with
 multiple pages: each one a different plot, for example. Or perhaps
 you're looping through multiple subsets of a file, plotting data from
-each subset, and you want to save each plot, but obviously can't stop
-the loop to click 'Export' for each one.
-
-In this case you can use a more flexible approach. The function
-`pdf` creates a new pdf device. You can control the size and resolution
+each subset, and you want to save each plot. 
+In this case you can use a more flexible approach. The
+`pdf()` function creates a new pdf device. You can control the size and resolution
 using the arguments to this function.
 
 ```{r, eval=FALSE}
-pdf("Life_Exp_vs_time.pdf", width=12, height=4)
-ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=country)) +
-  geom_line() +
-  theme(legend.position = "none")
+pdf("Distribution-of-gdpPercap.pdf", width=12, height=4)
+ggplot(data = gapminder, aes(x = gdpPercap)) +   
+  geom_histogram()
 
 # You then have to make sure to turn off the pdf device!
 
@@ -64,19 +59,20 @@ Open up this document and have a look.
 > ## Challenge 1
 >
 > Rewrite your 'pdf' command to print a second
-> page in the pdf, showing a line plot of year versus
-> gdp per capita, coloured by country.
+> page in the pdf, showing the side-by-side bar
+> plot of gdp per capita in countries in the Americas > in the years 1952 and 2007 that you created in the 
+> previous episode. 
+> 
 > > ## Solution to challenge 1
 > >
 > > ```{r, eval = FALSE}
-> > pdf("Life_Exp_vs_time.pdf", width = 12, height = 4)
-> > ggplot(data = gapminder, aes(x = year, y = lifeExp, colour = country)) +
-> >   geom_line() +
-> >   theme(legend.position = "none")
+> > pdf("Distribution-of-gdpPercap.pdf", width = 12, height = 4)
+> > ggplot(data = gapminder, aes(x = gdpPercap)) + 
+> > geom_histogram()
 > > 
-> > ggplot(data = gapminder, aes(x = year, y = gdpPercap, color = country)) +
-> >   geom_line() +
-> >   theme(legend.position = "none")
+> > ggplot(data = gapminder_small_2, aes(x = country, y = gdpPercap, fill = as.factor(year))) +
+> > geom_col(position = "dodge") + coord_flip()
+> > 
 > > dev.off()
 > > ```
 > {: .solution}
@@ -97,7 +93,7 @@ Let's create a data-cleaning script, for this analysis, we
 only want to focus on the gapminder data for Australia:
 
 ```{r}
-aust_subset <- gapminder[gapminder$country == "Australia",]
+aust_subset <- filter(gapminder, country == "Australia")
 
 write.csv(aust_subset,
   file="cleaned-data/gapminder-aus.csv"
@@ -134,19 +130,19 @@ write.csv(
 
 > ## Challenge 2
 >
-> Write a data-cleaning script file that subsets the gapminder
-> data to include only data points collected since 1990.
->
-> Use this script to write out the new subset to a file
+> Subset the gapminder
+> data to include only data points collected since 1990. Write out the new subset to a file
 > in the `cleaned-data/` directory.
+> 
 > > ## Solution to challenge 2
 > >
 > > ```{r, eval = FALSE}
-> > write.csv(
-> >   gapminder[gapminder$year > 1990, ],
-> >   file = "cleaned-data/gapminder-after1990.csv",
-> >   row.names = FALSE
-> > )
+> > 
+> > gapminder_after_1990 <- filter(gapminder, year > 1990)
+> > 
+> > write.csv(gapminder_after_1990,
+> >   file = "cleaned-data/gapminder-after-1990.csv",
+> >   row.names = FALSE)
 > > ```
 > {: .solution}
 {: .challenge}

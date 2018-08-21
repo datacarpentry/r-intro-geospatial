@@ -19,7 +19,7 @@ source: Rmd
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("04-")
+knitr_fig_path("03-")
 ```
 
 One of R's most powerful features is its ability to deal with tabular data -
