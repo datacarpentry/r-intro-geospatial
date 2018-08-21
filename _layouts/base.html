@@ -37,9 +37,15 @@ To work around this, we use the `jekyll.environment` variable which is set to `d
     <title>{{ site.title }}{% if page.title %}: {{ page.title }}{% endif %}</title>
   </head>
   <body>
+
+    {% include life_cycle.html %}
+
     <div class="container">
+
       {% include navbar.html %}
-{{ content }}
+
+      {{ content }}
+
       {% if site.kind == "workshop" %}
       {% include workshop_footer.html %}
       {% else %}

@@ -3,32 +3,30 @@ layout: lesson
 root: .
 ---
 
-<!-- TODO: update data if lesson uses data from existing geospatial lessons -->
+The goal of this lesson is to provide an introduction to R for learners
+working with geospatial data. It is intended as a pre-requisite for 
+the [R for Raster and Vector Data](https://datacarpentry.org/r-raster-vector-geospatial/) lesson
+for learners who have no prior experience using R. This lesson can
+be taught in approximately 4 hours and covers the following topics:
 
-Introduction to R for non-programmers using gapminder data.
+- Working with R in the RStudio GUI
+- Project management and file organization
+- Importing data into R
+- Introduction to R's core data types and data structures
+- Manipulation of data frames (tabular data) in R
+- Introduction to visualization
+- Writing data to a file
 
-The goal of this lesson is to revise best practices for using R in data
- analysis.
-R is commonly used in many scientific disciplines for statistical analysis and
- its array of third-party packages.
-These materials are designed to provide attendees with a concise introduction
- in the fundamentals of R, and to introdue best practices for scientific
- computing: breaking down analyses into modular units, task automation,
- and encapsulation, before getting started with working with geospatial data.
+The the [R for Raster and Vector Data](https://datacarpentry.org/r-raster-vector-geospatial/) lesson
+provides a more in-depth introduction to visualization (focusing on geospatial data),
+and working with data structures unique to geospatial data.
 
-Note that this workshop focuses on the fundamentals of the programming
-language R, and not on statistical analysis.
-
-The lesson contains more material than can be taught in a day.  The [instructor notes page]({{ page.root }}/guide) has some suggested lesson plans suitable for a one or half day workshop.
-
-A variety of third party packages are used throughout this workshop. These
-are not necessarily the best, nor are they comprehensive, but they are
-packages we find useful, and have been chosen primarily for their
-usability.
-
-> ## Prerequisites
+> ## Getting Started
 >
-> Understand that computers store data and instructions (programs, scripts etc.) in files.
-> Files are organised in directories (folders).
-> Know how to access files not in the working directory by specifying the path.
+> Data Carpentry's teaching is hands-on, so participants are encouraged to use
+> their own computers to insure the proper setup of tools for an efficient 
+> workflow. <br>**This lesson assume no prior knowledge of R.**
+>
+> To get started, follow the directions in the "[Setup](/setup.html)" tab to 
+> download data to your computer and follow any installation instructions.
 {: .prereq}
