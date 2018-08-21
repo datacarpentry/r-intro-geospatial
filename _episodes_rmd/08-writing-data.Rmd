@@ -60,7 +60,8 @@ Open up this document and have a look.
 >
 > Rewrite your 'pdf' command to print a second
 > page in the pdf, showing the side-by-side bar
-> plot of gdp per capita in countries in the Americas > in the years 1952 and 2007 that you created in the 
+> plot of gdp per capita in countries in the Americas
+> in the years 1952 and 2007 that you created in the 
 > previous episode. 
 > 
 > > ## Solution to challenge 1
