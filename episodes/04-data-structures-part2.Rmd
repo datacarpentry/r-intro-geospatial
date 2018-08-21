@@ -5,7 +5,6 @@ exercises: 10
 questions:
 - "How can I manipulate a data frame?"
 objectives:
-- "Add and remove rows or columns."
 - "Remove rows with `NA` values."
 - "Append two data frames."
 - "Understand what a `factor` is."
@@ -263,56 +262,6 @@ column without babysitting the factor levels:
 str(gapminder)
 gapminder$continent <- as.character(gapminder$continent)
 str(gapminder)
-```
-
-## Removing rows
-
-We now know how to add rows and columns to our data frame in R—but in our
-first attempt to add a "Nordic" continent to the data frame gapminder we have accidentally
-added a garbage row:
-
-```{r}
-tail(gapminder, n=3)
-```
-
-We can ask for a data frame minus this offending row:
-
-```{r}
-tail(gapminder[-1706, ])
-```
-
-Notice the comma with nothing after it to indicate that we want to drop the entire row (rwo with number 1706).
-
-Note: we could also remove both new rows at once by putting the row numbers
-inside of a vector: `cats[c(-1706,-1707), ]`
-
-Alternatively, we can drop all rows with `NA` values:
-
-```{r}
-head(na.omit(gapminder))
-```
-
-Let's reassign the output to `gapminder`, so that our changes will be permanent:
-
-```{r}
-gapminder <- na.omit(gapminder)
-```
-
-## Removing columns  
-
-We can also remove columns in our data frame. What if we want to remove the column "continent". We can remove it in two ways, by variable number or by index.  
-
-```{r}
-head(gapminder[,-4])
-```
-
-Notice the comma with nothing before it, indicating we want to keep all of the rows.  
-
-Alternatively, we can drop the column by using the index name.  
-
-```{r}
-drop <- names(gapminder) %in% c("continent")
-head(gapminder[,!drop])
 ```
 
 ## Appending to a data frame
