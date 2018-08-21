@@ -24,7 +24,7 @@ source: Rmd
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("05-")
+knitr_fig_path("04-")
 ```
 
 At this point, you've seen it all: in the last lesson, we toured all the basic
