@@ -27,7 +27,7 @@ function google_search() {
   window.open("https://www.google.com/search?q=" + query + "+site:" + domain);
 }
 
-//
+// function to shrink the life cycle bar when scrolling
 
 $(function(){
     $('#life-cycle').data('size','big');
