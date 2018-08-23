@@ -1,0 +1,10 @@
+Package: rintrogeospatial
+Imports:
+ checkpoint,
+ dplyr,
+ ggplot2,
+ knitr,
+ plyr,
+ sf,
+ stringr,
+ tidyr
