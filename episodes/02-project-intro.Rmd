@@ -118,7 +118,7 @@ It is generally best to avoid renaming downloaded spatial data,
 so that a clear connection is maintained with the point of truth. 
 You may otherwise find yourself wondering whether `file_A` really is just a copy of `Official_file_on_website` or not.
 
-For datasets you generate, its worth taking the time to come up with a naming convention that works for your project, 
+For datasets you generate, it's worth taking the time to come up with a naming convention that works for your project, 
 and sticking to it. File names don't have to be long, they just have to be long enough that you can tell what the file
 is about. Date generated, topic, and whether a product is intermediate or final are good bits of information to keep 
 in a file name. For more tips on naming files, check out [the slides from  
@@ -159,7 +159,3 @@ Now we have a good directory structure we will now place/save our data files in 
 ### Stage your scripts
 Creating separate R scripts or Rmarkdown documents for different stages of a project will maximise efficiency. 
 For instance, separating data download commands into their own file means that you won't re-download data unneccesarily.
-
-### Save workspaces
-It may be helpful to set up a folder specifically for saving R workspaces, 
-especially if you have multiple scripts to run in sequence. 
