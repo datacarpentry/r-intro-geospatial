@@ -15,7 +15,7 @@ In exchange,
 we will address your issues and/or assess your change proposal as promptly as we can,
 and help you become a member of our community.
 Everyone involved in [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
-agrees to abide by our [code of conduct](CONDUCT.md).
+agrees to abide by our [code of conduct](CODE_OF_CONDUCT.md).
 
 ## How to Contribute
 
@@ -46,8 +46,8 @@ and to meet some of our community members.
 ## Where to Contribute
 
 1.  If you wish to change this lesson,
-    please work in <https://github.com/swcarpentry/r-novice-gapminder>,
-    which can be viewed at <https://swcarpentry.github.io/r-novice-gapminder>.
+    please work in <https://github.com/datacarpentry/r-intro-geospatial/>,
+    which can be viewed at <https://datacarpentry.org/r-intro-geospatial/>.
 
 2.  If you wish to change the example lesson,
     please work in <https://github.com/carpentries/lesson-example>,
@@ -123,9 +123,15 @@ In brief:
         make changes on your desktop and push to your branch on GitHub:
         the pull request will update automatically.
 
-Each lesson has two maintainers who review issues and pull requests
+3.  This repository contains two repositories for storing the lesson episodes: 
+`_episodes` and `_episodes_rmd`. To modify episodes, make changes to the
+files in the `_episodes_rmd` directory **NOT** the `_episodes` directory.
+The Markdown files in `_episodes` render automatically from the RMarkdown
+files in the `_episodes_rmd` directory.
+
+Each lesson has at least two Maintainers who review issues and pull requests
 or encourage others to do so.
-The maintainers are community volunteers,
+The Maintainers are community volunteers,
 and have final say over what gets merged into the lesson.
 
 ## Other Resources
