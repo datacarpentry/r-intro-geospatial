@@ -8,7 +8,7 @@ objectives:
 - "To be able to write out plots and data from R."
 keypoints:
 - "Save plots using `ggsave()` or `pdf()` combined with `dev.off()`."
-- "Use `write.table` to save tabular data."
+- "Use `write.csv` to save tabular data."
 source: Rmd
 ---
 
