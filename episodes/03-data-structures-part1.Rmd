@@ -182,14 +182,14 @@ a column to be the same basic data type.
 You can also make vectors with explicit contents with the combine function:
 
 ```{r}
-combine_vector <- c(2,6,3)
+combine_vector <- c(2, 6, 3)
 combine_vector
 ```
 
 Given what we've learned so far, what do you think the following will produce?
 
 ```{r}
-quiz_vector <- c(2,6,'3')
+quiz_vector <- c(2, 6, '3')
 ```
 
 This is something called *type coercion*, and it is the source of many surprises
@@ -210,7 +210,7 @@ The coercion rules go: `logical` -> `integer` -> `numeric` -> `complex` ->
 force coercion against this flow using the `as.` functions:
 
 ```{r}
-character_vector_example <- c('0','2','4')
+character_vector_example <- c('0', '2', '4')
 character_vector_example
 character_coerced_to_numeric <- as.numeric(character_vector_example)
 character_coerced_to_numeric
@@ -247,15 +247,15 @@ The combine function, `c()`, will also append things to an existing vector:
 ```{r}
 ab_vector <- c('a', 'b')
 ab_vector
-combine_example <- c(ab_vector, 'SWC')
+combine_example <- c(ab_vector, 'DC')
 combine_example
 ```
 
 You can also make series of numbers:
 
 ```{r}
-mySeries <- 1:10
-mySeries
+my_series <- 1:10
+my_series
 seq(10)
 seq(1,10, by = 0.1)
 ```
@@ -268,7 +268,6 @@ head(sequence_example,n = 2)
 tail(sequence_example, n = 4)
 length(sequence_example)
 class(sequence_example)
-typeof(sequence_example)
 ```
 
 Finally, you can give names to elements in your vector:
@@ -297,7 +296,7 @@ names(my_example)
 {: .challenge}
 
 
-## Data Frames
+## Factors
 
 We said that columns in data frames were vectors:
 
@@ -312,15 +311,13 @@ These make sense. But what about
 str(nordic$country)
 ```
 
-## Factors
-
-Another important data structure is called a factor. Factors usually look like
-character data, but are typically used to represent categorical information. For
-example, let's make a vector of strings labelling nordic countries for all the
-countries in our study:
+Another important data structure is called a factor. Factors look like character
+data, but are used to represent categorical information. For example, let's make
+a vector of strings labelling nordic countries for all the countries in our
+study:
 
 ```{r}
-nordic_countries <- c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
+nordic_countries <- c('Norway', 'Finland', 'Denmark', 'Iceland', 'Sweden')
 nordic_countries
 str(nordic_countries)
 ```
@@ -333,23 +330,33 @@ class(categories)
 str(categories)
 ```
 
-Now R has noticed that there are three possible categories in our data - but it
+Now R has noticed that there are 5 possible categories in our data - but it
 also did something surprising; instead of printing out the strings we gave it,
 we got a bunch of numbers instead. R has replaced our human-readable categories
 with numbered indices under the hood, this is necessary as many statistical
 calculations utilise such numerical representations for categorical data:
 
 ```{r}
-typeof(nordic_countries)
-typeof(categories)
+class(nordic_countries)
+class(categories)
 ```
+
+> ## Challenge
+>
+> Can you guess why these numbers are used to represent these countries?
+>
+>> ## Solution
+>> 
+>> They are sorted in alphabetical order
+> {: .solution}
+{: .challenge}
 
 > ## Challenge 3
 >
-> Is there a factor in our `nordic` data frame? what is its name?
-> Try using `?read.csv` to figure out how to keep text columns as character
-> vectors instead of factors; then write a command or two to show that the factor
-> in `nordic` is actually a character vector when loaded in this way.
+> Is there a factor in our `nordic` data frame? what is its name? Try using
+> `?read.csv` to figure out how to keep text columns as character vectors
+> instead of factors; then write a command or two to show that the factor in
+> `nordic` is actually a character vector when loaded in this way.
 >
 > > ## Solution to Challenge 3
 > >
@@ -374,9 +381,9 @@ typeof(categories)
 > {: .solution}
 {: .challenge}
 
-In modelling functions, it's important to know what the baseline levels are. This
-is assumed to be the first factor, but by default factors are labelled in
-alphabetical order. You can change this by specifying the levels:
+When doing statistical modelliing, it's important to know what the baseline
+levels are. This is assumed to be the first factor, but by default factors are
+labelled in alphabetical order. You can change this by specifying the levels:
 
 ```{r}
 mydata <- c("case", "control", "control", "case")
@@ -384,8 +391,8 @@ factor_ordering_example <- factor(mydata, levels = c("control", "case"))
 str(factor_ordering_example)
 ```
 
-In this case, we've explicitly told R that "control" should represented by 1, and
-"case" by 2. This designation can be very important for interpreting the
+In this case, we've explicitly told R that "control" should represented by 1,
+and "case" by 2. This designation can be very important for interpreting the
 results of statistical models!
 
 ## Lists
