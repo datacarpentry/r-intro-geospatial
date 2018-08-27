@@ -181,7 +181,7 @@ In [a later lesson](https://datacarpentry.org/r-raster-vector-geospatial/) we wi
 more depth, including: 
 - plotting geospatial specific data types
 - adjusting the color scheme of our plots
-- setting and formating plot titles, subtitles, and axis labels
+- setting and formatting plot titles, subtitles, and axis labels
 - creating multi-panel plots
 - creating point (scatter) and line plots
 - layering datasets to create multi-layered plots

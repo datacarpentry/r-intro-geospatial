@@ -313,7 +313,7 @@ str(nordic$country)
 
 Another important data structure is called a factor. Factors look like character
 data, but are used to represent categorical information. For example, let's make
-a vector of strings labelling nordic countries for all the countries in our
+a vector of strings labeling nordic countries for all the countries in our
 study:
 
 ```{r}
@@ -381,9 +381,9 @@ class(categories)
 > {: .solution}
 {: .challenge}
 
-When doing statistical modelliing, it's important to know what the baseline
+When doing statistical modelling, it's important to know what the baseline
 levels are. This is assumed to be the first factor, but by default factors are
-labelled in alphabetical order. You can change this by specifying the levels:
+labeled in alphabetical order. You can change this by specifying the levels:
 
 ```{r}
 mydata <- c("case", "control", "control", "case")
@@ -491,7 +491,7 @@ str(nordic[1, ])
 > > This example uses a single brace, but this time we provide row and column
 > coordinates. The returned object is the value in row 1, column 1. The object
 > is an _integer_ but because it is part of a _vector_ of type _factor_, R
-> displays the label "calico" associated with the integer value.
+> displays the label "Denmark" associated with the integer value.
 > >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[, 1]
