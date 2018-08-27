@@ -1,10 +1,11 @@
 ---
 layout: reference
 ---
+{% include base_path.html %}
 
 ## Reference
 
-## [Introduction to R and RStudio]({% link _episodes/01-rstudio-intro.md %})
+## [Introduction to R and RStudio]({{ relative_root_path }}/{% link _episodes/01-rstudio-intro.md %})
 
  - Use the escape key to cancel incomplete commands or running code
    (Ctrl+C) if you're using R from the shell.
@@ -20,7 +21,6 @@ layout: reference
  - Functions are denoted by `function_name()`. Expressions inside the
    brackets are evaluated before being passed to the function, and
    functions can be nested.
- - Mathematical functions: `exp`, `sin`, `log`, `log10`, `log2` etc.
  - Comparison operators: `<`, `<=`, `>`, `>=`, `==`, `!=`
  - Use `all.equal` to compare numbers!
  - `<-` is the assignment operator. Anything to the right is evaluate, then
@@ -29,111 +29,57 @@ layout: reference
  - `rm` can be used to remove them
  - When assigning values to function arguments, you _must_ use `=`.
 
-## [Project management with RStudio]({{ page.root }}/02-project-intro/)
+## [Project management with RStudio]({{ relative_root_path }}/{% link _episodes/02-project-intro.md %})
 
  - To create a new project, go to File -> New Project
- - Install the `packrat` package to create self-contained projects
- - `install.packages` to install packages from CRAN
- - `library` to load a package into R
- - `packrat::status` to check whether all packages referenced in your
-   scripts have been installed.
+ - Some best practices:
+   * Treat data as read-only
+   * Keep cleaned data separate from raw dirty data
+   * Treat generated output as disposable
+   * Keep related data together
+   * Use a consistent naming scheme
 
-## [Seeking help]({{ page.root }}/03-seeking-help/)
+## [Data Structures]({{ relative_root_path }}/{% link _episodes/03-data-structures-part1.md %})
 
-- To access help for a function type `?function_name` or `help(function_name)`
-- Use quotes for special operators e.g. `?"+"`
-- Use fuzzy search if you can't remember a name '??search_term'
-- [CRAN task views](http://cran.at.r-project.org/web/views) are a good starting point.
-- [Stack Overflow](http://stackoverflow.com/) is a good place to get help with your code.
-    - `?dput` will dump data you are working from so others can load it easily.
-    - `sessionInfo()` will give details of your setup that others may need for debugging.
+- Use `read.csv()` to import data in memory
+- ` class()` gives you the data class of your object
+- R automatic converts data types
+- The functions: `length()`, `nrow()`, `head()`, `tail()`, and `str()` can be
+  useful to explore data.
+- Factors are a special class to deal with categorical data.
+- Lists provide a flexible data type.
+- Data frames are a special case of lists.
 
-## [Data structures]({{ page.root }}/04-data-structures-part1/)
+## [Exploring Data Frames]({{ relative_root_path }}/{% link _episodes/04-data-structures-part2.md %})
 
-Individual values in R must be one of 5 **data types**, multiple values can be grouped in **data structures**.
-
- **Data types**
-
- - `typeof(object)` gives information about an items data type.
- - There are 5 main data types:
-    - `?numeric` real (decimal) numbers
-    - `?integer` whole numbers only
-    - `?character` text
-    - `?complex` complex numbers
-    - `?logical` TRUE or FALSE values
-
-    **Special types:**
-
-     - `?NA` missing values
-     - `?NaN` "not a number" for undefined values (e.g. `0/0`).
-     - `?Inf`, `-Inf` infinity.
-     - `?NULL` a data structure that doesn't exist
-
-    `NA` can occur in any atomic vector. `NaN`, and `Inf` can only
-    occur in complex, integer or numeric type vectors. Atomic vectors
-    are the building blocks for all other data structures. A `NULL` value
-    will occur in place of an entire data structure (but can occur as list
-    elements).
-
-
- **Basic data structures in R:**
-  - atomic `?vector` (can only contain one type)
-  - `?list` (containers for other objects)
-  - `?data.frame` two dimensional objects whose columns can contain different types of data
-  - `?matrix` two dimensional objects that can contain only one type of data.
-  - `?factor` vectors that contain predefined categorical data.
-  - `?array` multi-dimensional objects that can only contain one type of data
-
- Remember that matrices are really atomic vectors underneath the hood, and that
-data.frames are really lists underneath the hood (this explains some of the weirder
-behaviour of R).
-
- **[Vectors]({{ page.root }}/04-data-structures-part1/)**
- - `?vector()` All items in a vector must be the same type.
- - Items can be converted from one type to another using *coercion*.
- - The concatenate function 'c()' will append items to a vector.
- - `seq(from=0, to=1, by=1)` will create a sequence of numbers.
- - Items in a vector can be named using the `names()` function.
-
- **[Factors]({{ page.root }}/04-data-structures-part1/)**
- - `?factor()` Factors are a data structure designed to store categorical data.
- - `levels()` shows the valid values that can be stored in a vector of type factor.
-
- **[Lists]({{ page.root }}/04-data-structures-part1/)**
- - `?list()` Lists are a data structure designed to store data of different types.
-
- **[Matrices]({{ page.root }}/04-data-structures-part1/)**
- - `?matrix()` Matrices are a data structure designed to store 2-dimensional data.
-
- **[Data Frames]({{ page.root }}/05-data-structures-part2/)**
+* R makes it easy to import datasets storred remotely
+* **[Data Frames]({{ relative_root_path }}/05-data-structures-part2/)**
  - `?data.frame` is a key data structure. It is a `list` of `vectors`.
  - `cbind()` will add a column (vector) to a data.frame.
  - `rbind()` will add a row (list) to a data.frame.
 
  **Useful functions for querying data structures:**
  - `?str` structure, prints out a summary of the whole data structure
- - `?typeof` tells you the type inside an atomic vector
  - `?class` what is the data structure?
  - `?head` print the first `n` elements (rows for two-dimensional objects)
  - `?tail` print the last `n` elements (rows for two-dimensional objects)
  - `?rownames`, `?colnames`, `?dimnames` retrieve or modify the row names
    and column names of an object.
- - `?names` retrieve or modify the names of an atomic vector or list (or
-   columns of a data.frame).
  - `?length` get the number of elements in an atomic vector
  - `?nrow`, `?ncol`, `?dim` get the dimensions of a n-dimensional object
    (Won't work on atomic vectors or lists).
-
-## [Exploring Data Frames]({{ page.root }}/05-data-structures-part2/)
-
- - `read.csv` to read in data in a regular structure
+* If your data frame contains factors, you need to take extra steps to add rows
+  that contain new level values.
+ 
+- `read.csv` to read in data in a regular structure
    - `sep` argument to specify the separator
      - "," for comma separated
      - "\t" for tab separated
    - Other arguments:
      - `header=TRUE` if there is a header row
+ 
 
-## [Subsetting data]({{ page.root }}/06-data-subsetting/)
+## [Subsetting data]({{ relative_root_path }}/{% link _episodes/05-data-subsetting.md %})
 
  - Elements can be accessed by:
    - Index
@@ -156,18 +102,21 @@ behaviour of R).
  - `$` to access columns or list elements by name
  - negative indices skip elements
 
-## [Control flow]({{ page.root }}/07-control-flow/)
 
- - Use `if` condition to start a conditional statement, `else if` condition to provide
-   additional tests, and `else` to provide a default
- - The bodies of the branches of conditional statements must be indented.
- - Use `==` to test for equality.
- - `X && Y` is only true if both X and Y are `TRUE`.
- - `X || Y` is true if either X or Y, or both, are `TRUE`.
- - Zero is considered `FALSE`; all other numbers are considered `TRUE`
- - Nest loops to operate on multi-dimensional data.
+## [Data frame manipulation with dplyr]({{ relative_root_path }}/{% link _episodes/06-dplyr.md %})
 
-## [Creating publication quality graphics]({{ page.root }}/08-plot-ggplot2/)
+
+ - `?select` to extract variables by name.
+ - `?filter` return rows with matching conditions.
+ - `?group_by` group data by one of more variables.
+ - `?summarize` summarize multiple values to a single value.
+ - `?mutate` add new variables to a data.frame.
+ - `?count` and `?n` to tally values in the data frame.
+ - Combine operations using the `?"%>%"` pipe operator.
+
+
+## [Control flow]({{ relative_root_path }}/{% link _episodes/07-plot-ggplot2.md %})
+
 
  - figures can be created with the grammar of graphics:
    - `library(ggplot2)`
@@ -183,71 +132,11 @@ behaviour of R).
    - order of layers matters!
    - `ggsave` to save a figure.
 
-## [Vectorization]({{ page.root }}/09-vectorization/)
 
-- Most functions and operations apply to each element of a vector
-- `*` applies element-wise to matrices
-- `%*%` for true matrix multiplication
-- `any()` will return `TRUE` if any element of a vector is `TRUE`
-- `all()` will return `TRUE` if *all* elements of a vector are `TRUE`
-
-## [Functions explained]({{ page.root }}/10-functions/)
-
-  - `?"function"`
-  - Put code whose parameters change frequently in a function, then call it with
-    different parameter values to customize its behavior.
-  - The last line of a function is returned, or you can use `return` explicitly
-  - Any code written in the body of the function will preferably look for variables defined inside the function.
-  - Document Why, then What, then lastly How (if the code isn't self explanatory)
-
-## [Writing data]({{ page.root }}/11-writing-data/)
+## [Writing data]({{ relative_root_path }}/{% link _episodes/08-writing-data.md %})
 
  - `write.table` to write out objects in regular format
- - set `quote=FALSE` so that text isn't wrapped in `"` marks
 
-## [Split-apply-combine]({{ page.root }}/12-plyr/)
-
- - Use the `xxply` family of functions to apply functions to groups within
-   some data.
- - the first letter, `a`rray , `d`ata.frame or `l`ist corresponds to the input data
- - the second letter denotes the output data structure
- - Anonymous functions (those not assigned a name) are used inside the `plyr` family
-   of functions on groups within data.
-
-## [Dataframe manipulation with dplyr]({{ page.root }}/13-dplyr/)
- - `library(dplyr)`
- - `?select` to extract variables by name.
- - `?filter` return rows with matching conditions.
- - `?group_by` group data by one of more variables.
- - `?summarize` summarize multiple values to a single value.
- - `?mutate` add new variables to a data.frame.
- - Combine operations using the `?"%>%"` pipe operator.
-
-## [Dataframe manipulation with tidyr]({{ page.root }}/14-tidyr/)
-- `library(tidyr)`
-- '?gather' convert data from *wide* to *long* format.
-- '?spread' convert data from *long* to *wide* format.
-- '?separate' split a single value into multiple values.
-- '?unite' merge multiple values into a single value.
-
-## [Producing reports with knitr]({{ page.root }}/15-knitr-markdown/)
-- Value of reproducible reports
-- Basics of Markdown
-- R code chunks
-- Chunk options
-- Inline R code
-- Other output formats
-
-## [Best practices for writing good code]({{ page.root }}/16-wrap-up/)
-
- * Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
- * Write tests before writing code in order to help determine exactly what that code is supposed to do.
- * Know what code is supposed to do before trying to debug it.
- * Make it fail every time.
- * Make it fail fast.
- * Change one thing at a time, and for a reason.
- * Keep track of what you've done.
- * Be humble
 
 ## Glossary
 
