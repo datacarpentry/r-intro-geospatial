@@ -402,42 +402,39 @@ is simpler in some ways than the other types, because you can put anything you
 want in it:
 
 ```{r}
-list_example <- list(1, "a", TRUE, 1+4i)
+list_example <- list(1, "a", TRUE, c(2, 6, 7))
 list_example
 another_list <- list(title = "Numbers", numbers = 1:10, data = TRUE )
 another_list
 ```
 
-We can now understand something a bit surprising in our data frame; what happens if we run:
+We can now understand something a bit surprising in our data frame; what happens if we compare `str(nordic)` and `str(another_list)`:
 
 ```{r}
-typeof(nordic)
+str(nordic)
+str(another_list)
 ```
 
-We see that data frames look like lists 'under the hood' - this is because a
-data frame is really a list of vectors and factors, as they have to be - in
-order to hold those columns that are a mix of vectors and factors, the
-data frame needs something a bit more flexible than a vector to put all the
-columns together into a familiar table.  In other words, a data frame is a
-special list in which all the vectors must have the same length.
+We see that the output for these two objects look very similar. It is because
+data frames are lists 'under the hood'. Data frames are a special case of lists where each element (the columns of the data frame) have the same lengths.
 
 In our `nordic` example, we have an integer, a double and a logical variable. As
 we have seen already, each column of data frame is a vector.
 
 ```{r}
 nordic$country
-nordic[,1]
-typeof(nordic[,1])
-str(nordic[,1])
+nordic[, 1]
+class(nordic[, 1])
+str(nordic[, 1])
 ```
 
 Each row is an *observation* of different variables, itself a data frame, and
 thus can be composed of elements of different types.
 
 ```{r}
-nordic[1,]
-typeof(nordic[1,])
-str(nordic[1,])
+nordic[1, ]
+class(nordic[1, ])
+str(nordic[1, ])
 ```
 
 > ## Challenge 4
@@ -455,48 +452,61 @@ str(nordic[1,])
 >
 > Try out these examples and explain what is returned by each one.
 >
-> *Hint:* Use the function `typeof()` to examine what is returned in each case.
+> *Hint:* Use the function `class()` to examine what is returned in each case.
 >
 > > ## Solution to Challenge 4
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[1]
 > > ```
+> >
 > > We can think of a data frame as a list of vectors. The single brace `[1]`
-> returns the first slice of the list, as another list. In this case it is the
-> first column of the data frame.
+> > returns the first slice of the list, as another list. In this case it is the
+> > first column of the data frame.
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[[1]]
 > > ```
+> >
 > > The double brace `[[1]]` returns the contents of the list item. In this case
-> it is the contents of the first column, a _vector_ of type _factor_.
+> > it is the contents of the first column, a _vector_ of type _factor_.
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic$country
 > > ```
+> >
 > > This example uses the `$` character to address items by name. _coat_ is the
-> first column of the data frame, again a _vector_ of type _factor_.
+> > first column of the data frame, again a _vector_ of type _factor_.
+> X
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic["country"]
 > > ```
-> > Here we are using a single brace `["country"]` replacing the index number with
-> the column name. Like example 1, the returned object is a _list_.
+> > Here we are using a single brace `["country"]` replacing the index number
+> > with the column name. Like example 1, the returned object is a _list_.
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[1, 1]
 > > ```
+> >
 > > This example uses a single brace, but this time we provide row and column
 > coordinates. The returned object is the value in row 1, column 1. The object
 > is an _integer_ but because it is part of a _vector_ of type _factor_, R
 > displays the label "calico" associated with the integer value.
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[, 1]
 > > ```
+> >
 > > Like the previous example we use single braces and provide row and column
-> coordinates. The row coordinate is not specified, R interprets this missing
-> value as all the elements in this _column_ _vector_.
+> > coordinates. The row coordinate is not specified, R interprets this missing
+> > value as all the elements in this _column_ _vector_.
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[1, ]
 > > ```
+> >
 > > Again we use the single brace with row and column coordinates. The column
-> coordinate is not specified. The return value is a _list_ containing all the
-> values in the first row.
+> > coordinate is not specified. The return value is a _list_ containing all the
+> > values in the first row.
 > {: .solution}
 {: .challenge}
