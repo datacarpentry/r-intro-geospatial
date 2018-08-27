@@ -1,6 +1,5 @@
 ---
 layout: lesson
-root: .
 ---
 
 The goal of this lesson is to provide an introduction to R for learners
