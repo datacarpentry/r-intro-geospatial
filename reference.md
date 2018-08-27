@@ -1,11 +1,10 @@
 ---
 layout: reference
-root: .
 ---
 
 ## Reference
 
-## [Introduction to R and RStudio]({{ page.root }}/01-rstudio-intro/)
+## [Introduction to R and RStudio]({% link _episodes/01-rstudio-intro.md %})
 
  - Use the escape key to cancel incomplete commands or running code
    (Ctrl+C) if you're using R from the shell.
