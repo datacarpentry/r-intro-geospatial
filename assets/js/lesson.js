@@ -28,7 +28,6 @@ function google_search() {
 }
 
 // function to shrink the life cycle bar when scrolling
-
 $(function(){
     $('#life-cycle').data('size','big');
 });
