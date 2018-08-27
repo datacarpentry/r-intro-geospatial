@@ -44,11 +44,13 @@ gapminder <- read.csv("data/gapminder_data.csv")
 
 > ## Miscellaneous Tips
 >
-> * Another type of file you might encounter are tab-separated value files (.tsv). To specify a tab as a separator, use `"\\t"` or `read.delim()`.
+> * Another type of file you might encounter are tab-separated value files
+>   (.tsv). To specify a tab as a separator, use `"\\t"` or `read.delim()`.
 >
-> * Files can also be downloaded directly from the Internet into a local
-> folder of your choice onto your computer using the `download.file` function.
-> The `read.csv` function can then be executed to read the downloaded file from the download location, for example,
+> * Files can also be downloaded directly from the Internet into a local folder
+> of your choice onto your computer using the `download.file` function. The
+> `read.csv` function can then be executed to read the downloaded file from the
+> download location, for example,
 >
 > ```{r eval=FALSE, echo=TRUE}
 > download.file("https://raw.githubusercontent.com/datacarpentry/r-intro-geospatial/master/_episodes_rmd/data/gapminder_data.csv",
@@ -56,7 +58,11 @@ gapminder <- read.csv("data/gapminder_data.csv")
 > gapminder <- read.csv("data/gapminder_data.csv")
 > ```
 >
-> * Alternatively, you can also read in files directly into R from the Internet by replacing the file paths with a web address in `read.csv`. One should note that in doing this no local copy of the csv file is first saved onto your computer. For example,
+> * Alternatively, you can also read in files directly into R from the Internet
+>   by replacing the file paths with a web address in `read.csv`. One should
+>   note that in doing this no local copy of the csv file is first saved onto
+>   your computer. For example,
+> 
 > ```{r eval=FALSE, echo=TRUE}
 > gapminder <- read.csv("https://raw.githubusercontent.com/datacarpentry/r-intro-geospatial/master/_episodes_rmd/data/gapminder_data.csv")
 > ```
