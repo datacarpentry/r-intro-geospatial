@@ -2,6 +2,7 @@
 layout: page
 title: "Instructor Notes"
 ---
+{% include base_path.html %}
 
 ## Instructor notes
 
@@ -22,7 +23,7 @@ geospatial data.
 
 ## Lesson design
 
-#### [Introduction to R and RStudio](../01-rstudio-intro/)
+#### [Introduction to R and RStudio]({{ relative_path_root }}/{% link _episodes/01-rstudio-intro.md %})
 
 * If your workshop includes the [Introduction to Geospatial Concepts](https://datacarpentry.org/organization-geospatial/) lesson, learners will have 
 just been introduced to RStudio in the context of the overall Geospatial 
@@ -33,47 +34,47 @@ using the Run button or the keyboard shortcut.
 * Learners will be using several libraries in the next lesson, so be sure to 
 introduce what a library is and how it is installed. 
 
-#### [Project Management With RStudio](../02-project-intro/)
+#### [Project Management With RStudio]({{ relative_path_root }}/{% link _episodes/02-project-intro.md %})
 
 * Make sure learners download the data files in Challenge 1 and move those files
 to their `data/` directory. 
 
-#### [Data Structures](../03-data-structures-part1/)
+#### [Data Structures]({{ relative_path_root }}/{% link _episodes/03-data-structures-part1.md %})
 
 * Learners will work with factors in the following lesson. Be sure to 
 cover this concept.
 * If needed for time reasons, you can skip the section on lists. The learners
 don't use lists in the rest of the workshop.
 
-#### [Exploring Data Frames](../04-data-structures-part2/)
+#### [Exploring Data Frames]({{ relative_path_root }}/{% link _episodes/04-data-structures-part2.md %})
 
 * Pay attention to and explain the errors and warnings generated from the examples in this episode.
 
-#### [Subsetting Data](../05-data-subsetting/)
+#### [Subsetting Data]({{ relative_path_root }}/{% link _episodes/05-data-subsetting.md %})
 
 * The episode after this one covers the `dplyr` package, which has an 
 alternate subsetting mechanism. Learners do still need to learn the 
 base R subsetting covered here, as `dplyr` won't work in all situations. However,
 the examples in the rest of the workshop focus on `dplyr` syntax.
 
-#### [Dataframe Manipulation with dplyr](../06-dplyr/)
+#### [Dataframe Manipulation with dplyr]({{ relative_path_root }}/{% link _episodes/06-dplyr.md %})
 
 * Introduce the `dplyr` package as a simpler, more intuitive way of doing
 subsetting. 
 * Unlike other SWC and DC R lessons, this lesson does **not** include data 
 reshaping with `tidyr` as it isn't used in the rest of the workshop.
 
-#### [Introduction to Visualization](../07-plot-ggplot2/)
+#### [Introduction to Visualization]({{ relative_path_root }}/{% link _episodes/07-plot-ggplot2.md %})
 
 * This episode introduces `geom_col` and `geom_histogram`. These geoms are used
 in the rest of the workshop, along with geoms specificly for geospatial data.
 * Emphasize that we will go much deeper into visualization and creating
 publication-quality graphics later in the workshop.
 
-#### [Writing Data](../08-writing-data/)
+#### [Writing Data]({{ relative_path_root }}/{% link _episodes/08-writing-data.md %})
 
 * Learners will need to have created the directory structure described in 
-[Project Management With RStudio](../02-project-intro/) in order for the code
+[Project Management With RStudio]({{ relative_path_root }}{% link _episodes/02-project-intro.md %}) in order for the code
 in this episode to work. 
 
 #### Concluding remarks
