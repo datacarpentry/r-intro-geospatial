@@ -2,6 +2,8 @@
 layout: lesson
 ---
 
+{% include base_path.html %}
+
 The goal of this lesson is to provide an introduction to R for learners
 working with geospatial data. It is intended as a pre-requisite for 
 the [R for Raster and Vector Data](https://datacarpentry.org/r-raster-vector-geospatial/) lesson
@@ -26,6 +28,6 @@ and working with data structures unique to geospatial data.
 > their own computers to insure the proper setup of tools for an efficient 
 > workflow. <br>**This lesson assume no prior knowledge of R.**
 >
-> To get started, follow the directions in the "[Setup](/setup.html)" tab to 
+> To get started, follow the directions in the "[Setup]({{ relative_root_path }}/{% link setup.md %})" tab to 
 > download data to your computer and follow any installation instructions.
 {: .prereq}
