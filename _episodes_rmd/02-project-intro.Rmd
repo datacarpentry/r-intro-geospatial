@@ -69,13 +69,20 @@ project.
 > 1. Click the "File" menu button, then "New Project".
 > 2. Click "New Directory".
 > 3. Click "Empty Project".
-> 4. Type in the name of the directory to store your project, e.g. "my_project".
-> 5. If available, select the checkbox for "Create a git repository."
-> 6. Click the "Create Project" button.
+> 4. Type in "r-geospatial" as the name of the directory.
+> 5. Click the "Create Project" button.
 {: .challenge}
 
-Now when we start R in this project directory, or open this project with RStudio,
-all of our work on this project will be entirely self-contained in this directory.
+A key advantage of an RStudio Project is that whenever we open this project in
+  subsequent RStudio sessions our working directory will *always* be set to the
+  folder `r-geospatial`.
+Let's check our working directory by entering the following into the R console:
+
+```r
+getwd()
+```
+
+R should return `your/path/r-geospatial` as the working directory.
 
 ## Best practices for project organization
 
@@ -157,6 +164,33 @@ Now we have a good directory structure we will now place/save our data files in 
 >
 > We will load and inspect these data later.
 {: .challenge}
+
+> ## Challenge 2
+> We also want to move the data that we downloaded from the [data page](http://datacarpentry.org/geospatial-workshop/data/) into a subdirectory
+> inside `r-geospatial`. If you haven't already downloaded the data, you can do so by clicking 
+> [this download link](https://ndownloader.figshare.com/articles/2009586/versions/10). 
+> 1. Move the downloaded zip file to the `data` directory.
+> 2. Once the data have been moved, unzip all files.
+{: .challenge}
+
+Once you have completed moving the data across to the new folder,
+ your data directory should look as follows:
+
+ ```
+ data/
+    gapminder_data.csv
+    NEON-DS-Airborne-Remote-Sensing/
+    NEON-DS-Landsat-NDVI/
+    NEON-DS-Met-Time-Series/
+    NEON-DS-Site-Layout-Files/
+    NEON-DS-Airborne-Remote-Sensing.zip
+    NEON-DS-Landsat-NDVI.zip
+    NEON-DS-Met-Time-Series.zip
+    NEON-DS-Site-Layout-Files.zip
+    nordic-data.csv
+    nordic-data-2.csv
+ ```
+
 
 ### Stage your scripts
 Creating separate R scripts or Rmarkdown documents for different stages of a project will maximise efficiency. 
