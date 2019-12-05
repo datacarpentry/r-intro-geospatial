@@ -69,7 +69,7 @@ reshaping with `tidyr` as it isn't used in the rest of the workshop.
 #### [Introduction to Visualization]({{ relative_root_path }}/{% link _episodes/07-plot-ggplot2.md %})
 
 * This episode introduces `geom_col` and `geom_histogram`. These geoms are used
-in the rest of the workshop, along with geoms specificly for geospatial data.
+in the rest of the workshop, along with geoms specifically for geospatial data.
 * Emphasize that we will go much deeper into visualization and creating
 publication-quality graphics later in the workshop.
 
