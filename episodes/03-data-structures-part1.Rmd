@@ -90,7 +90,7 @@ complicated our analyses become, all data in R is interpreted a specific
 data class. This strictness has some really important consequences.
 
 A user has added new details of age expectancy. This information is in the file
-`data/nordic-monarchy-data-2.csv`.
+`data/nordic-data-2.csv`.
 
 Load the new nordic data as `nordic_2`, and check what class of data we find in the
 `lifeExp` column:
