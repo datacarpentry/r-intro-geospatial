@@ -24,8 +24,9 @@ knitr_fig_path("03-")
 
 One of R's most powerful features is its ability to deal with tabular data -
 such as you may already have in a spreadsheet or a CSV file. Let's start by
-downloading and reading in a file `nordic-data.csv`. We will
-save this data as an object named `nordic`:
+reading in a file `data/nordic-data.csv`. Recall that we downloaded this file
+in the Project Management episode, [follow the download instructions there](https://datacarpentry.org/r-intro-geospatial/02-project-intro#challenge-1)
+if you haven't already done do. We'll load the data as an object named `nordic`:
 
 ```{r}
 nordic <- read.csv("data/nordic-data.csv")
