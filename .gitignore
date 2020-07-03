@@ -3,6 +3,7 @@
 .DS_Store
 .ipynb_checkpoints
 .sass-cache
+.jekyll-cache/
 __pycache__
 _site
 .Rproj.user
@@ -10,4 +11,8 @@ _site
 .RData
 _episodes/
 fig/rmd-*
-/Gemfile.lock
+.bundle/
+.vendor/
+.docker-vendor/
+Gemfile.lock
+.*history
