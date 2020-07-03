@@ -1,12 +1,51 @@
 library(tic)
 
+install_lesson_dependencies <- function() {
+
+  needed_pkgs <- c("remotes", "renv", "rprojroot", "rmarkdown", "knitr")
+  missing_pkgs <- setdiff(needed_pkgs, rownames(installed.packages()))
+
+  if (length(missing_pkgs)) {
+    message(
+      "Installing missing required core packages: ",
+      paste(missing_pkgs, collpase = ", ")
+    )
+    install.packages(
+      missing_pkgs,
+      repos = c(CRAN = "https://cloud.r-project.org/")
+    )
+  }
+
+  cfg  <- rprojroot::has_file_pattern("^_config.y*ml$")
+  root <- rprojroot::find_root(cfg)
+
+  required_pkgs <- unique(c(
+    ## Packages for episodes
+    renv::dependencies(file.path(root, "_episodes_rmd"), progress = FALSE, error = "ignore")$Package,
+    ## Pacakges for tools
+    renv::dependencies(file.path(root, "bin"), progress = FALSE, error = "ignore")$Package
+  ))
+
+  missing_pkgs <- setdiff(required_pkgs, rownames(installed.packages()))
+
+  if (length(missing_pkgs)) {
+    message("Installing missing required packages: ",
+      paste(missing_pkgs, collapse=", "))
+    install.packages(missing_pkgs)
+  }
+}
+
+
+
 BuildLesson <- R6::R6Class(
   "BuildLesson", inherit = TicStep,
   public = list(
     run = function() {
+      install_lesson_dependencies()
       build_status <- system("make clean-rmd; make lesson-md")
-      if (build_status > 0)
+      if (build_status > 0) {
         stop("Error during building process")
+      }
 
       file.remove(".gitignore")
       system("mkdir  _rendered")
