@@ -8,5 +8,6 @@ _site
 .Rproj.user
 .Rhistory
 .RData
-
+_episodes/
+fig/rmd-*
 /Gemfile.lock
