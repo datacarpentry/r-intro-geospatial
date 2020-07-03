@@ -3,7 +3,7 @@ library("methods")
 
 install_lesson_dependencies <- function() {
 
-  needed_pkgs <- c("remotes", "renv", "rprojroot")
+  needed_pkgs <- c("remotes", "renv", "rprojroot", "rmarkdown", "knitr")
   missing_pkgs <- setdiff(needed_pkgs, rownames(installed.packages()))
 
   if (length(missing_pkgs)) {
