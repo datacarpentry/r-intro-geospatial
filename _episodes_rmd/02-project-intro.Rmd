@@ -141,7 +141,6 @@ in a file name. For more tips on naming files, check out [the slides from Jenny 
 > 3. Put raw data and metadata in the `data` directory, and files generated during cleanup and analysis in a `results` directory.
 > 4. Put source for the project's scripts and programs in the `src` directory, and programs brought in from elsewhere or compiled locally in the `bin` directory.
 > 5. Name all files to reflect their content or function.
->
 {: .callout}
 
 ### Save the data in the data directory

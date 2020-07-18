@@ -166,7 +166,6 @@ command you can simply hit "<kbd>Esc</kbd>" and RStudio will give you back the "
 > you can also use it to tell R to stop running code (for example if it's
 > taking much longer than you expect), or to get rid of the code you're
 > currently writing.
->
 {: .callout}
 
 When using R as a calculator, the order of operations is the same as you
@@ -281,7 +280,6 @@ We can also do comparison in R:
 > Instead you should use the `all.equal` function.
 >
 > Further reading: [http://floating-point-gui.de/](http://floating-point-gui.de/)
->
 {: .callout}
 
 ## Variables and assignment
