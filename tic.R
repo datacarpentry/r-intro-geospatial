@@ -19,12 +19,12 @@ if (ci_on_travis()) {
   # - `Sys.getenv("BUILD_PKGDOWN") != ""`: If the env var "BUILD_PKGDOWN" is set
   # - `Sys.getenv("TRAVIS_EVENT_TYPE") == "cron"`: Only for Travis cron jobs
 
-  get_stage("before_deploy") %>%
-    add_step(step_setup_ssh())
-
   ## if there is a tag associated with the push or we are in master, the
   ## lesson gets deployed on gh-pages, and rendered by GitHub
   if (ci()$get_branch() == "master" || ci()$is_tag()) {
+    get_stage("before_deploy") %>%
+      add_step(step_setup_ssh())
+
     get_stage("deploy") %>%
       add_step(step_push_deploy(path = "_rendered", branch = "gh-pages"))
   }
