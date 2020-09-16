@@ -41,6 +41,27 @@ where the data are separated with tabs. Of these three functions `read.csv` is
 the most commonly used.  If needed it is possible to override the default
 delimiting punctuation marks for both `read.csv` and `read.delim`.
 
+
+We can explore the data in terms of content and structure using various functions.
+
+* Size:
+    * `dim(nordic)` - returns the dimensions of the object
+    * `nrow(nordic)` - returns the number of rows
+    * `ncol(nordic)` - returns the number of columns
+
+* Content:
+    * `head(nordic)` - shows the first 6 rows
+    * `tail(nordic)` - shows the last 6 rows
+
+* Names:
+    * `names(nordic)` - returns the column names 
+    * `rownames(nordic)` - returns the row names
+
+* Summary:
+    * `summary(nordic)` - summary statistics for each column
+    * `str(nordic)` - structure of the object and information about the class, length and content of  each column
+
+
 We can begin exploring our dataset right away, pulling out columns by specifying
 them using the `$` operator:
 
@@ -122,7 +143,37 @@ class(nordic)
 
 In order to successfully use our data in R, we need to understand what the basic
 data structures are, and how they behave. 
+ Data structures in R include vectors, matrices, dataframes and lists. We incude an example below to have a glimpse on various structures.
 
+Vectors are the basic data structure in R. The data type in the vector has to be in the same data types, i.e. numeric, characters, factors or logical.
+
+```{r}
+v <- 1:10
+v
+```
+
+**Matrices** are similar to vectors, but in two-dimensions.
+
+```{r}
+M <- matrix(1:10, nrow = 2)
+M
+```
+
+**Dataframes** are similar to matrices (two-dimensional), but it can contain multiple data types.
+```{r}
+DF = data.frame(
+  country = c('Denmark', 'Sweden', 'Norway'),
+  year = c(2002, 2002, 2002),
+  lifeExp = c(77.2, 80, 79)
+)
+DF
+```
+
+**Lists** are similar to vectors, in which each elements in the lists can contain any data structures
+```{r}
+L=list(v,M,DF)
+L
+```
 ## Vectors and Type Coercion
 
 To better understand this behavior, let's meet another of the data structures:
