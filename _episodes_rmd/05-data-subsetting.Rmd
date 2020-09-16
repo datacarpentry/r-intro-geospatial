@@ -345,7 +345,7 @@ gapminder[3, ]
 ```
 
 But for a single column the result will be a vector (this can be changed with
-the third argument, `drop = F0ALSE`).
+the third argument, `drop = FALSE`).
 
 > ## Challenge 3
 >
@@ -437,7 +437,7 @@ the third argument, `drop = F0ALSE`).
 >
 > > ## Solution to challenge 4
 > >
-> > 1.  `gapminder` is a data.frame so needs to be subsetted on two dimensions. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
+> > 1.  It is trying to subset the first 20 columns in `gapminder`, but there are only 6 columns in `gapminder`. Hence, the code is invalid. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
 > >
 > > 2.
 > >
