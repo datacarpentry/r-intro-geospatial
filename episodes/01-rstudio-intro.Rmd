@@ -443,3 +443,16 @@ symbol used in the community. So the recommendation is to use `<-`.
 > > ```
 > {: .solution}
 {: .challenge}
+
+## Installing Packages
+
+We can use R as a calculator to do addition, subtraction, multiplciation, division, etc. However, we can also use R to carry out more complicated analyses, make visualizations, and much more. In later episodes of this lesson, we will use R to do some data wrangling, plotting, and saving of reformatted data. 
+
+It is important to note is that R coders around the world have developed collections of R scripts to accomplish themed tasks (e.g., data wrangling). [functions] These collections of R scripts/fumctions are known as *R packages*. We will practice using the `dplyr` package to wrangle our datasets in episode 6 and will practice using the `ggplot` package to plot our data in episode 7. 
+
+
+
+
+[in the case that a funciton you need is not built in, you'll have to install an R package]
+
+Rather than coding this all from scratch, we can leverage the work that other members of the R community have done. We can 
