@@ -443,3 +443,69 @@ symbol used in the community. So the recommendation is to use `<-`.
 > > ```
 > {: .solution}
 {: .challenge}
+
+## Installing Packages
+
+We can use R as a calculator to do mathematical operations (e.g., addition, subtraction, multiplication, division), as we did above. However, we can also use R to carry out more complicated analyses, make visualizations, and much more. In later episodes, we'll use R to do some data wrangling, plotting, and saving of reformatted data.
+
+R coders around the world have developed collections of R code to accomplish themed tasks (e.g., data wrangling). These collections of R code are known as *R packages*. It is also important to note that R packages refer to code that is *not* automatically downloaded when we install R on our computer. Therefore, we'll have to install each R package that we want to use (more on this below).
+
+We will practice using the `dplyr` package to wrangle our datasets in episode 6 and will also practice using the `ggplot2` package to plot our data in episode 7. To give an example, the `dplyr` package includes code for a function called `filter()`. A *function* is something that takes input(s) does some internal operations and produces output(s). For the `filter()` function, the inputs are a dataset and a logical statement (i.e., when data value is greater than or equal to 100) and the output is data within the dataset that has a value greater than or equal to 100.
+
+There are two main ways to install packages in R:
+
+1. If you are using RStudio, we can go to `Tools` > `Install Packages...` and then search for the name of the R package we need and click `Install`.
+
+2. We can use the `install.packages( )` function. We can do this to install the `dplyr` R package.
+
+```{r}
+install.packages("dplyr")
+```
+
+It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
+
+> ## Challenge 4
+>
+> What code would we use to install the `ggplot2` package?
+>
+> > ## Solution to challenge 4
+> >
+> > We would use the following R code to install the `ggplot2` package:
+> > ```{r ch1pt1-sol, eval=FALSE}
+> > install.packages("ggplot2)
+> > ```
+> {: .solution}
+{: .challenge}
+
+Now that we've installed the R package, we're ready to use it! To use the R package, we need to "load" it into our R session. We can think of "loading" an R packages as telling R that we're ready to use the package we just installed. It's important to note that while we only have to install the package *once*, we'll have to load the package *each time we open R (or RStudio)*.
+
+To load an R package, we use the `library( )` function. We can load the `dplyr` package like this:
+
+```{r}
+library(dplyr)
+```
+
+> ## Challenge 5
+>
+> Which of the following could we use to load the `ggplot2` package? (Select all that apply.)
+> 
+> a) install.packages("ggplot2")
+> b) library("ggplot2")
+> c) library(ggplot2)
+> d) library(ggplo2)
+>
+> > ## Solution to challenge 5
+> >
+> > The correct answers are b and c.
+> > Answer a will install, not load, the ggplot2 package.
+> > Answer b will correctly load the ggplot2 package. Note there are no quotation marks.
+> > Answer c will correctly load the ggplot2 package. Note there are quotation marks.
+> > Answer d will produce an error because ggplot2 is misspelled.
+> > 
+> > Note: It is more common for coders to *not use quotation* marks when loading an R package (i.e., answer c).
+> > 
+> > ```{r ch1pt1-sol, eval=FALSE}
+> > library(ggplot2)
+> > ```
+> {: .solution}
+{: .challenge}
