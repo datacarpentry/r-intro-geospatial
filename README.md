@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/128225991.svg)](https://zenodo.org/badge/latestdoi/128225991)
-[![Build Status](https://travis-ci.org/datacarpentry/r-intro-geospatial.svg?branch=gh-pages)](https://travis-ci.org/datacarpentry/r-intro-geospatial)
+![Build and Deploy Website](https://github.com/datacarpentry/r-intro-geospatial/workflows/Build%20and%20Deploy%20Website/badge.svg)
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
  [![Slack Status](https://img.shields.io/badge/Slack_Channel-dc--geospatial-E01563.svg)](https://swcarpentry.slack.com/messages/C9ME7G5RD)
 
@@ -16,7 +16,7 @@ or run `make` in this directory for a list of helpful commands.
 
 The goal of this lesson is to revise best practices for using R in data
  analysis. This lesson is a modification of the [Software Carpentry: Programming with R](https://swcarpentry.github.io/r-novice-gapminder), and is part of the [Data Carpentry Geospatial Curriculum](https://datacarpentry.org/geospatial-workshop/). It introduces the R skills needed in the [Introduction to Raster and Vector Geospatial Data lesson](https://datacarpentry.org/r-raster-vector-geospatial).
- 
+
 R is commonly used in many scientific disciplines for statistical analysis and
  its array of third-party packages. These materials are designed to provide
  attendees with a concise introduction in the fundamentals of R, and to introdue
