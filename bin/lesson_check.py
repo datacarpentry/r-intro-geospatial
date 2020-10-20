@@ -67,7 +67,8 @@ KNOWN_BLOCKQUOTES = {
     'prereq',
     'quotation',
     'solution',
-    'testimonial'
+    'testimonial',
+    'warning'
 }
 
 # What kinds of code fragments are allowed?
@@ -77,6 +78,9 @@ KNOWN_CODEBLOCKS = {
     'source',
     'language-bash',
     'html',
+    'language-c',
+    'language-cmake',
+    'language-cpp',
     'language-make',
     'language-matlab',
     'language-python',
