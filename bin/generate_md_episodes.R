@@ -1,11 +1,4 @@
-## if run with RScript
-library("methods")
-
 generate_md_episodes <- function() {
-
-  if (packageVersion("knitr") < '1.9.19') {
-    stop("knitr must be version 1.9.20 or higher")
-  }
 
   ## get the Rmd file to process from the command line, and generate the path
   ## for their respective outputs
