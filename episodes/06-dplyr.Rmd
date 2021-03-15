@@ -153,7 +153,7 @@ You will notice that the structure of the dataframe where we used `group_by()`
 `data.frame` which contains only the rows that correspond to the a particular
 value `continent` (at least in the example above).
 
-![](../fig/13-dplyr-fig2.png)
+![Illustration of multiple dataframes created by piping a dataframe to group_by](../fig/13-dplyr-fig2.png)
 
 ## Using `summarize()`
 
