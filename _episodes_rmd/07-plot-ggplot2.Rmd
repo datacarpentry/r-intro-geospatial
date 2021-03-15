@@ -78,7 +78,7 @@ do by adding a geom layer. In our example, we used `geom_histogram()`, which
 tells `ggplot` we want to visually represent the
 distribution of one variable (in our case "lifeExp"):
 
-```{r lifeExp-vs-gdpPercap-scatter2}
+```{r lifeExp-vs-gdpPercap-scatter2 fig.cap ="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75"}
 ggplot(data = gapminder, aes(x = lifeExp)) +   
   geom_histogram()
 ```
