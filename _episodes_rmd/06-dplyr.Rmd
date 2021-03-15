@@ -172,7 +172,7 @@ gdp_bycontinents <- gapminder %>%
 gdp_bycontinents
 ```
 
-![](../fig/13-dplyr-fig3.png)
+![illustration of creating a summary dataframe from grouped data](../fig/13-dplyr-fig3.png)
 
 That allowed us to calculate the mean gdpPercap for each continent, but it gets
 even better.
