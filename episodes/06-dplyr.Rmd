@@ -78,7 +78,7 @@ variables you select.
 year_country_gdp <- select(gapminder, year, country, gdpPercap)
 ```
 
-![](../fig/13-dplyr-fig1.png)
+![Illustration of selecting two columns from a dataframe](../fig/13-dplyr-fig1.png)
 
 If we open up `year_country_gdp` we'll see that it only contains the year,
 country and gdpPercap. Above we used 'normal' grammar, but the strengths of
