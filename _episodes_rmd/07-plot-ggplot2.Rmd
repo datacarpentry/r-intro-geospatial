@@ -123,7 +123,7 @@ With this many bars plotted, it's impossible to read all of the
 x-axis labels. A quick fix to this is the add the `coord_flip()` 
 function to the end of our plot code.
 
-```{r hist-subset-gapminder-flipped}
+```{r hist-subset-gapminder-flipped fig.cap = "Barplot of GDP per capita. Country names on x-axis overlap and are not readable."}
 ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) + 
   geom_col() +
   coord_flip()
