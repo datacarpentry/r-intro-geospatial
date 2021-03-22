@@ -214,7 +214,7 @@ gapminder %>% group_by(continent) %>% str()
 
 
 ~~~
-tibble [1,704 × 6] (S3: grouped_df/tbl_df/tbl/data.frame)
+grouped_df [1,704 × 6] (S3: grouped_df/tbl_df/tbl/data.frame)
  $ country  : chr [1:1704] "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
  $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
  $ pop      : num [1:1704] 8425333 9240934 10267083 11537966 13079460 ...
@@ -256,19 +256,7 @@ original dataframe into multiple pieces, then we can run functions
 gdp_bycontinents <- gapminder %>%
   group_by(continent) %>%
   summarize(mean_gdpPercap = mean(gdpPercap))
-~~~
-{: .language-r}
 
-
-
-~~~
-`summarise()` ungrouping output (override with `.groups` argument)
-~~~
-{: .output}
-
-
-
-~~~
 gdp_bycontinents
 ~~~
 {: .language-r}
@@ -305,19 +293,7 @@ even better.
 > > lifeExp_bycountry <- gapminder %>%
 > >    group_by(country) %>%
 > >    summarize(mean_lifeExp=mean(lifeExp))
-> >~~~
-> >{: .language-r}
 > >
-> >
-> >
-> >~~~
-> >`summarise()` ungrouping output (override with `.groups` argument)
-> >~~~
-> >{: .output}
-> >
-> >
-> >
-> >~~~
 > > lifeExp_bycountry %>%
 > >    filter(mean_lifeExp == min(mean_lifeExp) | mean_lifeExp == max(mean_lifeExp))
 > >~~~
@@ -393,7 +369,7 @@ gdp_bycontinents_byyear <- gapminder %>%
 
 
 ~~~
-`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+`summarise()` has grouped output by 'continent'. You can override using the `.groups` argument.
 ~~~
 {: .output}
 
@@ -413,7 +389,7 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
 
 
 ~~~
-`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+`summarise()` has grouped output by 'continent'. You can override using the `.groups` argument.
 ~~~
 {: .output}
 
@@ -462,13 +438,6 @@ gapminder %>%
 
 
 ~~~
-`summarise()` ungrouping output (override with `.groups` argument)
-~~~
-{: .output}
-
-
-
-~~~
 # A tibble: 5 x 2
   continent se_le
   <chr>     <dbl>
@@ -493,13 +462,6 @@ gapminder %>%
       se_le = sd(lifeExp)/sqrt(n()))
 ~~~
 {: .language-r}
-
-
-
-~~~
-`summarise()` ungrouping output (override with `.groups` argument)
-~~~
-{: .output}
 
 
 
@@ -536,7 +498,7 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
 
 
 ~~~
-`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+`summarise()` has grouped output by 'continent'. You can override using the `.groups` argument.
 ~~~
 {: .output}
 
