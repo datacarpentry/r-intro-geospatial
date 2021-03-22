@@ -148,7 +148,7 @@ in a file name. For more tips on naming files, check out [the slides from Jenny 
 Now we have a good directory structure we will now place/save our data files in the `data/` directory.
 
 > ## Challenge 1
-> 1\. Download each of the data files listed below (CTRL + S, right mouse click -> "Save as", or File -> "Save page as")
+> 1\. Download each of the data files listed below (<kbd>Ctrl</kbd>+<kbd>S</kbd>, right mouse click -> "Save as", or File -> "Save page as")
 > 
 > - [nordic country data](https://raw.githubusercontent.com/datacarpentry/r-intro-geospatial/master/_episodes_rmd/data/nordic-data.csv)
 > - [nordic country data (version 2)](https://raw.githubusercontent.com/datacarpentry/r-intro-geospatial/master/_episodes_rmd/data/nordic-data-2.csv)
