@@ -78,7 +78,7 @@ do by adding a geom layer. In our example, we used `geom_histogram()`, which
 tells `ggplot` we want to visually represent the
 distribution of one variable (in our case "lifeExp"):
 
-```{r lifeExp-vs-gdpPercap-scatter2 fig.cap ="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75"}
+```{r lifeExp-vs-gdpPercap-scatter2, fig.cap ="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75"}
 ggplot(data = gapminder, aes(x = lifeExp)) +   
   geom_histogram()
 ```
@@ -114,7 +114,7 @@ This time, we will use the `geom_col()` function as our geometry.
 We will plot countries on the x-axis (listed in alphabetic order
 by default) and gdp per capita on the y-axis.
 
-```{r hist-subset-gapminder fig.cap = "Barplot of GDP per capita. Country names on x-axis overlap and are not readable"}
+```{r hist-subset-gapminder, fig.cap = "Barplot of GDP per capita. Country names on x-axis overlap and are not readable"}
 ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) + 
   geom_col()
 ```
@@ -123,7 +123,7 @@ With this many bars plotted, it's impossible to read all of the
 x-axis labels. A quick fix to this is the add the `coord_flip()` 
 function to the end of our plot code.
 
-```{r hist-subset-gapminder-flipped fig.cap = "Barplot showing GDP per capita. Country names on the y-axis are readable"}
+```{r hist-subset-gapminder-flipped, fig.cap = "Barplot showing GDP per capita. Country names on the y-axis are readable"}
 ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) + 
   geom_col() +
   coord_flip()
