@@ -48,6 +48,12 @@ them using the `$` operator:
 nordic$country
 nordic$lifeExp
 ```
+Note that when you type '$' after the data frame variable name, the column names will pop up as suggestions. You can also explore the data frame using 'r head' and 'r names' functions:
+
+'''{r}
+head(nordisc)
+names(nordisc)
+'''
 
 We can do other operations on the columns. For example, if we discovered that the life expectancy is two years higher: 
 
