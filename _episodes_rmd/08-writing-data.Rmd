@@ -80,7 +80,7 @@ Open up this document and have a look.
 {: .challenge}
 
 
-The commands `jpeg`, `png` etc. are used similarly to produce
+The commands `jpeg`, `png`, etc. are used similarly to produce
 documents in different formats.
 
 ## Writing data
