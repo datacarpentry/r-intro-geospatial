@@ -33,7 +33,7 @@ usual.
 
 Most people tend to organize their projects like this:
 
-![](../fig/bad_layout.png)
+![A screenshot of a project folder containing multiple versions of data, analysis scripts, figures, and results files](../fig/bad_layout.png)
 
 There are many reasons why we should *ALWAYS* avoid this:
 
