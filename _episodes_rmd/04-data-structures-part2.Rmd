@@ -190,7 +190,6 @@ head(gapminder)
 > > - `country` and `continent` are factors.
 > > - `year` is an integer vector.
 > > - `pop`, `lifeExp`, and `gdpPercap` are numeric vectors.
-> >
 > {: .solution}
 {: .challenge}
 

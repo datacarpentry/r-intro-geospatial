@@ -191,7 +191,6 @@ x
 > > ```{r}
 > > x[c(2,3,4)]
 > > ```
-> >
 > {: .solution}
 {: .challenge}
 
@@ -289,7 +288,6 @@ x[names(x) == "a"]
 >
 > Remember you can search for help on operators by wrapping them in quotes:
 > `help("%in%")` or `?"%in%"`.
->
 {: .callout}
 
 

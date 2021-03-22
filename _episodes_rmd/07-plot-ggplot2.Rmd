@@ -171,7 +171,6 @@ later in this workshop.
 > >    geom_col(position = "dodge") + 
 > >    coord_flip()
 > > ```
-> >
 > {: .solution}
 {: .challenge}
 
