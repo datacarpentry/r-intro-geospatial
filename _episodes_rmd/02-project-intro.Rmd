@@ -33,7 +33,7 @@ usual.
 
 Most people tend to organize their projects like this:
 
-![](../fig/bad_layout.png)
+![]({{ site.baseurl }}/fig/bad_layout.png)
 
 There are many reasons why we should *ALWAYS* avoid this:
 
