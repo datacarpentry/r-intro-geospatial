@@ -116,7 +116,7 @@ year_country_gdp <- select(gapminder, year, country, gdpPercap)
 ~~~
 {: .language-r}
 
-![](../fig/13-dplyr-fig1.png)
+![Illustration of selecting two columns from a dataframe](../fig/13-dplyr-fig1.png)
 
 If we open up `year_country_gdp` we'll see that it only contains the year,
 country and gdpPercap. Above we used 'normal' grammar, but the strengths of
@@ -240,7 +240,7 @@ You will notice that the structure of the dataframe where we used `group_by()`
 `data.frame` which contains only the rows that correspond to the a particular
 value `continent` (at least in the example above).
 
-![](../fig/13-dplyr-fig2.png)
+![Illustration of multiple dataframes created by piping a dataframe to group_by](../fig/13-dplyr-fig2.png)
 
 ## Using `summarize()`
 
@@ -275,7 +275,7 @@ gdp_bycontinents
 ~~~
 {: .output}
 
-![](../fig/13-dplyr-fig3.png)
+![illustration of creating a summary dataframe from grouped data](../fig/13-dplyr-fig3.png)
 
 That allowed us to calculate the mean gdpPercap for each continent, but it gets
 even better.
