@@ -61,7 +61,7 @@ the figure. Here we will tell `ggplot` we
 want to plot the "lifeExp" column of the gapminder data frame on the x-axis. We don't need to specify a y-axis
 for histograms.
 
-```{r lifeExp-vs-gdpPercap-scatter, fig.cap ="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75" message=FALSE}
+```{r lifeExp-vs-gdpPercap-scatter, fig.cap ="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75", message=FALSE}
 library("ggplot2")
 ggplot(data = gapminder, aes(x = lifeExp)) +   
   geom_histogram()
