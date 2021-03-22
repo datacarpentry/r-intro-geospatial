@@ -636,7 +636,7 @@ It's important to note that we only need to install the R package on our compute
 > > We would use the following R code to install the `ggplot2` package:
 > > 
 > > ~~~
-> > install.packages("ggplot2)
+> > install.packages("ggplot2")
 > > ~~~
 > > {: .language-r}
 > {: .solution}
