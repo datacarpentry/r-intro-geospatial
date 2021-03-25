@@ -498,8 +498,8 @@ library(dplyr)
 > >
 > > The correct answers are b and c.
 > > Answer a will install, not load, the ggplot2 package.
-> > Answer b will correctly load the ggplot2 package. Note there are no quotation marks.
-> > Answer c will correctly load the ggplot2 package. Note there are quotation marks.
+> > Answer b will correctly load the ggplot2 package. Note there are quotation marks.
+> > Answer c will correctly load the ggplot2 package. Note there are no quotation marks.
 > > Answer d will produce an error because ggplot2 is misspelled.
 > >
 > > Note: It is more common for coders to *not use quotation* marks when loading an R package (i.e., answer c).
