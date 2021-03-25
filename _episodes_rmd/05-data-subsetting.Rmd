@@ -316,7 +316,7 @@ apply. However they are also two dimensional objects:
 element corresponds to a column. The resulting object will be a data frame:
 
 ```{r}
-head(gapminder[3])
+head(gapminder[,3])
 ```
 
 Similarly, `[[` will act to extract *a single column*:
