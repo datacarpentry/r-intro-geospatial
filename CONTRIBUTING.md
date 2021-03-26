@@ -109,7 +109,7 @@ In brief:
 1.  The published copy of the lesson is in the `gh-pages` branch of the repository
     (so that GitHub will regenerate it automatically).
     Please create all branches from that,
-    and merge the [master repository][repo]'s `gh-pages` branch into your `gh-pages` branch
+    and merge the [main repository][repo]'s `gh-pages` branch into your `gh-pages` branch
     before starting work.
     Please do *not* work directly in your `gh-pages` branch,
     since that will make it difficult for you to work on other contributions.
@@ -118,7 +118,7 @@ In brief:
     1.  Create a new branch in your desktop copy of this repository for each significant change.
     2.  Commit the change in that branch.
     3.  Push that branch to your fork of this repository on GitHub.
-    4.  Submit a pull request from that branch to the [master repository][repo].
+    4.  Submit a pull request from that branch to the [main repository][repo].
     5.  If you receive feedback,
         make changes on your desktop and push to your branch on GitHub:
         the pull request will update automatically.
@@ -150,8 +150,8 @@ You can also [reach us by email][contact].
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
 [how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
-[issues]: https://github.com/swcarpentry/r-novice-gapminder/issues
-[repo]: https://github.com/swcarpentry/r-novice-gapminder
+[issues]: https://github.com/datacarpentry/r-intro-geospatial/issues
+[repo]: https://github.com/datacarpentry/r-intro-geospatial
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 [swc-lessons]: http://software-carpentry.org/lessons/
 [swc-site]: http://software-carpentry.org/
