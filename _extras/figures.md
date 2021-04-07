@@ -2,8 +2,6 @@
 title: Figures
 ---
 
-{% include base_path.html %}
-
 <script>
   window.onload = function() {
     var lesson_episodes = [
@@ -52,7 +50,7 @@ title: Figures
           }
         }
       }
-      episode_url = "{{ relative_root_path }}" + lesson_episodes[i];
+      episode_url = "{{ site.baseurl }}" + lesson_episodes[i];
       xmlHttp[i].open("GET", episode_url);
       xmlHttp[i].send(null);
     }

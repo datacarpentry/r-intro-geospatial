@@ -1,11 +1,10 @@
 ---
 layout: reference
 ---
-{% include base_path.html %}
 
 ## Reference
 
-## [Introduction to R and RStudio]({{ relative_root_path }}/{% link _episodes/01-rstudio-intro.md %})
+## [Introduction to R and RStudio]({{ site.baseurl }}{% link _episodes/01-rstudio-intro.md %})
 
  - Use the escape key to cancel incomplete commands or running code
    (Ctrl+C) if you're using R from the shell.
@@ -29,7 +28,7 @@ layout: reference
  - `rm` can be used to remove them
  - When assigning values to function arguments, you _must_ use `=`.
 
-## [Project management with RStudio]({{ relative_root_path }}/{% link _episodes/02-project-intro.md %})
+## [Project management with RStudio]({{ site.baseurl }}{% link _episodes/02-project-intro.md %})
 
  - To create a new project, go to File -> New Project
  - Some best practices:
@@ -39,7 +38,7 @@ layout: reference
    * Keep related data together
    * Use a consistent naming scheme
 
-## [Data Structures]({{ relative_root_path }}/{% link _episodes/03-data-structures-part1.md %})
+## [Data Structures]({{ site.baseurl }}{% link _episodes/03-data-structures-part1.md %})
 
 - Use `read.csv()` to import data in memory
 - ` class()` gives you the data class of your object
@@ -50,7 +49,7 @@ layout: reference
 - Lists provide a flexible data type.
 - Data frames are a special case of lists.
 
-## [Exploring Data Frames]({{ relative_root_path }}/{% link _episodes/04-data-structures-part2.md %})
+## [Exploring Data Frames]({{ site.baseurl }}{% link _episodes/04-data-structures-part2.md %})
 
 * R makes it easy to import datasets storred remotely
 * **[Data Frames]({{ relative_root_path }}/05-data-structures-part2/)**
@@ -79,7 +78,7 @@ layout: reference
      - `header=TRUE` if there is a header row
  
 
-## [Subsetting data]({{ relative_root_path }}/{% link _episodes/05-data-subsetting.md %})
+## [Subsetting data]({{ site.baseurl }}{% link _episodes/05-data-subsetting.md %})
 
  - Elements can be accessed by:
    - Index
@@ -103,7 +102,7 @@ layout: reference
  - negative indices skip elements
 
 
-## [Data frame manipulation with dplyr]({{ relative_root_path }}/{% link _episodes/06-dplyr.md %})
+## [Data frame manipulation with dplyr]({{ site.baseurl }}{% link _episodes/06-dplyr.md %})
 
 
  - `?select` to extract variables by name.
@@ -115,7 +114,7 @@ layout: reference
  - Combine operations using the `?"%>%"` pipe operator.
 
 
-## [Control flow]({{ relative_root_path }}/{% link _episodes/07-plot-ggplot2.md %})
+## [Control flow]({{ site.baseurl }}{% link _episodes/07-plot-ggplot2.md %})
 
 
  - figures can be created with the grammar of graphics:
@@ -133,7 +132,7 @@ layout: reference
    - `ggsave` to save a figure.
 
 
-## [Writing data]({{ relative_root_path }}/{% link _episodes/08-writing-data.md %})
+## [Writing data]({{ site.baseurl }}{% link _episodes/08-writing-data.md %})
 
  - `write.table` to write out objects in regular format
 
