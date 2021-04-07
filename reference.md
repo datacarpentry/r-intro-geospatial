@@ -52,7 +52,7 @@ layout: reference
 ## [Exploring Data Frames]({{ site.baseurl }}{% link _episodes/04-data-structures-part2.md %})
 
 * R makes it easy to import datasets storred remotely
-* **[Data Frames]({{ relative_root_path }}/05-data-structures-part2/)**
+* **[Data Frames]({{ site.baseurl }}{% link _episodes/04-data-structures-part2.md %})**
  - `?data.frame` is a key data structure. It is a `list` of `vectors`.
  - `cbind()` will add a column (vector) to a data.frame.
  - `rbind()` will add a row (list) to a data.frame.
