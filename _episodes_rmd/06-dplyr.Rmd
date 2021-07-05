@@ -54,7 +54,8 @@ pipes (`%>%`) to combine them.
 2. `filter()`
 3. `group_by()`
 4. `summarize()`
-5. `mutate()`
+5. `count()` and `n()`
+6. `mutate()`
 
 If you have have not installed this package earlier, please do so:
 
