@@ -1,0 +1,157 @@
+current directory: /home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c
+/opt/hostedtoolcache/Ruby/2.7.3/x64/bin/ruby -I /opt/hostedtoolcache/Ruby/2.7.3/x64/lib/ruby/2.7.0 -r ./siteconf20210705-10606-9ycsi8.rb extconf.rb
+checking for ffi_prep_closure_loc() in -lffi... yes
+checking for ffi_prep_cif_var()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+checking for whether -pthread is accepted as LDFLAGS... yes
+creating extconf.h
+creating Makefile
+
+current directory: /home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c
+make "DESTDIR=" clean
+make[1]: Entering directory '/home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c'
+Makefile:175: warning: overriding recipe for target 'clean'
+Ài#ƒýU:175: warning: ignoring old recipe for target 'clean'
+Makefile:182: warning: overriding recipe for target 'distclean'
+Ài#ƒýU:182: warning: ignoring old recipe for target 'distclean'
+Makefile:190: warning: overriding recipe for target 'install-so'
+Ài#ƒýU:190: warning: ignoring old recipe for target 'install-so'
+Makefile:200: warning: overriding recipe for target 'pre-install-rb-default'
+Ài#ƒýU:200: warning: ignoring old recipe for target 'pre-install-rb-default'
+Makefile:202: warning: overriding recipe for target '.sitearchdir.time'
+Ài#ƒýU:202: warning: ignoring old recipe for target '.sitearchdir.time'
+Makefile:212: warning: overriding recipe for target '.cc.o'
+Ài#ƒýU:212: warning: ignoring old recipe for target '.cc.o'
+Makefile:216: warning: overriding recipe for target '.cc.S'
+Ài#ƒýU:216: warning: ignoring old recipe for target '.cc.S'
+Makefile:220: warning: overriding recipe for target '.mm.o'
+Ài#ƒýU:220: warning: ignoring old recipe for target '.mm.o'
+Makefile:224: warning: overriding recipe for target '.mm.S'
+Ài#ƒýU:224: warning: ignoring old recipe for target '.mm.S'
+Makefile:228: warning: overriding recipe for target '.cxx.o'
+Ài#ƒýU:228: warning: ignoring old recipe for target '.cxx.o'
+Makefile:232: warning: overriding recipe for target '.cxx.S'
+Ài#ƒýU:232: warning: ignoring old recipe for target '.cxx.S'
+Makefile:236: warning: overriding recipe for target '.cpp.o'
+Ài#ƒýU:236: warning: ignoring old recipe for target '.cpp.o'
+Makefile:240: warning: overriding recipe for target '.cpp.S'
+Ài#ƒýU:240: warning: ignoring old recipe for target '.cpp.S'
+Makefile:244: warning: overriding recipe for target '.c.o'
+Ài#ƒýU:244: warning: ignoring old recipe for target '.c.o'
+Makefile:248: warning: overriding recipe for target '.c.S'
+Ài#ƒýU:248: warning: ignoring old recipe for target '.c.S'
+Makefile:252: warning: overriding recipe for target '.m.o'
+Ài#ƒýU:252: warning: ignoring old recipe for target '.m.o'
+Makefile:256: warning: overriding recipe for target '.m.S'
+Ài#ƒýU:256: warning: ignoring old recipe for target '.m.S'
+Makefile:260: warning: overriding recipe for target 'ffi_c.so'
+Ài#ƒýU:260: warning: ignoring old recipe for target 'ffi_c.so'
+make[1]: Leaving directory '/home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c'
+
+current directory: /home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c
+make "DESTDIR="
+make[1]: Entering directory '/home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c'
+Makefile:175: warning: overriding recipe for target 'clean'
+Ài¤’éU:175: warning: ignoring old recipe for target 'clean'
+Makefile:182: warning: overriding recipe for target 'distclean'
+Ài¤’éU:182: warning: ignoring old recipe for target 'distclean'
+Makefile:190: warning: overriding recipe for target 'install-so'
+Ài¤’éU:190: warning: ignoring old recipe for target 'install-so'
+Makefile:200: warning: overriding recipe for target 'pre-install-rb-default'
+Ài¤’éU:200: warning: ignoring old recipe for target 'pre-install-rb-default'
+Makefile:202: warning: overriding recipe for target '.sitearchdir.time'
+Ài¤’éU:202: warning: ignoring old recipe for target '.sitearchdir.time'
+Makefile:212: warning: overriding recipe for target '.cc.o'
+Ài¤’éU:212: warning: ignoring old recipe for target '.cc.o'
+Makefile:216: warning: overriding recipe for target '.cc.S'
+Ài¤’éU:216: warning: ignoring old recipe for target '.cc.S'
+Makefile:220: warning: overriding recipe for target '.mm.o'
+Ài¤’éU:220: warning: ignoring old recipe for target '.mm.o'
+Makefile:224: warning: overriding recipe for target '.mm.S'
+Ài¤’éU:224: warning: ignoring old recipe for target '.mm.S'
+Makefile:228: warning: overriding recipe for target '.cxx.o'
+Ài¤’éU:228: warning: ignoring old recipe for target '.cxx.o'
+Makefile:232: warning: overriding recipe for target '.cxx.S'
+Ài¤’éU:232: warning: ignoring old recipe for target '.cxx.S'
+Makefile:236: warning: overriding recipe for target '.cpp.o'
+Ài¤’éU:236: warning: ignoring old recipe for target '.cpp.o'
+Makefile:240: warning: overriding recipe for target '.cpp.S'
+Ài¤’éU:240: warning: ignoring old recipe for target '.cpp.S'
+Makefile:244: warning: overriding recipe for target '.c.o'
+Ài¤’éU:244: warning: ignoring old recipe for target '.c.o'
+Makefile:248: warning: overriding recipe for target '.c.S'
+Ài¤’éU:248: warning: ignoring old recipe for target '.c.S'
+Makefile:252: warning: overriding recipe for target '.m.o'
+Ài¤’éU:252: warning: ignoring old recipe for target '.m.o'
+Makefile:256: warning: overriding recipe for target '.m.S'
+Ài¤’éU:256: warning: ignoring old recipe for target '.m.S'
+Makefile:260: warning: overriding recipe for target 'ffi_c.so'
+Ài¤’éU:260: warning: ignoring old recipe for target 'ffi_c.so'
+compiling AbstractMemory.c
+compiling ArrayType.c
+compiling Buffer.c
+compiling Call.c
+compiling ClosurePool.c
+compiling DynamicLibrary.c
+compiling Function.c
+compiling FunctionInfo.c
+compiling LastError.c
+compiling LongDouble.c
+compiling MappedType.c
+compiling MemoryPointer.c
+compiling MethodHandle.c
+compiling Platform.c
+compiling Pointer.c
+compiling Struct.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Thread.c
+compiling Type.c
+compiling Types.c
+compiling Variadic.c
+compiling ffi.c
+linking shared-object ffi_c.so
+make[1]: Leaving directory '/home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c'
+
+current directory: /home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c
+make "DESTDIR=" install
+make[1]: Entering directory '/home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c'
+Makefile:175: warning: overriding recipe for target 'clean'
+ÀI2J/V:175: warning: ignoring old recipe for target 'clean'
+Makefile:182: warning: overriding recipe for target 'distclean'
+ÀI2J/V:182: warning: ignoring old recipe for target 'distclean'
+Makefile:190: warning: overriding recipe for target 'install-so'
+ÀI2J/V:190: warning: ignoring old recipe for target 'install-so'
+Makefile:200: warning: overriding recipe for target 'pre-install-rb-default'
+ÀI2J/V:200: warning: ignoring old recipe for target 'pre-install-rb-default'
+Makefile:202: warning: overriding recipe for target '.sitearchdir.time'
+ÀI2J/V:202: warning: ignoring old recipe for target '.sitearchdir.time'
+Makefile:212: warning: overriding recipe for target '.cc.o'
+ÀI2J/V:212: warning: ignoring old recipe for target '.cc.o'
+Makefile:216: warning: overriding recipe for target '.cc.S'
+ÀI2J/V:216: warning: ignoring old recipe for target '.cc.S'
+Makefile:220: warning: overriding recipe for target '.mm.o'
+ÀI2J/V:220: warning: ignoring old recipe for target '.mm.o'
+Makefile:224: warning: overriding recipe for target '.mm.S'
+ÀI2J/V:224: warning: ignoring old recipe for target '.mm.S'
+Makefile:228: warning: overriding recipe for target '.cxx.o'
+ÀI2J/V:228: warning: ignoring old recipe for target '.cxx.o'
+Makefile:232: warning: overriding recipe for target '.cxx.S'
+ÀI2J/V:232: warning: ignoring old recipe for target '.cxx.S'
+Makefile:236: warning: overriding recipe for target '.cpp.o'
+ÀI2J/V:236: warning: ignoring old recipe for target '.cpp.o'
+Makefile:240: warning: overriding recipe for target '.cpp.S'
+ÀI2J/V:240: warning: ignoring old recipe for target '.cpp.S'
+Makefile:244: warning: overriding recipe for target '.c.o'
+ÀI2J/V:244: warning: ignoring old recipe for target '.c.o'
+Makefile:248: warning: overriding recipe for target '.c.S'
+ÀI2J/V:248: warning: ignoring old recipe for target '.c.S'
+Makefile:252: warning: overriding recipe for target '.m.o'
+ÀI2J/V:252: warning: ignoring old recipe for target '.m.o'
+Makefile:256: warning: overriding recipe for target '.m.S'
+ÀI2J/V:256: warning: ignoring old recipe for target '.m.S'
+Makefile:260: warning: overriding recipe for target 'ffi_c.so'
+ÀI2J/V:260: warning: ignoring old recipe for target 'ffi_c.so'
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20210705-10606-1x490cr
+make[1]: Leaving directory '/home/runner/work/r-intro-geospatial/r-intro-geospatial/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.3/ext/ffi_c'
