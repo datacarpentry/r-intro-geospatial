@@ -235,10 +235,9 @@ your columns of data frames, or you will get nasty surprises!
 > > str(nordic_2$lifeExp)
 > > str(nordic$lifeExp)
 > > ```
-> > The data in `nordic_2$lifeExp` is stored as factors rather than 
+> > The data in `nordic_2$lifeExp` are stored as characters rather than 
 > > numeric. This is because of the "or" character string in the third 
-> > data point. "Factor" is R's special term for categorical data. 
-> > We will be working more with factor data later in this workshop.
+> > data point.
 > {: .solution}
 {: .challenge}
 
