@@ -468,15 +468,15 @@ str(nordic[1, ])
 > > ```
 > >
 > > The double brace `[[1]]` returns the contents of the list item. In this case
-> > it is the contents of the first column, a _vector_ of type _factor_.
+> > it is the contents of the first column, a _vector_ of type _character_.
 > >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic$country
 > > ```
 > >
 > > This example uses the `$` character to address items by name. _coat_ is the
-> > first column of the data frame, again a _vector_ of type _factor_.
-> X
+> > first column of the data frame, again a _vector_ of type _character_.
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic["country"]
 > > ```
@@ -489,8 +489,7 @@ str(nordic[1, ])
 > >
 > > This example uses a single brace, but this time we provide row and column
 > coordinates. The returned object is the value in row 1, column 1. The object
-> is an _integer_ but because it is part of a _vector_ of type _factor_, R
-> displays the label "Denmark" associated with the integer value.
+> is a _character_.
 > >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[, 1]
