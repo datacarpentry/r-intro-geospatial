@@ -451,7 +451,7 @@ head(cbind(gapminder, below_average))
 {: .output}
 The sequence `TRUE,TRUE,FALSE` is repeated over all the gapminder rows.
 
-Let's overwite the content of gapminder with our new data frame.
+Let's overwrite the content of gapminder with our new data frame.
 
 
 ~~~
