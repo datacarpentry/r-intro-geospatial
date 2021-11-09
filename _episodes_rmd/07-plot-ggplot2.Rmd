@@ -191,3 +191,11 @@ more depth, including:
 The examples we've worked through in this episode should give you the building
 blocks for working with the more complex graphic types and customizations we
 will be working with in that lesson.
+
+## Other great resources
+
+* [R for Data Science](http://r4ds.had.co.nz/)
+* [R for Data Science ggplot Chapter](https://r4ds.had.co.nz/data-visualisation.html)
+* [Data Visualization Cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+* [Overview of ggplot2](https://ggplot2.tidyverse.org/)
+* [Vignette ggplot2](https://cran.r-project.org/web/packages/ggplot2/vignettes/ggplot2-specs.html)
