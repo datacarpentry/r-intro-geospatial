@@ -35,7 +35,7 @@ suggested lesson plans suitable for a one or half day workshop.
 #### Maintainers:
 
 * Leah Wasser
-* Joseph Stachelek
+* Jemma Stachelek
 * Tyson Swetnam
 * Lauren O'Brien
 * Janani Selvaraj
