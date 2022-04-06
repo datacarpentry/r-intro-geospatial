@@ -26,7 +26,7 @@ and working with data structures unique to geospatial data.
 > ## Getting Started
 >
 > Data Carpentry's teaching is hands-on, so participants are encouraged to use
-> their own computers to insure the proper setup of tools for an efficient
+> their own computers to ensure the proper setup of tools for an efficient
 > workflow. <br>**This lesson assume no prior knowledge of R.**
 >
 > To get started, follow the directions in the "[Setup]({{ relative_root_path }}/{% link setup.md %})" tab to
