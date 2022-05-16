@@ -235,10 +235,9 @@ your columns of data frames, or you will get nasty surprises!
 > > str(nordic_2$lifeExp)
 > > str(nordic$lifeExp)
 > > ```
-> > The data in `nordic_2$lifeExp` is stored as factors rather than 
+> > The data in `nordic_2$lifeExp` are stored as characters rather than 
 > > numeric. This is because of the "or" character string in the third 
-> > data point. "Factor" is R's special term for categorical data. 
-> > We will be working more with factor data later in this workshop.
+> > data point.
 > {: .solution}
 {: .challenge}
 
@@ -469,15 +468,15 @@ str(nordic[1, ])
 > > ```
 > >
 > > The double brace `[[1]]` returns the contents of the list item. In this case
-> > it is the contents of the first column, a _vector_ of type _factor_.
+> > it is the contents of the first column, a _vector_ of type _character_.
 > >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic$country
 > > ```
 > >
 > > This example uses the `$` character to address items by name. _coat_ is the
-> > first column of the data frame, again a _vector_ of type _factor_.
-> X
+> > first column of the data frame, again a _vector_ of type _character_.
+> >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic["country"]
 > > ```
@@ -490,8 +489,7 @@ str(nordic[1, ])
 > >
 > > This example uses a single brace, but this time we provide row and column
 > coordinates. The returned object is the value in row 1, column 1. The object
-> is an _integer_ but because it is part of a _vector_ of type _factor_, R
-> displays the label "Denmark" associated with the integer value.
+> is a _character_.
 > >
 > > ```{r, eval=TRUE, echo=TRUE}
 > > nordic[, 1]
