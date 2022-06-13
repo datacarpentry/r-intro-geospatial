@@ -38,6 +38,10 @@ data are consistent in type throughout the columns.
 So far, you have seen the basics of manipulating data frames with our nordic data; now let’s use those skills to digest a more extensive dataset. Let’s read in the gapminder dataset that we downloaded previously:
 
 
+~~~
+gapminder <- read.csv("data/gapminder_data.csv")
+~~~
+{: .language-r}
 
 > ## Miscellaneous Tips
 >
