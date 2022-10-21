@@ -62,7 +62,7 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-lifeExp-vs-gdpPercap-scatter-1.png" title="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75" alt="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-lifeExp-vs-gdpPercap-scatter-1.png" alt="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75" width="612" style="display: block; margin: auto;" />
 
 By itself, the call to `ggplot` isn't enough to draw a figure:
 
@@ -72,7 +72,7 @@ ggplot(data = gapminder, aes(x = lifeExp))
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-blank-plot-1.png" title="plot of chunk blank-plot" alt="plot of chunk blank-plot" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-blank-plot-1.png" alt="plot of chunk blank-plot" width="612" style="display: block; margin: auto;" />
 
 We need to tell `ggplot` how we want to visually represent the data, which we
 do by adding a geom layer. In our example, we used `geom_histogram()`, which
@@ -93,7 +93,7 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
 ~~~
 {: .output}
 
-<img src="../fig/rmd-07-lifeExp-vs-gdpPercap-scatter2-1.png" title="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75" alt="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-lifeExp-vs-gdpPercap-scatter2-1.png" alt="Histogram of life expectancy by country showing bimodal distribution with modes at 45 and 75" width="612" style="display: block; margin: auto;" />
 
 > ## Challenge 1
 >
@@ -117,7 +117,7 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
 > > ~~~
 > > {: .output}
 > > 
-> > <img src="../fig/rmd-07-ch1-sol-1.png" title="plot of chunk ch1-sol" alt="plot of chunk ch1-sol" width="612" style="display: block; margin: auto;" />
+> > <img src="../fig/rmd-07-ch1-sol-1.png" alt="plot of chunk ch1-sol" width="612" style="display: block; margin: auto;" />
 > {: .solution}
 {: .challenge}
 
@@ -146,7 +146,7 @@ ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-hist-subset-gapminder-1.png" title="Barplot of GDP per capita. Country names on x-axis overlap and are not readable" alt="Barplot of GDP per capita. Country names on x-axis overlap and are not readable" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-hist-subset-gapminder-1.png" alt="Barplot of GDP per capita. Country names on x-axis overlap and are not readable" width="612" style="display: block; margin: auto;" />
 
 With this many bars plotted, it's impossible to read all of the 
 x-axis labels. A quick fix to this is the add the `coord_flip()` 
@@ -160,7 +160,7 @@ ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-hist-subset-gapminder-flipped-1.png" title="Barplot showing GDP per capita. Country names on the y-axis are readable" alt="Barplot showing GDP per capita. Country names on the y-axis are readable" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-hist-subset-gapminder-flipped-1.png" alt="Barplot showing GDP per capita. Country names on the y-axis are readable" width="612" style="display: block; margin: auto;" />
 
 There are more sophisticated ways of modifying axis
 labels. We will be learning some of those methods
@@ -209,7 +209,7 @@ later in this workshop.
 > > ~~~
 > > {: .language-r}
 > > 
-> > <img src="../fig/rmd-07-gpd-per-cap-1.png" title="plot of chunk gpd-per-cap" alt="plot of chunk gpd-per-cap" width="612" style="display: block; margin: auto;" />
+> > <img src="../fig/rmd-07-gpd-per-cap-1.png" alt="plot of chunk gpd-per-cap" width="612" style="display: block; margin: auto;" />
 > >
 > {: .solution}
 {: .challenge}
