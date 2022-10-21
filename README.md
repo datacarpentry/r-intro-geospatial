@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/128225991.svg)](https://zenodo.org/badge/latestdoi/128225991)
-![Build and Deploy Website](https://github.com/datacarpentry/r-intro-geospatial/workflows/Build%20and%20Deploy%20Website/badge.svg)
+[![Website](https://github.com/datacarpentry/r-intro-geospatial/actions/workflows/website.yml/badge.svg)](https://github.com/datacarpentry/r-intro-geospatial/actions/workflows/website.yml)
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
  [![Slack Status](https://img.shields.io/badge/Slack_Channel-dc--geospatial-E01563.svg)](https://swcarpentry.slack.com/messages/C9ME7G5RD)
 
