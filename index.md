@@ -19,7 +19,7 @@ be taught in approximately 4 hours and covers the following topics:
 - Introduction to visualization
 - Writing data to a file
 
-The the [R for Raster and Vector Data](https://datacarpentry.org/r-raster-vector-geospatial/) lesson
+The [R for Raster and Vector Data](https://datacarpentry.org/r-raster-vector-geospatial/) lesson
 provides a more in-depth introduction to visualization (focusing on geospatial data),
 and working with data structures unique to geospatial data.
 
@@ -27,7 +27,7 @@ and working with data structures unique to geospatial data.
 >
 > Data Carpentry's teaching is hands-on, so participants are encouraged to use
 > their own computers to insure the proper setup of tools for an efficient
-> workflow. <br>**This lesson assume no prior knowledge of R.**
+> workflow. <br>**This lesson assumes no prior knowledge of R.**
 >
 > To get started, follow the directions in the "[Setup]({{ relative_root_path }}/{% link setup.md %})" tab to
 > download data to your computer and follow any installation instructions.
