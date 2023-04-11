@@ -3021,6 +3021,20 @@ describe Addressable::URI, "when parsed from " +
   end
 end
 
+describe Addressable::URI, "when parsed with empty port" do
+  subject(:uri) do
+    Addressable::URI.parse("//example.com:")
+  end
+
+  it "should not infer a port" do
+    expect(uri.port).to be(nil)
+  end
+
+  it "should have a site value of '//example.com'" do
+    expect(uri.site).to eq("//example.com")
+  end
+end
+
 describe Addressable::URI, "when parsed from " +
     "'http://example.com/%2E/'" do
   before do
@@ -5939,6 +5953,26 @@ describe Addressable::URI, "when normalizing a path with an encoded slash" do
   end
 end
 
+describe Addressable::URI, "when normalizing a path with special unicode" do
+  it "does not stop at or ignore null bytes" do
+    expect(Addressable::URI.parse("/path%00segment/").normalize.path).to eq(
+      "/path%00segment/"
+    )
+  end
+
+  it "does apply NFC unicode normalization" do
+    expect(Addressable::URI.parse("/%E2%84%A6").normalize.path).to eq(
+      "/%CE%A9"
+    )
+  end
+
+  it "does not apply NFKC unicode normalization" do
+    expect(Addressable::URI.parse("/%C2%AF%C2%A0").normalize.path).to eq(
+      "/%C2%AF%C2%A0"
+    )
+  end
+end
+
 describe Addressable::URI, "when normalizing a partially encoded string" do
   it "should result in correct percent encoded sequence" do
     expect(Addressable::URI.normalize_component(
@@ -6741,5 +6775,27 @@ describe Addressable::URI, "when initialized in a non-main `Ractor`" do
     expect(
       Ractor.new { Addressable::URI.parse("http://example.com") }.take
     ).to eq(main)
+  end
+end
+
+describe Addressable::URI, "when deferring validation" do
+  subject(:deferred) { uri.instance_variable_get(:@validation_deferred) }
+
+  let(:uri) { Addressable::URI.parse("http://example.com") }
+
+  it "defers validation within the block" do
+    uri.defer_validation do
+      expect(deferred).to be true
+    end
+  end
+
+  it "always resets deferral afterward" do
+    expect { uri.defer_validation { raise "boom" } }.to raise_error("boom")
+    expect(deferred).to be false
+  end
+
+  it "returns nil" do
+    res = uri.defer_validation {}
+    expect(res).to be nil
   end
 end

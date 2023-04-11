@@ -29,8 +29,14 @@ module Addressable
        IDN::Punycode.decode(value.to_s)
      end
 
-    def self.unicode_normalize_kc(value)
-      IDN::Stringprep.nfkc_normalize(value.to_s)
+    class << self
+      # @deprecated Use {String#unicode_normalize(:nfkc)} instead
+      def unicode_normalize_kc(value)
+        value.to_s.unicode_normalize(:nfkc)
+      end
+
+      extend Gem::Deprecate
+      deprecate :unicode_normalize_kc, "String#unicode_normalize(:nfkc)", 2023, 4
     end
 
     def self.to_ascii(value)

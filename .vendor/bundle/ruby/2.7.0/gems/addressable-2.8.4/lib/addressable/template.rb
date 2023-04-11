@@ -892,25 +892,24 @@ module Addressable
     # operator.
     #
     # @param [Hash, Array, String] value
-    #   Normalizes keys and values with IDNA#unicode_normalize_kc
+    #   Normalizes unicode keys and values with String#unicode_normalize (NFC)
     #
     # @return [Hash, Array, String] The normalized values
     def normalize_value(value)
-      unless value.is_a?(Hash)
-        value = value.respond_to?(:to_ary) ? value.to_ary : value.to_str
-      end
-
       # Handle unicode normalization
-      if value.kind_of?(Array)
-        value.map! { |val| Addressable::IDNA.unicode_normalize_kc(val) }
+      if value.respond_to?(:to_ary)
+        value.to_ary.map! { |val| normalize_value(val) }
       elsif value.kind_of?(Hash)
         value = value.inject({}) { |acc, (k, v)|
-          acc[Addressable::IDNA.unicode_normalize_kc(k)] =
-            Addressable::IDNA.unicode_normalize_kc(v)
+          acc[normalize_value(k)] = normalize_value(v)
           acc
         }
       else
-        value = Addressable::IDNA.unicode_normalize_kc(value)
+        value = value.to_s if !value.kind_of?(String)
+        if value.encoding != Encoding::UTF_8
+          value = value.dup.force_encoding(Encoding::UTF_8)
+        end
+        value = value.unicode_normalize(:nfc)
       end
       value
     end

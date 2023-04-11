@@ -6,7 +6,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     coffee-script (2.4.1)
       coffee-script-source
@@ -255,7 +255,7 @@ DEPENDENCIES
   github-pages
 
 RUBY VERSION
-   ruby 2.7.7p221
+   ruby 2.7.8p225
 
 BUNDLED WITH
-   2.4.10
+   2.4.11
