@@ -1,1 +1,84 @@
-{"contributors":[{"type":"Editor","name":"Janani Selvaraj"},{"type":"Editor","name":"Lachlan Deer"},{"type":"Editor","name":"Juan Fung"}],"creators":[{"name":"Lachlan Deer"},{"name":"Juan Fung"},{"name":"Anne Fouilloux"},{"name":"Kok Ben Toh"},{"name":"Chris Prener"},{"name":"François Michonneau"},{"name":"Naupaka Zimmerman"},{"name":"Jeffrey Oliver"},{"name":"David Mawdsley"},{"name":"Erin Becker"},{"name":"Rayna Harris"},{"name":"Claudia Engel"},{"name":"Ido Bar"},{"name":"Katrin Leinweber"},{"name":"Paula Andrea Martinez"},{"name":"butterflyskip"},{"name":"Kevin Weitemier"},{"name":"Marieke Frassl"},{"name":"Matt Clark"},{"name":"Miles McBain"},{"name":"Preethy Nair"},{"name":"Raniere Silva"},{"name":"Richard McCosh"},{"name":"Vicken Hillis"}],"license":{"id":"CC-BY-4.0"}}
+{
+  "contributors": [
+    {
+      "type": "Editor",
+      "name": "Juan Fung",
+      "orcid": "0000-0002-0820-787X"
+    },
+    {
+      "type": "Editor",
+      "name": "Luca Di Stasio, Ph.D.",
+      "orcid": "0000-0002-9261-301X"
+    },
+    {
+      "type": "Editor",
+      "name": "Mike Mahoney",
+      "orcid": "0000-0003-2402-304X"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Jemma Stachelek",
+      "orcid": "0000-0002-5924-2464"
+    },
+    {
+      "name": "Serah Njambi",
+      "orcid": "0000-0002-7834-1038"
+    },
+    {
+      "name": "Mike Mahoney",
+      "orcid": "0000-0003-2402-304X"
+    },
+    {
+      "name": "sheila"
+    },
+    {
+      "name": "Annajiat Alim Rasel",
+      "orcid": "0000-0003-0198-3734"
+    },
+    {
+      "name": "David Pérez-Suárez"
+    },
+    {
+      "name": "Erika Koontz"
+    },
+    {
+      "name": "Joe Molloy"
+    },
+    {
+      "name": "Jon Jablonski"
+    },
+    {
+      "name": "Juan Fung",
+      "orcid": "0000-0002-0820-787X"
+    },
+    {
+      "name": "Katrin Leinweber",
+      "orcid": "0000-0001-5135-5758"
+    },
+    {
+      "name": "Matthew Sisk",
+      "orcid": "0000-0002-4141-9655"
+    },
+    {
+      "name": "Richard Detomasi",
+      "orcid": "0000-0002-6725-0261"
+    },
+    {
+      "name": "Sarah LR Stevens",
+      "orcid": "0000-0002-7040-548X"
+    },
+    {
+      "name": "Shamar Stewart"
+    },
+    {
+      "name": "Susan Chen"
+    },
+    {
+      "name": "Wartini Ng"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-4.0"
+  }
+}
