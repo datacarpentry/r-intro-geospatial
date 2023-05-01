@@ -78,7 +78,7 @@ A key advantage of an RStudio Project is that whenever we open this project in
   folder `r-geospatial`.
 Let's check our working directory by entering the following into the R console:
 
-```r
+```{r}
 getwd()
 ```
 
