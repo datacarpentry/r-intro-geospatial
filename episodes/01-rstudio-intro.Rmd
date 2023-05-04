@@ -1,32 +1,32 @@
 ---
-title: "Introduction to R and RStudio"
+title: Introduction to R and RStudio
 teaching: 20
 exercises: 5
-questions:
-- "How to find your way around RStudio?"
-- "How to interact with R?"
-- "How to install packages?"
-objectives:
-- "Describe the purpose and use of each pane in the RStudio IDE"
-- "Locate buttons and options in the RStudio IDE"
-- "Define a variable"
-- "Assign data to a variable"
-- "Use mathematical and comparison operators"
-- "Call functions"
-- "Manage packages"
-keypoints:
-- "Use RStudio to write and run R programs."
-- "R has the usual arithmetic operators."
-- "Use `<-` to assign values to variables."
-- "Use `install.packages()` to install packages (libraries)."
 source: Rmd
 ---
 
-```{r, include=FALSE}
-source("../bin/chunk-options.R")
-knitr_fig_path("01-")
-```
+::::::::::::::::::::::::::::::::::::::: objectives
 
+- Describe the purpose and use of each pane in the RStudio IDE
+- Locate buttons and options in the RStudio IDE
+- Define a variable
+- Assign data to a variable
+- Use mathematical and comparison operators
+- Call functions
+- Manage packages
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How to find your way around RStudio?
+- How to interact with R?
+- How to install packages?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+```{r, include=FALSE}
+```
 
 ## Motivation
 
@@ -59,58 +59,59 @@ We'll be using RStudio: a free, open source R integrated development environment
 servers) and provides many advantages such as integration with version control
 and project management.
 
-
-
 **Basic layout**
 
 When you first open RStudio, you will be greeted by three panels:
 
-  * The interactive R console (entire left)
-  * Environment/History (tabbed in upper right)
-  * Files/Plots/Packages/Help/Viewer (tabbed in lower right)
+- The interactive R console (entire left)
+- Environment/History (tabbed in upper right)
+- Files/Plots/Packages/Help/Viewer (tabbed in lower right)
 
-![RStudio layout](../fig/01-rstudio.png)
+![](fig/01-rstudio.png){alt='RStudio layout'}
 
 Once you open files, such as R scripts, an editor panel will also open
 in the top left.
 
-![RStudio layout with .R file open](../fig/01-rstudio-script.png)
-
+![](fig/01-rstudio-script.png){alt='RStudio layout with .R file open'}
 
 ## Workflow within RStudio
 
 There are two main ways one can work within RStudio.
 
 1. Test and play within the interactive R console then copy code into
-a .R file to run later.
-   *  This works well when doing small tests and initially starting off.
-   *  It quickly becomes laborious
+  a .R file to run later.
+  - This works well when doing small tests and initially starting off.
+  - It quickly becomes laborious
 2. Start writing in an .R file and use RStudio's shortcut keys for the Run command
-to push the current line, selected lines or modified lines to the
-interactive R console.
-   * This is a great way to start; all your code is saved for later
-   * You will be able to run the file you create from within RStudio
-   or using R's `source()`  function.
+  to push the current line, selected lines or modified lines to the
+  interactive R console.
+  - This is a great way to start; all your code is saved for later
+  - You will be able to run the file you create from within RStudio
+    or using R's `source()`  function.
 
-> ## Tip: Running segments of your code
->
-> RStudio offers you great flexibility in running code from within the editor
-> window. There are buttons, menu choices, and keyboard shortcuts. To run the
-> current line, you can 
->
-> 1. click on the `Run` button above the editor panel, or 
-> 2. select "Run Lines" from the "Code" menu, or 
-> 3. hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd> in Windows,
-> <kbd>Ctrl</kbd>+<kbd>Return</kbd> in Linux, 
-> or <kbd>&#8984;</kbd>+<kbd>Return</kbd> on OS X.
-> (This shortcut can also be seen by hovering
-> the mouse over the button). To run a block of code, select it and then `Run`.
-> If you have modified a line of code within a block of code you have just run,
-> there is no need to reselect the section and `Run`, you can use the next
-> button
-> along, `Re-run the previous region`. This will run the previous code block
-> including the modifications you have made.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Tip: Running segments of your code
+
+RStudio offers you great flexibility in running code from within the editor
+window. There are buttons, menu choices, and keyboard shortcuts. To run the
+current line, you can
+
+1. click on the `Run` button above the editor panel, or
+2. select "Run Lines" from the "Code" menu, or
+3. hit <kbd>Ctrl</kbd>\+<kbd>Enter</kbd> in Windows,
+  <kbd>Ctrl</kbd>\+<kbd>Return</kbd> in Linux,
+  or <kbd>⌘</kbd>\+<kbd>Return</kbd> on OS X.
+  (This shortcut can also be seen by hovering
+  the mouse over the button). To run a block of code, select it and then `Run`.
+  If you have modified a line of code within a block of code you have just run,
+  there is no need to reselect the section and `Run`, you can use the next
+  button
+  along, `Re-run the previous region`. This will run the previous code block
+  including the modifications you have made.
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction to R
 
@@ -140,44 +141,44 @@ output.
 Like bash, if you type in an incomplete command, R will wait for you to
 complete it:
 
-~~~
+```r
 > 1 +
-~~~
-{: .language-r}
+```
 
-~~~
+```output
 +
-~~~
-{: .output}
+```
 
 Any time you hit return and the R session shows a "`+`" instead of a "`>`", it
 means it's waiting for you to complete the command. If you want to cancel a
 command you can simply hit "<kbd>Esc</kbd>" and RStudio will give you back the "`>`" prompt.
 
-> ## Tip: Cancelling commands
->
-> If you're using R from the command line instead of from within RStudio,
-> you need to use <kbd>Ctrl</kbd>+<kbd>C</kbd> instead of <kbd>Esc</kbd>
-> to cancel the command. This applies to Mac users as well!
->
-> Cancelling a command isn't only useful for killing incomplete commands:
-> you can also use it to tell R to stop running code (for example if it's
-> taking much longer than you expect), or to get rid of the code you're
-> currently writing.
->
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Tip: Cancelling commands
+
+If you're using R from the command line instead of from within RStudio,
+you need to use <kbd>Ctrl</kbd>\+<kbd>C</kbd> instead of <kbd>Esc</kbd>
+to cancel the command. This applies to Mac users as well!
+
+Cancelling a command isn't only useful for killing incomplete commands:
+you can also use it to tell R to stop running code (for example if it's
+taking much longer than you expect), or to get rid of the code you're
+currently writing.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 When using R as a calculator, the order of operations is the same as you
 would have learned back in school.
 
 From highest to lowest precedence:
 
- * Parentheses: `(`, `)`
- * Exponents: `^` or `**`
- * Divide: `/`
- * Multiply: `*`
- * Add: `+`
- * Subtract: `-`
+- Parentheses: `(`, `)`
+- Exponents: `^` or `**`
+- Divide: `/`
+- Multiply: `*`
+- Add: `+`
+- Subtract: `-`
 
 ```{r}
 3 + 5 * 2
@@ -199,7 +200,6 @@ Remember that others may later read your code.
 3 + 5 * 2 ^ 2       # clear, if you remember the rules
 3 + 5 * (2 ^ 2)     # if you forget some rules, this might help
 ```
-
 
 The text after each line of code is called a
 "comment". Anything that follows after the hash (or octothorpe) symbol
@@ -262,25 +262,27 @@ We can also do comparison in R:
 1 >= -9 # greater than or equal to
 ```
 
-> ## Tip: Comparing Numbers
->
-> A word of warning about comparing numbers: you should
-> never use `==` to compare two numbers unless they are
-> integers (a data type which can specifically represent
-> only whole numbers).
->
-> Computers may only represent decimal numbers with a
-> certain degree of precision, so two numbers which look
-> the same when printed out by R, may actually have
-> different underlying representations and therefore be
-> different by a small margin of error (called Machine
-> numeric tolerance).
->
-> Instead you should use the `all.equal` function.
->
-> Further reading: [http://floating-point-gui.de/](http://floating-point-gui.de/)
->
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Tip: Comparing Numbers
+
+A word of warning about comparing numbers: you should
+never use `==` to compare two numbers unless they are
+integers (a data type which can specifically represent
+only whole numbers).
+
+Computers may only represent decimal numbers with a
+certain degree of precision, so two numbers which look
+the same when printed out by R, may actually have
+different underlying representations and therefore be
+different by a small margin of error (called Machine
+numeric tolerance).
+
+Instead you should use the `all.equal` function.
+
+Further reading: [http://floating-point-gui.de/](https://floating-point-gui.de/)
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Variables and assignment
 
@@ -298,7 +300,7 @@ x
 ```
 
 More precisely, the stored value is a *decimal approximation* of
-this fraction called a [floating point number](http://en.wikipedia.org/wiki/Floating_point).
+this fraction called a [floating point number](https://en.wikipedia.org/wiki/Floating_point).
 
 Look for the `Environment` tab in one of the panes of RStudio, and you will see that `x` and its value
 have appeared. Our variable `x` can be used in place of a number in any calculation that expects a number:
@@ -325,68 +327,88 @@ y <- x * 2
 The right hand side of the assignment can be any valid R expression.
 The right hand side is *fully evaluated* before the assignment occurs.
 
-> ## Challenge 1
->
-> What will be the value of each  variable  after each
-> statement in the following program?
->
-> ```{r, eval=FALSE}
-> mass <- 47.5
-> age <- 122
-> mass <- mass * 2.3
-> age <- age - 20
-> ```
->
-> > ## Solution to challenge 1
-> >
-> > ```{r ch2pt1-sol}
-> > mass <- 47.5
-> > ```
-> > This will give a value of `r mass` for the variable mass
-> >
-> > ```{r ch2pt2-sol}
-> > age <- 122
-> > ```
-> > This will give a value of `r age` for the variable age
-> >
-> > ```{r ch2pt3-sol}
-> > mass <- mass * 2.3
-> > ```
-> > This will multiply the existing value of `r mass/2.3` by 2.3 to give a new value of
-> > `r mass` to the variable mass.
-> >
-> > ```{r ch2pt4-sol}
-> > age <- age - 20
-> > ```
-> > This will subtract 20 from the existing value of `r age + 20 ` to give a new value
-> > of `r age` to the variable age.
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge 1
+
+What will be the value of each  variable  after each
+statement in the following program?
+
+```{r, eval=FALSE}
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+```
+
+:::::::::::::::  solution
+
+## Solution to challenge 1
+
+```{r ch2pt1-sol}
+mass <- 47.5
+```
+
+This will give a value of `r mass` for the variable mass
+
+```{r ch2pt2-sol}
+age <- 122
+```
+
+This will give a value of `r age` for the variable age
+
+```{r ch2pt3-sol}
+mass <- mass * 2.3
+```
+
+This will multiply the existing value of `r mass/2.3` by 2.3 to give a new value of
+`r mass` to the variable mass.
+
+```{r ch2pt4-sol}
+age <- age - 20
+```
+
+This will subtract 20 from the existing value of `r age + 20 ` to give a new value
+of `r age` to the variable age.
 
 
-> ## Challenge 2
->
-> Run the code from the previous challenge, and write a command to
-> compare mass to age. Is mass larger than age?
->
-> > ## Solution to challenge 2
-> >
-> > One way of answering this question in R is to use the `>` to set up the following:
-> > ```{r ch3-sol}
-> > mass > age
-> >```
-> > This should yield a boolean value of TRUE since `r mass` is greater than `r age`.
-> {: .solution}
-{: .challenge}
 
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge 2
+
+Run the code from the previous challenge, and write a command to
+compare mass to age. Is mass larger than age?
+
+:::::::::::::::  solution
+
+## Solution to challenge 2
+
+One way of answering this question in R is to use the `>` to set up the following:
+
+```{r ch3-sol}
+mass > age
+```
+
+This should yield a boolean value of TRUE since `r mass` is greater than `r age`.
+
+
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Variable names can contain letters, numbers, underscores and periods. They
 cannot start with a number nor contain spaces at all. Different people use
 different conventions for long variable names, these include
 
-  * periods.between.words
-  * underscores\_between_words
-  * camelCaseToSeparateWords
+- periods.between.words
+- underscores\_between\_words
+- camelCaseToSeparateWords
 
 What you use is up to you, but **be consistent**.
 
@@ -401,46 +423,56 @@ But this is much less common among R users.  The most important thing is to
 where it is less confusing to use `<-` than `=`, and it is the most common
 symbol used in the community. So the recommendation is to use `<-`.
 
-> ## Challenge 3
->
-> Which of the following are valid R variable names?
-> ```{r, eval=FALSE}
-> min_height
-> max.height
-> _age
-> .mass
-> MaxLength
-> min-length
-> 2widths
-> celsius2kelvin
-> ```
->
-> > ## Solution to challenge 3
-> >
-> > The following can be used as R variables:
-> > ```{r ch1pt1-sol, eval=FALSE}
-> > min_height
-> > max.height
-> > MaxLength
-> > celsius2kelvin
-> > ```
-> >
-> > The following creates a hidden variable:
-> > ```{r ch1pt2-sol, eval=FALSE}
-> > .mass
-> > ```
-> >
-> > We won't be discussing hidden variables in this lesson. We recommend not using a period at the
-> > beginning of variable names unless you intend your variables to be hidden.
-> >
-> > The following will not be able to be used to create a variable
-> > ```{r ch1pt3-sol, eval=FALSE}
-> > _age
-> > min-length
-> > 2widths
-> > ```
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge 3
+
+Which of the following are valid R variable names?
+
+```{r, eval=FALSE}
+min_height
+max.height
+_age
+.mass
+MaxLength
+min-length
+2widths
+celsius2kelvin
+```
+
+:::::::::::::::  solution
+
+## Solution to challenge 3
+
+The following can be used as R variables:
+
+```{r ch1pt1-sol, eval=FALSE}
+min_height
+max.height
+MaxLength
+celsius2kelvin
+```
+
+The following creates a hidden variable:
+
+```{r ch1pt2-sol, eval=FALSE}
+.mass
+```
+
+We won't be discussing hidden variables in this lesson. We recommend not using a period at the
+beginning of variable names unless you intend your variables to be hidden.
+
+The following will not be able to be used to create a variable
+
+```{r ch1pt3-sol, eval=FALSE}
+_age
+min-length
+2widths
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Installing Packages
 
@@ -462,18 +494,25 @@ install.packages("dplyr")
 
 It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
 
-> ## Challenge 4
->
-> What code would we use to install the `ggplot2` package?
->
-> > ## Solution to challenge 4
-> >
-> > We would use the following R code to install the `ggplot2` package:
-> > ```{r ch1pt4-sol, eval=FALSE}
-> > install.packages("ggplot2")
-> > ```
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge 4
+
+What code would we use to install the `ggplot2` package?
+
+:::::::::::::::  solution
+
+## Solution to challenge 4
+
+We would use the following R code to install the `ggplot2` package:
+
+```{r ch1pt4-sol, eval=FALSE}
+install.packages("ggplot2")
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Now that we've installed the R package, we're ready to use it! To use the R package, we need to "load" it into our R session. We can think of "loading" an R packages as telling R that we're ready to use the package we just installed. It's important to note that while we only have to install the package *once*, we'll have to load the package *each time we open R (or RStudio)*.
 
@@ -483,27 +522,44 @@ To load an R package, we use the `library( )` function. We can load the `dplyr` 
 library(dplyr)
 ```
 
-> ## Challenge 5
->
-> Which of the following could we use to load the `ggplot2` package? (Select all that apply.)
-> 
-> a) install.packages("ggplot2")
-> b) library("ggplot2")
-> c) library(ggplot2)
-> d) library(ggplo2)
->
-> > ## Solution to challenge 5
-> >
-> > The correct answers are b and c.
-> > Answer a will install, not load, the ggplot2 package.
-> > Answer b will correctly load the ggplot2 package. Note there are no quotation marks.
-> > Answer c will correctly load the ggplot2 package. Note there are quotation marks.
-> > Answer d will produce an error because ggplot2 is misspelled.
-> >
-> > Note: It is more common for coders to *not use quotation* marks when loading an R package (i.e., answer c).
-> >
-> > ```{r ch1pt5-sol, eval=FALSE}
-> > library(ggplot2)
-> > ```
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge 5
+
+Which of the following could we use to load the `ggplot2` package? (Select all that apply.)
+
+a) install.packages("ggplot2")
+b) library("ggplot2")
+c) library(ggplot2)
+d) library(ggplo2)
+
+:::::::::::::::  solution
+
+## Solution to challenge 5
+
+The correct answers are b and c.
+Answer a will install, not load, the ggplot2 package.
+Answer b will correctly load the ggplot2 package. Note there are no quotation marks.
+Answer c will correctly load the ggplot2 package. Note there are quotation marks.
+Answer d will produce an error because ggplot2 is misspelled.
+
+Note: It is more common for coders to *not use quotation* marks when loading an R package (i.e., answer c).
+
+```{r ch1pt5-sol, eval=FALSE}
+library(ggplot2)
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Use RStudio to write and run R programs.
+- R has the usual arithmetic operators.
+- Use `<-` to assign values to variables.
+- Use `install.packages()` to install packages (libraries).
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
