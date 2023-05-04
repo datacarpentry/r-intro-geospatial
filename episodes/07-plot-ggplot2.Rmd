@@ -83,25 +83,21 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
   geom_histogram()
 ```
 
-> ## Challenge 1
-> 
-> Modify the example so that the figure shows the
-> distribution of gdp per capita, rather than life
-> expectancy:
-> 
-> > ## Solution to challenge 1
-> > 
-> > ```{r ch1-sol}
-> > ggplot(data = gapminder, aes(x = gdpPercap)) +   
-> > ```
-
-geom\_histogram()
-
 :::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge 1
+
+Modify the example so that the figure shows the
+distribution of gdp per capita, rather than life
+expectancy:
 
 :::::::::::::::  solution
 
-```
+## Solution to challenge 1
+
+```{r ch1-sol}
+ggplot(data = gapminder, aes(x = gdpPercap)) +   
+ geom_histogram()
 ```
 
 :::::::::::::::::::::::::
