@@ -246,8 +246,8 @@ You can write numbers in scientific notation too:
 ```
 
 Don't worry about trying to remember every function in R. You can look them up
-on Google, or if you can remember the start of the function's name, use the tab
-completion in RStudio.
+using a search engine, or if you can remember the start of the function's name, 
+use the tab completion in RStudio.
 
 This is one advantage that RStudio has over R on its own, it has auto-completion
 abilities that allow you to more easily look up functions, their arguments, and
@@ -578,8 +578,8 @@ install.packages("dplyr")
 
 ```{.output}
 Installing dplyr [1.1.2] ...
-	OK [linked cache in 0.29 milliseconds]
-* Installed 1 package in 1.1 seconds.
+	OK [linked cache in 0.24 milliseconds]
+* Installed 1 package in 0.68 seconds.
 ```
 
 It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
