@@ -221,8 +221,8 @@ You can write numbers in scientific notation too:
 ```
 
 Don't worry about trying to remember every function in R. You can look them up
-using a web search engine like DuckDuckGo, or if you can remember the start of the function's name, use the tab
-completion in RStudio.
+using a search engine, or if you can remember the start of the function's name, 
+use the tab completion in RStudio.
 
 This is one advantage that RStudio has over R on its own, it has auto-completion
 abilities that allow you to more easily look up functions, their arguments, and
