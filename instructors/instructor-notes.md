@@ -8,21 +8,6 @@ relative path root: {{ relative\_root\_path }}
 
 ## Instructor notes
 
-## Lesson motivation and learning objectives
-
-This lesson is designed to introduce learners to the core concepts of R
-that they will need in order to complete the other lessons
-in this workshop. It is intended for learners who have no prior experience with
-R. If your workshop learners have all completed another Software or Data
-Carpentry R workshop, or have taken courses in R, you can skip this lesson
-and move straight into the
-[Introduction to Geospatial Raster and Vector Data with R](https://datacarpentry.org/r-raster-vector-geospatial/) lesson.
-
-This lesson is a trimmed-down version of the
-[R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder) SWC lesson. It does not cover visualization in detail,
-as the later lesson in this workshop covers visualization in the context of
-geospatial data.
-
 ## Lesson design
 
 #### [Introduction to R and RStudio](../episodes/01-rstudio-intro.Rmd)
