@@ -28,10 +28,6 @@ relative path root: {{ relative\_root\_path }}
 
 #### [Data Structures](../episodes/03-data-structures-part1.Rmd)
 
-- Learners will work with factors in the following lesson. Be sure to
-  cover this concept.
-- If needed for time reasons, you can skip the section on lists. The learners
-  don't use lists in the rest of the workshop.
 
 #### [Exploring Data Frames](../episodes/04-data-structures-part2.Rmd)
 
