@@ -89,6 +89,15 @@ Understanding what happened here is key to successfully analyzing data in R.
 
 ## Data Types
 
+::::::::::::::::::::::::::::::::::::::: instructor
+
+- Learners will work with factors in the following lesson. Be sure to
+  cover this concept.
+- If needed for time reasons, you can skip the section on lists. The learners
+  don't use lists in the rest of the workshop.
+  
+:::::::::::::::::::::::::::::::::::::::
+
 If you guessed that the last command will return an error because `77.2` plus
 `"Denmark"` is nonsense, you're right - and you already have some intuition for an
 important concept in programming called *data classes*. We can ask what class of
