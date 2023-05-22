@@ -593,12 +593,12 @@ character strings. If we similarly do</p>
 columns of data we load into R data frames are all vectors, and that’s
 the root of why R forces everything in a column to be the same basic
 data type.</p>
-<div id="discussion1" class="callout discussion">
+<div id="discussion-1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="discussion-1" class="callout-inner">
-<h3 class="callout-title">Discussion 1<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Discussion 1<a class="anchor" aria-label="anchor" href="#discussion-1"></a>
 </h3>
 <div class="callout-content">
 <p>Why is R so opinionated about what we put in our columns of data? How
@@ -610,7 +610,7 @@ does this help us?</p>
   Discussion 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>By keeping everything in a column the same, we allow ourselves to
 make simple assumptions about our data; if you can interpret one entry
@@ -724,12 +724,12 @@ point is: if your data doesn’t look like what you thought it was going
 to look like, type coercion may well be to blame; make sure everything
 is the same type in your vectors and your columns of data frames, or you
 will get nasty surprises!</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>Given what you now know about type conversion, look at the class of
@@ -746,7 +746,7 @@ classes?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -917,12 +917,12 @@ existing vector:</p>
 </h3>
 <pre class="output" tabindex="0"><code>[1] "a" "b" "c" "d"</code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>Start by making a vector with the numbers 1 through 26. Multiply the
@@ -938,7 +938,7 @@ there is a built in vector called <code>LETTERS</code>)</p>
   Solution to Challenge 2
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb77">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1068,12 +1068,12 @@ representations for categorical data:</p>
 </h3>
 <pre class="output" tabindex="0"><code>[1] "factor"</code></pre>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Can you guess why these numbers are used to represent these
@@ -1088,19 +1088,19 @@ countries?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>They are sorted in alphabetical order</p>
 </div>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>Is there a factor in our <code>nordic</code> data frame? what is its
@@ -1118,7 +1118,7 @@ character vector when loaded in this way.</p>
   Solution to Challenge 3
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>One solution is use the argument <code>stringAsFactors</code>:</p>
 <div class="codewrapper sourceCode" id="cb96">
@@ -1332,12 +1332,12 @@ data frame, and thus can be composed of elements of different types.</p>
  $ year   : int 2002
  $ lifeExp: num 77.2</code></pre>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge-4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
 </h3>
 <div class="callout-content">
 <p>There are several subtly different ways to call variables,
@@ -1362,7 +1362,7 @@ is returned in each case.</p>
   Solution to Challenge 4
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb122">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1521,7 +1521,7 @@ character.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.17" class="external-link">sandpaper (0.11.17)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1545,7 +1545,7 @@ character.</li>
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/03-data-structures-part1.html",
   "dateCreated": "2018-04-05",
   "dateModified": "2023-05-18",
-  "datePublished": "2023-05-18"
+  "datePublished": "2023-05-22"
 }
 
   </script><script>
