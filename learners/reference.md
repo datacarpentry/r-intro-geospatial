@@ -54,8 +54,6 @@ title: 'Reference'
 ## [Exploring Data Frames](episodes/04-data-structures-part2.Rmd)
 
 - R makes it easy to import datasets storred remotely
-- **[Data Frames](05-data-structures-part2)**
-
 - `?data.frame` is a key data structure. It is a `list` of `vectors`.
 - `cbind()` will add a column (vector) to a data.frame.
 - `rbind()` will add a row (list) to a data.frame.
@@ -217,7 +215,7 @@ not expected by the programming language.
 
 [type]{#type}
 :   The classification of something in a program (for example, the contents of a variable)
-as a kind of number (e.g. [floating-point](#float), [integer](#integer)), [string](#string),
+as a kind of number (e.g. [floating-point](#floating-point-number), [integer](#integer)), [string](#string),
 or something else. In R the command typeof() is used to query a variables type.
 
 [while loop]{#while-loop}
