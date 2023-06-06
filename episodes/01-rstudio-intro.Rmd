@@ -5,6 +5,19 @@ exercises: 5
 source: Rmd
 ---
 
+::::::::::::::::::::::::::::::::::::::: instructor
+
+- Leave about 30 minutes at the start of each workshop and another 15 mins at 
+  the start of each session for technical difficulties like WiFi and installing 
+  things (even if you asked students to install in advance, longer if not).
+- Be sure to actually go through examples of an R help page: help files can be 
+  intimidating at first, but knowing how to read them is tremendously useful.
+- Don't worry about being correct or knowing the material back-to-front. Use
+  mistakes as teaching moments: the most vital skill you can impart is how to
+  debug and recover from unexpected errors.
+
+:::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Describe the purpose and use of each pane in the RStudio IDE
@@ -28,25 +41,26 @@ source: Rmd
 ```{r, include=FALSE}
 ```
 
+
+## Motivation
+
 ::::::::::::::::::::::::::::::::::::::: instructor
 
-This lesson is designed to introduce learners to the core concepts of R
-that they will need in order to complete the other lessons
-in this workshop. It is intended for learners who have no prior experience with
-R. If your workshop learners have all completed another Software or Data
-Carpentry R workshop, or have taken courses in R, you can skip this lesson
-and move straight into the
-[Introduction to Geospatial Raster and Vector Data with R](https://datacarpentry.org/r-raster-vector-geospatial/) lesson.
-
-This lesson is a trimmed-down version of the
-[R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder) SWC lesson. It does not cover visualization in detail,
-as the later lesson in this workshop covers visualization in the context of
-geospatial data.
+- This lesson is designed to introduce learners to the core concepts of R that 
+they will need in order to complete the other lessons in this workshop. 
+- It is intended for learners who have no prior experience with R. If your 
+  workshop learners have all completed another Software or Data Carpentry R 
+  workshop, or have taken courses in R, you can skip this lesson and move 
+  straight into the 
+  [Introduction to Geospatial Raster and Vector Data with R] (https://datacarpentry.org/r-raster-vector-geospatial/) 
+  lesson.
+- This lesson is a trimmed-down version of the 
+  [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder) 
+  SWC lesson. It does not cover visualization in detail, as the later lesson in 
+  this workshop covers visualization in the context of geospatial data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-## Motivation
 
 Science is a multi-step process: once you've designed an experiment and
 collected data, the real fun begins! This lesson will teach you how to start
