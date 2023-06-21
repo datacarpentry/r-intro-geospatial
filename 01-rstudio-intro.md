@@ -65,6 +65,19 @@ Please ensure you have the latest version of R and RStudio installed on your mac
 - [Download and install the latest version of R here](https://www.r-project.org/)
 - [Download and install RStudio here](https://www.rstudio.com/)
 
+:::::::::::::::::::::::::::::::::::::::: instructor
+
+- If your workshop includes the [Introduction to Geospatial Concepts](https://datacarpentry.org/organization-geospatial/) lesson, learners will have
+  just been introduced to RStudio in the context of the overall Geospatial
+  software landscape.
+- Have your learners open RStudio and follow along as you explain each pane. Make sure that your RStudio environment is the default so learners can follow along.
+- Be sure to explain how to execute code from the script window, whether you're
+  using the Run button or the keyboard shortcut.
+- Learners will be using several packages in the next lesson, so be sure to
+  introduce what a package is and how it is installed.
+  
+::::::::::::::::::::::::::::::::::::::::
+
 ## Introduction to RStudio
 
 Throughout this lesson, we're going to teach you some of the fundamentals of
@@ -596,8 +609,8 @@ install.packages("dplyr")
 
 ```{.output}
 Installing dplyr [1.1.2] ...
-	OK [linked cache in 0.25 milliseconds]
-* Installed 1 package in 0.91 seconds.
+	OK [linked cache in 0.37 milliseconds]
+* Installed 1 package in 1.4 seconds.
 ```
 
 It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
