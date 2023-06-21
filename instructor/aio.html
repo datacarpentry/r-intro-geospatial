@@ -318,7 +318,7 @@
         
 <section id="aio-01-rstudio-intro"><p>Content from <a href="01-rstudio-intro.html">Introduction to R and RStudio</a></p>
 <hr>
-<p> Last updated on 2023-05-18 | 
+<p> Last updated on 2023-06-21 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/01-rstudio-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
@@ -408,7 +408,35 @@ date.</p>
 version of R here</a></li>
 <li><a href="https://www.rstudio.com/" class="external-link">Download and install RStudio
 here</a></li>
-</ul></section><section id="introduction-to-rstudio"><h2 class="section-heading">Introduction to RStudio<a class="anchor" aria-label="anchor" href="#introduction-to-rstudio"></a>
+</ul>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div class="accordion-body">
+<ul>
+<li>If your workshop includes the <a href="https://datacarpentry.org/organization-geospatial/" class="external-link">Introduction
+to Geospatial Concepts</a> lesson, learners will have just been
+introduced to RStudio in the context of the overall Geospatial software
+landscape.</li>
+<li>Have your learners open RStudio and follow along as you explain each
+pane. Make sure that your RStudio environment is the default so learners
+can follow along.</li>
+<li>Be sure to explain how to execute code from the script window,
+whether you’re using the Run button or the keyboard shortcut.</li>
+<li>Learners will be using several packages in the next lesson, so be
+sure to introduce what a package is and how it is installed.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section><section id="introduction-to-rstudio"><h2 class="section-heading">Introduction to RStudio<a class="anchor" aria-label="anchor" href="#introduction-to-rstudio"></a>
 </h2>
 <hr class="half-width">
 <p>Throughout this lesson, we’re going to teach you some of the
@@ -1028,8 +1056,8 @@ do this to install the <code>dplyr</code> R package.</p></li>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Installing dplyr [1.1.2] ...
-	OK [linked cache in 0.25 milliseconds]
-* Installed 1 package in 0.91 seconds.</code></pre>
+	OK [linked cache in 0.37 milliseconds]
+* Installed 1 package in 1.4 seconds.</code></pre>
 </div>
 <p>It’s important to note that we only need to install the R package on
 our computer once. Well, if we install a new version of R on the same
@@ -1589,7 +1617,7 @@ data in R.</p>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <ul>
 <li>Learners will work with factors in the following lesson. Be sure to
@@ -1826,7 +1854,7 @@ does this help us?</p>
   Discussion 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>By keeping everything in a column the same, we allow ourselves to
 make simple assumptions about our data; if you can interpret one entry
@@ -1962,7 +1990,7 @@ classes?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2154,7 +2182,7 @@ there is a built in vector called <code>LETTERS</code>)</p>
   Solution to Challenge 2
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb77">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2305,7 +2333,7 @@ countries?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>They are sorted in alphabetical order</p>
 </div>
@@ -2335,7 +2363,7 @@ character vector when loaded in this way.</p>
   Solution to Challenge 3
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>One solution is use the argument <code>stringAsFactors</code>:</p>
 <div class="codewrapper sourceCode" id="cb96">
@@ -2582,7 +2610,7 @@ is returned in each case.</p>
   Solution to Challenge 4
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb122">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2994,7 +3022,7 @@ could simply ask for a few lines at random. How would you code this?</p>
   Solution to Challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To check the last few lines it’s relatively simple as R already has a
 function for this:</p>
@@ -3051,7 +3079,7 @@ interpret, discuss with your neighbors!</p>
   Solution to Challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The object <code>gapminder</code> is a data frame with columns</p>
 <ul>
@@ -3403,7 +3431,7 @@ person’s answer to the question, “Is it time for coffee break?”</p>
   Solution to Challenge 3
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3787,7 +3815,7 @@ neighbour. Did you have different strategies?</p>
   Solution to challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3994,7 +4022,7 @@ than 4 and less than 7.</p>
   Solution to challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4204,7 +4232,7 @@ and 2007</li>
   Solution to challenge 3
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Fix each of the following common data frame subsetting errors:</p>
 <ol style="list-style-type: decimal">
@@ -4290,7 +4318,7 @@ through 23. You can do this in one or two steps.</p></li>
   Solution to challenge 4
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p><code>gapminder</code> is a data.frame so it needs to be
@@ -5025,7 +5053,7 @@ per capita, rather than life expectancy:</p>
   Solution to challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5107,7 +5135,7 @@ Americas for the years 1952 and 2007, color coded by year.</p>
   Solution to challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>First we create a new object with our filtered data:</p>
 <div class="codewrapper sourceCode" id="cb10">
@@ -5251,7 +5279,7 @@ in the years 1952 and 2007 that you created in the previous episode.</p>
   Solution to challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5341,7 +5369,7 @@ following:</p>
   Solution to challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5422,8 +5450,8 @@ combined with <code>dev.off()</code>.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/aio.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/aio.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-06-20",
-  "datePublished": "2023-06-20"
+  "dateModified": "2023-06-21",
+  "datePublished": "2023-06-21"
 }
 
   </script><script>
