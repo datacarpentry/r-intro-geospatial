@@ -74,8 +74,8 @@ Please ensure you have the latest version of R and RStudio installed on your mac
 - Have your learners open RStudio and follow along as you explain each pane. Make sure that your RStudio environment is the default so learners can follow along.
 - Be sure to explain how to execute code from the script window, whether you're
   using the Run button or the keyboard shortcut.
-- Learners will be using several libraries in the next lesson, so be sure to
-  introduce what a library is and how it is installed.
+- Learners will be using several packages in the next lesson, so be sure to
+  introduce what a package is and how it is installed.
   
 ::::::::::::::::::::::::::::::::::::::::
 
