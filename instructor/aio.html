@@ -318,7 +318,7 @@
         
 <section id="aio-01-rstudio-intro"><p>Content from <a href="01-rstudio-intro.html">Introduction to R and RStudio</a></p>
 <hr>
-<p> Last updated on 2023-06-21 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/01-rstudio-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
@@ -1055,9 +1055,17 @@ do this to install the <code>dplyr</code> R package.</p></li>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Installing dplyr [1.1.2] ...
-	OK [linked cache in 0.37 milliseconds]
-* Installed 1 package in 1.4 seconds.</code></pre>
+<pre class="output" tabindex="0"><code>The following package(s) will be installed:
+
+- dplyr [1.1.2]
+
+These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/R-4.3/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+
+- Installing dplyr ...                          OK [linked from cache in 0.00037s]
+
+Successfully installed 1 package in 5.7 milliseconds.</code></pre>
 </div>
 <p>It’s important to note that we only need to install the R package on
 our computer once. Well, if we install a new version of R on the same
@@ -1196,7 +1204,7 @@ marks when loading an R package (i.e., answer c).</p>
 </div>
 </section></section><section id="aio-02-project-intro"><p>Content from <a href="02-project-intro.html">Project Management With RStudio</a></p>
 <hr>
-<p> Last updated on 2023-05-04 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/02-project-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 15 minutes </p>
@@ -1494,7 +1502,7 @@ layout.</li>
 </div>
 </section></section><section id="aio-03-data-structures-part1"><p>Content from <a href="03-data-structures-part1.html">Data Structures</a></p>
 <hr>
-<p> Last updated on 2023-05-18 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/03-data-structures-part1.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 55 minutes </p>
@@ -1617,7 +1625,7 @@ data in R.</p>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <ul>
 <li>Learners will work with factors in the following lesson. Be sure to
@@ -1854,7 +1862,7 @@ does this help us?</p>
   Discussion 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>By keeping everything in a column the same, we allow ourselves to
 make simple assumptions about our data; if you can interpret one entry
@@ -1990,7 +1998,7 @@ classes?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2182,7 +2190,7 @@ there is a built in vector called <code>LETTERS</code>)</p>
   Solution to Challenge 2
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb77">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2333,7 +2341,7 @@ countries?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>They are sorted in alphabetical order</p>
 </div>
@@ -2363,7 +2371,7 @@ character vector when loaded in this way.</p>
   Solution to Challenge 3
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>One solution is use the argument <code>stringAsFactors</code>:</p>
 <div class="codewrapper sourceCode" id="cb96">
@@ -2610,7 +2618,7 @@ is returned in each case.</p>
   Solution to Challenge 4
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb122">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2743,7 +2751,7 @@ character.</li>
 </div>
 </section></section><section id="aio-04-data-structures-part2"><p>Content from <a href="04-data-structures-part2.html">Exploring Data Frames</a></p>
 <hr>
-<p> Last updated on 2023-05-04 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/04-data-structures-part2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 30 minutes </p>
@@ -3022,7 +3030,7 @@ could simply ask for a few lines at random. How would you code this?</p>
   Solution to Challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To check the last few lines it’s relatively simple as R already has a
 function for this:</p>
@@ -3079,7 +3087,7 @@ interpret, discuss with your neighbors!</p>
   Solution to Challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The object <code>gapminder</code> is a data frame with columns</p>
 <ul>
@@ -3431,7 +3439,7 @@ person’s answer to the question, “Is it time for coffee break?”</p>
   Solution to Challenge 3
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3477,7 +3485,7 @@ represents.</li>
 </div>
 </section></section><section id="aio-05-data-subsetting"><p>Content from <a href="05-data-subsetting.html">Subsetting Data</a></p>
 <hr>
-<p> Last updated on 2023-05-04 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/05-data-subsetting.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 35 minutes </p>
@@ -3815,7 +3823,7 @@ neighbour. Did you have different strategies?</p>
   Solution to challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4022,7 +4030,7 @@ than 4 and less than 7.</p>
   Solution to challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4232,7 +4240,7 @@ and 2007</li>
   Solution to challenge 3
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Fix each of the following common data frame subsetting errors:</p>
 <ol style="list-style-type: decimal">
@@ -4318,7 +4326,7 @@ through 23. You can do this in one or two steps.</p></li>
   Solution to challenge 4
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p><code>gapminder</code> is a data.frame so it needs to be
@@ -4358,7 +4366,7 @@ data.</li>
 </div>
 </section></section><section id="aio-06-dplyr"><p>Content from <a href="06-dplyr.html">Data frame Manipulation with dplyr</a></p>
 <hr>
-<p> Last updated on 2023-05-04 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/06-dplyr.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 40 minutes </p>
@@ -4920,7 +4928,7 @@ of observations in columns.</li>
 </div>
 </section></section><section id="aio-07-plot-ggplot2"><p>Content from <a href="07-plot-ggplot2.html">Introduction to Visualization</a></p>
 <hr>
-<p> Last updated on 2023-05-04 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/07-plot-ggplot2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 35 minutes </p>
@@ -5199,7 +5207,7 @@ customizations we will be working with in that lesson.</p>
 </div>
 </div></section><section id="aio-08-writing-data"><p>Content from <a href="08-writing-data.html">Writing Data</a></p>
 <hr>
-<p> Last updated on 2023-05-04 | 
+<p> Last updated on 2023-07-11 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/08-writing-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -5279,7 +5287,7 @@ in the years 1952 and 2007 that you created in the previous episode.</p>
   Solution to challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5369,7 +5377,7 @@ following:</p>
   Solution to challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5426,7 +5434,7 @@ combined with <code>dev.off()</code>.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.4" class="external-link">sandpaper (0.12.4)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.12.5)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.17" class="external-link">varnish (0.2.17)</a>.</p>
 			</div>
@@ -5450,8 +5458,8 @@ combined with <code>dev.off()</code>.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/aio.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/aio.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-07-04",
-  "datePublished": "2023-07-04"
+  "dateModified": "2023-07-11",
+  "datePublished": "2023-07-11"
 }
 
   </script><script>
