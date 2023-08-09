@@ -320,114 +320,7 @@
 <p>relative path root: {{ relative_root_path }}</p>
 <section id="instructor-notes"><h2 class="section-heading">Instructor notes<a class="anchor" aria-label="anchor" href="#instructor-notes"></a>
 </h2>
-<hr class="half-width"></section><section id="lesson-design"><h2 class="section-heading">Lesson design<a class="anchor" aria-label="anchor" href="#lesson-design"></a>
-</h2>
-<hr class="half-width">
-<div class="section level4">
-<h4 id="introduction-to-r-and-rstudio">
-<a href="01-rstudio-intro.html">Introduction to R and
-RStudio</a><a class="anchor" aria-label="anchor" href="#introduction-to-r-and-rstudio"></a>
-</h4>
-<ul>
-<li>If your workshop includes the <a href="https://datacarpentry.org/organization-geospatial/" class="external-link">Introduction
-to Geospatial Concepts</a> lesson, learners will have just been
-introduced to RStudio in the context of the overall Geospatial software
-landscape.</li>
-<li>Have your learners open RStudio and follow along as you explain each
-pane. Make sure that your RStudio environment is the default so learners
-can follow along.</li>
-<li>Be sure to explain how to execute code from the script window,
-whether you’re using the Run button or the keyboard shortcut.</li>
-<li>Learners will be using several libraries in the next lesson, so be
-sure to introduce what a library is and how it is installed.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="project-management-with-rstudio">
-<a href="02-project-intro.html">Project Management With
-RStudio</a><a class="anchor" aria-label="anchor" href="#project-management-with-rstudio"></a>
-</h4>
-<ul>
-<li>Make sure learners download the data files in Challenge 1 and move
-those files to their <code>data/</code> directory.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="data-structures">
-<a href="03-data-structures-part1.html">Data Structures</a><a class="anchor" aria-label="anchor" href="#data-structures"></a>
-</h4>
-</div>
-<div class="section level4">
-<h4 id="exploring-data-frames">
-<a href="04-data-structures-part2.html">Exploring Data
-Frames</a><a class="anchor" aria-label="anchor" href="#exploring-data-frames"></a>
-</h4>
-<ul>
-<li>Pay attention to and explain the errors and warnings generated from
-the examples in this episode.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="subsetting-data">
-<a href="05-data-subsetting.html">Subsetting Data</a><a class="anchor" aria-label="anchor" href="#subsetting-data"></a>
-</h4>
-<ul>
-<li>The episode after this one covers the <code>dplyr</code> package,
-which has an alternate subsetting mechanism. Learners do still need to
-learn the base R subsetting covered here, as <code>dplyr</code> won’t
-work in all situations. However, the examples in the rest of the
-workshop focus on <code>dplyr</code> syntax.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="dataframe-manipulation-with-dplyr">
-<a href="06-dplyr.html">Dataframe Manipulation with dplyr</a><a class="anchor" aria-label="anchor" href="#dataframe-manipulation-with-dplyr"></a>
-</h4>
-<ul>
-<li>Introduce the <code>dplyr</code> package as a simpler, more
-intuitive way of doing subsetting.</li>
-<li>Unlike other SWC and DC R lessons, this lesson does
-<strong>not</strong> include data reshaping with <code>tidyr</code> as
-it isn’t used in the rest of the workshop.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="introduction-to-visualization">
-<a href="07-plot-ggplot2.html">Introduction to
-Visualization</a><a class="anchor" aria-label="anchor" href="#introduction-to-visualization"></a>
-</h4>
-<ul>
-<li>This episode introduces <code>geom_col</code> and
-<code>geom_histogram</code>. These geoms are used in the rest of the
-workshop, along with geoms specifically for geospatial data.</li>
-<li>Emphasize that we will go much deeper into visualization and
-creating publication-quality graphics later in the workshop.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="writing-data">
-<a href="08-writing-data.html">Writing Data</a><a class="anchor" aria-label="anchor" href="#writing-data"></a>
-</h4>
-<ul>
-<li>Learners will need to have created the directory structure described
-in <a href="02-project-intro.html">Project Management With RStudio</a>
-in order for the code in this episode to work.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="concluding-remarks">Concluding remarks<a class="anchor" aria-label="anchor" href="#concluding-remarks"></a>
-</h4>
-<ul>
-<li>Now that learners know the fundamentals of R, the rest of the
-workshop will apply these concepts to working with geospatial data in
-R.</li>
-<li>Packages and functions specific for working with geospatial data
-will be the focus of the rest of the workshop.</li>
-<li>They will have lots of changes to practice applying and expanding
-these skills in the next lesson.</li>
-</ul>
-</div>
-</section><section id="technical-tips-and-tricks"><h2 class="section-heading">Technical tips and tricks<a class="anchor" aria-label="anchor" href="#technical-tips-and-tricks"></a>
+<hr class="half-width"></section><section id="technical-tips-and-tricks"><h2 class="section-heading">Technical tips and tricks<a class="anchor" aria-label="anchor" href="#technical-tips-and-tricks"></a>
 </h2>
 <hr class="half-width">
 <ul>
@@ -451,20 +344,40 @@ errors.</p></li>
 <h3 id="01-rstudio-intro-headingInstructor1">
 <a href="01-rstudio-intro.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#01-rstudio-intro-headingInstructor1"></a>
 </h3>
-<p>This lesson is designed to introduce learners to the core concepts of
-R that they will need in order to complete the other lessons in this
-workshop. It is intended for learners who have no prior experience with
-R. If your workshop learners have all completed another Software or Data
-Carpentry R workshop, or have taken courses in R, you can skip this
-lesson and move straight into the <a href="https://datacarpentry.org/r-raster-vector-geospatial/" class="external-link">Introduction
-to Geospatial Raster and Vector Data with R</a> lesson.</p>
-<p>This lesson is a trimmed-down version of the <a href="https://swcarpentry.github.io/r-novice-gapminder" class="external-link">R for
-Reproducible Scientific Analysis</a> SWC lesson. It does not cover
-visualization in detail, as the later lesson in this workshop covers
-visualization in the context of geospatial data.</p>
+<ul>
+<li>Leave about 30 minutes at the start of each workshop and another 15
+mins at the start of each session for technical difficulties like WiFi
+and installing things (even if you asked students to install in advance,
+longer if not).</li>
+<li>Be sure to actually go through examples of an R help page: help
+files can be intimidating at first, but knowing how to read them is
+tremendously useful.</li>
+<li>Don’t worry about being correct or knowing the material
+back-to-front. Use mistakes as teaching moments: the most vital skill
+you can impart is how to debug and recover from unexpected errors.</li>
+</ul>
 <hr>
 <br><h3 id="01-rstudio-intro-headingInstructor2">
 <a href="01-rstudio-intro.html#headingInstructor2">Instructor Note</a><a class="anchor" aria-label="anchor" href="#01-rstudio-intro-headingInstructor2"></a>
+</h3>
+<ul>
+<li>This lesson is designed to introduce learners to the core concepts
+of R that they will need in order to complete the other lessons in this
+workshop.</li>
+<li>It is intended for learners who have no prior experience with R. If
+your workshop learners have all completed another Software or Data
+Carpentry R workshop, or have taken courses in R, you can skip this
+lesson and move straight into the [Introduction to Geospatial Raster and
+Vector Data with R] (<a href="https://datacarpentry.org/r-raster-vector-geospatial/" class="external-link uri">https://datacarpentry.org/r-raster-vector-geospatial/</a>)
+lesson.</li>
+<li>This lesson is a trimmed-down version of the <a href="https://swcarpentry.github.io/r-novice-gapminder" class="external-link">R for
+Reproducible Scientific Analysis</a> SWC lesson. It does not cover
+visualization in detail, as the later lesson in this workshop covers
+visualization in the context of geospatial data.</li>
+</ul>
+<hr>
+<br><h3 id="01-rstudio-intro-headingInstructor3">
+<a href="01-rstudio-intro.html#headingInstructor3">Instructor Note</a><a class="anchor" aria-label="anchor" href="#01-rstudio-intro-headingInstructor3"></a>
 </h3>
 <ul>
 <li>If your workshop includes the <a href="https://datacarpentry.org/organization-geospatial/" class="external-link">Introduction
@@ -481,7 +394,14 @@ sure to introduce what a package is and how it is installed.</li>
 </ul>
 <hr>
 <br></section><section id="02-project-intro"><h2 class="section-heading"><a href="02-project-intro.html">Project Management With RStudio</a></h2>
-<hr class="half-width"></section><section id="03-data-structures-part1"><h2 class="section-heading"><a href="03-data-structures-part1.html">Data Structures</a></h2>
+<hr class="half-width">
+<h3 id="02-project-intro-headingInstructor1">
+<a href="02-project-intro.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#02-project-intro-headingInstructor1"></a>
+</h3>
+<p>Make sure learners download the data files in Challenge 1 and move
+those files to their <code>data/</code> directory.</p>
+<hr>
+<br></section><section id="03-data-structures-part1"><h2 class="section-heading"><a href="03-data-structures-part1.html">Data Structures</a></h2>
 <hr class="half-width">
 <h3 id="03-data-structures-part1-headingInstructor1">
 <a href="03-data-structures-part1.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#03-data-structures-part1-headingInstructor1"></a>
@@ -494,11 +414,73 @@ learners don’t use lists in the rest of the workshop.</li>
 </ul>
 <hr>
 <br></section><section id="04-data-structures-part2"><h2 class="section-heading"><a href="04-data-structures-part2.html">Exploring Data Frames</a></h2>
-<hr class="half-width"></section><section id="05-data-subsetting"><h2 class="section-heading"><a href="05-data-subsetting.html">Subsetting Data</a></h2>
-<hr class="half-width"></section><section id="06-dplyr"><h2 class="section-heading"><a href="06-dplyr.html">Data frame Manipulation with dplyr</a></h2>
-<hr class="half-width"></section><section id="07-plot-ggplot2"><h2 class="section-heading"><a href="07-plot-ggplot2.html">Introduction to Visualization</a></h2>
-<hr class="half-width"></section><section id="08-writing-data"><h2 class="section-heading"><a href="08-writing-data.html">Writing Data</a></h2>
-<hr class="half-width"></section></section>
+<hr class="half-width">
+<h3 id="04-data-structures-part2-headingInstructor1">
+<a href="04-data-structures-part2.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#04-data-structures-part2-headingInstructor1"></a>
+</h3>
+<p>Pay attention to and explain the errors and warnings generated from
+the examples in this episode.</p>
+<hr>
+<br></section><section id="05-data-subsetting"><h2 class="section-heading"><a href="05-data-subsetting.html">Subsetting Data</a></h2>
+<hr class="half-width">
+<h3 id="05-data-subsetting-headingInstructor1">
+<a href="05-data-subsetting.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#05-data-subsetting-headingInstructor1"></a>
+</h3>
+<p>The episode after this one covers the <code>dplyr</code> package,
+which has an alternate subsetting mechanism. Learners do still need to
+learn the base R subsetting covered here, as <code>dplyr</code> won’t
+work in all situations. However, the examples in the rest of the
+workshop focus on <code>dplyr</code> syntax.</p>
+<hr>
+<br></section><section id="06-dplyr"><h2 class="section-heading"><a href="06-dplyr.html">Data frame Manipulation with dplyr</a></h2>
+<hr class="half-width">
+<h3 id="06-dplyr-headingInstructor1">
+<a href="06-dplyr.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#06-dplyr-headingInstructor1"></a>
+</h3>
+<ul>
+<li>Introduce the <code>dplyr</code> package as a simpler, more
+intuitive way of doing subsetting.</li>
+<li>Unlike other SWC and DC R lessons, this lesson does
+<strong>not</strong> include data reshaping with <code>tidyr</code> as
+it isn’t used in the rest of the workshop.</li>
+</ul>
+<hr>
+<br></section><section id="07-plot-ggplot2"><h2 class="section-heading"><a href="07-plot-ggplot2.html">Introduction to Visualization</a></h2>
+<hr class="half-width">
+<h3 id="07-plot-ggplot2-headingInstructor1">
+<a href="07-plot-ggplot2.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#07-plot-ggplot2-headingInstructor1"></a>
+</h3>
+<ul>
+<li>This episode introduces <code>geom_col</code> and
+<code>geom_histogram</code>. These geoms are used in the rest of the
+workshop, along with geoms specifically for geospatial data.</li>
+<li>Emphasize that we will go much deeper into visualization and
+creating publication-quality graphics later in the workshop.</li>
+</ul>
+<hr>
+<br></section><section id="08-writing-data"><h2 class="section-heading"><a href="08-writing-data.html">Writing Data</a></h2>
+<hr class="half-width">
+<h3 id="08-writing-data-headingInstructor1">
+<a href="08-writing-data.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#08-writing-data-headingInstructor1"></a>
+</h3>
+<p>Learners will need to have created the directory structure described
+in <a href="02-project-intro.html">Project Management With RStudio</a>
+in order for the code in this episode to work.</p>
+<hr>
+<br><h3 id="08-writing-data-headingInstructor2">
+<a href="08-writing-data.html#headingInstructor2">Instructor Note</a><a class="anchor" aria-label="anchor" href="#08-writing-data-headingInstructor2"></a>
+</h3>
+<ul>
+<li>Now that learners know the fundamentals of R, the rest of the
+workshop will apply these concepts to working with geospatial data in
+R.</li>
+<li>Packages and functions specific for working with geospatial data
+will be the focus of the rest of the workshop.</li>
+<li>They will have lots of challenges to practice applying and expanding
+these skills in the next lesson.</li>
+</ul>
+<hr>
+<br></section></section>
 </div>
     </main>
 </div>
@@ -547,8 +529,8 @@ learners don’t use lists in the rest of the workshop.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/instructor-notes.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/instructor-notes.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-08-08",
-  "datePublished": "2023-08-08"
+  "dateModified": "2023-08-09",
+  "datePublished": "2023-08-09"
 }
 
   </script><script>

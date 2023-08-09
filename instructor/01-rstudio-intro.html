@@ -275,7 +275,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to R and RStudio</h1>
-        <p> Last updated on 2023-07-11 | 
+        <p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/01-rstudio-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -289,6 +289,30 @@
 
         
 
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<ul><li>Leave about 30 minutes at the start of each workshop and another 15
+mins at the start of each session for technical difficulties like WiFi
+and installing things (even if you asked students to install in advance,
+longer if not).</li>
+<li>Be sure to actually go through examples of an R help page: help
+files can be intimidating at first, but knowing how to read them is
+tremendously useful.</li>
+<li>Don’t worry about being correct or knowing the material
+back-to-front. Use mistakes as teaching moments: the most vital skill
+you can impart is how to debug and recover from unexpected errors.</li>
+</ul></div>
+</div>
+</div>
+</div>
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -318,34 +342,36 @@
 </div>
 </div>
 </div>
-<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
+<hr class="half-width"><div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
-<p>This lesson is designed to introduce learners to the core concepts of
-R that they will need in order to complete the other lessons in this
-workshop. It is intended for learners who have no prior experience with
-R. If your workshop learners have all completed another Software or Data
+<ul><li>This lesson is designed to introduce learners to the core concepts
+of R that they will need in order to complete the other lessons in this
+workshop.</li>
+<li>It is intended for learners who have no prior experience with R. If
+your workshop learners have all completed another Software or Data
 Carpentry R workshop, or have taken courses in R, you can skip this
-lesson and move straight into the <a href="https://datacarpentry.org/r-raster-vector-geospatial/" class="external-link">Introduction
-to Geospatial Raster and Vector Data with R</a> lesson.</p>
-<p>This lesson is a trimmed-down version of the <a href="https://swcarpentry.github.io/r-novice-gapminder" class="external-link">R for
+lesson and move straight into the [Introduction to Geospatial Raster and
+Vector Data with R] (<a href="https://datacarpentry.org/r-raster-vector-geospatial/" class="external-link uri">https://datacarpentry.org/r-raster-vector-geospatial/</a>)
+lesson.</li>
+<li>This lesson is a trimmed-down version of the <a href="https://swcarpentry.github.io/r-novice-gapminder" class="external-link">R for
 Reproducible Scientific Analysis</a> SWC lesson. It does not cover
 visualization in detail, as the later lesson in this workshop covers
-visualization in the context of geospatial data.</p>
+visualization in the context of geospatial data.</li>
+</ul></div>
 </div>
 </div>
 </div>
-</div>
-<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
-</h2>
-<hr class="half-width"><p>Science is a multi-step process: once you’ve designed an experiment
+<p>Science is a multi-step process: once you’ve designed an experiment
 and collected data, the real fun begins! This lesson will teach you how
 to start this process using R and RStudio. We will begin with raw data,
 perform exploratory analyses, and learn how to plot results graphically.
@@ -365,15 +391,15 @@ date.</p>
 version of R here</a></li>
 <li><a href="https://www.rstudio.com/" class="external-link">Download and install RStudio
 here</a></li>
-</ul><div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+</ul><div id="accordionInstructor3" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
-  <h3 class="accordion-header" id="headingInstructor2">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
+  <h3 class="accordion-header" id="headingInstructor3">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div id="collapseInstructor3" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor3" aria-labelledby="headingInstructor3">
 <div class="accordion-body">
 <ul><li>If your workshop includes the <a href="https://datacarpentry.org/organization-geospatial/" class="external-link">Introduction
 to Geospatial Concepts</a> lesson, learners will have just been
@@ -992,9 +1018,9 @@ These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospat
 
 # Installing packages --------------------------------------------------------
 
-- Installing dplyr ...                          OK [linked from cache in 0.00037s]
+- Installing dplyr ...                          OK [linked from cache in 0.00034s]
 
-Successfully installed 1 package in 5.7 milliseconds.</code></pre>
+Successfully installed 1 package in 5.6 milliseconds.</code></pre>
 </div>
 <p>It’s important to note that we only need to install the R package on
 our computer once. Well, if we install a new version of R on the same
@@ -1180,8 +1206,8 @@ marks when loading an R package (i.e., answer c).</p>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/01-rstudio-intro.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/01-rstudio-intro.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-07-11",
-  "datePublished": "2023-08-08"
+  "dateModified": "2023-08-09",
+  "datePublished": "2023-08-09"
 }
 
   </script><script>

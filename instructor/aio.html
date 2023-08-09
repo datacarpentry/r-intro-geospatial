@@ -318,13 +318,39 @@
         
 <section id="aio-01-rstudio-intro"><p>Content from <a href="01-rstudio-intro.html">Introduction to R and RStudio</a></p>
 <hr>
-<p> Last updated on 2023-07-11 | 
+<p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/01-rstudio-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<ul>
+<li>Leave about 30 minutes at the start of each workshop and another 15
+mins at the start of each session for technical difficulties like WiFi
+and installing things (even if you asked students to install in advance,
+longer if not).</li>
+<li>Be sure to actually go through examples of an R help page: help
+files can be intimidating at first, but knowing how to read them is
+tremendously useful.</li>
+<li>Don’t worry about being correct or knowing the material
+back-to-front. Use mistakes as teaching moments: the most vital skill
+you can impart is how to debug and recover from unexpected errors.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -358,34 +384,38 @@
 </div>
 </div>
 </div>
-<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
+<hr class="half-width">
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
-<p>This lesson is designed to introduce learners to the core concepts of
-R that they will need in order to complete the other lessons in this
-workshop. It is intended for learners who have no prior experience with
-R. If your workshop learners have all completed another Software or Data
+<ul>
+<li>This lesson is designed to introduce learners to the core concepts
+of R that they will need in order to complete the other lessons in this
+workshop.</li>
+<li>It is intended for learners who have no prior experience with R. If
+your workshop learners have all completed another Software or Data
 Carpentry R workshop, or have taken courses in R, you can skip this
-lesson and move straight into the <a href="https://datacarpentry.org/r-raster-vector-geospatial/" class="external-link">Introduction
-to Geospatial Raster and Vector Data with R</a> lesson.</p>
-<p>This lesson is a trimmed-down version of the <a href="https://swcarpentry.github.io/r-novice-gapminder" class="external-link">R for
+lesson and move straight into the [Introduction to Geospatial Raster and
+Vector Data with R] (<a href="https://datacarpentry.org/r-raster-vector-geospatial/" class="external-link uri">https://datacarpentry.org/r-raster-vector-geospatial/</a>)
+lesson.</li>
+<li>This lesson is a trimmed-down version of the <a href="https://swcarpentry.github.io/r-novice-gapminder" class="external-link">R for
 Reproducible Scientific Analysis</a> SWC lesson. It does not cover
 visualization in detail, as the later lesson in this workshop covers
-visualization in the context of geospatial data.</p>
+visualization in the context of geospatial data.</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
-</h2>
-<hr class="half-width">
 <p>Science is a multi-step process: once you’ve designed an experiment
 and collected data, the real fun begins! This lesson will teach you how
 to start this process using R and RStudio. We will begin with raw data,
@@ -409,15 +439,15 @@ version of R here</a></li>
 <li><a href="https://www.rstudio.com/" class="external-link">Download and install RStudio
 here</a></li>
 </ul>
-<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div id="accordionInstructor3" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
-  <h3 class="accordion-header" id="headingInstructor2">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
+  <h3 class="accordion-header" id="headingInstructor3">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div id="collapseInstructor3" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor3" aria-labelledby="headingInstructor3">
 <div class="accordion-body">
 <ul>
 <li>If your workshop includes the <a href="https://datacarpentry.org/organization-geospatial/" class="external-link">Introduction
@@ -1063,9 +1093,9 @@ These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospat
 
 # Installing packages --------------------------------------------------------
 
-- Installing dplyr ...                          OK [linked from cache in 0.00037s]
+- Installing dplyr ...                          OK [linked from cache in 0.00034s]
 
-Successfully installed 1 package in 5.7 milliseconds.</code></pre>
+Successfully installed 1 package in 5.6 milliseconds.</code></pre>
 </div>
 <p>It’s important to note that we only need to install the R package on
 our computer once. Well, if we install a new version of R on the same
@@ -1204,7 +1234,7 @@ marks when loading an R package (i.e., answer c).</p>
 </div>
 </section></section><section id="aio-02-project-intro"><p>Content from <a href="02-project-intro.html">Project Management With RStudio</a></p>
 <hr>
-<p> Last updated on 2023-07-11 | 
+<p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/02-project-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 15 minutes </p>
@@ -1283,6 +1313,22 @@ your work effectively.</p>
 <p>One of the most powerful and useful aspects of RStudio is its project
 management functionality. We’ll be using this today to create a
 self-contained, reproducible project.</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p>Make sure learners download the data files in Challenge 1 and move
+those files to their <code>data/</code> directory.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="challenge-creating-a-self-contained-project" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -2751,7 +2797,7 @@ character.</li>
 </div>
 </section></section><section id="aio-04-data-structures-part2"><p>Content from <a href="04-data-structures-part2.html">Exploring Data Frames</a></p>
 <hr>
-<p> Last updated on 2023-07-11 | 
+<p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/04-data-structures-part2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 30 minutes </p>
@@ -2803,6 +2849,22 @@ that our data are consistent in type throughout the columns. So far, you
 have seen the basics of manipulating data frames with our nordic data;
 now let’s use those skills to digest a more extensive dataset. Let’s
 read in the gapminder dataset that we downloaded previously:</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p>Pay attention to and explain the errors and warnings generated from
+the examples in this episode.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3030,7 +3092,7 @@ could simply ask for a few lines at random. How would you code this?</p>
   Solution to Challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>To check the last few lines it’s relatively simple as R already has a
 function for this:</p>
@@ -3087,7 +3149,7 @@ interpret, discuss with your neighbors!</p>
   Solution to Challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The object <code>gapminder</code> is a data frame with columns</p>
 <ul>
@@ -3439,7 +3501,7 @@ person’s answer to the question, “Is it time for coffee break?”</p>
   Solution to Challenge 3
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3485,7 +3547,7 @@ represents.</li>
 </div>
 </section></section><section id="aio-05-data-subsetting"><p>Content from <a href="05-data-subsetting.html">Subsetting Data</a></p>
 <hr>
-<p> Last updated on 2023-07-11 | 
+<p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/05-data-subsetting.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 35 minutes </p>
@@ -4094,6 +4156,25 @@ vector</li>
 </section><section id="data-frames"><h2 class="section-heading">Data frames<a class="anchor" aria-label="anchor" href="#data-frames"></a>
 </h2>
 <hr class="half-width">
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p>The episode after this one covers the <code>dplyr</code> package,
+which has an alternate subsetting mechanism. Learners do still need to
+learn the base R subsetting covered here, as <code>dplyr</code> won’t
+work in all situations. However, the examples in the rest of the
+workshop focus on <code>dplyr</code> syntax.</p>
+</div>
+</div>
+</div>
+</div>
 <p>Remember the data frames are lists underneath the hood, so similar
 rules apply. However they are also two dimensional objects:</p>
 <p><code>[</code> with one argument will act the same way as for lists,
@@ -4366,7 +4447,7 @@ data.</li>
 </div>
 </section></section><section id="aio-06-dplyr"><p>Content from <a href="06-dplyr.html">Data frame Manipulation with dplyr</a></p>
 <hr>
-<p> Last updated on 2023-07-11 | 
+<p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/06-dplyr.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 40 minutes </p>
@@ -4446,6 +4527,27 @@ time, both now and later, and potentially introduce some nasty bugs.</p>
 <section id="the-dplyr-package"><h2 class="section-heading">The <code>dplyr</code> package<a class="anchor" aria-label="anchor" href="#the-dplyr-package"></a>
 </h2>
 <hr class="half-width">
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<ul>
+<li>Introduce the <code>dplyr</code> package as a simpler, more
+intuitive way of doing subsetting.</li>
+<li>Unlike other SWC and DC R lessons, this lesson does
+<strong>not</strong> include data reshaping with <code>tidyr</code> as
+it isn’t used in the rest of the workshop.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <p>Luckily, the <a href="https://dplyr.tidyverse.org" class="external-link"><code>dplyr</code></a> package
 provides a number of very useful functions for manipulating dataframes
 in a way that will reduce the above repetition, reduce the probability
@@ -4928,7 +5030,7 @@ of observations in columns.</li>
 </div>
 </section></section><section id="aio-07-plot-ggplot2"><p>Content from <a href="07-plot-ggplot2.html">Introduction to Visualization</a></p>
 <hr>
-<p> Last updated on 2023-07-11 | 
+<p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/07-plot-ggplot2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 35 minutes </p>
@@ -4975,6 +5077,27 @@ ggplot and make a few example plots. We will expand on these concepts
 and see how they apply to geospatial data types when we start working
 with geospatial data in the <a href="https://datacarpentry.org/r-raster-vector-geospatial/" class="external-link">R for
 Raster and Vector Data</a> lesson.</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<ul>
+<li>This episode introduces <code>geom_col</code> and
+<code>geom_histogram</code>. These geoms are used in the rest of the
+workshop, along with geoms specifically for geospatial data.</li>
+<li>Emphasize that we will go much deeper into visualization and
+creating publication-quality graphics later in the workshop.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <p>ggplot2 is built on the grammar of graphics, the idea that any plot
 can be expressed from the same set of components: a
 <strong>data</strong> set, a <strong>coordinate system</strong>, and a
@@ -5061,7 +5184,7 @@ per capita, rather than life expectancy:</p>
   Solution to challenge 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5143,7 +5266,7 @@ Americas for the years 1952 and 2007, color coded by year.</p>
   Solution to challenge 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>First we create a new object with our filtered data:</p>
 <div class="codewrapper sourceCode" id="cb10">
@@ -5207,7 +5330,7 @@ customizations we will be working with in that lesson.</p>
 </div>
 </div></section><section id="aio-08-writing-data"><p>Content from <a href="08-writing-data.html">Writing Data</a></p>
 <hr>
-<p> Last updated on 2023-07-11 | 
+<p> Last updated on 2023-08-09 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/08-writing-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -5235,6 +5358,23 @@ customizations we will be working with in that lesson.</p>
 <li>To be able to write out plots and data from R.</li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<p>Learners will need to have created the directory structure described
+in <a href="02-project-intro.html">Project Management With RStudio</a>
+in order for the code in this episode to work.</p>
 </div>
 </div>
 </div>
@@ -5409,6 +5549,29 @@ combined with <code>dev.off()</code>.</li>
 </div>
 </div>
 </div>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div class="accordion-body">
+<ul>
+<li>Now that learners know the fundamentals of R, the rest of the
+workshop will apply these concepts to working with geospatial data in
+R.</li>
+<li>Packages and functions specific for working with geospatial data
+will be the focus of the rest of the workshop.</li>
+<li>They will have lots of challenges to practice applying and expanding
+these skills in the next lesson.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 </div>
     </main>
@@ -5458,8 +5621,8 @@ combined with <code>dev.off()</code>.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/aio.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/aio.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-08-08",
-  "datePublished": "2023-08-08"
+  "dateModified": "2023-08-09",
+  "datePublished": "2023-08-09"
 }
 
   </script><script>
