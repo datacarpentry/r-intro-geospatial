@@ -33,6 +33,16 @@ expand on these concepts and see how they apply to geospatial data types when we
 start working with geospatial data in the [R for Raster and Vector
 Data](https://datacarpentry.org/r-raster-vector-geospatial/) lesson.
 
+:::::::::::::::::::::::::::::::::::::::  instructor
+
+- This episode introduces `geom_col` and `geom_histogram`. These geoms are used
+  in the rest of the workshop, along with geoms specifically for geospatial 
+  data.
+- Emphasize that we will go much deeper into visualization and creating
+  publication-quality graphics later in the workshop.
+
+:::::::::::::::::::::::::::::::::::::::
+
 ggplot2 is built on the grammar of graphics, the idea that any plot can be
 expressed from the same set of components: a **data** set, a **coordinate
 system**, and a set of **geoms**\--the visual representation of data points. The

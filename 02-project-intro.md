@@ -65,6 +65,13 @@ One of the most powerful and useful aspects of RStudio is its project management
 functionality. We'll be using this today to create a self-contained, reproducible
 project.
 
+:::::::::::::::::::::::::::::::::::::::  instructor
+
+Make sure learners download the data files in Challenge 1 and move those files
+to their `data/` directory.
+
+:::::::::::::::::::::::::::::::::::::::  
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Challenge: Creating a self-contained project

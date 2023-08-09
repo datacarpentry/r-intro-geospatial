@@ -34,6 +34,13 @@ We already learned that the columns of a data frame are vectors, so that our
 data are consistent in type throughout the columns.
 So far, you have seen the basics of manipulating data frames with our nordic data; now let's use those skills to digest a more extensive dataset. Let's read in the gapminder dataset that we downloaded previously:
 
+:::::::::::::::::::::::::::::::::::::::::  instructor
+
+Pay attention to and explain the errors and warnings generated from the 
+examples in this episode.
+
+:::::::::::::::::::::::::::::::::::::::::  
+
 
 ```r
 gapminder <- read.csv("data/gapminder_data.csv")

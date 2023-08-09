@@ -17,6 +17,14 @@ source: Rmd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::: instructor
+
+Learners will need to have created the directory structure described in 
+[Project Management With RStudio](../episodes/02-project-intro.Rmd) in order 
+for the code in this episode to work.
+
+::::::::::::::::::::::::::::::::::::::::
+
 
 
 ## Saving plots
@@ -164,3 +172,13 @@ write.csv(gapminder_after_1990,
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+:::::::::::::::::::::::::::::::::::::::: instructor
+
+- Now that learners know the fundamentals of R, the rest of the workshop will 
+  apply these concepts to working with geospatial data in R.
+- Packages and functions specific for working with geospatial data will be the 
+  focus of the rest of the workshop.
+- They will have lots of challenges to practice applying and expanding these 
+  skills in the next lesson.
+
+::::::::::::::::::::::::::::::::::::::::

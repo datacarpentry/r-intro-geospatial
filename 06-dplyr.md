@@ -57,6 +57,15 @@ later, and potentially introduce some nasty bugs.
 
 ## The `dplyr` package
 
+:::::::::::::::::::::::::::::::::::::::  instructor
+
+- Introduce the `dplyr` package as a simpler, more intuitive way of doing
+  subsetting.
+- Unlike other SWC and DC R lessons, this lesson does **not** include data
+  reshaping with `tidyr` as it isn't used in the rest of the workshop.
+
+:::::::::::::::::::::::::::::::::::::::
+
 Luckily, the [`dplyr`](https://dplyr.tidyverse.org) package provides a number of
 very useful functions for manipulating dataframes in a way that will reduce the
 above repetition, reduce the probability of making errors, and probably even

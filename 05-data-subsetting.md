@@ -494,6 +494,15 @@ There are a number of special functions you can use to filter out this data:
 
 ## Data frames
 
+:::::::::::::::::::::::::::::::::::::::::  instructor
+
+The episode after this one covers the `dplyr` package, which has an alternate 
+subsetting mechanism. Learners do still need to learn the base R subsetting 
+covered here, as `dplyr` won't work in all situations. However, the examples in 
+the rest of the workshop focus on `dplyr` syntax.
+
+:::::::::::::::::::::::::::::::::::::::::
+
 Remember the data frames are lists underneath the hood, so similar rules
 apply. However they are also two dimensional objects:
 
