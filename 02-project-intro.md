@@ -70,6 +70,13 @@ project.
 Make sure learners download the data files in Challenge 1 and move those files
 to their `data/` directory.
 
+When learners load an RStudio project, their R session's working directory should
+automatically be set to the same folder as the `.RProj` file. We'll be using relative
+paths throughout the lesson to refer to files, so it's important to make sure that
+learners have loaded the right project and are in the right directory! You may also
+want to introduce other ways to make file paths, such as the `here` package, after
+creating the project.
+
 :::::::::::::::::::::::::::::::::::::::  
 
 :::::::::::::::::::::::::::::::::::::::  challenge
