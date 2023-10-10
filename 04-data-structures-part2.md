@@ -278,7 +278,7 @@ neighbors!
 
 The object `gapminder` is a data frame with columns
 
-- `country` and `continent` are factors.
+- `country` and `continent` are character vectors.
 - `year` is an integer vector.
 - `pop`, `lifeExp`, and `gdpPercap` are numeric vectors.
 
@@ -560,8 +560,7 @@ You can create a new data frame right from within R with the following syntax:
 ```r
 df <- data.frame(id = c("a", "b", "c"),
                  x = 1:3,
-                 y = c(TRUE, TRUE, FALSE),
-                 stringsAsFactors = FALSE)
+                 y = c(TRUE, TRUE, FALSE))
 ```
 
 Make a data frame that holds the following information for yourself:
@@ -582,8 +581,7 @@ time for coffee break?"
 ```r
 df <- data.frame(first = c("Grace"),
                  last = c("Hopper"),
-                 lucky_number = c(0),
-                 stringsAsFactors = FALSE)
+                 lucky_number = c(0))
 df <- rbind(df, list("Marie", "Curie", 238) )
 df <- cbind(df, coffeetime = c(TRUE, TRUE))
 ```

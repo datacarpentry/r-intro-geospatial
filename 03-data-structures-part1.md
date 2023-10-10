@@ -411,12 +411,9 @@ str(nordic$lifeExp)
  num [1:3] 77.2 80 79
 ```
 
-The data in `nordic_2$lifeExp` is stored as factors rather than
-numeric. This is because of the "or" character string in the third
-data point. "Factor" is R's special term for categorical data.
-We will be working more with factor data later in this workshop.
-
-
+The data in `nordic_2$lifeExp` is stored as a character vector, rather than as
+a numeric vector. This is because of the "or" character string in the third
+data point.
 
 :::::::::::::::::::::::::
 
@@ -579,9 +576,6 @@ str(nordic$year)
  int [1:3] 2002 2002 2002
 ```
 
-These make sense. But what about
-
-
 ```r
 str(nordic$country)
 ```
@@ -590,10 +584,14 @@ str(nordic$country)
  chr [1:3] "Denmark" "Sweden" "Norway"
 ```
 
-Another important data structure is called a factor. Factors look like character
-data, but are used to represent categorical information. For example, let's make
-a vector of strings labeling nordic countries for all the countries in our
-study:
+One final important data structure in R is called a "factor". Factors look like 
+character data, but are used to represent data where each element of the vector
+must be one of a limited number of "levels". To phrase that another way, factors
+are an "enumerated" type where there are a finite number of pre-defined values
+that your vector can have. 
+
+For example, let's make a vector of strings labeling nordic countries for all 
+the countries in our study:
 
 
 ```r
@@ -668,8 +666,6 @@ Can you guess why these numbers are used to represent these countries?
 
 They are sorted in alphabetical order
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -678,37 +674,87 @@ They are sorted in alphabetical order
 
 ## Challenge 3
 
-Is there a factor in our `nordic` data frame? what is its name? Try using
-`?read.csv` to figure out how to keep text columns as character vectors
-instead of factors; then write a command or two to show that the factor in
-`nordic` is actually a character vector when loaded in this way.
+Convert the `country` column of our `nordic` data frame to a factor. Then try
+converting it back to a character vector. 
+
+Now try converting `lifeExp` in our `nordic` data frame to a factor, then back
+to a numeric vector. What happens if you use `as.numeric()`?
+
+Remember that you can reload the `nordic` data frame using 
+`read.csv("data/nordic-data.csv")` if you accidentally lose some data!
 
 :::::::::::::::  solution
 
 ## Solution to Challenge 3
 
-One solution is use the argument `stringAsFactors`:
+Converting character vectors to factors can be done using the `factor()` 
+function:
 
 
 ```r
-nordic <- read.csv(file = "data/nordic-data.csv", stringsAsFactors = FALSE)
-str(nordic$country)
+nordic$country <- factor(nordic$country)
+nordic$country
 ```
 
-Another solution is use the argument `colClasses`
-that allow finer control.
+```{.output}
+[1] Denmark Sweden  Norway 
+Levels: Denmark Norway Sweden
+```
+
+You can convert these back to character vectors using `as.character()`:
 
 
 ```r
-nordic <- read.csv(file="data/nordic-data.csv", colClasses=c(NA, NA, "character"))
-str(nordic$country)
+nordic$country <- as.character(nordic$country)
+nordic$country
+```
+
+```{.output}
+[1] "Denmark" "Sweden"  "Norway" 
+```
+
+You can convert numeric vectors to factors in the exact same way:
+
+
+```r
+nordic$lifeExp <- factor(nordic$lifeExp)
+nordic$lifeExp
+```
+
+```{.output}
+[1] 77.2 80   79  
+Levels: 77.2 79 80
+```
+
+But be careful -- you can't use `as.numeric()` to convert factors to numerics!
+
+
+```r
+as.numeric(nordic$lifeExp)
+```
+
+```{.output}
+[1] 1 3 2
+```
+
+Instead, `as.numeric()` converts factors to those "numbers under the hood" we 
+talked about. To go from a factor to a number, you need to first turn the factor
+into a character vector, and _then_ turn that into a numeric vector:
+
+
+```r
+nordic$lifeExp <- as.character(nordic$lifeExp)
+nordic$lifeExp <- as.numeric(nordic$lifeExp)
+nordic$lifeExp
+```
+
+```{.output}
+[1] 77.2 80.0 79.0
 ```
 
 Note: new students find the help files difficult to understand; make sure to let them know
 that this is typical, and encourage them to take their best guess based on semantic meaning,
 even if they aren't sure.
-
-
 
 :::::::::::::::::::::::::
 
@@ -920,7 +966,7 @@ nordic[[1]]
 ```
 
 The double brace `[[1]]` returns the contents of the list item. In this case
-it is the contents of the first column, a *vector* of type *factor*.
+it is the contents of the first column, a *vector* of type *character*.
 
 
 ```r
@@ -931,9 +977,8 @@ nordic$country
 [1] "Denmark" "Sweden"  "Norway" 
 ```
 
-This example uses the `$` character to address items by name. *coat* is the
-first column of the data frame, again a *vector* of type *factor*.
-X
+This example uses the `$` character to address items by name. *country* is the
+first column of the data frame, again a *vector* of type *character*.
 
 
 ```r
@@ -961,8 +1006,7 @@ nordic[1, 1]
 
 This example uses a single brace, but this time we provide row and column
 coordinates. The returned object is the value in row 1, column 1. The object
-is an *integer* but because it is part of a *vector* of type *factor*, R
-displays the label "Denmark" associated with the integer value.
+is an *character*: the first value of the first vector in our `nordic` object.
 
 
 ```r
