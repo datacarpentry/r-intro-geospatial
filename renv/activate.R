@@ -295,8 +295,7 @@ local({
         # retrieve package database
         db <- tryCatch(
           as.data.frame(
-            utils::available.packages(type = type, repos = repos),
-            stringsAsFactors = FALSE
+            utils::available.packages(type = type, repos = repos)
           ),
           error = identity
         )
@@ -557,8 +556,7 @@ local({
       sep              = "=",
       quote            = c("\"", "'"),
       col.names        = c("Key", "Value"),
-      comment.char     = "#",
-      stringsAsFactors = FALSE
+      comment.char     = "#"
     )
   
     vars <- as.list(release$Value)
