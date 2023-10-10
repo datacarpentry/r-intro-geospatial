@@ -280,7 +280,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exploring Data Frames</h1>
-        <p> Last updated on 2023-08-15 | 
+        <p> Last updated on 2023-10-10 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/04-data-structures-part2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -615,7 +615,8 @@ interpret, discuss with your neighbors!</p>
 <div class="accordion-body">
 <p>The object <code>gapminder</code> is a data frame with columns</p>
 <ul><li>
-<code>country</code> and <code>continent</code> are factors.</li>
+<code>country</code> and <code>continent</code> are character
+vectors.</li>
 <li>
 <code>year</code> is an integer vector.</li>
 <li>
@@ -935,8 +936,7 @@ following syntax:</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">data.frame</span><span class="op">(</span>id <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>,</span>
 <span>                 x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,</span>
-<span>                 y <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>,</span>
-<span>                 stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre>
+<span>                 y <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Make a data frame that holds the following information for
 yourself:</p>
@@ -964,8 +964,7 @@ person’s answer to the question, “Is it time for coffee break?”</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">data.frame</span><span class="op">(</span>first <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"Grace"</span><span class="op">)</span>,</span>
 <span>                 last <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"Hopper"</span><span class="op">)</span>,</span>
-<span>                 lucky_number <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,</span>
-<span>                 stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>                 lucky_number <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">rbind</span><span class="op">(</span><span class="va">df</span>, <span class="fu">list</span><span class="op">(</span><span class="st">"Marie"</span>, <span class="st">"Curie"</span>, <span class="fl">238</span><span class="op">)</span> <span class="op">)</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">cbind</span><span class="op">(</span><span class="va">df</span>, coffeetime <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
@@ -1057,7 +1056,7 @@ represents.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/04-data-structures-part2.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/04-data-structures-part2.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-08-15",
+  "dateModified": "2023-10-10",
   "datePublished": "2023-10-10"
 }
 

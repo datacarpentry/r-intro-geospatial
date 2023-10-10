@@ -279,7 +279,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data Structures</h1>
-        <p> Last updated on 2023-08-15 | 
+        <p> Last updated on 2023-10-10 | 
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/03-data-structures-part1.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -404,7 +404,7 @@ data in R.</p>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <ul><li>Learners will work with factors in the following lesson. Be sure to
 cover this concept.</li>
@@ -638,7 +638,7 @@ does this help us?</p>
   Discussion 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>By keeping everything in a column the same, we allow ourselves to
 make simple assumptions about our data; if you can interpret one entry
@@ -774,7 +774,7 @@ classes?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -798,10 +798,9 @@ classes?</p>
 </h3>
 <pre class="output" tabindex="0"><code> num [1:3] 77.2 80 79</code></pre>
 </div>
-<p>The data in <code>nordic_2$lifeExp</code> is stored as factors rather
-than numeric. This is because of the “or” character string in the third
-data point. “Factor” is R’s special term for categorical data. We will
-be working more with factor data later in this workshop.</p>
+<p>The data in <code>nordic_2$lifeExp</code> is stored as a character
+vector, rather than as a numeric vector. This is because of the “or”
+character string in the third data point.</p>
 </div>
 </div>
 </div>
@@ -966,7 +965,7 @@ there is a built in vector called <code>LETTERS</code>)</p>
   Solution to Challenge 2
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb77">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1005,7 +1004,6 @@ there is a built in vector called <code>LETTERS</code>)</p>
 </h3>
 <pre class="output" tabindex="0"><code> int [1:3] 2002 2002 2002</code></pre>
 </div>
-<p>These make sense. But what about</p>
 <div class="codewrapper sourceCode" id="cb82">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1017,9 +1015,12 @@ there is a built in vector called <code>LETTERS</code>)</p>
 </h3>
 <pre class="output" tabindex="0"><code> chr [1:3] "Denmark" "Sweden" "Norway"</code></pre>
 </div>
-<p>Another important data structure is called a factor. Factors look
-like character data, but are used to represent categorical information.
-For example, let’s make a vector of strings labeling nordic countries
+<p>One final important data structure in R is called a “factor”. Factors
+look like character data, but are used to represent data where each
+element of the vector must be one of a limited number of “levels”. To
+phrase that another way, factors are an “enumerated” type where there
+are a finite number of pre-defined values that your vector can have.</p>
+<p>For example, let’s make a vector of strings labeling nordic countries
 for all the countries in our study:</p>
 <div class="codewrapper sourceCode" id="cb84">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1116,7 +1117,7 @@ countries?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>They are sorted in alphabetical order</p>
 </div>
@@ -1131,11 +1132,15 @@ countries?</p>
 <h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
-<p>Is there a factor in our <code>nordic</code> data frame? what is its
-name? Try using <code>?read.csv</code> to figure out how to keep text
-columns as character vectors instead of factors; then write a command or
-two to show that the factor in <code>nordic</code> is actually a
-character vector when loaded in this way.</p>
+<p>Convert the <code>country</code> column of our <code>nordic</code>
+data frame to a factor. Then try converting it back to a character
+vector.</p>
+<p>Now try converting <code>lifeExp</code> in our <code>nordic</code>
+data frame to a factor, then back to a numeric vector. What happens if
+you use <code>as.numeric()</code>?</p>
+<p>Remember that you can reload the <code>nordic</code> data frame using
+<code>read.csv("data/nordic-data.csv")</code> if you accidentally lose
+some data!</p>
 </div>
 </div>
 </div>
@@ -1146,24 +1151,80 @@ character vector when loaded in this way.</p>
   Solution to Challenge 3
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
-<p>One solution is use the argument <code>stringAsFactors</code>:</p>
+<p>Converting character vectors to factors can be done using the
+<code>factor()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb96">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">nordic</span> <span class="op">&lt;-</span> <span class="fu">read.csv</span><span class="op">(</span>file <span class="op">=</span> <span class="st">"data/nordic-data.csv"</span>, stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="fu">str</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span> <span class="op">&lt;-</span> <span class="fu">factor</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span>
+<span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span></span></code></pre>
 </div>
-<p>Another solution is use the argument <code>colClasses</code> that
-allow finer control.</p>
-<div class="codewrapper sourceCode" id="cb97">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] Denmark Sweden  Norway 
+Levels: Denmark Norway Sweden</code></pre>
+</div>
+<p>You can convert these back to character vectors using
+<code>as.character()</code>:</p>
+<div class="codewrapper sourceCode" id="cb98">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">nordic</span> <span class="op">&lt;-</span> <span class="fu">read.csv</span><span class="op">(</span>file<span class="op">=</span><span class="st">"data/nordic-data.csv"</span>, colClasses<span class="op">=</span><span class="fu">c</span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"character"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu">str</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span> <span class="op">&lt;-</span> <span class="fu">as.character</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span>
+<span><span class="va">nordic</span><span class="op">$</span><span class="va">country</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "Denmark" "Sweden"  "Norway" </code></pre>
+</div>
+<p>You can convert numeric vectors to factors in the exact same way:</p>
+<div class="codewrapper sourceCode" id="cb100">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span> <span class="op">&lt;-</span> <span class="fu">factor</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span><span class="op">)</span></span>
+<span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 77.2 80   79  
+Levels: 77.2 79 80</code></pre>
+</div>
+<p>But be careful – you can’t use <code>as.numeric()</code> to convert
+factors to numerics!</p>
+<div class="codewrapper sourceCode" id="cb102">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">as.numeric</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 1 3 2</code></pre>
+</div>
+<p>Instead, <code>as.numeric()</code> converts factors to those “numbers
+under the hood” we talked about. To go from a factor to a number, you
+need to first turn the factor into a character vector, and <em>then</em>
+turn that into a numeric vector:</p>
+<div class="codewrapper sourceCode" id="cb104">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span> <span class="op">&lt;-</span> <span class="fu">as.character</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span><span class="op">)</span></span>
+<span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span> <span class="op">&lt;-</span> <span class="fu">as.numeric</span><span class="op">(</span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span><span class="op">)</span></span>
+<span><span class="va">nordic</span><span class="op">$</span><span class="va">lifeExp</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 77.2 80.0 79.0</code></pre>
 </div>
 <p>Note: new students find the help files difficult to understand; make
 sure to let them know that this is typical, and encourage them to take
@@ -1177,7 +1238,7 @@ sure.</p>
 baseline levels are. This is assumed to be the first factor, but by
 default factors are labeled in alphabetical order. You can change this
 by specifying the levels:</p>
-<div class="codewrapper sourceCode" id="cb98">
+<div class="codewrapper sourceCode" id="cb106">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1198,7 +1259,7 @@ important for interpreting the results of statistical models!</p>
 <hr class="half-width"><p>Another data structure you’ll want in your bag of tricks is the
 <code>list</code>. A list is simpler in some ways than the other types,
 because you can put anything you want in it:</p>
-<div class="codewrapper sourceCode" id="cb100">
+<div class="codewrapper sourceCode" id="cb108">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1220,7 +1281,7 @@ because you can put anything you want in it:</p>
 [[4]]
 [1] 2 6 7</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb102">
+<div class="codewrapper sourceCode" id="cb110">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1242,7 +1303,7 @@ $data
 <p>We can now understand something a bit surprising in our data frame;
 what happens if we compare <code>str(nordic)</code> and
 <code>str(another_list)</code>:</p>
-<div class="codewrapper sourceCode" id="cb104">
+<div class="codewrapper sourceCode" id="cb112">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1256,7 +1317,7 @@ what happens if we compare <code>str(nordic)</code> and
  $ year   : int  2002 2002 2002
  $ lifeExp: num  77.2 80 79</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb106">
+<div class="codewrapper sourceCode" id="cb114">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1277,7 +1338,7 @@ have the same lengths.</p>
 <p>In our <code>nordic</code> example, we have an integer, a double and
 a logical variable. As we have seen already, each column of data frame
 is a vector.</p>
-<div class="codewrapper sourceCode" id="cb108">
+<div class="codewrapper sourceCode" id="cb116">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1288,7 +1349,7 @@ is a vector.</p>
 </h3>
 <pre class="output" tabindex="0"><code>[1] "Denmark" "Sweden"  "Norway" </code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb110">
+<div class="codewrapper sourceCode" id="cb118">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1299,7 +1360,7 @@ is a vector.</p>
 </h3>
 <pre class="output" tabindex="0"><code>[1] "Denmark" "Sweden"  "Norway" </code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb112">
+<div class="codewrapper sourceCode" id="cb120">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1310,7 +1371,7 @@ is a vector.</p>
 </h3>
 <pre class="output" tabindex="0"><code>[1] "character"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb114">
+<div class="codewrapper sourceCode" id="cb122">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1323,7 +1384,7 @@ is a vector.</p>
 </div>
 <p>Each row is an <em>observation</em> of different variables, itself a
 data frame, and thus can be composed of elements of different types.</p>
-<div class="codewrapper sourceCode" id="cb116">
+<div class="codewrapper sourceCode" id="cb124">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1335,7 +1396,7 @@ data frame, and thus can be composed of elements of different types.</p>
 <pre class="output" tabindex="0"><code>  country year lifeExp
 1 Denmark 2002    77.2</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb118">
+<div class="codewrapper sourceCode" id="cb126">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1346,7 +1407,7 @@ data frame, and thus can be composed of elements of different types.</p>
 </h3>
 <pre class="output" tabindex="0"><code>[1] "data.frame"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb120">
+<div class="codewrapper sourceCode" id="cb128">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1390,9 +1451,9 @@ is returned in each case.</p>
   Solution to Challenge 4
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb122">
+<div class="codewrapper sourceCode" id="cb130">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1409,7 +1470,7 @@ is returned in each case.</p>
 <p>We can think of a data frame as a list of vectors. The single brace
 <code>[1]</code> returns the first slice of the list, as another list.
 In this case it is the first column of the data frame.</p>
-<div class="codewrapper sourceCode" id="cb124">
+<div class="codewrapper sourceCode" id="cb132">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1422,8 +1483,8 @@ In this case it is the first column of the data frame.</p>
 </div>
 <p>The double brace <code>[[1]]</code> returns the contents of the list
 item. In this case it is the contents of the first column, a
-<em>vector</em> of type <em>factor</em>.</p>
-<div class="codewrapper sourceCode" id="cb126">
+<em>vector</em> of type <em>character</em>.</p>
+<div class="codewrapper sourceCode" id="cb134">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1435,9 +1496,9 @@ item. In this case it is the contents of the first column, a
 <pre class="output" tabindex="0"><code>[1] "Denmark" "Sweden"  "Norway" </code></pre>
 </div>
 <p>This example uses the <code>$</code> character to address items by
-name. <em>coat</em> is the first column of the data frame, again a
-<em>vector</em> of type <em>factor</em>. X</p>
-<div class="codewrapper sourceCode" id="cb128">
+name. <em>country</em> is the first column of the data frame, again a
+<em>vector</em> of type <em>character</em>.</p>
+<div class="codewrapper sourceCode" id="cb136">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1454,7 +1515,7 @@ name. <em>coat</em> is the first column of the data frame, again a
 <p>Here we are using a single brace <code>["country"]</code> replacing
 the index number with the column name. Like example 1, the returned
 object is a <em>list</em>.</p>
-<div class="codewrapper sourceCode" id="cb130">
+<div class="codewrapper sourceCode" id="cb138">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1467,10 +1528,9 @@ object is a <em>list</em>.</p>
 </div>
 <p>This example uses a single brace, but this time we provide row and
 column coordinates. The returned object is the value in row 1, column 1.
-The object is an <em>integer</em> but because it is part of a
-<em>vector</em> of type <em>factor</em>, R displays the label “Denmark”
-associated with the integer value.</p>
-<div class="codewrapper sourceCode" id="cb132">
+The object is an <em>character</em>: the first value of the first vector
+in our <code>nordic</code> object.</p>
+<div class="codewrapper sourceCode" id="cb140">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1485,7 +1545,7 @@ associated with the integer value.</p>
 column coordinates. The row coordinate is not specified, R interprets
 this missing value as all the elements in this <em>column</em>
 <em>vector</em>.</p>
-<div class="codewrapper sourceCode" id="cb134">
+<div class="codewrapper sourceCode" id="cb142">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1578,7 +1638,7 @@ character.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/03-data-structures-part1.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/03-data-structures-part1.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-08-15",
+  "dateModified": "2023-10-10",
   "datePublished": "2023-10-10"
 }
 
