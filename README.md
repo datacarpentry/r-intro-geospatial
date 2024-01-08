@@ -34,6 +34,12 @@ suggested lesson plans suitable for a one or half day workshop.
 
 #### Maintainers:
 
+- Johanna Bayer
+- Mike Mahoney
+- Alber Sánchez
+
+#### Previous maintainers:
+
 - Leah Wasser
 - Jemma Stachelek
 - Tyson Swetnam
