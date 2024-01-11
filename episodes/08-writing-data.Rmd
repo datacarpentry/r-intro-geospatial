@@ -82,7 +82,7 @@ ggsave("Distribution-of-gdpPercap.pdf", width = 12, height = 4)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To produce documents in different formats, just change the file extension for
+To produce documents in different formats, change the file extension for
 `jpeg`, `png`, `tiff`, or `bmp`.
 
 
