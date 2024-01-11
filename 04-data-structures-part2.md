@@ -36,10 +36,10 @@ So far, you have seen the basics of manipulating data frames with our nordic dat
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
-Pay attention to and explain the errors and warnings generated from the 
+Pay attention to and explain the errors and warnings generated from the
 examples in this episode.
 
-:::::::::::::::::::::::::::::::::::::::::  
+:::::::::::::::::::::::::::::::::::::::::
 
 
 ```r
@@ -77,7 +77,7 @@ gapminder <- read.csv("https://datacarpentry.org/r-intro-geospatial/data/gapmind
 
 - You can read directly from excel spreadsheets without
   converting them to plain text first by using the [readxl](https://cran.r-project.org/package=readxl) package.
-  
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -99,11 +99,20 @@ str(gapminder)
  $ gdpPercap: num  779 821 853 836 740 ...
 ```
 
-We can also examine individual columns of the data frame with our `class` function:
+We can also examine individual columns of the data frame with the `class` or
+'typeof' functions:
 
 
 ```r
 class(gapminder$year)
+```
+
+```{.output}
+[1] "integer"
+```
+
+```r
+typeof(gapminder$year)
 ```
 
 ```{.output}
@@ -423,6 +432,104 @@ tail(gapminder_norway)
 ```
 
 To understand why R is giving us a warning when we try to add this row, let's learn a little more about factors.
+
+
+## Removing columns and rows in data frames
+
+To remove columns from a data frame, we can use the 'subset' function.
+This function allows us to remove columns using their names:
+
+
+```r
+life_expectancy <- subset(gapminder, select = -c(continent, pop, gdpPercap))
+head(life_expectancy)
+```
+
+```{.output}
+      country year lifeExp below_average
+1 Afghanistan 1952  28.801          TRUE
+2 Afghanistan 1957  30.332          TRUE
+3 Afghanistan 1962  31.997          TRUE
+4 Afghanistan 1967  34.020          TRUE
+5 Afghanistan 1972  36.088          TRUE
+6 Afghanistan 1977  38.438          TRUE
+```
+
+We can also use a logical vector to achieve the same result. Make sure the
+vector's length match the number of columns in the data frame (to avoid vector
+recycling):
+
+
+```r
+life_expectancy <- gapminder[c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE)]
+head(life_expectancy)
+```
+
+```{.output}
+      country year lifeExp below_average
+1 Afghanistan 1952  28.801          TRUE
+2 Afghanistan 1957  30.332          TRUE
+3 Afghanistan 1962  31.997          TRUE
+4 Afghanistan 1967  34.020          TRUE
+5 Afghanistan 1972  36.088          TRUE
+6 Afghanistan 1977  38.438          TRUE
+```
+
+Alternatively, we can use column's positions:
+
+
+```r
+life_expectancy <- gapminder[-c(3, 4, 6)]
+head(life_expectancy)
+```
+
+```{.output}
+      country year lifeExp below_average
+1 Afghanistan 1952  28.801          TRUE
+2 Afghanistan 1957  30.332          TRUE
+3 Afghanistan 1962  31.997          TRUE
+4 Afghanistan 1967  34.020          TRUE
+5 Afghanistan 1972  36.088          TRUE
+6 Afghanistan 1977  38.438          TRUE
+```
+
+Note that the easy way to remove rows from a data frame is selecting the rows
+we want to keep instead.
+Anyway, to remove rows from a data frame, we can use their positions:
+
+
+```r
+# Filter data for Afghanistan during the 20th century:
+afghanistan_20c <- gapminder[gapminder$country == "Afghanistan" &
+                             gapminder$year > 2000, ]
+
+# Now remove data for 2002, that is, the first row:
+afghanistan_20c[-1, ]
+```
+
+```{.output}
+       country year      pop continent lifeExp gdpPercap below_average
+12 Afghanistan 2007 31889923      Asia  43.828  974.5803          TRUE
+```
+
+
+An interesting case is removing rows containing NAs:
+
+
+```r
+# Turn some values into NAs:
+afghanistan_20c <- gapminder[gapminder$country == "Afghanistan", ]
+afghanistan_20c[afghanistan_20c$year < 2007, "year"] <- NA
+
+# Remove NAs
+na.omit(afghanistan_20c)
+```
+
+```{.output}
+       country year      pop continent lifeExp gdpPercap below_average
+12 Afghanistan 2007 31889923      Asia  43.828  974.5803          TRUE
+```
+
 
 ## Factors
 
