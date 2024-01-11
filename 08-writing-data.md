@@ -19,8 +19,8 @@ source: Rmd
 
 :::::::::::::::::::::::::::::::::::::::: instructor
 
-Learners will need to have created the directory structure described in 
-[Project Management With RStudio](../episodes/02-project-intro.Rmd) in order 
+Learners will need to have created the directory structure described in
+[Project Management With RStudio](../episodes/02-project-intro.Rmd) in order
 for the code in this episode to work.
 
 ::::::::::::::::::::::::::::::::::::::::
@@ -33,24 +33,19 @@ You can save a plot from within RStudio using the 'Export' button
 in the 'Plot' window. This will give you the option of saving as a
 .pdf or as .png, .jpg or other image formats.
 
-Sometimes you will want to save plots without creating them in the
-'Plot' window first. Perhaps you want to make a pdf document with
-multiple pages: each one a different plot, for example. Or perhaps
-you're looping through multiple subsets of a file, plotting data from
-each subset, and you want to save each plot.
-In this case you can use a more flexible approach. The
-`pdf()` function creates a new pdf device. You can control the size and resolution
-using the arguments to this function.
+Sometimes you will want to save plots without creating them in the 'Plot'
+window first. Perhaps you want to make a pdf document, for example. Or perhaps
+you're looping through multiple subsets of a file, plotting data from each
+subset, and you want to save each plot.
+In this case you can use flexible approach. The `ggsave` function saves the
+latest plot by default. You can control the size and resolution using the
+arguments to this function.
 
 
 ```r
-pdf("Distribution-of-gdpPercap.pdf", width=12, height=4)
-ggplot(data = gapminder, aes(x = gdpPercap)) +   
+ggplot(data = gapminder, aes(x = gdpPercap)) +
   geom_histogram()
-
-# You then have to make sure to turn off the pdf device!
-
-dev.off()
+ggsave("Distribution-of-gdpPercap.pdf", width=12, height=4)
 ```
 
 Open up this document and have a look.
@@ -59,11 +54,11 @@ Open up this document and have a look.
 
 ## Challenge 1
 
-Rewrite your 'pdf' command to print a second
-page in the pdf, showing the side-by-side bar
-plot of gdp per capita in countries in the Americas
-in the years 1952 and 2007 that you created in the
+Create and save a new plot showing the side-by-side bar plot of gdp per capita
+in countries in the Americas in the years 1952 and 2007 that you created in the
 previous episode.
+
+
 
 :::::::::::::::  solution
 
@@ -71,22 +66,22 @@ previous episode.
 
 
 ```r
-pdf("Distribution-of-gdpPercap.pdf", width = 12, height = 4)
-ggplot(data = gapminder, aes(x = gdpPercap)) + 
-geom_histogram()
-
-ggplot(data = gapminder_small_2, aes(x = country, y = gdpPercap, fill = as.factor(year))) +
-geom_col(position = "dodge") + coord_flip()
-
-dev.off()
+ggplot(data = gapminder_small_2, aes(x = country, y = gdpPercap,
+                                     fill = as.factor(year))) +
+  geom_col(position = "dodge") +
+  coord_flip()
+# Note that ggsave saves by default the latest plot.
+ggsave("Distribution-of-gdpPercap.pdf", width = 12, height = 4)
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The commands `jpeg`, `png`, etc. are used similarly to produce
-documents in different formats.
+To produce documents in different formats, change the file extension for
+`jpeg`, `png`, `tiff`, or `bmp`.
+
+
 
 ## Writing data
 
@@ -166,7 +161,7 @@ write.csv(gapminder_after_1990,
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Save plots using `ggsave()` or `pdf()` combined with `dev.off()`.
+- Save plots using `ggsave()`.
 - Use `write.csv` to save tabular data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -174,11 +169,11 @@ write.csv(gapminder_after_1990,
 
 :::::::::::::::::::::::::::::::::::::::: instructor
 
-- Now that learners know the fundamentals of R, the rest of the workshop will 
+- Now that learners know the fundamentals of R, the rest of the workshop will
   apply these concepts to working with geospatial data in R.
-- Packages and functions specific for working with geospatial data will be the 
+- Packages and functions specific for working with geospatial data will be the
   focus of the rest of the workshop.
-- They will have lots of challenges to practice applying and expanding these 
+- They will have lots of challenges to practice applying and expanding these
   skills in the next lesson.
 
 ::::::::::::::::::::::::::::::::::::::::
