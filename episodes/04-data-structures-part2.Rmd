@@ -87,7 +87,7 @@ str(gapminder)
 ```
 
 We can also examine individual columns of the data frame with the `class` or
-'typeof' functions.:
+'typeof' functions:
 
 ```{r}
 class(gapminder$year)
