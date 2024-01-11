@@ -278,7 +278,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Writing Data</h1>
-        <p>Last updated on 2023-11-21 |
+        <p>Last updated on 2024-01-11 |
         
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/08-writing-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -334,24 +334,19 @@ in order for the code in this episode to work.</p>
 the ‘Plot’ window. This will give you the option of saving as a .pdf or
 as .png, .jpg or other image formats.</p>
 <p>Sometimes you will want to save plots without creating them in the
-‘Plot’ window first. Perhaps you want to make a pdf document with
-multiple pages: each one a different plot, for example. Or perhaps
-you’re looping through multiple subsets of a file, plotting data from
-each subset, and you want to save each plot. In this case you can use a
-more flexible approach. The <code>pdf()</code> function creates a new
-pdf device. You can control the size and resolution using the arguments
-to this function.</p>
+‘Plot’ window first. Perhaps you want to make a pdf document, for
+example. Or perhaps you’re looping through multiple subsets of a file,
+plotting data from each subset, and you want to save each plot. In this
+case you can use flexible approach. The <code>ggsave</code> function
+saves the latest plot by default. You can control the size and
+resolution using the arguments to this function.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pdf</span><span class="op">(</span><span class="st">"Distribution-of-gdpPercap.pdf"</span>, width<span class="op">=</span><span class="fl">12</span>, height<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span>
-<span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">gapminder</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>   </span>
+<code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">gapminder</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_histogram</span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># You then have to make sure to turn off the pdf device!</span></span>
-<span></span>
-<span><span class="fu">dev.off</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<span><span class="fu">ggsave</span><span class="op">(</span><span class="st">"Distribution-of-gdpPercap.pdf"</span>, width<span class="op">=</span><span class="fl">12</span>, height<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Open up this document and have a look.</p>
 <div id="challenge-1" class="callout challenge">
@@ -362,9 +357,9 @@ to this function.</p>
 <h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
-<p>Rewrite your ‘pdf’ command to print a second page in the pdf, showing
-the side-by-side bar plot of gdp per capita in countries in the Americas
-in the years 1952 and 2007 that you created in the previous episode.</p>
+<p>Create and save a new plot showing the side-by-side bar plot of gdp
+per capita in countries in the Americas in the years 1952 and 2007 that
+you created in the previous episode.</p>
 </div>
 </div>
 </div>
@@ -379,21 +374,20 @@ in the years 1952 and 2007 that you created in the previous episode.</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pdf</span><span class="op">(</span><span class="st">"Distribution-of-gdpPercap.pdf"</span>, width <span class="op">=</span> <span class="fl">12</span>, height <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
-<span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">gapminder</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span><span class="fu">geom_histogram</span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">gapminder_small_2</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">country</span>, y <span class="op">=</span> <span class="va">gdpPercap</span>, fill <span class="op">=</span> <span class="fu">as.factor</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">geom_col</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span> <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">dev.off</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">gapminder_small_2</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">country</span>, y <span class="op">=</span> <span class="va">gdpPercap</span>,</span>
+<span>                                     fill <span class="op">=</span> <span class="fu">as.factor</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_col</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co"># Note that ggsave saves by default the latest plot.</span></span>
+<span><span class="fu">ggsave</span><span class="op">(</span><span class="st">"Distribution-of-gdpPercap.pdf"</span>, width <span class="op">=</span> <span class="fl">12</span>, height <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>The commands <code>jpeg</code>, <code>png</code>, etc. are used
-similarly to produce documents in different formats.</p>
+<p>To produce documents in different formats, change the file extension
+for <code>jpeg</code>, <code>png</code>, <code>tiff</code>, or
+<code>bmp</code>.</p>
 </section><section id="writing-data"><h2 class="section-heading">Writing data<a class="anchor" aria-label="anchor" href="#writing-data"></a>
 </h2>
 <hr class="half-width"><p>At some point, you’ll also want to write out data from R.</p>
@@ -484,8 +478,7 @@ following:</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>Save plots using <code>ggsave()</code> or <code>pdf()</code>
-combined with <code>dev.off()</code>.</li>
+<ul><li>Save plots using <code>ggsave()</code>.</li>
 <li>Use <code>write.csv</code> to save tabular data.</li>
 </ul></div>
 </div>
@@ -567,8 +560,8 @@ these skills in the next lesson.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/08-writing-data.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/08-writing-data.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2023-11-21",
-  "datePublished": "2024-01-09"
+  "dateModified": "2024-01-11",
+  "datePublished": "2024-01-11"
 }
 
   </script><script>
