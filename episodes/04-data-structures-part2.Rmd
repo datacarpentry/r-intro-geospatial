@@ -37,10 +37,10 @@ So far, you have seen the basics of manipulating data frames with our nordic dat
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
-Pay attention to and explain the errors and warnings generated from the 
+Pay attention to and explain the errors and warnings generated from the
 examples in this episode.
 
-:::::::::::::::::::::::::::::::::::::::::  
+:::::::::::::::::::::::::::::::::::::::::
 
 ```{r, echo=TRUE}
 gapminder <- read.csv("data/gapminder_data.csv")
@@ -70,12 +70,12 @@ gapminder <- read.csv("data/gapminder_data.csv")
   your computer. For example,
 
 ```{r, eval=FALSE, echo=TRUE}
-gapminder <- read.csv("https://datacarpentry.org/r-intro-geospatial/data/gapminder_data.csv", stringsAsFactors = TRUE) #in R version 4.0.0 the default stringsAsFactors changed from TRUE to FALSE. But because below we use some examples to show what is a factor, we need to add the stringAsFactors = TRUE to be able to perform the below examples with factor.
+gapminder <- read.csv("https://datacarpentry.org/r-intro-geospatial/data/gapminder_data.csv")
 ```
 
 - You can read directly from excel spreadsheets without
   converting them to plain text first by using the [readxl](https://cran.r-project.org/package=readxl) package.
-  
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -193,11 +193,10 @@ gapminder[sample(nrow(gapminder), 5), ]
 
 ## Challenge 2
 
-Read the output of `str(gapminder)` again; this time, use what you've learned
-about factors and vectors, as well as the output of functions like `colnames`
-and `dim` to explain what everything that `str` prints out for `gapminder`
-means. If there are any parts you can't interpret, discuss with your
-neighbors!
+Read the output of `str(gapminder)` again; this time, use what you've learned,
+as well as the output of functions like `colnames` and `dim` to explain what
+everything that `str` prints out for `gapminder` means. If there are any parts
+you can't interpret, discuss with your neighbors!
 
 :::::::::::::::  solution
 
@@ -219,17 +218,12 @@ We would like to create a new column to hold information on whether the life exp
 
 ```{r}
 below_average <- gapminder$lifeExp < 70.5
-head(gapminder)
 ```
 
 We can then add this as a column via:
 
 ```{r, eval=FALSE}
 cbind(gapminder, below_average)
-```
-
-```{r, eval=TRUE, echo=FALSE}
-head(cbind(gapminder, below_average))
 ```
 
 We probably don't want to print the entire dataframe each time, so
@@ -267,7 +261,7 @@ The sequence `TRUE,TRUE,FALSE` is repeated over all the gapminder rows.
 Let's overwrite the content of gapminder with our new data frame.
 
 ```{r}
-below_average <-  as.logical(gapminder$lifeExp<70.5)
+below_average <-  as.logical(gapminder$lifeExp < 70.5)
 gapminder <- cbind(gapminder, below_average)
 ```
 
@@ -279,39 +273,68 @@ gapminder_norway <- rbind(gapminder, new_row)
 tail(gapminder_norway)
 ```
 
-To understand why R is giving us a warning when we try to add this row, let's learn a little more about factors.
 
 ## Factors
 
 Here is another thing to look out for: in a `factor`, each different value
-represents what is called a `level`. In our case, the `factor` "continent" has 5
-levels: "Africa", "Americas", "Asia", "Europe" and "Oceania". R will only accept
-values that match one of the levels. If you add a new value, it will become
-`NA`.
+represents what is called a `level`.
 
-The warning is telling us that we unsuccessfully added "Nordic" to our
-*continent* factor, but 2016 (a numeric), 5000000 (a numeric), 80.3 (a numeric),
-49400\.0 (a numeric) and `FALSE` (a logical) were successfully added to
-*country*, *year*, *pop*, *lifeExp*, *gdpPercap* and *below\_average*
-respectively, since those variables are not factors. 'Norway' was also
-successfully added since it corresponds to an existing level. To successfully
-add a gapminder row with a "Nordic" *continent*, add "Nordic" as a *level* of
-the factor:
+Let's convert the columns continent and country into factors:
+
+```{r}
+gapminder$continent <- factor(gapminder$continent)
+gapminder$country <- factor(gapminder$country)
+str(gapminder)
+```
+
+In our case, the `factor` "continent" has 5 levels: "Africa", "Americas",
+"Asia", "Europe" and "Oceania":
 
 ```{r}
 levels(gapminder$continent)
-levels(gapminder$continent) <- c(levels(gapminder$continent), "Nordic")
-gapminder_norway  <- rbind(gapminder,
-                           list('Norway', 2016, 5000000, 'Nordic', 80.3,49400.0, FALSE))
-tail(gapminder_norway)
 ```
 
-Alternatively, we can change a factor into a character vector; we lose the handy
-categories of the factor, but we can subsequently add any word we want to the
-column without babysitting the factor levels:
+A factor is not a character. For example, if we try to add the same row from
+above to our data.frame, some values will become `NA`. This is so because
+"continent" and "country" are now factors and R will only accept new values
+that match one of the factor's levels:
 
 ```{r}
-str(gapminder)
+new_row <- list('Norway', 2016, 5000000, 'Nordic', 80.3, 49400.0, FALSE)
+gapminder_norway <- rbind(gapminder, new_row)
+```
+
+This warning is telling us that we unsuccessfully added "Nordic" to our
+*continent* factor (see below), but 2016 (a numeric), 5000000 (a numeric), 80.3
+(a numeric), 49400\.0 (a numeric) and `FALSE` (a logical) were successfully
+added to *country*, *year*, *pop*, *lifeExp*, *gdpPercap* and *below\_average*
+respectively, since those variables are not factors. 'Norway' was also
+successfully added since it corresponds to an existing level.
+
+```{r}
+tail(gapminder_norway, n = 1)
+```
+
+To successfully add a row with a "Nordic" *continent*, add "Nordic" as a
+*level* of the factor:
+
+```{r}
+levels(gapminder$continent) <- c(levels(gapminder$continent), "Nordic")
+```
+
+And then add the Norway row again:
+
+```{r}
+gapminder_norway  <- rbind(gapminder,
+    list('Norway', 2016, 5000000, 'Nordic', 80.3,49400.0, FALSE))
+tail(gapminder_norway, n = 1)
+```
+
+Alternatively, we can change the "continent" factor into a character vector. In
+this way, we lose the handy categories of the factor, but we can subsequently
+add any word we want to the column without babysitting the factor levels:
+
+```{r}
 gapminder$continent <- as.character(gapminder$continent)
 str(gapminder)
 ```
@@ -324,7 +347,7 @@ vectors and rows are lists.* We can also glue two data frames together with
 
 ```{r}
 gapminder <- rbind(gapminder, gapminder)
-tail(gapminder, n=3)
+tail(gapminder, n = 3)
 ```
 
 But now the row names are unnecessarily complicated (not consecutive numbers).
@@ -385,5 +408,4 @@ df <- cbind(df, coffeetime = c(TRUE, TRUE))
 - Understand what `length()` of a data frame represents.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
