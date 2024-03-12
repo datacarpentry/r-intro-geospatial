@@ -624,13 +624,13 @@ install.packages("dplyr")
 ```{.output}
 The following package(s) will be installed:
 - dplyr [1.1.4]
-- vctrs [0.6.4]
+- vctrs [0.6.5]
 These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/R-4.3/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
 - Installing vctrs ...                          OK [linked from cache]
 - Installing dplyr ...                          OK [linked from cache]
-Successfully installed 2 packages in 14 milliseconds.
+Successfully installed 2 packages in 9.1 milliseconds.
 ```
 
 It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
