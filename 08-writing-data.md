@@ -42,7 +42,7 @@ latest plot by default. You can control the size and resolution using the
 arguments to this function.
 
 
-```r
+``` r
 ggplot(data = gapminder, aes(x = gdpPercap)) +
   geom_histogram()
 ggsave("Distribution-of-gdpPercap.pdf", width=12, height=4)
@@ -65,7 +65,7 @@ previous episode.
 ## Solution to challenge 1
 
 
-```r
+``` r
 ggplot(data = gapminder_small_2, aes(x = country, y = gdpPercap,
                                      fill = as.factor(year))) +
   geom_col(position = "dodge") +
@@ -94,7 +94,7 @@ Let's create a data-cleaning script, for this analysis, we
 only want to focus on the gapminder data for Australia:
 
 
-```r
+``` r
 aust_subset <- filter(gapminder, country == "Australia")
 
 write.csv(aust_subset,
@@ -115,7 +115,7 @@ Let's look at the help file to work out how to change this
 behaviour.
 
 
-```r
+``` r
 ?write.csv
 ```
 
@@ -124,7 +124,7 @@ column names when writing data to a file.
 To over write this behavior, we can do the following:
 
 
-```r
+``` r
 write.csv(
   aust_subset,
   file="cleaned-data/gapminder-aus.csv",
@@ -145,7 +145,7 @@ in the `cleaned-data/` directory.
 ## Solution to challenge 2
 
 
-```r
+``` r
 gapminder_after_1990 <- filter(gapminder, year > 1990)
 
 write.csv(gapminder_after_1990,

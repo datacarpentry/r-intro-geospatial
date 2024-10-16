@@ -27,27 +27,27 @@ data by a certain variable(s), or we even calculate summary statistics. We can
 do these operations using the normal base R operations:
 
 
-```r
+``` r
 mean(gapminder[gapminder$continent == "Africa", "gdpPercap"])
 ```
 
-```{.output}
+``` output
 [1] 2193.755
 ```
 
-```r
+``` r
 mean(gapminder[gapminder$continent == "Americas", "gdpPercap"])
 ```
 
-```{.output}
+``` output
 [1] 7136.11
 ```
 
-```r
+``` r
 mean(gapminder[gapminder$continent == "Asia", "gdpPercap"])
 ```
 
-```{.output}
+``` output
 [1] 7902.15
 ```
 
@@ -85,14 +85,14 @@ pipes (`%>%`) to combine them.
 If you have have not installed this package earlier, please do so:
 
 
-```r
+``` r
 install.packages('dplyr')
 ```
 
 Now let's load the package:
 
 
-```r
+``` r
 library("dplyr")
 ```
 
@@ -103,7 +103,7 @@ our dataframe we could use the `select()` function. This will keep only the
 variables you select.
 
 
-```r
+``` r
 year_country_gdp <- select(gapminder, year, country, gdpPercap)
 ```
 
@@ -116,7 +116,7 @@ is unlike anything we've seen in R before, let's repeat what we've done above
 using pipes.
 
 
-```r
+``` r
 year_country_gdp <- gapminder %>% select(year,country,gdpPercap)
 ```
 
@@ -134,7 +134,7 @@ If we now wanted to move forward with the above, but only with European
 countries, we can combine `select` and `filter`
 
 
-```r
+``` r
 year_country_gdp_euro <- gapminder %>%
   filter(continent == "Europe") %>%
   select(year, country, gdpPercap)
@@ -154,7 +154,7 @@ have and why?
 ## Solution to Challenge 1
 
 
-```r
+``` r
 year_country_lifeExp_Africa <- gapminder %>%
                            filter(continent=="Africa") %>%
                            select(year,country,lifeExp)
@@ -180,11 +180,11 @@ can use `group_by()`, which will essentially use every unique criteria that you
 could have used in filter.
 
 
-```r
+``` r
 str(gapminder)
 ```
 
-```{.output}
+``` output
 'data.frame':	1704 obs. of  6 variables:
  $ country  : chr  "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
@@ -194,11 +194,11 @@ str(gapminder)
  $ gdpPercap: num  779 821 853 836 740 ...
 ```
 
-```r
+``` r
 gapminder %>% group_by(continent) %>% str()
 ```
 
-```{.output}
+``` output
 gropd_df [1,704 × 6] (S3: grouped_df/tbl_df/tbl/data.frame)
  $ country  : chr [1:1704] "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
  $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
@@ -236,7 +236,7 @@ original dataframe into multiple pieces, then we can run functions
 (e.g. `mean()` or `sd()`) within `summarize()`.
 
 
-```r
+``` r
 gdp_bycontinents <- gapminder %>%
   group_by(continent) %>%
   summarize(mean_gdpPercap = mean(gdpPercap))
@@ -244,7 +244,7 @@ gdp_bycontinents <- gapminder %>%
 gdp_bycontinents
 ```
 
-```{.output}
+``` output
 # A tibble: 5 × 2
   continent mean_gdpPercap
   <chr>              <dbl>
@@ -272,7 +272,7 @@ expectancy and which has the shortest average life expectancy?
 ## Solution to Challenge 2
 
 
-```r
+``` r
 lifeExp_bycountry <- gapminder %>%
    group_by(country) %>%
    summarize(mean_lifeExp=mean(lifeExp))
@@ -281,7 +281,7 @@ lifeExp_bycountry %>%
    filter(mean_lifeExp == min(mean_lifeExp) | mean_lifeExp == max(mean_lifeExp))
 ```
 
-```{.output}
+``` output
 # A tibble: 2 × 2
   country      mean_lifeExp
   <chr>               <dbl>
@@ -296,26 +296,26 @@ from the `dplyr` package. You can use `desc()` inside `arrange()` to sort in
 descending order.
 
 
-```r
+``` r
 lifeExp_bycountry %>%
    arrange(mean_lifeExp) %>%
    head(1)
 ```
 
-```{.output}
+``` output
 # A tibble: 1 × 2
   country      mean_lifeExp
   <chr>               <dbl>
 1 Sierra Leone         36.8
 ```
 
-```r
+``` r
 lifeExp_bycountry %>%
    arrange(desc(mean_lifeExp)) %>%
    head(1)
 ```
 
-```{.output}
+``` output
 # A tibble: 1 × 2
   country mean_lifeExp
   <chr>          <dbl>
@@ -329,13 +329,13 @@ lifeExp_bycountry %>%
 The function `group_by()` allows us to group by multiple variables. Let's group by `year` and `continent`.
 
 
-```r
+``` r
 gdp_bycontinents_byyear <- gapminder %>%
   group_by(continent, year) %>%
   summarize(mean_gdpPercap = mean(gdpPercap))
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'continent'. You can override using the
 `.groups` argument.
 ```
@@ -343,7 +343,7 @@ gdp_bycontinents_byyear <- gapminder %>%
 That is already quite powerful, but it gets even better! You're not limited to defining 1 new variable in `summarize()`.
 
 
-```r
+``` r
 gdp_pop_bycontinents_byyear <- gapminder %>%
   group_by(continent,year) %>%
   summarize(mean_gdpPercap = mean(gdpPercap),
@@ -352,7 +352,7 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
             sd_pop = sd(pop))
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'continent'. You can override using the
 `.groups` argument.
 ```
@@ -368,13 +368,13 @@ of one or more columns that contain the groups we are interested in, and we can
 optionally sort the results in descending order by adding `sort=TRUE`:
 
 
-```r
+``` r
 gapminder %>%
     filter(year == 2002) %>%
     count(continent, sort = TRUE)
 ```
 
-```{.output}
+``` output
   continent  n
 1    Africa 52
 2      Asia 33
@@ -388,13 +388,13 @@ is useful. For instance, if we wanted to get the standard error of the life
 expectancy per continent:
 
 
-```r
+``` r
 gapminder %>%
     group_by(continent) %>%
     summarize(se_le = sd(lifeExp)/sqrt(n()))
 ```
 
-```{.output}
+``` output
 # A tibble: 5 × 2
   continent se_le
   <chr>     <dbl>
@@ -408,7 +408,7 @@ gapminder %>%
 You can also chain together several summary operations; in this case calculating the `minimum`, `maximum`, `mean` and `se` of each continent's per-country life-expectancy:
 
 
-```r
+``` r
 gapminder %>%
     group_by(continent) %>%
     summarize(
@@ -418,7 +418,7 @@ gapminder %>%
       se_le = sd(lifeExp)/sqrt(n()))
 ```
 
-```{.output}
+``` output
 # A tibble: 5 × 5
   continent mean_le min_le max_le se_le
   <chr>       <dbl>  <dbl>  <dbl> <dbl>
@@ -434,7 +434,7 @@ gapminder %>%
 We can also create new variables prior to (or even after) summarizing information using `mutate()`.
 
 
-```r
+``` r
 gdp_pop_bycontinents_byyear <- gapminder %>%
   mutate(gdp_billion = gdpPercap*pop/10^9) %>%
   group_by(continent, year) %>%
@@ -446,7 +446,7 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
             sd_gdp_billion = sd(gdp_billion))
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'continent'. You can override using the
 `.groups` argument.
 ```

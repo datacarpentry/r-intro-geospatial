@@ -30,13 +30,13 @@ different subsetting operators for the different data structures.
 Let's start with the workhorse of R: a simple numeric vector.
 
 
-```r
+``` r
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
 x
 ```
 
-```{.output}
+``` output
   a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 
 ```
@@ -60,21 +60,21 @@ To extract elements of a vector we can give their corresponding index, starting
 from one:
 
 
-```r
+``` r
 x[1]
 ```
 
-```{.output}
+``` output
   a 
 5.4 
 ```
 
 
-```r
+``` r
 x[4]
 ```
 
-```{.output}
+``` output
   d 
 4.8 
 ```
@@ -85,11 +85,11 @@ It may look different, but the square brackets operator is a function. For vecto
 We can ask for multiple elements at once:
 
 
-```r
+``` r
 x[c(1, 3)]
 ```
 
-```{.output}
+``` output
   a   c 
 5.4 7.1 
 ```
@@ -97,11 +97,11 @@ x[c(1, 3)]
 Or slices of the vector:
 
 
-```r
+``` r
 x[1:4]
 ```
 
-```{.output}
+``` output
   a   b   c   d 
 5.4 6.2 7.1 4.8 
 ```
@@ -109,30 +109,30 @@ x[1:4]
 the `:` operator creates a sequence of numbers from the left element to the right.
 
 
-```r
+``` r
 1:4
 ```
 
-```{.output}
+``` output
 [1] 1 2 3 4
 ```
 
-```r
+``` r
 c(1, 2, 3, 4)
 ```
 
-```{.output}
+``` output
 [1] 1 2 3 4
 ```
 
 We can ask for the same element multiple times:
 
 
-```r
+``` r
 x[c(1, 1, 3)]
 ```
 
-```{.output}
+``` output
   a   a   c 
 5.4 5.4 7.1 
 ```
@@ -140,11 +140,11 @@ x[c(1, 1, 3)]
 If we ask for an index beyond the length of the vector, R will return a missing value:
 
 
-```r
+``` r
 x[6]
 ```
 
-```{.output}
+``` output
 <NA> 
   NA 
 ```
@@ -154,11 +154,11 @@ This is a vector of length one containing an `NA`, whose name is also `NA`.
 If we ask for the 0th element, we get an empty vector:
 
 
-```r
+``` r
 x[0]
 ```
 
-```{.output}
+``` output
 named numeric(0)
 ```
 
@@ -178,11 +178,11 @@ If we use a negative number as the index of a vector, R will return
 every element *except* for the one specified:
 
 
-```r
+``` r
 x[-2]
 ```
 
-```{.output}
+``` output
   a   c   d   e 
 5.4 7.1 4.8 7.5 
 ```
@@ -190,11 +190,11 @@ x[-2]
 We can skip multiple elements:
 
 
-```r
+``` r
 x[c(-1, -5)]  # or x[-c(1,5)]
 ```
 
-```{.output}
+``` output
   b   c   d 
 6.2 7.1 4.8 
 ```
@@ -208,14 +208,14 @@ slices of a vector. It's natural to to try to negate a
 sequence like so:
 
 
-```r
+``` r
 x[-1:3]
 ```
 
 This gives a somewhat cryptic error:
 
 
-```{.error}
+``` error
 Error in x[-1:3]: only 0's may be mixed with negative subscripts
 ```
 
@@ -227,11 +227,11 @@ The correct solution is to wrap that function call in brackets, so
 that the `-` operator applies to the result:
 
 
-```r
+``` r
 x[-(1:3)]
 ```
 
-```{.output}
+``` output
   d   e 
 4.8 7.5 
 ```
@@ -242,12 +242,12 @@ To remove elements from a vector, we need to assign the result back
 into the variable:
 
 
-```r
+``` r
 x <- x[-4]
 x
 ```
 
-```{.output}
+``` output
   a   b   c   e 
 5.4 6.2 7.1 7.5 
 ```
@@ -259,13 +259,13 @@ x
 Given the following code:
 
 
-```r
+``` r
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
 print(x)
 ```
 
-```{.output}
+``` output
   a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 
 ```
@@ -273,7 +273,7 @@ print(x)
 Come up with at least 3 different commands that will produce the following output:
 
 
-```{.output}
+``` output
   b   c   d 
 6.2 7.1 4.8 
 ```
@@ -285,41 +285,41 @@ After you find 3 different commands, compare notes with your neighbour. Did you 
 ## Solution to challenge 1
 
 
-```r
+``` r
 x[2:4]
 ```
 
-```{.output}
+``` output
   b   c   d 
 6.2 7.1 4.8 
 ```
 
 
-```r
+``` r
 x[-c(1,5)]
 ```
 
-```{.output}
+``` output
   b   c   d 
 6.2 7.1 4.8 
 ```
 
 
-```r
+``` r
 x[c("b", "c", "d")]
 ```
 
-```{.output}
+``` output
   b   c   d 
 6.2 7.1 4.8 
 ```
 
 
-```r
+``` r
 x[c(2,3,4)]
 ```
 
-```{.output}
+``` output
   b   c   d 
 6.2 7.1 4.8 
 ```
@@ -333,12 +333,12 @@ x[c(2,3,4)]
 We can extract elements by using their name, instead of extracting by index:
 
 
-```r
+``` r
 x <- c(a = 5.4, b = 6.2, c = 7.1, d = 4.8, e = 7.5) # we can name a vector 'on the fly'
 x[c("a", "c")]
 ```
 
-```{.output}
+``` output
   a   c 
 5.4 7.1 
 ```
@@ -352,11 +352,11 @@ subsetting operations, but the names will always remain the same!
 We can also use any logical vector to subset:
 
 
-```r
+``` r
 x[c(FALSE, FALSE, TRUE, FALSE, TRUE)]
 ```
 
-```{.output}
+``` output
   c   e 
 7.1 7.5 
 ```
@@ -366,11 +366,11 @@ use them to succinctly subset vectors: the following statement gives
 the same result as the previous one.
 
 
-```r
+``` r
 x[x > 7]
 ```
 
-```{.output}
+``` output
   c   e 
 7.1 7.5 
 ```
@@ -383,11 +383,11 @@ We can use `==` to mimic the previous method of indexing by name
 (remember you have to use `==` rather than `=` for comparisons):
 
 
-```r
+``` r
 x[names(x) == "a"]
 ```
 
-```{.output}
+``` output
   a 
 5.4 
 ```
@@ -432,13 +432,13 @@ vector are `TRUE`).
 Given the following code:
 
 
-```r
+``` r
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
 print(x)
 ```
 
-```{.output}
+``` output
   a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 
 ```
@@ -450,12 +450,12 @@ Write a subsetting command to return the values in x that are greater than 4 and
 ## Solution to challenge 2
 
 
-```r
+``` r
 x_subset <- x[x<7 & x>4]
 print(x_subset)
 ```
 
-```{.output}
+``` output
   a   b   d 
 5.4 6.2 4.8 
 ```
@@ -510,11 +510,11 @@ apply. However they are also two dimensional objects:
 element corresponds to a column. The resulting object will be a data frame:
 
 
-```r
+``` r
 head(gapminder[3])
 ```
 
-```{.output}
+``` output
        pop
 1  8425333
 2  9240934
@@ -527,33 +527,33 @@ head(gapminder[3])
 Similarly, `[[` will act to extract *a single column*:
 
 
-```r
+``` r
 head(gapminder[["lifeExp"]])
 ```
 
-```{.output}
+``` output
 [1] 28.801 30.332 31.997 34.020 36.088 38.438
 ```
 
 And `$` provides a convenient shorthand to extract columns by name:
 
 
-```r
+``` r
 head(gapminder$year)
 ```
 
-```{.output}
+``` output
 [1] 1952 1957 1962 1967 1972 1977
 ```
 
 To select specific rows and/or columns, you can provide two arguments to `[`
 
 
-```r
+``` r
 gapminder[1:3, ]
 ```
 
-```{.output}
+``` output
       country year      pop continent lifeExp gdpPercap
 1 Afghanistan 1952  8425333      Asia  28.801  779.4453
 2 Afghanistan 1957  9240934      Asia  30.332  820.8530
@@ -564,11 +564,11 @@ If we subset a single row, the result will be a data frame (because
 the elements are mixed types):
 
 
-```r
+``` r
 gapminder[3, ]
 ```
 
-```{.output}
+``` output
       country year      pop continent lifeExp gdpPercap
 3 Afghanistan 1962 10267083      Asia  31.997  853.1007
 ```
@@ -585,21 +585,21 @@ Fix each of the following common data frame subsetting errors:
 1. Extract observations collected for the year 1957
   
   
-  ```r
+  ``` r
   gapminder[gapminder$year = 1957, ]
   ```
 
 2. Extract all columns except 1 through to 4
   
   
-  ```r
+  ``` r
   gapminder[, -1:4]
   ```
 
 3. Extract the rows where the life expectancy is longer the 80 years
   
   
-  ```r
+  ``` r
   gapminder[gapminder$lifeExp > 80]
   ```
 
@@ -607,7 +607,7 @@ Fix each of the following common data frame subsetting errors:
   (`lifeExp` and `gdpPercap`).
   
   
-  ```r
+  ``` r
   gapminder[1, 4, 5]
   ```
 
@@ -615,7 +615,7 @@ Fix each of the following common data frame subsetting errors:
   and 2007
   
   
-  ```r
+  ``` r
   gapminder[gapminder$year == 2002 | 2007,]
   ```
 
@@ -628,7 +628,7 @@ Fix each of the following common data frame subsetting errors:
 1. Extract observations collected for the year 1957
   
   
-  ```r
+  ``` r
   # gapminder[gapminder$year = 1957, ]
   gapminder[gapminder$year == 1957, ]
   ```
@@ -636,7 +636,7 @@ Fix each of the following common data frame subsetting errors:
 2. Extract all columns except 1 through to 4
   
   
-  ```r
+  ``` r
   # gapminder[, -1:4]
   gapminder[,-c(1:4)]
   ```
@@ -644,7 +644,7 @@ Fix each of the following common data frame subsetting errors:
 3. Extract the rows where the life expectancy is longer the 80 years
   
   
-  ```r
+  ``` r
   # gapminder[gapminder$lifeExp > 80]
   gapminder[gapminder$lifeExp > 80,]
   ```
@@ -653,7 +653,7 @@ Fix each of the following common data frame subsetting errors:
   (`lifeExp` and `gdpPercap`).
   
   
-  ```r
+  ``` r
   # gapminder[1, 4, 5]
   gapminder[1, c(4, 5)]
   ```
@@ -662,7 +662,7 @@ Fix each of the following common data frame subsetting errors:
   and 2007
   
   
-  ```r
+  ``` r
   # gapminder[gapminder$year == 2002 | 2007,]
   gapminder[gapminder$year == 2002 | gapminder$year == 2007,]
   gapminder[gapminder$year %in% c(2002, 2007),]
@@ -690,7 +690,7 @@ Fix each of the following common data frame subsetting errors:
 
 2. 
 
-```r
+``` r
 gapminder_small <- gapminder[c(1:9, 19:23),]
 ```
 

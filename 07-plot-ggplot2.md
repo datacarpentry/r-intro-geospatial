@@ -69,7 +69,7 @@ want to plot the "lifeExp" column of the gapminder data frame on the x-axis. We 
 for histograms.
 
 
-```r
+``` r
 library("ggplot2")
 ggplot(data = gapminder, aes(x = lifeExp)) +   
   geom_histogram()
@@ -83,7 +83,7 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
 By itself, the call to `ggplot` isn't enough to draw a figure:
 
 
-```r
+``` r
 ggplot(data = gapminder, aes(x = lifeExp))
 ```
 
@@ -95,12 +95,12 @@ tells `ggplot` we want to visually represent the
 distribution of one variable (in our case "lifeExp"):
 
 
-```r
+``` r
 ggplot(data = gapminder, aes(x = lifeExp)) +   
   geom_histogram()
 ```
 
-```{.output}
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -122,12 +122,12 @@ expectancy:
 ## Solution to challenge 1
 
 
-```r
+``` r
 ggplot(data = gapminder, aes(x = gdpPercap)) +   
  geom_histogram()
 ```
 
-```{.output}
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -146,7 +146,7 @@ recent year and only
 from countries in the Americas.
 
 
-```r
+``` r
 gapminder_small <- filter(gapminder, year == 2007, continent == "Americas")
 ```
 
@@ -155,7 +155,7 @@ We will plot countries on the x-axis (listed in alphabetic order
 by default) and gdp per capita on the y-axis.
 
 
-```r
+``` r
 ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) + 
   geom_col()
 ```
@@ -170,7 +170,7 @@ x-axis labels. A quick fix to this is the add the `coord_flip()`
 function to the end of our plot code.
 
 
-```r
+``` r
 ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) + 
   geom_col() +
   coord_flip()
@@ -206,7 +206,7 @@ First we create a new object with
 our filtered data:
 
 
-```r
+``` r
 gapminder_small_2 <- gapminder %>%
                         filter(continent == "Americas",
                                year %in% c(1952, 2007))
@@ -222,7 +222,7 @@ The default behavior for `postion` in `geom_col()`
 is "stack".
 
 
-```r
+``` r
 ggplot(gapminder_small_2, 
        aes(x = country, y = gdpPercap, 
        fill = as.factor(year))) +

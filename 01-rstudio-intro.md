@@ -175,11 +175,11 @@ attempt to execute them, and then returns a result.
 The simplest thing you could do with R is do arithmetic:
 
 
-```r
+``` r
 1 + 100
 ```
 
-```{.output}
+``` output
 [1] 101
 ```
 
@@ -230,11 +230,11 @@ From highest to lowest precedence:
 - Subtract: `-`
 
 
-```r
+``` r
 3 + 5 * 2
 ```
 
-```{.output}
+``` output
 [1] 13
 ```
 
@@ -243,11 +243,11 @@ evaluation if it differs from the default, or to make clear what you
 intend.
 
 
-```r
+``` r
 (3 + 5) * 2
 ```
 
-```{.output}
+``` output
 [1] 16
 ```
 
@@ -255,7 +255,7 @@ This can get unwieldy when not needed, but  clarifies your intentions.
 Remember that others may later read your code.
 
 
-```r
+``` r
 (3 + (5 * (2 ^ 2))) # hard to read
 3 + 5 * 2 ^ 2       # clear, if you remember the rules
 3 + 5 * (2 ^ 2)     # if you forget some rules, this might help
@@ -268,11 +268,11 @@ The text after each line of code is called a
 Really small or large numbers get a scientific notation:
 
 
-```r
+``` r
 2/10000
 ```
 
-```{.output}
+``` output
 [1] 2e-04
 ```
 
@@ -282,11 +282,11 @@ is shorthand for `2 * 10^(-4)`.
 You can write numbers in scientific notation too:
 
 
-```r
+``` r
 5e3  # Note the lack of minus here
 ```
 
-```{.output}
+``` output
 [1] 5000
 ```
 
@@ -309,56 +309,56 @@ later.
 We can also do comparison in R:
 
 
-```r
+``` r
 1 == 1  # equality (note two equals signs, read as "is equal to")
 ```
 
-```{.output}
+``` output
 [1] TRUE
 ```
 
 
-```r
+``` r
 1 != 2  # inequality (read as "is not equal to")
 ```
 
-```{.output}
+``` output
 [1] TRUE
 ```
 
 
-```r
+``` r
 1 < 2  # less than
 ```
 
-```{.output}
+``` output
 [1] TRUE
 ```
 
 
-```r
+``` r
 1 <= 1  # less than or equal to
 ```
 
-```{.output}
+``` output
 [1] TRUE
 ```
 
 
-```r
+``` r
 1 > 0  # greater than
 ```
 
-```{.output}
+``` output
 [1] TRUE
 ```
 
 
-```r
+``` r
 1 >= -9 # greater than or equal to
 ```
 
-```{.output}
+``` output
 [1] TRUE
 ```
 
@@ -389,7 +389,7 @@ Further reading: [http://floating-point-gui.de/](https://floating-point-gui.de/)
 We can store values in variables using the assignment operator `<-`, like this:
 
 
-```r
+``` r
 x <- 1/40
 ```
 
@@ -397,11 +397,11 @@ Notice that assignment does not print a value. Instead, we stored it for later
 in something called a **variable**. `x` now contains the **value** `0.025`:
 
 
-```r
+``` r
 x
 ```
 
-```{.output}
+``` output
 [1] 0.025
 ```
 
@@ -412,18 +412,18 @@ Look for the `Environment` tab in one of the panes of RStudio, and you will see 
 have appeared. Our variable `x` can be used in place of a number in any calculation that expects a number:
 
 
-```r
+``` r
 log(x)
 ```
 
-```{.output}
+``` output
 [1] -3.688879
 ```
 
 Notice also that variables can be reassigned:
 
 
-```r
+``` r
 x <- 100
 ```
 
@@ -432,7 +432,7 @@ x <- 100
 Assignment values can contain the variable being assigned to:
 
 
-```r
+``` r
 x <- x + 1 #notice how RStudio updates its description of x on the top right tab
 y <- x * 2
 ```
@@ -448,7 +448,7 @@ What will be the value of each  variable  after each
 statement in the following program?
 
 
-```r
+``` r
 mass <- 47.5
 age <- 122
 mass <- mass * 2.3
@@ -460,21 +460,21 @@ age <- age - 20
 ## Solution to challenge 1
 
 
-```r
+``` r
 mass <- 47.5
 ```
 
 This will give a value of 47.5 for the variable mass
 
 
-```r
+``` r
 age <- 122
 ```
 
 This will give a value of 122 for the variable age
 
 
-```r
+``` r
 mass <- mass * 2.3
 ```
 
@@ -482,7 +482,7 @@ This will multiply the existing value of 47.5 by 2.3 to give a new value of
 109.25 to the variable mass.
 
 
-```r
+``` r
 age <- age - 20
 ```
 
@@ -509,11 +509,11 @@ compare mass to age. Is mass larger than age?
 One way of answering this question in R is to use the `>` to set up the following:
 
 
-```r
+``` r
 mass > age
 ```
 
-```{.output}
+``` output
 [1] TRUE
 ```
 
@@ -538,7 +538,7 @@ What you use is up to you, but **be consistent**.
 It is also possible to use the `=` operator for assignment:
 
 
-```r
+``` r
 x = 1/40
 ```
 
@@ -554,7 +554,7 @@ symbol used in the community. So the recommendation is to use `<-`.
 Which of the following are valid R variable names?
 
 
-```r
+``` r
 min_height
 max.height
 _age
@@ -572,7 +572,7 @@ celsius2kelvin
 The following can be used as R variables:
 
 
-```r
+``` r
 min_height
 max.height
 MaxLength
@@ -582,7 +582,7 @@ celsius2kelvin
 The following creates a hidden variable:
 
 
-```r
+``` r
 .mass
 ```
 
@@ -592,7 +592,7 @@ beginning of variable names unless you intend your variables to be hidden.
 The following will not be able to be used to create a variable
 
 
-```r
+``` r
 _age
 min-length
 2widths
@@ -617,20 +617,18 @@ There are two main ways to install packages in R:
 2. We can use the `install.packages( )` function. We can do this to install the `dplyr` R package.
 
 
-```r
+``` r
 install.packages("dplyr")
 ```
 
-```{.output}
+``` output
 The following package(s) will be installed:
 - dplyr [1.1.4]
-- vctrs [0.6.5]
-These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/R-4.3/x86_64-pc-linux-gnu".
+These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing vctrs ...                          OK [linked from cache]
 - Installing dplyr ...                          OK [linked from cache]
-Successfully installed 2 packages in 9.1 milliseconds.
+Successfully installed 1 package in 6.5 milliseconds.
 ```
 
 It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
@@ -648,7 +646,7 @@ What code would we use to install the `ggplot2` package?
 We would use the following R code to install the `ggplot2` package:
 
 
-```r
+``` r
 install.packages("ggplot2")
 ```
 
@@ -661,22 +659,22 @@ Now that we've installed the R package, we're ready to use it! To use the R pack
 To load an R package, we use the `library( )` function. We can load the `dplyr` package like this:
 
 
-```r
+``` r
 library(dplyr)
 ```
 
-```{.output}
+``` output
 
 Attaching package: 'dplyr'
 ```
 
-```{.output}
+``` output
 The following objects are masked from 'package:stats':
 
     filter, lag
 ```
 
-```{.output}
+``` output
 The following objects are masked from 'package:base':
 
     intersect, setdiff, setequal, union
@@ -706,7 +704,7 @@ Answer d will produce an error because ggplot2 is misspelled.
 Note: It is more common for coders to *not use quotation* marks when loading an R package (i.e., answer c).
 
 
-```r
+``` r
 library(ggplot2)
 ```
 
