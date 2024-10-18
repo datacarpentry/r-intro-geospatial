@@ -22,21 +22,21 @@ source: Rmd
 
 
 Plotting our data is one of the best ways to quickly explore it and the various
-relationships between variables. There are three main plotting systems in R, the
-[base plotting system](https://www.statmethods.net/graphs/), the
+relationships between variables. There are three main plotting systems in R,
+the [base plotting system](https://www.statmethods.net/graphs/), the
 [lattice](https://www.statmethods.net/advgraphs/trellis.html) package, and the
-[ggplot2](https://www.statmethods.net/advgraphs/ggplot2.html) package. Today and
-tomorrow we'll be learning about the ggplot2 package, because it is the most
-effective for creating publication quality graphics. In this episode, we will
-introduce the key features of a ggplot and make a few example plots. We will
-expand on these concepts and see how they apply to geospatial data types when we
-start working with geospatial data in the [R for Raster and Vector
+[ggplot2](https://www.statmethods.net/advgraphs/ggplot2.html) package. Today
+and tomorrow we'll be learning about the ggplot2 package, because it is one of
+the most popular for creating publication quality graphics. In this episode, we
+will introduce the key features of a ggplot and make a few example plots. We
+will expand on these concepts and see how they apply to geospatial data types
+when we start working with geospatial data in the [R for Raster and Vector
 Data](https://datacarpentry.org/r-raster-vector-geospatial/) lesson.
 
 :::::::::::::::::::::::::::::::::::::::  instructor
 
 - This episode introduces `geom_col` and `geom_histogram`. These geoms are used
-  in the rest of the workshop, along with geoms specifically for geospatial 
+  in the rest of the workshop, along with geoms specifically for geospatial
   data.
 - Emphasize that we will go much deeper into visualization and creating
   publication-quality graphics later in the workshop.
@@ -71,7 +71,7 @@ for histograms.
 
 ``` r
 library("ggplot2")
-ggplot(data = gapminder, aes(x = lifeExp)) +   
+ggplot(data = gapminder, aes(x = lifeExp)) +
   geom_histogram()
 ```
 
@@ -96,7 +96,7 @@ distribution of one variable (in our case "lifeExp"):
 
 
 ``` r
-ggplot(data = gapminder, aes(x = lifeExp)) +   
+ggplot(data = gapminder, aes(x = lifeExp)) +
   geom_histogram()
 ```
 
@@ -123,7 +123,7 @@ expectancy:
 
 
 ``` r
-ggplot(data = gapminder, aes(x = gdpPercap)) +   
+ggplot(data = gapminder, aes(x = gdpPercap)) +
  geom_histogram()
 ```
 
@@ -156,7 +156,7 @@ by default) and gdp per capita on the y-axis.
 
 
 ``` r
-ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) + 
+ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) +
   geom_col()
 ```
 
@@ -171,7 +171,7 @@ function to the end of our plot code.
 
 
 ``` r
-ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) + 
+ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) +
   geom_col() +
   coord_flip()
 ```
@@ -223,10 +223,10 @@ is "stack".
 
 
 ``` r
-ggplot(gapminder_small_2, 
-       aes(x = country, y = gdpPercap, 
+ggplot(gapminder_small_2,
+       aes(x = country, y = gdpPercap,
        fill = as.factor(year))) +
-   geom_col(position = "dodge") + 
+   geom_col(position = "dodge") +
    coord_flip()
 ```
 
