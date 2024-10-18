@@ -87,7 +87,7 @@ We're going to create a new project in RStudio:
 
 1. Click the "File" menu button, then "New Project".
 2. Click "New Directory".
-3. Click "Empty Project".
+3. Click "New Project".
 4. Type in "r-geospatial" as the name of the directory.
 5. Click the "Create Project" button.
   
@@ -199,7 +199,7 @@ We will load and inspect these data later.
 
 ## Challenge 2
 
-We also want to move the data that we downloaded from the [data page](https://datacarpentry.org/geospatial-workshop/data/) into a subdirectory
+We also want to move the data that we downloaded from the [data page](https://datacarpentry.org/geospatial-workshop/index.html#data) into a subdirectory
 inside `r-geospatial`. If you haven't already downloaded the data, you can do so by clicking
 [this download link](https://ndownloader.figshare.com/articles/2009586/versions/10).
 
