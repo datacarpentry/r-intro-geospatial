@@ -23,9 +23,7 @@ source: Rmd
 
 Plotting our data is one of the best ways to quickly explore it and the various
 relationships between variables. There are three main plotting systems in R,
-the [base plotting system](https://www.statmethods.net/graphs/), the
-[lattice](https://www.statmethods.net/advgraphs/trellis.html) package, and the
-[ggplot2](https://www.statmethods.net/advgraphs/ggplot2.html) package. Today
+the base plotting system, the lattice package, and the ggplot2 package. Today
 and tomorrow we'll be learning about the ggplot2 package, because it is one of
 the most popular for creating publication quality graphics. In this episode, we
 will introduce the key features of a ggplot and make a few example plots. We
