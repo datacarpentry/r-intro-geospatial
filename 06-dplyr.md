@@ -454,7 +454,7 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
 ## Other great resources
 
 - [R for Data Science](https://r4ds.had.co.nz/)
-- [Data Wrangling Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+- [Data Wrangling Cheat sheet](https://posit.co/resources/cheatsheets/)
 - [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
 - [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/)
 
