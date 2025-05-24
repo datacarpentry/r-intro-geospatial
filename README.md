@@ -37,6 +37,7 @@ suggested lesson plans suitable for a one or half day workshop.
 - Johanna Bayer
 - Mike Mahoney
 - Alber Sánchez
+- Kristi Liu
 
 #### Previous maintainers:
 
