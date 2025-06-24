@@ -38,6 +38,7 @@ suggested lesson plans suitable for a one or half day workshop.
 - Mike Mahoney
 - Alber Sánchez
 - Kristi Liu
+- Cooper Kimball-Rhines
 
 #### Previous maintainers:
 
