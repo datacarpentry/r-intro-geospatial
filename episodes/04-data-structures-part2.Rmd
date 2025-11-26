@@ -324,7 +324,7 @@ afghanistan_20c[-1, ]
 ```
 
 
-An interesting case is removing rows containing NAs:
+In research, you may want to remove all the missing data prior to an analysis.  Let's first add some missing values (NAs) into the data and then we can use `na.omit()` to remove them.
 
 ```{r}
 # Turn some values into NAs:
