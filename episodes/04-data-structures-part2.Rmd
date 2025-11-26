@@ -312,7 +312,7 @@ head(life_expectancy)
 
 Note that the easy way to remove rows from a data frame is selecting the rows
 we want to keep instead.
-Anyway, to remove rows from a data frame, we can use their positions:
+However, to remove rows from a data frame, we can use their positions:
 
 ```{r}
 # Filter data for Afghanistan during the 20th century:
