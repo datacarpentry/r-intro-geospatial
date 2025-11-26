@@ -287,7 +287,8 @@ To understand why R is giving us a warning when we try to add this row, let's le
 ## Removing columns and rows in data frames
 
 To remove columns from a data frame, we can use the 'subset' function.
-This function allows us to remove columns using their names:
+This function allows us to remove columns using their names.
+If we want to keep all columns except continent, pop and gdpPercap we can use the following `subset` command:
 
 ```{r}
 life_expectancy <- subset(gapminder, select = -c(continent, pop, gdpPercap))
