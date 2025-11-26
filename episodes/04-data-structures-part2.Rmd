@@ -303,7 +303,7 @@ life_expectancy <- gapminder[c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE)]
 head(life_expectancy)
 ```
 
-Alternatively, we can use column's positions:
+Alternatively, we can use column positions:
 
 ```{r}
 life_expectancy <- gapminder[-c(3, 4, 6)]
