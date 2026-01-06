@@ -316,7 +316,7 @@ life_expectancy <- gapminder[-c(3, 4, 6)]
 head(life_expectancy)
 ```
 
-Note that the easy way to remove rows from a data frame is selecting the rows
+Note that typically we select the rows we want to keep, rather than removing rows we do not want in the data.
 we want to keep instead.
 However, to remove rows from a data frame, we can use their positions:
 
