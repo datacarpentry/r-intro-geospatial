@@ -316,7 +316,6 @@ head(life_expectancy)
 ```
 
 Note that typically we select the rows we want to keep, rather than removing rows we do not want in the data.
-we want to keep instead.
 However, to remove rows from a data frame, we can use their positions:
 
 ```{r}
