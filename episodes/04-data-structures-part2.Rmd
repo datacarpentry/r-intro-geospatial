@@ -337,6 +337,7 @@ For example, you may want to remove all the missing data prior to an analysis.  
 # Turn some values into NAs:
 afghanistan_20c <- gapminder[gapminder$country == "Afghanistan", ]
 afghanistan_20c[afghanistan_20c$year < 2007, "year"] <- NA
+head(afghanistan_20c)
 
 # Remove NAs
 na.omit(afghanistan_20c)
