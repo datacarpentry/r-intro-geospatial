@@ -316,7 +316,9 @@ head(life_expectancy)
 ```
 
 Note that typically we select the rows we want to keep, rather than removing rows we do not want in the data.
-However, to remove rows from a data frame, we can use their positions:
+However, to remove rows from a data frame, we can use their positions.
+To practice on a smaller subset, we will filter the data to only those entries from Afghanistan after the year 2000.
+This smaller dataset will be easier for us to inspect by eye and see the changes we are making.
 
 ```{r}
 # Filter data for Afghanistan during the 20th century:
