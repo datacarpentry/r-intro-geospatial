@@ -330,7 +330,8 @@ afghanistan_20c[-1, ]
 ```
 
 
-In research, you may want to remove all the missing data prior to an analysis.  Let's first add some missing values (NAs) into the data and then we can use `na.omit()` to remove them.
+In research, we often remove rows based on features of the data itself, rather than its location.
+For example, you may want to remove all the missing data prior to an analysis.  Let's first add some missing values (NAs) into the data and then we can use `na.omit()` to remove them.
 
 ```{r}
 # Turn some values into NAs:
