@@ -296,7 +296,7 @@ head(life_expectancy)
 ```
 
 We can also use a logical vector to achieve the same result. Make sure the
-vector's length match the number of columns in the data frame (to avoid R repeating the shorter vector to match the length of the longer vector):
+vector's length match the number of columns in the data frame (to avoid R repeating the shorter vector to match the length of the longer vector, called "vector recycling"):
 
 ```{r}
 life_expectancy <- gapminder[c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE)]
