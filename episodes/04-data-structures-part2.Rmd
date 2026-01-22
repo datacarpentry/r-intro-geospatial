@@ -303,10 +303,15 @@ life_expectancy <- gapminder[c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE)]
 head(life_expectancy)
 ```
 
+:::::: spoiler
+
+### Vector Recycling
+
 Vector recycling occurs when working with vectors of different length and it
 consist on repeating the elements of the shorter vector up to the lenght of
 the larger one. For more information, check the book R for Data Science and its
 [chapter about vectors](https://r4ds.had.co.nz/vectors.html#scalars-and-recycling-rules).
+::::::::
 
 Alternatively, we can use column positions:
 
