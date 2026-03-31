@@ -336,8 +336,12 @@ gdp_bycontinents_byyear <- gapminder %>%
 ```
 
 ``` output
-`summarise()` has grouped output by 'continent'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by continent and year.
+ℹ Output is grouped by continent.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(continent, year))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 That is already quite powerful, but it gets even better! You're not limited to defining 1 new variable in `summarize()`.
@@ -353,8 +357,12 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
 ```
 
 ``` output
-`summarise()` has grouped output by 'continent'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by continent and year.
+ℹ Output is grouped by continent.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(continent, year))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ## `count()` and `n()`
@@ -447,8 +455,12 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
 ```
 
 ``` output
-`summarise()` has grouped output by 'continent'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by continent and year.
+ℹ Output is grouped by continent.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(continent, year))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ## Other great resources
