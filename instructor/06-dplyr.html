@@ -342,7 +342,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data frame Manipulation with dplyr</h1>
-        <p>Last updated on 2025-11-18 |
+        <p>Last updated on 2026-03-31 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/06-dplyr.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -748,8 +748,12 @@ variables. Let’s group by <code>year</code> and
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'continent'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by continent and year.
+ℹ Output is grouped by continent.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(continent, year))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 <p>That is already quite powerful, but it gets even better! You’re not
 limited to defining 1 new variable in <code>summarize()</code>.</p>
@@ -767,8 +771,12 @@ limited to defining 1 new variable in <code>summarize()</code>.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'continent'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by continent and year.
+ℹ Output is grouped by continent.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(continent, year))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="count-and-n">
 <code>count()</code> and <code>n()</code>
@@ -871,8 +879,12 @@ information using <code>mutate()</code>.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'continent'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by continent and year.
+ℹ Output is grouped by continent.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(continent, year))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="other-great-resources">Other great resources<a class="anchor" aria-label="anchor" href="#other-great-resources"></a></h2>
 <hr class="half-width"><ul><li><a href="https://r4ds.hadley.nz/" class="external-link">R for Data Science</a></li>
@@ -960,8 +972,8 @@ of observations in columns.</li>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/instructor/06-dplyr.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/instructor/06-dplyr.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2025-11-18",
-  "datePublished": "2026-03-24"
+  "dateModified": "2026-03-31",
+  "datePublished": "2026-03-31"
 }
 
   </script><script>

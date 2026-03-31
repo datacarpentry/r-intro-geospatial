@@ -343,7 +343,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to R and RStudio</h1>
-        <p>Last updated on 2025-11-18 |
+        <p>Last updated on 2026-03-31 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/01-rstudio-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -789,7 +789,7 @@ following program?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution to challenge 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -843,7 +843,7 @@ compare mass to age. Is mass larger than age?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution to challenge 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>One way of answering this question in R is to use the
 <code>&gt;</code> to set up the following:</p>
@@ -915,7 +915,7 @@ used in the community. So the recommendation is to use
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution to challenge 3 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The following can be used as R variables:</p>
 <div class="codewrapper sourceCode" id="cb42">
@@ -986,13 +986,22 @@ do this to install the <code>dplyr</code> R package.</p></li>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>The following package(s) will be installed:
-- dplyr [1.1.4]
+<pre class="output" tabindex="0"><code>- Querying repositories for available source packages ... Done!
+The following package(s) will be installed:
+- dplyr  [1.2.0]
+- tibble [3.3.1]
 These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/linux-ubuntu-jammy/R-4.5/x86_64-pc-linux-gnu".
 
+# Downloading packages -------------------------------------------------------
+[?25l  (0/2) Downloading: dplyr, tibble                                                                                                                              [32m✔[0m dplyr 1.2.0                              [1.5 MB in 0.34s]
+  (1/2) Downloading: tibble                                                                                                                                     [32m✔[0m tibble 3.3.1                             [648 kB in 0.36s]
+                                                                                Successfully downloaded 2 packages in 0.53 seconds.
+
 # Installing packages --------------------------------------------------------
-- Installing dplyr ...                          OK [linked from cache]
-Successfully installed 1 package in 5.4 milliseconds.</code></pre>
+  (0/2) Building: tibble                                                          (0/2) Building: tibble                                                                                                                                        [32m✔[0m tibble 3.3.1                             [built from source]
+  (1/2) Building: dplyr                                                           (1/2) Building: dplyr                                                                                                                                         [32m✔[0m dplyr 1.2.0                              [built from source]
+Successfully installed 2 packages in 0.68 seconds.
+[?25h</code></pre>
 </div>
 <p>It’s important to note that we only need to install the R package on
 our computer once. Well, if we install a new version of R on the same
@@ -1016,7 +1025,7 @@ package?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Solution to challenge 4 </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>We would use the following R code to install the <code>ggplot2</code>
 package:</p>
@@ -1086,7 +1095,7 @@ package? (Select all that apply.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Solution to challenge 5 </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>The correct answers are b and c. Answer a will install, not load, the
 ggplot2 package. Answer b will correctly load the ggplot2 package. Note
@@ -1180,8 +1189,8 @@ marks when loading an R package (i.e., answer c).</p>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/01-rstudio-intro.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/01-rstudio-intro.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2025-11-18",
-  "datePublished": "2026-03-24"
+  "dateModified": "2026-03-31",
+  "datePublished": "2026-03-31"
 }
 
   </script><script>
