@@ -386,7 +386,7 @@
         
 <section id="aio-01-rstudio-intro"><p>Content from <a href="01-rstudio-intro.html">Introduction to R and RStudio</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/01-rstudio-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -860,7 +860,7 @@ following program?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution to challenge 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -914,7 +914,7 @@ compare mass to age. Is mass larger than age?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution to challenge 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>One way of answering this question in R is to use the
 <code>&gt;</code> to set up the following:</p>
@@ -988,7 +988,7 @@ used in the community. So the recommendation is to use
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution to challenge 3 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The following can be used as R variables:</p>
 <div class="codewrapper sourceCode" id="cb42">
@@ -1065,19 +1065,23 @@ do this to install the <code>dplyr</code> R package.</p></li>
 </h3>
 <pre class="output" tabindex="0"><code>- Querying repositories for available source packages ... Done!
 The following package(s) will be installed:
-- dplyr  [1.2.0]
-- tibble [3.3.1]
+- dplyr    [1.2.1]
+- magrittr [2.0.5]
+- rlang    [1.1.7]
+- tibble   [3.3.1]
 These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/linux-ubuntu-jammy/R-4.5/x86_64-pc-linux-gnu".
 
 # Downloading packages -------------------------------------------------------
-[?25l  (0/2) Downloading: dplyr, tibble                                                                                                                              [32m✔[0m dplyr 1.2.0                              [1.5 MB in 0.34s]
-  (1/2) Downloading: tibble                                                                                                                                     [32m✔[0m tibble 3.3.1                             [648 kB in 0.36s]
-                                                                                Successfully downloaded 2 packages in 0.53 seconds.
+[?25l  (0/2) Downloading: magrittr, dplyr                                                                                                                            [32m✔[0m magrittr 2.0.5                           [222 kB in 0.23s]
+  (1/2) Downloading: dplyr                                                                                                                                      [32m✔[0m dplyr 1.2.1                              [1.5 MB in 0.25s]
+                                                                                Successfully downloaded 2 packages in 0.41 seconds.
 
 # Installing packages --------------------------------------------------------
-  (0/2) Building: tibble                                                          (0/2) Building: tibble                                                                                                                                        [32m✔[0m tibble 3.3.1                             [built from source]
-  (1/2) Building: dplyr                                                           (1/2) Building: dplyr                                                                                                                                         [32m✔[0m dplyr 1.2.0                              [built from source]
-Successfully installed 2 packages in 0.68 seconds.
+[32m✔[0m tibble 3.3.1                             [linked from cache]
+[32m✔[0m rlang 1.1.7                              [linked from cache]
+  (0/2) Building: magrittr                                                        (0/2) Building: magrittr                                                                                                                                      [32m✔[0m magrittr 2.0.5                           [built from source]
+  (1/2) Building: dplyr                                                           (1/2) Building: dplyr                                                                                                                                         [32m✔[0m dplyr 1.2.1                              [built from source]
+Successfully installed 4 packages in 0.65 seconds.
 [?25h</code></pre>
 </div>
 <p>It’s important to note that we only need to install the R package on
@@ -1102,7 +1106,7 @@ package?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Solution to challenge 4 </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>We would use the following R code to install the <code>ggplot2</code>
 package:</p>
@@ -1174,7 +1178,7 @@ package? (Select all that apply.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Solution to challenge 5 </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>The correct answers are b and c. Answer a will install, not load, the
 ggplot2 package. Answer b will correctly load the ggplot2 package. Note
@@ -1212,7 +1216,7 @@ marks when loading an R package (i.e., answer c).</p>
 </div>
 </section></section><section id="aio-02-project-intro"><p>Content from <a href="02-project-intro.html">Project Management With RStudio</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/02-project-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1509,7 +1513,7 @@ layout.</li>
 </div>
 </section></section><section id="aio-03-data-structures-part1"><p>Content from <a href="03-data-structures-part1.html">Data Structures</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/03-data-structures-part1.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2784,7 +2788,7 @@ character.</li>
 </div>
 </section></section><section id="aio-04-data-structures-part2"><p>Content from <a href="04-data-structures-part2.html">Exploring Data Frames</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/04-data-structures-part2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3061,7 +3065,7 @@ could simply ask for a few lines at random. How would you code this?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution to Challenge 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>To check the last few lines it’s relatively simple as R already has a
 function for this:</p>
@@ -3116,7 +3120,7 @@ neighbors!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution to Challenge 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The object <code>gapminder</code> is a data frame with columns</p>
 <ul>
@@ -3463,7 +3467,7 @@ person’s answer to the question, “Is it time for coffee break?”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution to Challenge 3 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3507,7 +3511,7 @@ represents.</li>
 </div>
 </section></section><section id="aio-05-data-subsetting"><p>Content from <a href="05-data-subsetting.html">Subsetting Data</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/05-data-subsetting.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3842,7 +3846,7 @@ neighbour. Did you have different strategies?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution to challenge 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4047,7 +4051,7 @@ than 4 and less than 7.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution to challenge 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4255,7 +4259,7 @@ and 2007</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution to challenge 3 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Fix each of the following common data frame subsetting errors:</p>
 <ol style="list-style-type: decimal">
@@ -4339,7 +4343,7 @@ through 23. You can do this in one or two steps.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Solution to challenge 4 </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p><code>gapminder</code> is a data.frame so it needs to be
@@ -4378,7 +4382,7 @@ data.</li>
 </div>
 </section></section><section id="aio-06-dplyr"><p>Content from <a href="06-dplyr.html">Data frame Manipulation with dplyr</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/06-dplyr.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4560,7 +4564,7 @@ why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution to Challenge 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4698,7 +4702,7 @@ expectancy?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution to Challenge 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4952,7 +4956,7 @@ of observations in columns.</li>
 </div>
 </section></section><section id="aio-07-plot-ggplot2"><p>Content from <a href="07-plot-ggplot2.html">Introduction to Visualization</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/07-plot-ggplot2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -5080,7 +5084,7 @@ per capita, rather than life expectancy:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution to challenge 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5160,7 +5164,7 @@ Americas for the years 1952 and 2007, color coded by year.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution to challenge 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>First we create a new object with our filtered data:</p>
 <div class="codewrapper sourceCode" id="cb10">
@@ -5223,7 +5227,7 @@ customizations we will be working with in that lesson.</p>
 </div>
 </div></section><section id="aio-08-writing-data"><p>Content from <a href="08-writing-data.html">Writing Data</a></p>
 <hr>
-<p>Last updated on 2026-03-31 |
+<p>Last updated on 2026-04-07 |
 
         <a href="https://github.com/datacarpentry/r-intro-geospatial/edit/main/episodes/08-writing-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -5463,8 +5467,8 @@ following:</p>
   "url": "https://datacarpentry.github.io/r-intro-geospatial/aio.html",
   "identifier": "https://datacarpentry.github.io/r-intro-geospatial/aio.html",
   "dateCreated": "2018-04-05",
-  "dateModified": "2026-03-31",
-  "datePublished": "2026-03-31"
+  "dateModified": "2026-04-07",
+  "datePublished": "2026-04-07"
 }
 
   </script><script>
