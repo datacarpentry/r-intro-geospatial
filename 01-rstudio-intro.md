@@ -624,19 +624,23 @@ install.packages("dplyr")
 ``` output
 - Querying repositories for available source packages ... Done!
 The following package(s) will be installed:
-- dplyr  [1.2.0]
-- tibble [3.3.1]
+- dplyr    [1.2.1]
+- magrittr [2.0.5]
+- rlang    [1.1.7]
+- tibble   [3.3.1]
 These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/linux-ubuntu-jammy/R-4.5/x86_64-pc-linux-gnu".
 
 # Downloading packages -------------------------------------------------------
-[?25l  (0/2) Downloading: dplyr, tibble                                                                                                                              [32m✔[0m dplyr 1.2.0                              [1.5 MB in 0.34s]
-  (1/2) Downloading: tibble                                                                                                                                     [32m✔[0m tibble 3.3.1                             [648 kB in 0.36s]
-                                                                                Successfully downloaded 2 packages in 0.53 seconds.
+[?25l  (0/2) Downloading: magrittr, dplyr                                                                                                                            [32m✔[0m magrittr 2.0.5                           [222 kB in 0.23s]
+  (1/2) Downloading: dplyr                                                                                                                                      [32m✔[0m dplyr 1.2.1                              [1.5 MB in 0.25s]
+                                                                                Successfully downloaded 2 packages in 0.41 seconds.
 
 # Installing packages --------------------------------------------------------
-  (0/2) Building: tibble                                                          (0/2) Building: tibble                                                                                                                                        [32m✔[0m tibble 3.3.1                             [built from source]
-  (1/2) Building: dplyr                                                           (1/2) Building: dplyr                                                                                                                                         [32m✔[0m dplyr 1.2.0                              [built from source]
-Successfully installed 2 packages in 0.68 seconds.
+[32m✔[0m tibble 3.3.1                             [linked from cache]
+[32m✔[0m rlang 1.1.7                              [linked from cache]
+  (0/2) Building: magrittr                                                        (0/2) Building: magrittr                                                                                                                                      [32m✔[0m magrittr 2.0.5                           [built from source]
+  (1/2) Building: dplyr                                                           (1/2) Building: dplyr                                                                                                                                         [32m✔[0m dplyr 1.2.1                              [built from source]
+Successfully installed 4 packages in 0.65 seconds.
 [?25h
 ```
 
