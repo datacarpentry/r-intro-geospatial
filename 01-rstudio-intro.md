@@ -624,24 +624,16 @@ install.packages("dplyr")
 ``` output
 - Querying repositories for available source packages ... Done!
 The following package(s) will be installed:
-- dplyr    [1.2.1]
-- magrittr [2.0.5]
-- rlang    [1.1.7]
-- tibble   [3.3.1]
+- dplyr [1.2.1]
 These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/linux-ubuntu-jammy/R-4.5/x86_64-pc-linux-gnu".
 
 # Downloading packages -------------------------------------------------------
-[?25l  (0/2) Downloading: magrittr, dplyr                                                                                                                            [32m✔[0m magrittr 2.0.5                           [222 kB in 0.23s]
-  (1/2) Downloading: dplyr                                                                                                                                      [32m✔[0m dplyr 1.2.1                              [1.5 MB in 0.25s]
-                                                                                Successfully downloaded 2 packages in 0.41 seconds.
+[32m✔[0m dplyr 1.2.1                              [1.5 MB in 0.43s]
+Successfully downloaded 1 package in 0.59 seconds.
 
 # Installing packages --------------------------------------------------------
-[32m✔[0m tibble 3.3.1                             [linked from cache]
-[32m✔[0m rlang 1.1.7                              [linked from cache]
-  (0/2) Building: magrittr                                                        (0/2) Building: magrittr                                                                                                                                      [32m✔[0m magrittr 2.0.5                           [built from source]
-  (1/2) Building: dplyr                                                           (1/2) Building: dplyr                                                                                                                                         [32m✔[0m dplyr 1.2.1                              [built from source]
-Successfully installed 4 packages in 0.65 seconds.
-[?25h
+[32m✔[0m dplyr 1.2.1                              [built from source]
+Successfully installed 1 package in 0.35 seconds.
 ```
 
 It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
