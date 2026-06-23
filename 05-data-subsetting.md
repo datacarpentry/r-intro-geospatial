@@ -216,7 +216,8 @@ This gives a somewhat cryptic error:
 
 
 ``` error
-Error in x[-1:3]: only 0's may be mixed with negative subscripts
+Error in `x[-1:3]`:
+! only 0's may be mixed with negative subscripts
 ```
 
 But remember the order of operations. `:` is really a function.

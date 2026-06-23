@@ -82,7 +82,8 @@ nordic$lifeExp + nordic$country
 ```
 
 ``` error
-Error in nordic$lifeExp + nordic$country: non-numeric argument to binary operator
+Error in `nordic$lifeExp + nordic$country`:
+! non-numeric argument to binary operator
 ```
 
 Understanding what happened here is key to successfully analyzing data in R.
@@ -192,7 +193,8 @@ nordic_2$lifeExp + 2
 ```
 
 ``` error
-Error in nordic_2$lifeExp + 2: non-numeric argument to binary operator
+Error in `nordic_2$lifeExp + 2`:
+! non-numeric argument to binary operator
 ```
 
 What happened? When R reads a csv file into one of these tables, it insists that

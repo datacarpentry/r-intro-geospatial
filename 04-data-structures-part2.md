@@ -329,7 +329,8 @@ head(cbind(gapminder, below_average))
 ```
 
 ``` error
-Error in data.frame(..., check.names = FALSE): arguments imply differing number of rows: 1704, 5
+Error in `data.frame()`:
+! arguments imply differing number of rows: 1704, 5
 ```
 
 Why didn't this work? R wants to see one element in our new column

@@ -85,7 +85,7 @@ By itself, the call to `ggplot` isn't enough to draw a figure:
 ggplot(data = gapminder, aes(x = lifeExp))
 ```
 
-<img src="fig/07-plot-ggplot2-rendered-blank-plot-1.png" style="display: block; margin: auto;" />
+<img src="fig/07-plot-ggplot2-rendered-blank-plot-1.png" alt="" style="display: block; margin: auto;" />
 
 We need to tell `ggplot` how we want to visually represent the data, which we
 do by adding a geom layer. In our example, we used `geom_histogram()`, which
@@ -129,7 +129,7 @@ ggplot(data = gapminder, aes(x = gdpPercap)) +
 `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
-<img src="fig/07-plot-ggplot2-rendered-ch1-sol-1.png" style="display: block; margin: auto;" />
+<img src="fig/07-plot-ggplot2-rendered-ch1-sol-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::
 
@@ -228,7 +228,7 @@ ggplot(gapminder_small_2,
    coord_flip()
 ```
 
-<img src="fig/07-plot-ggplot2-rendered-gpd-per-cap-1.png" style="display: block; margin: auto;" />
+<img src="fig/07-plot-ggplot2-rendered-gpd-per-cap-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::
 
