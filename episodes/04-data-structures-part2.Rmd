@@ -86,10 +86,12 @@ always do is check out what the data looks like with `str`:
 str(gapminder)
 ```
 
-We can also examine individual columns of the data frame with our `class` function:
+We can also examine individual columns of the data frame with the `class` or
+'typeof' functions:
 
 ```{r}
 class(gapminder$year)
+typeof(gapminder$year)
 class(gapminder$country)
 str(gapminder$country)
 ```
@@ -271,6 +273,74 @@ Now how about adding rows? The rows of a data frame are lists:
 new_row <- list('Norway', 2016, 5000000, 'Nordic', 80.3, 49400.0, FALSE)
 gapminder_norway <- rbind(gapminder, new_row)
 tail(gapminder_norway)
+```
+
+
+
+## Removing columns and rows in data frames
+
+To remove columns from a data frame, we can use the 'subset' function.
+This function allows us to remove columns using their names.
+If we want to keep all columns except continent, pop and gdpPercap we can use the following `subset` command:
+
+```{r}
+life_expectancy <- subset(gapminder, select = -c(continent, pop, gdpPercap))
+head(life_expectancy)
+```
+
+We can also use a logical vector to achieve the same result. Make sure the
+vector's length matches the number of columns in the data frame (to avoid R
+repeating the shorter vector to match the length of the longer vector, called
+"vector recycling"):
+
+```{r}
+life_expectancy <- gapminder[c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE)]
+head(life_expectancy)
+```
+
+:::::: spoiler
+
+### Vector Recycling
+
+Vector recycling occurs when working with vectors of different length and it
+consist of repeating the elements of the shorter vector up to the length of
+the larger one. For more information, check the book R for Data Science and its
+[chapter about vectors](https://r4ds.had.co.nz/vectors.html#scalars-and-recycling-rules).
+::::::::
+
+Alternatively, we can use column positions:
+
+```{r}
+life_expectancy <- gapminder[-c(3, 4, 6)]
+head(life_expectancy)
+```
+
+Note that typically we select the rows we want to keep, rather than removing rows we do not want in the data.
+However, to remove rows from a data frame, we can use their positions.
+To practice on a smaller subset, we will filter the data to only those entries from Afghanistan after the year 2000.
+This smaller dataset will be easier for us to inspect by eye and see the changes we are making.
+
+```{r}
+# Filter data for Afghanistan during the 20th century:
+afghanistan_20c <- gapminder[gapminder$country == "Afghanistan" &
+                             gapminder$year > 2000, ]
+
+# Now remove data for 2002, that is, the first row:
+afghanistan_20c[-1, ]
+```
+
+
+In research, we often remove rows based on features of the data itself, rather than its location.
+For example, you may want to remove all the missing data prior to an analysis.  Let's first add some missing values (NAs) into the data and then we can use `na.omit()` to remove them.
+
+```{r}
+# Turn some values into NAs:
+afghanistan_20c <- gapminder[gapminder$country == "Afghanistan", ]
+afghanistan_20c[afghanistan_20c$year < 2007, "year"] <- NA
+head(afghanistan_20c)
+
+# Remove NAs
+na.omit(afghanistan_20c)
 ```
 
 
