@@ -622,13 +622,14 @@ install.packages("dplyr")
 ```
 
 ``` output
+- Querying repositories for available source packages ... Done!
 The following package(s) will be installed:
 - dplyr [1.2.1]
-These packages will be installed into "/__w/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/linux-ubuntu-noble/R-4.6/x86_64-pc-linux-gnu".
+These packages will be installed into "~/work/r-intro-geospatial/r-intro-geospatial/renv/profiles/lesson-requirements/renv/library/linux-ubuntu-jammy/R-4.6/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
 [32m✔[0m dplyr 1.2.1                              [linked from cache]
-Successfully installed 1 package in 3.9 milliseconds.
+Successfully installed 1 package in 2.9 milliseconds.
 ```
 
 It's important to note that we only need to install the R package on our computer once. Well, if we install a new version of R on the same computer, then we will likely need to also re-install the R packages too.
