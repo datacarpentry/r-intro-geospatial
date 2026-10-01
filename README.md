@@ -5,54 +5,10 @@
 
 # Intro to R for Geospatial data
 
-<!-- TODO: Update first pararaph of the introduction if they data changes -->
+<**This curriculum is retired.** The lesson pages remain online but the source repository is archived and no new contributions can be made.
+[Contact The Carpentries](mailto:team@carpentries.org) with your questions.
 
-An introduction to R for non-programmers using the [Gapminder][gapminder] data.
-Please see [https://datacarpentry.org/r-intro-geospatial](https://datacarpentry.org/r-intro-geospatial) for a rendered
-version of this material,
-[the lesson template documentation][lesson-example]
-for instructions on formatting, building, and submitting material,
-or run `make` in this directory for a list of helpful commands.
-
-The goal of this lesson is to revise best practices for using R in data
-analysis. This lesson is a modification of the [Software Carpentry: Programming with R](https://swcarpentry.github.io/r-novice-gapminder), and is part of the [Data Carpentry Geospatial Curriculum](https://datacarpentry.org/geospatial-workshop/). It introduces the R skills needed in the [Introduction to Raster and Vector Geospatial Data lesson](https://datacarpentry.org/r-raster-vector-geospatial).
-
-R is commonly used in many scientific disciplines for statistical analysis and
-its array of third-party packages. These materials are designed to provide
-attendees with a concise introduction in the fundamentals of R, and to introdue
-best practices for scientific computing: breaking down analyses into modular
-units, task automation, and encapsulation, before getting started with working
-with geospatial data.
-
-Note that this workshop focuses on the fundamentals of the programming
-language R, and not on statistical analysis.
-
-The lesson contains material than can be taught in about 4 hours. The
-[instructor notes
-page](https://datacarpentry.org/r-intro-geospatial/guide/index.html) has some
-suggested lesson plans suitable for a one or half day workshop.
-
-#### Maintainers:
-
-- Johanna Bayer
-- Mike Mahoney
-- Alber Sánchez
-- Kristi Liu
-- Cooper Kimball-Rhines
-
-#### Previous maintainers:
-
-- Leah Wasser
-- Jemma Stachelek
-- Tyson Swetnam
-- Lauren O'Brien
-- Janani Selvaraj
-- Lachlan Deer
-- Chris Prener
-- Juan Fung
-
-[gapminder]: https://www.gapminder.org/
-[lesson-example]: https://carpentries.github.io/lesson-example
-
-
+**Looking for an alternative?** The [Geospatial Data Carpentry with R for Urbanists](https://carpentries-incubator.github.io/r-geospatial-urban/) lesson in The Carpentries Incubator is actively maintained and has received good reviews from Instructors who have taught it. 
+The Maintainers of that lesson are inviting feedback from Instructors who have tried teaching it. 
+Why not give that curriculum a try, and [let the developers know whether it worked for your community](https://github.com/carpentries-incubator/r-geospatial-urban/issues/new?template=pilot_workshop_feedback.yml)?
 
