@@ -2,7 +2,13 @@
 site: sandpaper::sandpaper_site
 ---
 
+:::::::::::::::::::::::::::::::::::::::::: callout
 
+### Lesson Retired
+**This curriculum is retired.** The lesson pages remain online but the source repository is archived and no new contributions can be made.
+[Contact The Carpentries](mailto:team@carpentries.org) with your questions.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The goal of this lesson is to provide an introduction to R for learners
 working with geospatial data. It is intended as a pre-requisite for
